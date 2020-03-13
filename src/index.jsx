@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import './index.scss';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+class PersesFleet extends React.Component {
+  render() {
+    return (
+      <div className="my-flix">
+        <div>Good morning</div>
+      </div>
+    );
+  }
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const container = document.getElementsByClassName('app-container')[0];
+
+ReactDOM.render(React.createElement(PersesFleet), container);
