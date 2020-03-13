@@ -2,17 +2,20 @@
   "name": "perses-fleet",
   "version": "0.1.0",
   "private": true,
+  "main": "index.js",
   "dependencies": {
-    "react": "^16.13.0",
-    "react-bootstrap": "^1.0.0-beta.17",
-    "react-dom": "^16.13.0",
-    "react-scripts": "3.4.0"
+    "@popperjs/core": "^2.1.0",
+    "core-js": "^3.6.4",
+    "popper.js": "^1.16.1",
+    "react": "^16.12.0",
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "parcel src/index.html",
+    "prebuild": "rm -rf dist/",
+    "build": "parcel build src/index.html"
   },
   "browserslist": {
     "production": [
