@@ -2,6 +2,7 @@
   "name": "perses-fleet",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://RJArkell.github.io/perses-fleet",
   "main": "index.js",
   "dependencies": {
     "@popperjs/core": "^2.1.0",
@@ -17,7 +18,9 @@
   "scripts": {
     "start": "parcel src/index.html",
     "prebuild": "rm -rf dist/",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
@@ -37,6 +40,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "cssnano": "^4.1.10",
+    "gh-pages": "^2.2.0",
     "sass": "^1.24.0"
   }
 }

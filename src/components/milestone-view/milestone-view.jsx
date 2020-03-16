@@ -19,7 +19,7 @@ export class MilestoneView extends React.Component {
                 <Card className="h-100" style={{ backgroundColor: 'silver' }}>
                   <Card.Header style={{ backgroundColor: 'grey' }}><h5>2nd DRAKE Caterpillar</h5></Card.Header>
                   <Card.Body >
-                    <Card.Text>We're currently working towards buying a second Caterpillar to increase our trading capacity.</Card.Text>
+                    <Card.Text>We are currently working towards buying a second Caterpillar to increase our trading capacity.</Card.Text>
                     <ProgressBar striped variant="info" animated now={65} />
                     <Card.Text>3 000 000 / 4 700 000 aUEC</Card.Text>
                   </Card.Body>

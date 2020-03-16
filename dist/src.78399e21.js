@@ -36689,7 +36689,7 @@ class MilestoneView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, _react.default.createElement("h5", null, "2nd DRAKE Caterpillar")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "We're currently working towards buying a second Caterpillar to increase our trading capacity."), _react.default.createElement(_ProgressBar.default, {
+    }, _react.default.createElement("h5", null, "2nd DRAKE Caterpillar")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "We are currently working towards buying a second Caterpillar to increase our trading capacity."), _react.default.createElement(_ProgressBar.default, {
       striped: true,
       variant: "info",
       animated: true,
