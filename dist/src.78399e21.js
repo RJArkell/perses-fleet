@@ -35373,10 +35373,16 @@ class MenuBar extends _react.default.Component {
     }, _react.default.createElement(_Nav.default.Link, {
       href: "/"
     }, "Home"), _react.default.createElement(_Nav.default.Link, {
+      href: "/roster"
+    }, "Roster"), _react.default.createElement(_Nav.default.Link, {
       href: "/milestones"
     }, "Milestones"), _react.default.createElement(_Nav.default.Link, {
-      href: "/roster"
-    }, "Roster")));
+      target: "_blank",
+      href: "https://robertsspaceindustries.com/spectrum/community/PERSES"
+    }, "Forum"), _react.default.createElement(_Nav.default.Link, {
+      target: "_blank",
+      href: "https://robertsspaceindustries.com/orgs/PERSES"
+    }, "Apply to Join")));
   }
 
 }
@@ -35389,7 +35395,579 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../../../../home/arnketel/.nvm/versions/node/v12.13.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/home-view/home-view.jsx":[function(require,module,exports) {
+},{"_css_loader":"../../../../../../../../home/arnketel/.nvm/versions/node/v12.13.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/react-bootstrap/esm/Jumbotron.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var defaultProps = {
+  fluid: false
+};
+
+var Jumbotron = _react.default.forwardRef(function (_ref, ref) {
+  var _classes;
+
+  var _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'div' : _ref$as,
+      className = _ref.className,
+      fluid = _ref.fluid,
+      bsPrefix = _ref.bsPrefix,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["as", "className", "fluid", "bsPrefix"]);
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'jumbotron');
+  var classes = (_classes = {}, _classes[bsPrefix] = true, _classes[bsPrefix + "-fluid"] = fluid, _classes);
+  return _react.default.createElement(Component, (0, _extends2.default)({
+    ref: ref
+  }, props, {
+    className: (0, _classnames.default)(className, classes)
+  }));
+});
+
+Jumbotron.defaultProps = defaultProps;
+Jumbotron.displayName = 'Jumbotron';
+var _default = Jumbotron;
+exports.default = _default;
+},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","react":"../node_modules/react/index.js","classnames":"../node_modules/classnames/index.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js"}],"../node_modules/react-bootstrap/esm/CarouselCaption.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _default = (0, _createWithBsPrefix.default)('carousel-caption', {
+  Component: 'div'
+});
+
+exports.default = _default;
+},{"./createWithBsPrefix":"../node_modules/react-bootstrap/esm/createWithBsPrefix.js"}],"../node_modules/react-bootstrap/esm/CarouselItem.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _default = (0, _createWithBsPrefix.default)('carousel-item');
+
+exports.default = _default;
+},{"./createWithBsPrefix":"../node_modules/react-bootstrap/esm/createWithBsPrefix.js"}],"../node_modules/react-bootstrap/esm/ElementChildren.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.map = map;
+exports.forEach = forEach;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Iterates through children that are typically specified as `props.children`,
+ * but only maps over children that are "valid elements".
+ *
+ * The mapFunction provided index will be normalised to the components mapped,
+ * so an invalid component would not increase the index.
+ *
+ */
+function map(children, func) {
+  var index = 0;
+  return _react.default.Children.map(children, function (child) {
+    return _react.default.isValidElement(child) ? func(child, index++) : child;
+  });
+}
+/**
+ * Iterates through children that are "valid elements".
+ *
+ * The provided forEachFunc(child, index) will be called for each
+ * leaf child with the index reflecting the position relative to "valid components".
+ */
+
+
+function forEach(children, func) {
+  var index = 0;
+
+  _react.default.Children.forEach(children, function (child) {
+    if (_react.default.isValidElement(child)) func(child, index++);
+  });
+}
+},{"react":"../node_modules/react/index.js"}],"../node_modules/react-bootstrap/esm/Carousel.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose"));
+
+var _inheritsLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/inheritsLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _css = _interopRequireDefault(require("dom-helpers/css"));
+
+var _transitionEnd = _interopRequireDefault(require("dom-helpers/transitionEnd"));
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _uncontrollable = require("uncontrollable");
+
+var _CarouselCaption = _interopRequireDefault(require("./CarouselCaption"));
+
+var _CarouselItem = _interopRequireDefault(require("./CarouselItem"));
+
+var _ElementChildren = require("./ElementChildren");
+
+var _SafeAnchor = _interopRequireDefault(require("./SafeAnchor"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var _triggerBrowserReflow = _interopRequireDefault(require("./triggerBrowserReflow"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var countChildren = function countChildren(c) {
+  return _react.default.Children.toArray(c).filter(_react.default.isValidElement).length;
+};
+
+var SWIPE_THRESHOLD = 40; // TODO: `slide` should be `animate`.
+
+var defaultProps = {
+  slide: true,
+  fade: false,
+  interval: 5000,
+  keyboard: true,
+  pauseOnHover: true,
+  wrap: true,
+  indicators: true,
+  controls: true,
+  activeIndex: 0,
+  prevIcon: _react.default.createElement("span", {
+    "aria-hidden": "true",
+    className: "carousel-control-prev-icon"
+  }),
+  prevLabel: 'Previous',
+  nextIcon: _react.default.createElement("span", {
+    "aria-hidden": "true",
+    className: "carousel-control-next-icon"
+  }),
+  nextLabel: 'Next',
+  touch: true
+};
+
+var Carousel = /*#__PURE__*/function (_React$Component) {
+  (0, _inheritsLoose2.default)(Carousel, _React$Component);
+
+  function Carousel() {
+    var _this;
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;
+    _this.state = {
+      prevClasses: '',
+      currentClasses: 'active',
+      touchStartX: 0
+    };
+    _this.isUnmounted = false;
+    _this.carousel = _react.default.createRef();
+
+    _this.handleTouchStart = function (e) {
+      _this.setState({
+        touchStartX: e.changedTouches[0].screenX
+      });
+    };
+
+    _this.handleTouchEnd = function (e) {
+      // If the swipe is under the threshold, don't do anything.
+      if (Math.abs(e.changedTouches[0].screenX - _this.state.touchStartX) < SWIPE_THRESHOLD) return;
+
+      if (e.changedTouches[0].screenX < _this.state.touchStartX) {
+        // Swiping left to navigate to next item.
+        _this.handleNext(e);
+      } else {
+        // Swiping right to navigate to previous item.
+        _this.handlePrev(e);
+      }
+    };
+
+    _this.handleSlideEnd = function () {
+      var pendingIndex = _this._pendingIndex;
+      _this._isSliding = false;
+      _this._pendingIndex = null;
+      if (pendingIndex != null) _this.to(pendingIndex);else _this.cycle();
+    };
+
+    _this.handleMouseOut = function () {
+      _this.cycle();
+    };
+
+    _this.handleMouseOver = function () {
+      if (_this.props.pauseOnHover) _this.pause();
+    };
+
+    _this.handleKeyDown = function (event) {
+      if (/input|textarea/i.test(event.target.tagName)) return;
+
+      switch (event.key) {
+        case 'ArrowLeft':
+          event.preventDefault();
+
+          _this.handlePrev(event);
+
+          break;
+
+        case 'ArrowRight':
+          event.preventDefault();
+
+          _this.handleNext(event);
+
+          break;
+
+        default:
+          break;
+      }
+    };
+
+    _this.handleNextWhenVisible = function () {
+      if (!_this.isUnmounted && !document.hidden && (0, _css.default)(_this.carousel.current, 'visibility') !== 'hidden') {
+        _this.handleNext();
+      }
+    };
+
+    _this.handleNext = function (e) {
+      if (_this._isSliding) return;
+      var _this$props = _this.props,
+          wrap = _this$props.wrap,
+          activeIndex = _this$props.activeIndex;
+      var index = activeIndex + 1;
+      var count = countChildren(_this.props.children);
+
+      if (index > count - 1) {
+        if (!wrap) return;
+        index = 0;
+      }
+
+      _this.select(index, e, 'next');
+    };
+
+    _this.handlePrev = function (e) {
+      if (_this._isSliding) return;
+      var _this$props2 = _this.props,
+          wrap = _this$props2.wrap,
+          activeIndex = _this$props2.activeIndex;
+      var index = activeIndex - 1;
+
+      if (index < 0) {
+        if (!wrap) return;
+        index = countChildren(_this.props.children) - 1;
+      }
+
+      _this.select(index, e, 'prev');
+    };
+
+    return _this;
+  }
+
+  var _proto = Carousel.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    this.cycle();
+  };
+
+  Carousel.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, _ref) {
+    var previousActiveIndex = _ref.activeIndex;
+
+    if (nextProps.activeIndex !== previousActiveIndex) {
+      var lastPossibleIndex = countChildren(nextProps.children) - 1;
+      var nextIndex = Math.max(0, Math.min(nextProps.activeIndex, lastPossibleIndex));
+      var direction;
+
+      if (nextIndex === 0 && previousActiveIndex >= lastPossibleIndex || previousActiveIndex <= nextIndex) {
+        direction = 'next';
+      } else {
+        direction = 'prev';
+      }
+
+      return {
+        direction: direction,
+        previousActiveIndex: previousActiveIndex,
+        activeIndex: nextIndex
+      };
+    }
+
+    return null;
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate(_, prevState) {
+    var _this2 = this;
+
+    var _this$props3 = this.props,
+        bsPrefix = _this$props3.bsPrefix,
+        slide = _this$props3.slide,
+        onSlideEnd = _this$props3.onSlideEnd;
+    if (!slide || this.state.activeIndex === prevState.activeIndex || this._isSliding) return;
+    var _this$state = this.state,
+        activeIndex = _this$state.activeIndex,
+        direction = _this$state.direction;
+    var orderClassName, directionalClassName;
+
+    if (direction === 'next') {
+      orderClassName = bsPrefix + "-item-next";
+      directionalClassName = bsPrefix + "-item-left";
+    } else if (direction === 'prev') {
+      orderClassName = bsPrefix + "-item-prev";
+      directionalClassName = bsPrefix + "-item-right";
+    }
+
+    this._isSliding = true;
+    this.pause(); // eslint-disable-next-line react/no-did-update-set-state
+
+    this.safeSetState({
+      prevClasses: 'active',
+      currentClasses: orderClassName
+    }, function () {
+      var items = _this2.carousel.current.children;
+      var nextElement = items[activeIndex];
+      (0, _triggerBrowserReflow.default)(nextElement);
+
+      _this2.safeSetState({
+        prevClasses: (0, _classnames.default)('active', directionalClassName),
+        currentClasses: (0, _classnames.default)(orderClassName, directionalClassName)
+      }, function () {
+        return (0, _transitionEnd.default)(nextElement, function () {
+          _this2.safeSetState({
+            prevClasses: '',
+            currentClasses: 'active'
+          }, _this2.handleSlideEnd);
+
+          if (onSlideEnd) {
+            onSlideEnd();
+          }
+        });
+      });
+    });
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    clearTimeout(this.timeout);
+    this.isUnmounted = true;
+  };
+
+  _proto.safeSetState = function safeSetState(state, cb) {
+    var _this3 = this;
+
+    if (this.isUnmounted) return;
+    this.setState(state, function () {
+      return !_this3.isUnmounted && cb();
+    });
+  } // This might be a public API.
+  ;
+
+  _proto.pause = function pause() {
+    this._isPaused = true;
+    clearInterval(this._interval);
+    this._interval = null;
+  };
+
+  _proto.cycle = function cycle() {
+    this._isPaused = false;
+    clearInterval(this._interval);
+    this._interval = null;
+
+    if (this.props.interval && !this._isPaused) {
+      this._interval = setInterval(document.visibilityState ? this.handleNextWhenVisible : this.handleNext, this.props.interval);
+    }
+  };
+
+  _proto.to = function to(index, event) {
+    var children = this.props.children;
+
+    if (index < 0 || index > countChildren(children) - 1) {
+      return;
+    }
+
+    if (this._isSliding) {
+      this._pendingIndex = index;
+      return;
+    }
+
+    this.select(index, event);
+  };
+
+  _proto.select = function select(index, event, direction) {
+    var _this4 = this;
+
+    clearTimeout(this.selectThrottle);
+    if (event && event.persist) event.persist(); // The timeout throttles fast clicks, in order to give any pending state
+    // a chance to update and propagate back through props
+
+    this.selectThrottle = setTimeout(function () {
+      clearTimeout(_this4.timeout);
+      var _this4$props = _this4.props,
+          activeIndex = _this4$props.activeIndex,
+          onSelect = _this4$props.onSelect;
+      if (index === activeIndex || _this4._isSliding || _this4.isUnmounted) return;
+      onSelect(index, direction || (index < activeIndex ? 'prev' : 'next'), event);
+    }, 50);
+  };
+
+  _proto.renderControls = function renderControls(properties) {
+    var bsPrefix = this.props.bsPrefix;
+    var wrap = properties.wrap,
+        children = properties.children,
+        activeIndex = properties.activeIndex,
+        prevIcon = properties.prevIcon,
+        nextIcon = properties.nextIcon,
+        prevLabel = properties.prevLabel,
+        nextLabel = properties.nextLabel;
+    var count = countChildren(children);
+    return [(wrap || activeIndex !== 0) && _react.default.createElement(_SafeAnchor.default, {
+      key: "prev",
+      className: bsPrefix + "-control-prev",
+      onClick: this.handlePrev
+    }, prevIcon, prevLabel && _react.default.createElement("span", {
+      className: "sr-only"
+    }, prevLabel)), (wrap || activeIndex !== count - 1) && _react.default.createElement(_SafeAnchor.default, {
+      key: "next",
+      className: bsPrefix + "-control-next",
+      onClick: this.handleNext
+    }, nextIcon, nextLabel && _react.default.createElement("span", {
+      className: "sr-only"
+    }, nextLabel))];
+  };
+
+  _proto.renderIndicators = function renderIndicators(children, activeIndex) {
+    var _this5 = this;
+
+    var bsPrefix = this.props.bsPrefix;
+    var indicators = [];
+    (0, _ElementChildren.forEach)(children, function (child, index) {
+      indicators.push(_react.default.createElement("li", {
+        key: index,
+        className: index === activeIndex ? 'active' : null,
+        onClick: function onClick(e) {
+          return _this5.to(index, e);
+        }
+      }), // Force whitespace between indicator elements. Bootstrap requires
+      // this for correct spacing of elements.
+      ' ');
+    });
+    return _react.default.createElement("ol", {
+      className: bsPrefix + "-indicators"
+    }, indicators);
+  };
+
+  _proto.render = function render() {
+    var _this$props4 = this.props,
+        _this$props4$as = _this$props4.as,
+        Component = _this$props4$as === void 0 ? 'div' : _this$props4$as,
+        bsPrefix = _this$props4.bsPrefix,
+        slide = _this$props4.slide,
+        fade = _this$props4.fade,
+        indicators = _this$props4.indicators,
+        controls = _this$props4.controls,
+        wrap = _this$props4.wrap,
+        touch = _this$props4.touch,
+        prevIcon = _this$props4.prevIcon,
+        prevLabel = _this$props4.prevLabel,
+        nextIcon = _this$props4.nextIcon,
+        nextLabel = _this$props4.nextLabel,
+        className = _this$props4.className,
+        children = _this$props4.children,
+        keyboard = _this$props4.keyboard,
+        _5 = _this$props4.activeIndex,
+        _4 = _this$props4.pauseOnHover,
+        _3 = _this$props4.interval,
+        _2 = _this$props4.onSelect,
+        _1 = _this$props4.onSlideEnd,
+        props = (0, _objectWithoutPropertiesLoose2.default)(_this$props4, ["as", "bsPrefix", "slide", "fade", "indicators", "controls", "wrap", "touch", "prevIcon", "prevLabel", "nextIcon", "nextLabel", "className", "children", "keyboard", "activeIndex", "pauseOnHover", "interval", "onSelect", "onSlideEnd"]);
+    var _this$state2 = this.state,
+        activeIndex = _this$state2.activeIndex,
+        previousActiveIndex = _this$state2.previousActiveIndex,
+        prevClasses = _this$state2.prevClasses,
+        currentClasses = _this$state2.currentClasses;
+    return (// eslint-disable-next-line jsx-a11y/no-static-element-interactions
+      _react.default.createElement(Component, (0, _extends2.default)({
+        onTouchStart: touch ? this.handleTouchStart : undefined,
+        onTouchEnd: touch ? this.handleTouchEnd : undefined
+      }, props, {
+        className: (0, _classnames.default)(className, bsPrefix, slide && 'slide', fade && bsPrefix + "-fade"),
+        onKeyDown: keyboard ? this.handleKeyDown : undefined,
+        onMouseOver: this.handleMouseOver,
+        onMouseOut: this.handleMouseOut
+      }), indicators && this.renderIndicators(children, activeIndex), _react.default.createElement("div", {
+        className: bsPrefix + "-inner",
+        ref: this.carousel
+      }, (0, _ElementChildren.map)(children, function (child, index) {
+        var current = index === activeIndex;
+        var previous = index === previousActiveIndex;
+        return (0, _react.cloneElement)(child, {
+          className: (0, _classnames.default)(child.props.className, current && currentClasses, previous && prevClasses)
+        });
+      })), controls && this.renderControls({
+        wrap: wrap,
+        children: children,
+        activeIndex: activeIndex,
+        prevIcon: prevIcon,
+        prevLabel: prevLabel,
+        nextIcon: nextIcon,
+        nextLabel: nextLabel
+      }))
+    );
+  };
+
+  return Carousel;
+}(_react.default.Component);
+
+Carousel.defaultProps = defaultProps;
+var DecoratedCarousel = (0, _ThemeProvider.createBootstrapComponent)((0, _uncontrollable.uncontrollable)(Carousel, {
+  activeIndex: 'onSelect'
+}), 'carousel');
+DecoratedCarousel.Caption = _CarouselCaption.default;
+DecoratedCarousel.Item = _CarouselItem.default;
+var _default = DecoratedCarousel;
+exports.default = _default;
+},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","@babel/runtime/helpers/esm/inheritsLoose":"../node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","classnames":"../node_modules/classnames/index.js","dom-helpers/css":"../node_modules/dom-helpers/esm/css.js","dom-helpers/transitionEnd":"../node_modules/dom-helpers/esm/transitionEnd.js","react":"../node_modules/react/index.js","uncontrollable":"../node_modules/uncontrollable/esm/index.js","./CarouselCaption":"../node_modules/react-bootstrap/esm/CarouselCaption.js","./CarouselItem":"../node_modules/react-bootstrap/esm/CarouselItem.js","./ElementChildren":"../node_modules/react-bootstrap/esm/ElementChildren.js","./SafeAnchor":"../node_modules/react-bootstrap/esm/SafeAnchor.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js","./triggerBrowserReflow":"../node_modules/react-bootstrap/esm/triggerBrowserReflow.js"}],"img/mole.png":[function(require,module,exports) {
+module.exports = "/mole.999bfa52.png";
+},{}],"img/arccorp.png":[function(require,module,exports) {
+module.exports = "/arccorp.6584714d.png";
+},{}],"img/hammerhead.png":[function(require,module,exports) {
+module.exports = "/hammerhead.fa913b32.png";
+},{}],"components/home-view/home-view.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35403,13 +35981,35 @@ var _reactDom = _interopRequireDefault(require("react-dom"));
 
 require("./home-view.scss");
 
+var _Container = _interopRequireDefault(require("react-bootstrap/Container"));
+
+var _Jumbotron = _interopRequireDefault(require("react-bootstrap/Jumbotron"));
+
+var _Carousel = _interopRequireDefault(require("react-bootstrap/Carousel"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class HomeView extends _react.default.Component {
   render() {
     return _react.default.createElement("div", {
       className: "home"
-    }, _react.default.createElement("div", null, "Home view"));
+    }, _react.default.createElement(_Container.default, {
+      fluid: true
+    }, _react.default.createElement(_Jumbotron.default, {
+      className: "text-center",
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, _react.default.createElement("h1", null, "Perses Fleet")), _react.default.createElement(_Carousel.default, null, _react.default.createElement(_Carousel.default.Item, null, _react.default.createElement("img", {
+      className: "d-block w-100",
+      src: require("/img/mole.png")
+    }), _react.default.createElement(_Carousel.default.Caption, null, _react.default.createElement("h3", null, "Check out this shit"))), _react.default.createElement(_Carousel.default.Item, null, _react.default.createElement("img", {
+      className: "d-block w-100",
+      src: require("/img/arccorp.png")
+    }), _react.default.createElement(_Carousel.default.Caption, null, _react.default.createElement("h3", null, "Damn ain't that some shit"))), _react.default.createElement(_Carousel.default.Item, null, _react.default.createElement("img", {
+      className: "d-block w-100",
+      src: require("/img/hammerhead.png")
+    }), _react.default.createElement(_Carousel.default.Caption, null, _react.default.createElement("h3", null, "Aw hell no, look at that shit"))))));
   }
 
 }
@@ -35417,12 +36017,275 @@ class HomeView extends _react.default.Component {
 exports.HomeView = HomeView;
 var _default = HomeView;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./home-view.scss":"components/home-view/home-view.scss"}],"components/roster-view/roster-view.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./home-view.scss":"components/home-view/home-view.scss","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Jumbotron":"../node_modules/react-bootstrap/esm/Jumbotron.js","react-bootstrap/Carousel":"../node_modules/react-bootstrap/esm/Carousel.js","/img/mole.png":"img/mole.png","/img/arccorp.png":"img/arccorp.png","/img/hammerhead.png":"img/hammerhead.png"}],"components/roster-view/roster-view.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../../../../home/arnketel/.nvm/versions/node/v12.13.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/roster-view/roster-view.jsx":[function(require,module,exports) {
+},{"_css_loader":"../../../../../../../../home/arnketel/.nvm/versions/node/v12.13.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/react-bootstrap/esm/divWithClassName.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/extends"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _default = function _default(className) {
+  return _react.default.forwardRef(function (p, ref) {
+    return _react.default.createElement("div", (0, _extends2.default)({}, p, {
+      ref: ref,
+      className: (0, _classnames.default)(p.className, className)
+    }));
+  });
+};
+
+exports.default = _default;
+},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","react":"../node_modules/react/index.js","classnames":"../node_modules/classnames/index.js"}],"../node_modules/react-bootstrap/esm/CardImg.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var defaultProps = {
+  variant: null
+};
+
+var CardImg = _react.default.forwardRef( // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      className = _ref.className,
+      variant = _ref.variant,
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'img' : _ref$as,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "variant", "as"]);
+  var prefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'card-img');
+  return _react.default.createElement(Component, (0, _extends2.default)({
+    ref: ref,
+    className: (0, _classnames.default)(variant ? prefix + "-" + variant : prefix, className)
+  }, props));
+});
+
+CardImg.displayName = 'CardImg';
+CardImg.defaultProps = defaultProps;
+var _default = CardImg;
+exports.default = _default;
+},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","classnames":"../node_modules/classnames/index.js","react":"../node_modules/react/index.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js"}],"../node_modules/react-bootstrap/esm/Card.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
+
+var _divWithClassName = _interopRequireDefault(require("./divWithClassName"));
+
+var _CardContext = _interopRequireDefault(require("./CardContext"));
+
+var _CardImg = _interopRequireDefault(require("./CardImg"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var DivStyledAsH5 = (0, _divWithClassName.default)('h5');
+var DivStyledAsH6 = (0, _divWithClassName.default)('h6');
+var CardBody = (0, _createWithBsPrefix.default)('card-body');
+var defaultProps = {
+  body: false
+};
+
+var Card = _react.default.forwardRef(function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      className = _ref.className,
+      bg = _ref.bg,
+      text = _ref.text,
+      border = _ref.border,
+      body = _ref.body,
+      children = _ref.children,
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'div' : _ref$as,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "bg", "text", "border", "body", "children", "as"]);
+  var prefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'card');
+  var cardContext = (0, _react.useMemo)(function () {
+    return {
+      cardHeaderBsPrefix: prefix + "-header"
+    };
+  }, [prefix]);
+  return _react.default.createElement(_CardContext.default.Provider, {
+    value: cardContext
+  }, _react.default.createElement(Component, (0, _extends2.default)({
+    ref: ref
+  }, props, {
+    className: (0, _classnames.default)(className, prefix, bg && "bg-" + bg, text && "text-" + text, border && "border-" + border)
+  }), body ? _react.default.createElement(CardBody, null, children) : children));
+});
+
+Card.displayName = 'Card';
+Card.defaultProps = defaultProps;
+Card.Img = _CardImg.default;
+Card.Title = (0, _createWithBsPrefix.default)('card-title', {
+  Component: DivStyledAsH5
+});
+Card.Subtitle = (0, _createWithBsPrefix.default)('card-subtitle', {
+  Component: DivStyledAsH6
+});
+Card.Body = CardBody;
+Card.Link = (0, _createWithBsPrefix.default)('card-link', {
+  Component: 'a'
+});
+Card.Text = (0, _createWithBsPrefix.default)('card-text', {
+  Component: 'p'
+});
+Card.Header = (0, _createWithBsPrefix.default)('card-header');
+Card.Footer = (0, _createWithBsPrefix.default)('card-footer');
+Card.ImgOverlay = (0, _createWithBsPrefix.default)('card-img-overlay');
+var _default = Card;
+exports.default = _default;
+},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","classnames":"../node_modules/classnames/index.js","react":"../node_modules/react/index.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js","./createWithBsPrefix":"../node_modules/react-bootstrap/esm/createWithBsPrefix.js","./divWithClassName":"../node_modules/react-bootstrap/esm/divWithClassName.js","./CardContext":"../node_modules/react-bootstrap/esm/CardContext.js","./CardImg":"../node_modules/react-bootstrap/esm/CardImg.js"}],"../node_modules/react-bootstrap/esm/Row.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var defaultProps = {
+  noGutters: false
+};
+
+var Row = _react.default.forwardRef(function (props, ref) {
+  var bsPrefix = props.bsPrefix,
+      noGutters = props.noGutters,
+      _props$as = props.as,
+      Component = _props$as === void 0 ? 'div' : _props$as,
+      className = props.className,
+      otherProps = (0, _objectWithoutPropertiesLoose2.default)(props, ["bsPrefix", "noGutters", "as", "className"]);
+  var decoratedBsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'row');
+  return _react.default.createElement(Component, (0, _extends2.default)({
+    ref: ref
+  }, otherProps, {
+    className: (0, _classnames.default)(className, decoratedBsPrefix, noGutters && 'no-gutters')
+  }));
+});
+
+Row.displayName = 'Row';
+Row.defaultProps = defaultProps;
+var _default = Row;
+exports.default = _default;
+},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","classnames":"../node_modules/classnames/index.js","react":"../node_modules/react/index.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js"}],"../node_modules/react-bootstrap/esm/Col.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var DEVICE_SIZES = ['xl', 'lg', 'md', 'sm', 'xs'];
+
+var Col = _react.default.forwardRef( // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      className = _ref.className,
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'div' : _ref$as,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "as"]);
+  var prefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'col');
+  var spans = [];
+  var classes = [];
+  DEVICE_SIZES.forEach(function (brkPoint) {
+    var propValue = props[brkPoint];
+    delete props[brkPoint];
+    var span, offset, order;
+
+    if (propValue != null && typeof propValue === 'object') {
+      var _propValue$span = propValue.span;
+      span = _propValue$span === void 0 ? true : _propValue$span;
+      offset = propValue.offset;
+      order = propValue.order;
+    } else {
+      span = propValue;
+    }
+
+    var infix = brkPoint !== 'xs' ? "-" + brkPoint : '';
+    if (span != null) spans.push(span === true ? "" + prefix + infix : "" + prefix + infix + "-" + span);
+    if (order != null) classes.push("order" + infix + "-" + order);
+    if (offset != null) classes.push("offset" + infix + "-" + offset);
+  });
+
+  if (!spans.length) {
+    spans.push(prefix); // plain 'col'
+  }
+
+  return _react.default.createElement(Component, (0, _extends2.default)({}, props, {
+    ref: ref,
+    className: _classnames.default.apply(void 0, [className].concat(spans, classes))
+  }));
+});
+
+Col.displayName = 'Col';
+var _default = Col;
+exports.default = _default;
+},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","classnames":"../node_modules/classnames/index.js","react":"../node_modules/react/index.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js"}],"components/roster-view/roster-view.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35436,13 +36299,177 @@ var _reactDom = _interopRequireDefault(require("react-dom"));
 
 require("./roster-view.scss");
 
+var _Container = _interopRequireDefault(require("react-bootstrap/Container"));
+
+var _Card = _interopRequireDefault(require("react-bootstrap/Card"));
+
+var _Row = _interopRequireDefault(require("react-bootstrap/Row"));
+
+var _Col = _interopRequireDefault(require("react-bootstrap/Col"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class RosterView extends _react.default.Component {
   render() {
     return _react.default.createElement("div", {
       className: "roster"
-    }, _react.default.createElement("div", null, "Roster view"));
+    }, _react.default.createElement(_Container.default, {
+      fluid: true,
+      className: "text-center my-4 px-5 vh-100"
+    }, _react.default.createElement(_Card.default, {
+      className: "text-center mx-5  ",
+      style: {
+        backgroundColor: 'darkgrey'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, _react.default.createElement("h3", null, "Organization Roster")), _react.default.createElement(_Card.default, {
+      className: "m-5",
+      style: {
+        backgroundColor: 'silver'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, "Admiral"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "C3SK"))), _react.default.createElement(_Row.default, null, _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "mx-5",
+      style: {
+        backgroundColor: 'silver'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, "Commander"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "CursedEinherjar")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "mx-5",
+      style: {
+        backgroundColor: 'silver'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, "Commander"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "ZuccinniZhang")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "mx-5",
+      style: {
+        backgroundColor: 'silver'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, "Acting Commander"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "7R06D0R"))))), _react.default.createElement(_Row.default, null, _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "m-5",
+      style: {
+        backgroundColor: 'silver'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "makewiththebits")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "m-5",
+      style: {
+        backgroundColor: 'silver'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "Bootyout")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "m-5",
+      style: {
+        backgroundColor: 'silver'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "GravityScientist")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "m-5",
+      style: {
+        backgroundColor: 'silver'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "TrashbagMckee")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "m-5",
+      style: {
+        backgroundColor: 'silver'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "bxw93")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "m-5",
+      style: {
+        backgroundColor: 'silver'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "Tbster"))))), _react.default.createElement(_Row.default, null, _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "m-5",
+      style: {
+        backgroundColor: 'silver'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "slippery_pickle")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "m-5",
+      style: {
+        backgroundColor: 'silver'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "zander825")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "m-5",
+      style: {
+        backgroundColor: 'silver'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "Mikecrook2112")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "m-5",
+      style: {
+        backgroundColor: 'silver'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "ILoveTheFedGov")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "m-5",
+      style: {
+        backgroundColor: 'silver'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "kingbudha")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "m-5",
+      style: {
+        backgroundColor: 'silver'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "Placeholder"))))))));
   }
 
 }
@@ -35450,12 +36477,167 @@ class RosterView extends _react.default.Component {
 exports.RosterView = RosterView;
 var _default = RosterView;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./roster-view.scss":"components/roster-view/roster-view.scss"}],"components/milestone-view/milestone-view.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./roster-view.scss":"components/roster-view/roster-view.scss","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js"}],"../node_modules/react-bootstrap/esm/ProgressBar.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var _ElementChildren = require("./ElementChildren");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ROUND_PRECISION = 1000;
+/**
+ * Validate that children, if any, are instances of `<ProgressBar>`.
+ */
+
+function onlyProgressBar(props, propName, componentName) {
+  var children = props[propName];
+
+  if (!children) {
+    return null;
+  }
+
+  var error = null;
+
+  _react.default.Children.forEach(children, function (child) {
+    if (error) {
+      return;
+    }
+    /**
+     * Compare types in a way that works with libraries that patch and proxy
+     * components like react-hot-loader.
+     *
+     * see https://github.com/gaearon/react-hot-loader#checking-element-types
+     */
+
+
+    var element = _react.default.createElement(ProgressBar, null);
+
+    if (child.type === element.type) return;
+    var childIdentifier = _react.default.isValidElement(child) ? child.type.displayName || child.type.name || child.type : child;
+    error = new Error("Children of " + componentName + " can contain only ProgressBar " + ("components. Found " + childIdentifier + "."));
+  });
+
+  return error;
+}
+
+var defaultProps = {
+  min: 0,
+  max: 100,
+  animated: false,
+  isChild: false,
+  srOnly: false,
+  striped: false
+};
+
+function getPercentage(now, min, max) {
+  var percentage = (now - min) / (max - min) * 100;
+  return Math.round(percentage * ROUND_PRECISION) / ROUND_PRECISION;
+}
+
+function renderProgressBar(_ref, ref) {
+  var _classNames;
+
+  var min = _ref.min,
+      now = _ref.now,
+      max = _ref.max,
+      label = _ref.label,
+      srOnly = _ref.srOnly,
+      striped = _ref.striped,
+      animated = _ref.animated,
+      className = _ref.className,
+      style = _ref.style,
+      variant = _ref.variant,
+      bsPrefix = _ref.bsPrefix,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["min", "now", "max", "label", "srOnly", "striped", "animated", "className", "style", "variant", "bsPrefix"]);
+  return _react.default.createElement("div", (0, _extends2.default)({
+    ref: ref
+  }, props, {
+    role: "progressbar",
+    className: (0, _classnames.default)(className, bsPrefix + "-bar", (_classNames = {}, _classNames["bg-" + variant] = variant, _classNames[bsPrefix + "-bar-animated"] = animated, _classNames[bsPrefix + "-bar-striped"] = animated || striped, _classNames)),
+    style: (0, _extends2.default)({
+      width: getPercentage(now, min, max) + "%"
+    }, style),
+    "aria-valuenow": now,
+    "aria-valuemin": min,
+    "aria-valuemax": max
+  }), srOnly ? _react.default.createElement("span", {
+    className: "sr-only"
+  }, label) : label);
+}
+
+var ProgressBar = _react.default.forwardRef(function (_ref2, ref) {
+  var isChild = _ref2.isChild,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref2, ["isChild"]);
+  props.bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(props.bsPrefix, 'progress');
+
+  if (isChild) {
+    return renderProgressBar(props, ref);
+  }
+
+  var min = props.min,
+      now = props.now,
+      max = props.max,
+      label = props.label,
+      srOnly = props.srOnly,
+      striped = props.striped,
+      animated = props.animated,
+      bsPrefix = props.bsPrefix,
+      variant = props.variant,
+      className = props.className,
+      children = props.children,
+      wrapperProps = (0, _objectWithoutPropertiesLoose2.default)(props, ["min", "now", "max", "label", "srOnly", "striped", "animated", "bsPrefix", "variant", "className", "children"]);
+  return _react.default.createElement("div", (0, _extends2.default)({
+    ref: ref
+  }, wrapperProps, {
+    className: (0, _classnames.default)(className, bsPrefix)
+  }), children ? (0, _ElementChildren.map)(children, function (child) {
+    return (0, _react.cloneElement)(child, {
+      isChild: true
+    });
+  }) : renderProgressBar({
+    min: min,
+    now: now,
+    max: max,
+    label: label,
+    srOnly: srOnly,
+    striped: striped,
+    animated: animated,
+    bsPrefix: bsPrefix,
+    variant: variant
+  }, ref));
+});
+
+ProgressBar.displayName = 'ProgressBar';
+ProgressBar.defaultProps = defaultProps;
+var _default = ProgressBar;
+exports.default = _default;
+},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","classnames":"../node_modules/classnames/index.js","react":"../node_modules/react/index.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js","./ElementChildren":"../node_modules/react-bootstrap/esm/ElementChildren.js"}],"components/milestone-view/milestone-view.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../../../../home/arnketel/.nvm/versions/node/v12.13.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/milestone-view/milestone-view.jsx":[function(require,module,exports) {
+},{"_css_loader":"../../../../../../../../home/arnketel/.nvm/versions/node/v12.13.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"img/milestone1.png":[function(require,module,exports) {
+module.exports = "/milestone1.cb137128.png";
+},{}],"components/milestone-view/milestone-view.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35467,6 +36649,16 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactDom = _interopRequireDefault(require("react-dom"));
 
+var _ProgressBar = _interopRequireDefault(require("react-bootstrap/ProgressBar"));
+
+var _Container = _interopRequireDefault(require("react-bootstrap/Container"));
+
+var _Card = _interopRequireDefault(require("react-bootstrap/Card"));
+
+var _Row = _interopRequireDefault(require("react-bootstrap/Row"));
+
+var _Col = _interopRequireDefault(require("react-bootstrap/Col"));
+
 require("./milestone-view.scss");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -35474,8 +36666,69 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 class MilestoneView extends _react.default.Component {
   render() {
     return _react.default.createElement("div", {
-      className: "milestones"
-    }, _react.default.createElement("div", null, "Milestone view"));
+      className: "milestones",
+      style: {
+        backgroundColor: 'silver'
+      }
+    }, _react.default.createElement(_Container.default, {
+      fluid: true,
+      className: "w-75 my-4"
+    }, _react.default.createElement(_Card.default, {
+      className: "text-center",
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, _react.default.createElement(_Card.default.Header, null, _react.default.createElement("h3", null, "Current Objective")), _react.default.createElement(_Row.default, {
+      className: "no-gutters"
+    }, _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "h-100",
+      style: {
+        backgroundColor: 'silver'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, _react.default.createElement("h5", null, "2nd DRAKE Caterpillar")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "We're currently working towards buying a second Caterpillar to increase our trading capacity."), _react.default.createElement(_ProgressBar.default, {
+      striped: true,
+      variant: "info",
+      animated: true,
+      now: 65
+    }), _react.default.createElement(_Card.default.Text, null, "3 000 000 / 4 700 000 aUEC")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "h-100",
+      style: {
+        backgroundColor: 'silver'
+      }
+    }, _react.default.createElement(_Card.default.Img, {
+      src: require("/img/milestone1.png")
+    })))))), _react.default.createElement(_Container.default, {
+      fluid: true,
+      className: "text-center px-5"
+    }, _react.default.createElement(_Card.default, {
+      className: "text-center mx-5",
+      style: {
+        backgroundColor: 'darkgrey'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, _react.default.createElement("h3", null, "Completed Objectives")), _react.default.createElement(_Row.default, null, _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "m-5",
+      style: {
+        backgroundColor: 'silver'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, _react.default.createElement("h5", null, "1st DRAKE Caterpillar")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "We have obtained our first Caterpillar to begin ramping up our trade operations."), _react.default.createElement(_ProgressBar.default, {
+      striped: true,
+      variant: "success",
+      now: 100
+    }), _react.default.createElement(_Card.default.Text, null, "4 700 000 / 4 700 000 aUEC"), _react.default.createElement(_Card.default.Img, {
+      src: require("/img/milestone1.png")
+    })))), _react.default.createElement(_Col.default, null)))));
   }
 
 }
@@ -35483,7 +36736,7 @@ class MilestoneView extends _react.default.Component {
 exports.MilestoneView = MilestoneView;
 var _default = MilestoneView;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./milestone-view.scss":"components/milestone-view/milestone-view.scss"}],"app.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","react-bootstrap/ProgressBar":"../node_modules/react-bootstrap/esm/ProgressBar.js","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","./milestone-view.scss":"components/milestone-view/milestone-view.scss","/img/milestone1.png":"img/milestone1.png"}],"app.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35514,8 +36767,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 class App extends _react.default.Component {
   render() {
     return _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement("div", {
-      className: "main"
-    }, _react.default.createElement(_navBar.default, null), _react.default.createElement(_Container.default, null, _react.default.createElement(_reactRouterDom.Route, {
+      className: "main",
+      style: {
+        backgroundColor: 'silver'
+      }
+    }, _react.default.createElement(_navBar.default, null), _react.default.createElement(_reactRouterDom.Route, {
       exact: true,
       path: "/",
       component: _homeView.default
@@ -35525,7 +36781,7 @@ class App extends _react.default.Component {
     }), _react.default.createElement(_reactRouterDom.Route, {
       path: "/roster",
       component: _rosterView.default
-    }))));
+    })));
   }
 
 }
@@ -35589,7 +36845,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59222" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54676" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
