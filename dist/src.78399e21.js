@@ -35307,8 +35307,6 @@ exports.default = exports.MenuBar = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _reactDom = _interopRequireDefault(require("react-dom"));
-
 require("./nav-bar.scss");
 
 var _Navbar = _interopRequireDefault(require("react-bootstrap/Navbar"));
@@ -35346,7 +35344,7 @@ class MenuBar extends _react.default.Component {
 exports.MenuBar = MenuBar;
 var _default = MenuBar;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./nav-bar.scss":"components/nav-bar/nav-bar.scss","react-bootstrap/Navbar":"../node_modules/react-bootstrap/esm/Navbar.js","react-bootstrap/Nav":"../node_modules/react-bootstrap/esm/Nav.js"}],"components/home-view/home-view.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./nav-bar.scss":"components/nav-bar/nav-bar.scss","react-bootstrap/Navbar":"../node_modules/react-bootstrap/esm/Navbar.js","react-bootstrap/Nav":"../node_modules/react-bootstrap/esm/Nav.js"}],"components/home-view/home-view.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -35961,68 +35959,115 @@ DecoratedCarousel.Caption = _CarouselCaption.default;
 DecoratedCarousel.Item = _CarouselItem.default;
 var _default = DecoratedCarousel;
 exports.default = _default;
-},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","@babel/runtime/helpers/esm/inheritsLoose":"../node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","classnames":"../node_modules/classnames/index.js","dom-helpers/css":"../node_modules/dom-helpers/esm/css.js","dom-helpers/transitionEnd":"../node_modules/dom-helpers/esm/transitionEnd.js","react":"../node_modules/react/index.js","uncontrollable":"../node_modules/uncontrollable/esm/index.js","./CarouselCaption":"../node_modules/react-bootstrap/esm/CarouselCaption.js","./CarouselItem":"../node_modules/react-bootstrap/esm/CarouselItem.js","./ElementChildren":"../node_modules/react-bootstrap/esm/ElementChildren.js","./SafeAnchor":"../node_modules/react-bootstrap/esm/SafeAnchor.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js","./triggerBrowserReflow":"../node_modules/react-bootstrap/esm/triggerBrowserReflow.js"}],"img/mole.png":[function(require,module,exports) {
-module.exports = "/mole.999bfa52.png";
-},{}],"img/arccorp.png":[function(require,module,exports) {
-module.exports = "/arccorp.6584714d.png";
-},{}],"img/hammerhead.png":[function(require,module,exports) {
-module.exports = "/hammerhead.fa913b32.png";
-},{}],"components/home-view/home-view.jsx":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","@babel/runtime/helpers/esm/inheritsLoose":"../node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","classnames":"../node_modules/classnames/index.js","dom-helpers/css":"../node_modules/dom-helpers/esm/css.js","dom-helpers/transitionEnd":"../node_modules/dom-helpers/esm/transitionEnd.js","react":"../node_modules/react/index.js","uncontrollable":"../node_modules/uncontrollable/esm/index.js","./CarouselCaption":"../node_modules/react-bootstrap/esm/CarouselCaption.js","./CarouselItem":"../node_modules/react-bootstrap/esm/CarouselItem.js","./ElementChildren":"../node_modules/react-bootstrap/esm/ElementChildren.js","./SafeAnchor":"../node_modules/react-bootstrap/esm/SafeAnchor.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js","./triggerBrowserReflow":"../node_modules/react-bootstrap/esm/triggerBrowserReflow.js"}],"../node_modules/react-bootstrap/esm/Row.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = exports.HomeView = void 0;
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
 
 var _react = _interopRequireDefault(require("react"));
 
-var _reactDom = _interopRequireDefault(require("react-dom"));
-
-require("./home-view.scss");
-
-var _Container = _interopRequireDefault(require("react-bootstrap/Container"));
-
-var _Jumbotron = _interopRequireDefault(require("react-bootstrap/Jumbotron"));
-
-var _Carousel = _interopRequireDefault(require("react-bootstrap/Carousel"));
+var _ThemeProvider = require("./ThemeProvider");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-class HomeView extends _react.default.Component {
-  render() {
-    return _react.default.createElement("div", {
-      className: "home"
-    }, _react.default.createElement(_Container.default, {
-      fluid: true
-    }, _react.default.createElement(_Jumbotron.default, {
-      className: "text-center",
-      style: {
-        backgroundColor: 'grey'
-      }
-    }, _react.default.createElement("h1", null, "Perses Fleet")), _react.default.createElement(_Carousel.default, null, _react.default.createElement(_Carousel.default.Item, null, _react.default.createElement("img", {
-      className: "d-block w-100",
-      src: require("/img/mole.png")
-    }), _react.default.createElement(_Carousel.default.Caption, null, _react.default.createElement("h3", null, "Check out this shit"))), _react.default.createElement(_Carousel.default.Item, null, _react.default.createElement("img", {
-      className: "d-block w-100",
-      src: require("/img/arccorp.png")
-    }), _react.default.createElement(_Carousel.default.Caption, null, _react.default.createElement("h3", null, "Damn ain't that some shit"))), _react.default.createElement(_Carousel.default.Item, null, _react.default.createElement("img", {
-      className: "d-block w-100",
-      src: require("/img/hammerhead.png")
-    }), _react.default.createElement(_Carousel.default.Caption, null, _react.default.createElement("h3", null, "Aw hell no, look at that shit"))))));
+var defaultProps = {
+  noGutters: false
+};
+
+var Row = _react.default.forwardRef(function (props, ref) {
+  var bsPrefix = props.bsPrefix,
+      noGutters = props.noGutters,
+      _props$as = props.as,
+      Component = _props$as === void 0 ? 'div' : _props$as,
+      className = props.className,
+      otherProps = (0, _objectWithoutPropertiesLoose2.default)(props, ["bsPrefix", "noGutters", "as", "className"]);
+  var decoratedBsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'row');
+  return _react.default.createElement(Component, (0, _extends2.default)({
+    ref: ref
+  }, otherProps, {
+    className: (0, _classnames.default)(className, decoratedBsPrefix, noGutters && 'no-gutters')
+  }));
+});
+
+Row.displayName = 'Row';
+Row.defaultProps = defaultProps;
+var _default = Row;
+exports.default = _default;
+},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","classnames":"../node_modules/classnames/index.js","react":"../node_modules/react/index.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js"}],"../node_modules/react-bootstrap/esm/Col.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var DEVICE_SIZES = ['xl', 'lg', 'md', 'sm', 'xs'];
+
+var Col = _react.default.forwardRef( // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      className = _ref.className,
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'div' : _ref$as,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "as"]);
+  var prefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'col');
+  var spans = [];
+  var classes = [];
+  DEVICE_SIZES.forEach(function (brkPoint) {
+    var propValue = props[brkPoint];
+    delete props[brkPoint];
+    var span, offset, order;
+
+    if (propValue != null && typeof propValue === 'object') {
+      var _propValue$span = propValue.span;
+      span = _propValue$span === void 0 ? true : _propValue$span;
+      offset = propValue.offset;
+      order = propValue.order;
+    } else {
+      span = propValue;
+    }
+
+    var infix = brkPoint !== 'xs' ? "-" + brkPoint : '';
+    if (span != null) spans.push(span === true ? "" + prefix + infix : "" + prefix + infix + "-" + span);
+    if (order != null) classes.push("order" + infix + "-" + order);
+    if (offset != null) classes.push("offset" + infix + "-" + offset);
+  });
+
+  if (!spans.length) {
+    spans.push(prefix); // plain 'col'
   }
 
-}
+  return _react.default.createElement(Component, (0, _extends2.default)({}, props, {
+    ref: ref,
+    className: _classnames.default.apply(void 0, [className].concat(spans, classes))
+  }));
+});
 
-exports.HomeView = HomeView;
-var _default = HomeView;
+Col.displayName = 'Col';
+var _default = Col;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./home-view.scss":"components/home-view/home-view.scss","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Jumbotron":"../node_modules/react-bootstrap/esm/Jumbotron.js","react-bootstrap/Carousel":"../node_modules/react-bootstrap/esm/Carousel.js","/img/mole.png":"img/mole.png","/img/arccorp.png":"img/arccorp.png","/img/hammerhead.png":"img/hammerhead.png"}],"components/roster-view/roster-view.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../../../../home/arnketel/.nvm/versions/node/v12.13.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/react-bootstrap/esm/divWithClassName.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","classnames":"../node_modules/classnames/index.js","react":"../node_modules/react/index.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js"}],"../node_modules/react-bootstrap/esm/divWithClassName.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36177,115 +36222,122 @@ Card.Footer = (0, _createWithBsPrefix.default)('card-footer');
 Card.ImgOverlay = (0, _createWithBsPrefix.default)('card-img-overlay');
 var _default = Card;
 exports.default = _default;
-},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","classnames":"../node_modules/classnames/index.js","react":"../node_modules/react/index.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js","./createWithBsPrefix":"../node_modules/react-bootstrap/esm/createWithBsPrefix.js","./divWithClassName":"../node_modules/react-bootstrap/esm/divWithClassName.js","./CardContext":"../node_modules/react-bootstrap/esm/CardContext.js","./CardImg":"../node_modules/react-bootstrap/esm/CardImg.js"}],"../node_modules/react-bootstrap/esm/Row.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","classnames":"../node_modules/classnames/index.js","react":"../node_modules/react/index.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js","./createWithBsPrefix":"../node_modules/react-bootstrap/esm/createWithBsPrefix.js","./divWithClassName":"../node_modules/react-bootstrap/esm/divWithClassName.js","./CardContext":"../node_modules/react-bootstrap/esm/CardContext.js","./CardImg":"../node_modules/react-bootstrap/esm/CardImg.js"}],"img/mole.png":[function(require,module,exports) {
+module.exports = "/mole.999bfa52.png";
+},{}],"img/arccorp.png":[function(require,module,exports) {
+module.exports = "/arccorp.6584714d.png";
+},{}],"img/hammerhead.png":[function(require,module,exports) {
+module.exports = "/hammerhead.fa913b32.png";
+},{}],"components/home-view/home-view.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/extends"));
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose"));
-
-var _classnames = _interopRequireDefault(require("classnames"));
+exports.default = exports.HomeView = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _ThemeProvider = require("./ThemeProvider");
+require("./home-view.scss");
+
+var _Container = _interopRequireDefault(require("react-bootstrap/Container"));
+
+var _Jumbotron = _interopRequireDefault(require("react-bootstrap/Jumbotron"));
+
+var _Carousel = _interopRequireDefault(require("react-bootstrap/Carousel"));
+
+var _Row = _interopRequireDefault(require("react-bootstrap/Row"));
+
+var _Col = _interopRequireDefault(require("react-bootstrap/Col"));
+
+var _Card = _interopRequireDefault(require("react-bootstrap/Card"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var defaultProps = {
-  noGutters: false
-};
-
-var Row = _react.default.forwardRef(function (props, ref) {
-  var bsPrefix = props.bsPrefix,
-      noGutters = props.noGutters,
-      _props$as = props.as,
-      Component = _props$as === void 0 ? 'div' : _props$as,
-      className = props.className,
-      otherProps = (0, _objectWithoutPropertiesLoose2.default)(props, ["bsPrefix", "noGutters", "as", "className"]);
-  var decoratedBsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'row');
-  return _react.default.createElement(Component, (0, _extends2.default)({
-    ref: ref
-  }, otherProps, {
-    className: (0, _classnames.default)(className, decoratedBsPrefix, noGutters && 'no-gutters')
-  }));
-});
-
-Row.displayName = 'Row';
-Row.defaultProps = defaultProps;
-var _default = Row;
-exports.default = _default;
-},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","classnames":"../node_modules/classnames/index.js","react":"../node_modules/react/index.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js"}],"../node_modules/react-bootstrap/esm/Col.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/extends"));
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose"));
-
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _react = _interopRequireDefault(require("react"));
-
-var _ThemeProvider = require("./ThemeProvider");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var DEVICE_SIZES = ['xl', 'lg', 'md', 'sm', 'xs'];
-
-var Col = _react.default.forwardRef( // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-function (_ref, ref) {
-  var bsPrefix = _ref.bsPrefix,
-      className = _ref.className,
-      _ref$as = _ref.as,
-      Component = _ref$as === void 0 ? 'div' : _ref$as,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "as"]);
-  var prefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'col');
-  var spans = [];
-  var classes = [];
-  DEVICE_SIZES.forEach(function (brkPoint) {
-    var propValue = props[brkPoint];
-    delete props[brkPoint];
-    var span, offset, order;
-
-    if (propValue != null && typeof propValue === 'object') {
-      var _propValue$span = propValue.span;
-      span = _propValue$span === void 0 ? true : _propValue$span;
-      offset = propValue.offset;
-      order = propValue.order;
-    } else {
-      span = propValue;
-    }
-
-    var infix = brkPoint !== 'xs' ? "-" + brkPoint : '';
-    if (span != null) spans.push(span === true ? "" + prefix + infix : "" + prefix + infix + "-" + span);
-    if (order != null) classes.push("order" + infix + "-" + order);
-    if (offset != null) classes.push("offset" + infix + "-" + offset);
-  });
-
-  if (!spans.length) {
-    spans.push(prefix); // plain 'col'
+class HomeView extends _react.default.Component {
+  render() {
+    return _react.default.createElement("div", {
+      className: "home"
+    }, _react.default.createElement(_Container.default, {
+      fluid: true
+    }, _react.default.createElement(_Jumbotron.default, {
+      className: "text-center mb-5",
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, _react.default.createElement("h1", null, "Perses Fleet")), _react.default.createElement(_Carousel.default, null, _react.default.createElement(_Carousel.default.Item, null, _react.default.createElement("img", {
+      className: "d-block w-100",
+      src: require("/img/mole.png")
+    }), _react.default.createElement(_Carousel.default.Caption, null, _react.default.createElement("h3", null, "Join our trading and mining expeditions"))), _react.default.createElement(_Carousel.default.Item, null, _react.default.createElement("img", {
+      className: "d-block w-100",
+      src: require("/img/arccorp.png")
+    }), _react.default.createElement(_Carousel.default.Caption, null, _react.default.createElement("h3", null, "Keep the peace as part of our marine division"))), _react.default.createElement(_Carousel.default.Item, null, _react.default.createElement("img", {
+      className: "d-block w-100",
+      src: require("/img/hammerhead.png")
+    }), _react.default.createElement(_Carousel.default.Caption, null, _react.default.createElement("h3", null, "Serve aboard our ships during combat operations")))), _react.default.createElement(_Row.default, {
+      className: "mt-5"
+    }, _react.default.createElement(_Col.default, {
+      xs: 5
+    }, _react.default.createElement(_Card.default, {
+      style: {
+        backgroundColor: 'darkgrey'
+      },
+      className: ""
+    }, _react.default.createElement(_Card.default.Header, {
+      className: "text-center",
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, _react.default.createElement("h3", null, "About Perses Fleet")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, _react.default.createElement("p", null, "I'm giving you a night call to tell you how I feel (We'll go all, all, all night long) I want to drive you through the night, down the hills (We'll go all, all, all night long) I'm gonna tell you something you don't want to hear (We'll go all, all, all night long) I'm gonna show you where it's dark, but have no fear (We'll go all, all, all night long)"), _react.default.createElement("p", null, "There's something inside you It's hard to explain They're talking about you, boy But you're still the same There's something inside you It's hard to explain They're talking about you, boy But you're still the same"), _react.default.createElement("p", null, "I'm giving you a night call to tell you how I feel (We'll go all, all, all night long) I want to drive you through the night, down the hills (We'll go all, all, all night long) I'm gonna tell you something you don't want to hear (We'll go all, all, all night long) I'm gonna show you where it's dark, but have no fear (We'll go all, all, all night long)"))))), _react.default.createElement(_Col.default, {
+      xs: 7
+    }, _react.default.createElement(_Card.default, {
+      style: {
+        backgroundColor: 'darkgrey'
+      },
+      className: ""
+    }, _react.default.createElement(_Card.default.Header, {
+      className: "text-center",
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, _react.default.createElement("h3", null, "Latest Galactic News")), _react.default.createElement(_Card.default, {
+      style: {
+        backgroundColor: 'darkgrey'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, _react.default.createElement("h5", null, "RSI - Yet Further News - 03.03.2020")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "Somehow even more things are broken."))), _react.default.createElement(_Card.default, {
+      style: {
+        backgroundColor: 'darkgrey'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, _react.default.createElement("h5", null, "Perses - News 2: Electric Boogaloo - 02.02.2020")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "Recruitment drive has begun! Join Us. Please. We need more turret slaves."))), _react.default.createElement(_Card.default, {
+      style: {
+        backgroundColor: 'darkgrey'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, _react.default.createElement("h5", null, "RSI - Some News - 01.01.2020")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "Everything is broken."))))))));
   }
 
-  return _react.default.createElement(Component, (0, _extends2.default)({}, props, {
-    ref: ref,
-    className: _classnames.default.apply(void 0, [className].concat(spans, classes))
-  }));
-});
+}
 
-Col.displayName = 'Col';
-var _default = Col;
+exports.HomeView = HomeView;
+var _default = HomeView;
 exports.default = _default;
-},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","classnames":"../node_modules/classnames/index.js","react":"../node_modules/react/index.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js"}],"components/roster-view/roster-view.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./home-view.scss":"components/home-view/home-view.scss","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Jumbotron":"../node_modules/react-bootstrap/esm/Jumbotron.js","react-bootstrap/Carousel":"../node_modules/react-bootstrap/esm/Carousel.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","/img/mole.png":"img/mole.png","/img/arccorp.png":"img/arccorp.png","/img/hammerhead.png":"img/hammerhead.png"}],"components/roster-view/roster-view.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../../../../../../home/arnketel/.nvm/versions/node/v12.13.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/roster-view/roster-view.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36294,8 +36346,6 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = exports.RosterView = void 0;
 
 var _react = _interopRequireDefault(require("react"));
-
-var _reactDom = _interopRequireDefault(require("react-dom"));
 
 require("./roster-view.scss");
 
@@ -36315,7 +36365,7 @@ class RosterView extends _react.default.Component {
       className: "roster"
     }, _react.default.createElement(_Container.default, {
       fluid: true,
-      className: "text-center my-4 px-5 vh-100"
+      className: "text-center mt-4 px-5 vh-100"
     }, _react.default.createElement(_Card.default, {
       className: "text-center mx-5  ",
       style: {
@@ -36352,7 +36402,7 @@ class RosterView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, "Commander"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "ZuccinniZhang")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+    }, "Commander"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "ZucchiniZhang")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
       className: "mx-5",
       style: {
         backgroundColor: 'silver'
@@ -36406,7 +36456,7 @@ class RosterView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "bxw93")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "kingbudha")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
       className: "m-5",
       style: {
         backgroundColor: 'silver'
@@ -36451,7 +36501,7 @@ class RosterView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "ILoveTheFedGov")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+    }, "Recruit"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "ILoveTheFedGov")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
       className: "m-5",
       style: {
         backgroundColor: 'silver'
@@ -36460,7 +36510,7 @@ class RosterView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "kingbudha")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+    }, "Recruit"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "bxw93")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
       className: "m-5",
       style: {
         backgroundColor: 'silver'
@@ -36469,7 +36519,7 @@ class RosterView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "Placeholder"))))))));
+    }, "Recruit"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "Placeholder"))))))));
   }
 
 }
@@ -36477,7 +36527,7 @@ class RosterView extends _react.default.Component {
 exports.RosterView = RosterView;
 var _default = RosterView;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./roster-view.scss":"components/roster-view/roster-view.scss","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js"}],"../node_modules/react-bootstrap/esm/ProgressBar.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./roster-view.scss":"components/roster-view/roster-view.scss","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js"}],"../node_modules/react-bootstrap/esm/ProgressBar.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36647,8 +36697,6 @@ exports.default = exports.MilestoneView = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _reactDom = _interopRequireDefault(require("react-dom"));
-
 var _ProgressBar = _interopRequireDefault(require("react-bootstrap/ProgressBar"));
 
 var _Container = _interopRequireDefault(require("react-bootstrap/Container"));
@@ -36672,9 +36720,9 @@ class MilestoneView extends _react.default.Component {
       }
     }, _react.default.createElement(_Container.default, {
       fluid: true,
-      className: "w-75 my-4"
+      className: "px-5 text-center"
     }, _react.default.createElement(_Card.default, {
-      className: "text-center",
+      className: "text-center mt-4 mb-5 mx-5",
       style: {
         backgroundColor: 'grey'
       }
@@ -36701,10 +36749,7 @@ class MilestoneView extends _react.default.Component {
       }
     }, _react.default.createElement(_Card.default.Img, {
       src: require("/img/milestone1.png")
-    })))))), _react.default.createElement(_Container.default, {
-      fluid: true,
-      className: "text-center px-5"
-    }, _react.default.createElement(_Card.default, {
+    }))))), _react.default.createElement(_Card.default, {
       className: "text-center mx-5",
       style: {
         backgroundColor: 'darkgrey'
@@ -36736,7 +36781,7 @@ class MilestoneView extends _react.default.Component {
 exports.MilestoneView = MilestoneView;
 var _default = MilestoneView;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","react-bootstrap/ProgressBar":"../node_modules/react-bootstrap/esm/ProgressBar.js","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","./milestone-view.scss":"components/milestone-view/milestone-view.scss","/img/milestone1.png":"img/milestone1.png"}],"app.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-bootstrap/ProgressBar":"../node_modules/react-bootstrap/esm/ProgressBar.js","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","./milestone-view.scss":"components/milestone-view/milestone-view.scss","/img/milestone1.png":"img/milestone1.png"}],"app.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36745,8 +36790,6 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = exports.App = void 0;
 
 var _react = _interopRequireDefault(require("react"));
-
-var _reactDom = _interopRequireDefault(require("react-dom"));
 
 var _reactRouterDom = require("react-router-dom");
 
@@ -36769,7 +36812,9 @@ class App extends _react.default.Component {
       style: {
         backgroundColor: 'silver'
       }
-    }, _react.default.createElement(_navBar.default, null), _react.default.createElement(_reactRouterDom.Route, {
+    }, _react.default.createElement(_navBar.default, {
+      path: "/"
+    }), _react.default.createElement(_reactRouterDom.Route, {
       exact: true,
       path: "/",
       component: _homeView.default
@@ -36787,7 +36832,7 @@ class App extends _react.default.Component {
 exports.App = App;
 var _default = App;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./app.scss":"app.scss","./components/nav-bar/nav-bar":"components/nav-bar/nav-bar.jsx","./components/home-view/home-view":"components/home-view/home-view.jsx","./components/roster-view/roster-view":"components/roster-view/roster-view.jsx","./components/milestone-view/milestone-view":"components/milestone-view/milestone-view.jsx"}],"index.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./app.scss":"app.scss","./components/nav-bar/nav-bar":"components/nav-bar/nav-bar.jsx","./components/home-view/home-view":"components/home-view/home-view.jsx","./components/roster-view/roster-view":"components/roster-view/roster-view.jsx","./components/milestone-view/milestone-view":"components/milestone-view/milestone-view.jsx"}],"index.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -36843,7 +36888,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63395" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52415" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

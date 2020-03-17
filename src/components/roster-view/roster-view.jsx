@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import "./roster-view.scss"
 import Container from "react-bootstrap/Container";
 import Card from 'react-bootstrap/Card';
@@ -10,7 +9,7 @@ export class RosterView extends React.Component {
   render() {
     return (
       <div className="roster">
-        <Container fluid className="text-center my-4 px-5 vh-100">
+        <Container fluid className="text-center mt-4 px-5 vh-100">
           <Card className="text-center mx-5  " style={{ backgroundColor: 'darkgrey' }}>
             <Card.Header style={{ backgroundColor: 'grey' }}><h3>Organization Roster</h3></Card.Header>
             <Card className="m-5" style={{ backgroundColor: 'silver' }}>
@@ -32,7 +31,7 @@ export class RosterView extends React.Component {
                 <Card className="mx-5" style={{ backgroundColor: 'silver' }}>
                   <Card.Header style={{ backgroundColor: 'grey' }}>Commander</Card.Header>
                   <Card.Body>
-                    <Card.Text>ZuccinniZhang</Card.Text>
+                    <Card.Text>ZucchiniZhang</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
@@ -82,7 +81,7 @@ export class RosterView extends React.Component {
                 <Card className="m-5" style={{ backgroundColor: 'silver' }}>
                   <Card.Header style={{ backgroundColor: 'grey' }}>Ensign</Card.Header>
                   <Card.Body>
-                    <Card.Text>bxw93</Card.Text>
+                    <Card.Text>kingbudha</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
@@ -122,7 +121,7 @@ export class RosterView extends React.Component {
               </Col>
               <Col>
                 <Card className="m-5" style={{ backgroundColor: 'silver' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}>Ensign</Card.Header>
+                  <Card.Header style={{ backgroundColor: 'grey' }}>Recruit</Card.Header>
                   <Card.Body>
                     <Card.Text>ILoveTheFedGov</Card.Text>
                   </Card.Body>
@@ -130,15 +129,15 @@ export class RosterView extends React.Component {
               </Col>
               <Col>
                 <Card className="m-5" style={{ backgroundColor: 'silver' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}>Ensign</Card.Header>
+                  <Card.Header style={{ backgroundColor: 'grey' }}>Recruit</Card.Header>
                   <Card.Body>
-                    <Card.Text>kingbudha</Card.Text>
+                    <Card.Text>bxw93</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
               <Col>
                 <Card className="m-5" style={{ backgroundColor: 'silver' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}>Ensign</Card.Header>
+                  <Card.Header style={{ backgroundColor: 'grey' }}>Recruit</Card.Header>
                   <Card.Body>
                     <Card.Text>Placeholder</Card.Text>
                   </Card.Body>

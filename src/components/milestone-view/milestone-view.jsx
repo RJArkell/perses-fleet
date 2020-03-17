@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import Container from "react-bootstrap/Container";
 import Card from 'react-bootstrap/Card';
@@ -11,8 +10,8 @@ export class MilestoneView extends React.Component {
   render() {
     return (
       <div className="milestones" style={{ backgroundColor: 'silver' }}>
-        <Container fluid className="w-75 my-4" >
-          <Card className="text-center" style={{ backgroundColor: 'grey' }}>
+        <Container fluid className="px-5 text-center" >
+          <Card className="text-center mt-4 mb-5 mx-5" style={{ backgroundColor: 'grey' }}>
             <Card.Header ><h3>Current Objective</h3></Card.Header>
             <Row className="no-gutters">
               <Col>
@@ -32,8 +31,6 @@ export class MilestoneView extends React.Component {
               </Col>
             </Row>
           </Card>
-        </Container>
-        <Container fluid className="text-center px-5">
           <Card className="text-center mx-5" style={{ backgroundColor: 'darkgrey' }}>
             <Card.Header style={{ backgroundColor: 'grey' }}><h3>Completed Objectives</h3></Card.Header>
             <Row>
