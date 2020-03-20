@@ -7,7 +7,7 @@ export class MenuBar extends React.Component {
   render() {
     return (
       <div className="menubar">
-        <Navbar bg="dark" variant="dark" expand="md" sticky="top">
+        <Navbar className="border-bottom border-info" bg="dark" variant="dark" expand="md" sticky="top">
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/roster">Roster</Nav.Link>
           <Nav.Link href="/milestones">Milestones</Nav.Link>

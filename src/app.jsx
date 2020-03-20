@@ -10,7 +10,7 @@ export class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="main min-vh-100 background" style={{ backgroundImage: 'url(' + require("/img/background.png") + ')' }}>
+        <div className="main min-vh-100 background" style={{ backgroundImage: 'url(' + require("/img/background2.png") + ')' }}>
           <MenuBar path="/" />
           <Route exact path="/" component={HomeView} />
           <Route path="/milestones" component={MilestoneView} />

@@ -16,4 +16,21 @@ code {
   background-size: cover;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+* {
+  font-weight: bold;
+}
+.jumbotron {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
 /*# sourceMappingURL=/src.78399e21.css.map */

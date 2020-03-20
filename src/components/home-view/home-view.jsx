@@ -11,40 +11,12 @@ export class HomeView extends React.Component {
   render() {
     return (
       <div className="home">
-        <Container fluid>
-          <Jumbotron className="text-center mb-5 border border-info" style={{ backgroundColor: 'grey' }}>
+        <Container fluid className="pb-5">
+          <Jumbotron className="text-center border border-info" style={{ backgroundColor: 'grey' }}>
             <h1>Perses Fleet</h1>
+            <p>Tactical Space Operations</p>
           </Jumbotron>
-          <Carousel className="border border-info">
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={require("/img/mole.png")}
-              />
-              <Carousel.Caption>
-                <h3>Join our trading and mining expeditions</h3>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={require("/img/arccorp.png")}
-              />
-              <Carousel.Caption>
-                <h3>Keep the peace as part of our marine division</h3>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={require("/img/hammerhead.png")}
-              />
-              <Carousel.Caption>
-                <h3>Serve aboard our ships during combat operations</h3>
-              </Carousel.Caption>
-            </Carousel.Item>
-          </Carousel>
-          <Row className="mt-5">
+          <Row className="mt-4">
             <Col xs={5}>
               <Card style={{ backgroundColor: 'darkgrey' }} className="border border-info">
                 <Card.Header className="text-center" style={{ backgroundColor: 'grey' }}><h3>About Perses Fleet</h3></Card.Header>
@@ -77,7 +49,7 @@ export class HomeView extends React.Component {
                   </Card.Text>
                 </Card.Body>
               </Card>
-              <Card style={{ backgroundColor: 'darkgrey' }} className="border border-info">
+              <Card style={{ backgroundColor: 'darkgrey' }} className="border border-info mt-4">
                 <Card.Header className="text-center" style={{ backgroundColor: 'grey' }}><h3>Screenshot of the Week</h3></Card.Header>
                 <Card.Img src={require("/img/featured.png")} />
                 <Card.Text className="text-center">
@@ -86,10 +58,39 @@ export class HomeView extends React.Component {
               </Card>
             </Col>
             <Col xs={7}>
-              <Card style={{ backgroundColor: 'darkgrey' }} className="border border-info">
+              <Carousel className="border border-info">
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src={require("/img/marine.png")}
+                  />
+                  <Carousel.Caption>
+                    <h3>Explore new worlds</h3>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item >
+                  <img
+                    className="d-block w-100 h-100"
+                    src={require("/img/mining.png")}
+                  />
+                  <Carousel.Caption>
+                    <h3>Build your fortune</h3>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src={require("/img/combat.png")}
+                  />
+                  <Carousel.Caption>
+                    <h3>Join the fight</h3>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              </Carousel>
+              <Card style={{ backgroundColor: 'darkgrey' }} className="border border-info mt-4">
                 <Card.Header className="text-center" style={{ backgroundColor: 'grey' }}><h3>Latest Galactic News</h3></Card.Header>
                 <Card style={{ backgroundColor: 'darkgrey' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}><h5>RSI - New Inside Star Citizen Video - 18.03.2020</h5></Card.Header>
+                  <Card.Header style={{ backgroundColor: 'grey' }}><h5>CIG - New Inside Star Citizen Video - 18.03.2020</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>
                       <p>Inside Star Citizen: Personal Systems - You want UI updates? You want another sprint report?

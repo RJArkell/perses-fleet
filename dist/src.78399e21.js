@@ -35325,6 +35325,7 @@ class MenuBar extends _react.default.Component {
     return _react.default.createElement("div", {
       className: "menubar"
     }, _react.default.createElement(_Navbar.default, {
+      className: "border-bottom border-info",
       bg: "dark",
       variant: "dark",
       expand: "md",
@@ -36227,14 +36228,14 @@ Card.Footer = (0, _createWithBsPrefix.default)('card-footer');
 Card.ImgOverlay = (0, _createWithBsPrefix.default)('card-img-overlay');
 var _default = Card;
 exports.default = _default;
-},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","classnames":"../node_modules/classnames/index.js","react":"../node_modules/react/index.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js","./createWithBsPrefix":"../node_modules/react-bootstrap/esm/createWithBsPrefix.js","./divWithClassName":"../node_modules/react-bootstrap/esm/divWithClassName.js","./CardContext":"../node_modules/react-bootstrap/esm/CardContext.js","./CardImg":"../node_modules/react-bootstrap/esm/CardImg.js"}],"img/mole.png":[function(require,module,exports) {
-module.exports = "/mole.999bfa52.png";
-},{}],"img/arccorp.png":[function(require,module,exports) {
-module.exports = "/arccorp.6584714d.png";
-},{}],"img/hammerhead.png":[function(require,module,exports) {
-module.exports = "/hammerhead.fa913b32.png";
-},{}],"img/featured.png":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","classnames":"../node_modules/classnames/index.js","react":"../node_modules/react/index.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js","./createWithBsPrefix":"../node_modules/react-bootstrap/esm/createWithBsPrefix.js","./divWithClassName":"../node_modules/react-bootstrap/esm/divWithClassName.js","./CardContext":"../node_modules/react-bootstrap/esm/CardContext.js","./CardImg":"../node_modules/react-bootstrap/esm/CardImg.js"}],"img/featured.png":[function(require,module,exports) {
 module.exports = "/featured.5b7ebcb3.png";
+},{}],"img/marine.png":[function(require,module,exports) {
+module.exports = "/marine.b81757bd.png";
+},{}],"img/mining.png":[function(require,module,exports) {
+module.exports = "/mining.d250e3a2.png";
+},{}],"img/combat.png":[function(require,module,exports) {
+module.exports = "/combat.5ccd382e.png";
 },{}],"components/home-view/home-view.jsx":[function(require,module,exports) {
 "use strict";
 
@@ -36266,25 +36267,15 @@ class HomeView extends _react.default.Component {
     return _react.default.createElement("div", {
       className: "home"
     }, _react.default.createElement(_Container.default, {
-      fluid: true
+      fluid: true,
+      className: "pb-5"
     }, _react.default.createElement(_Jumbotron.default, {
-      className: "text-center mb-5 border border-info",
+      className: "text-center border border-info",
       style: {
         backgroundColor: 'grey'
       }
-    }, _react.default.createElement("h1", null, "Perses Fleet")), _react.default.createElement(_Carousel.default, {
-      className: "border border-info"
-    }, _react.default.createElement(_Carousel.default.Item, null, _react.default.createElement("img", {
-      className: "d-block w-100",
-      src: require("/img/mole.png")
-    }), _react.default.createElement(_Carousel.default.Caption, null, _react.default.createElement("h3", null, "Join our trading and mining expeditions"))), _react.default.createElement(_Carousel.default.Item, null, _react.default.createElement("img", {
-      className: "d-block w-100",
-      src: require("/img/arccorp.png")
-    }), _react.default.createElement(_Carousel.default.Caption, null, _react.default.createElement("h3", null, "Keep the peace as part of our marine division"))), _react.default.createElement(_Carousel.default.Item, null, _react.default.createElement("img", {
-      className: "d-block w-100",
-      src: require("/img/hammerhead.png")
-    }), _react.default.createElement(_Carousel.default.Caption, null, _react.default.createElement("h3", null, "Serve aboard our ships during combat operations")))), _react.default.createElement(_Row.default, {
-      className: "mt-5"
+    }, _react.default.createElement("h1", null, "Perses Fleet"), _react.default.createElement("p", null, "Tactical Space Operations")), _react.default.createElement(_Row.default, {
+      className: "mt-4"
     }, _react.default.createElement(_Col.default, {
       xs: 5
     }, _react.default.createElement(_Card.default, {
@@ -36301,7 +36292,7 @@ class HomeView extends _react.default.Component {
       style: {
         backgroundColor: 'darkgrey'
       },
-      className: "border border-info"
+      className: "border border-info mt-4"
     }, _react.default.createElement(_Card.default.Header, {
       className: "text-center",
       style: {
@@ -36313,11 +36304,22 @@ class HomeView extends _react.default.Component {
       className: "text-center"
     }, "Submitted by: C3SK"))), _react.default.createElement(_Col.default, {
       xs: 7
-    }, _react.default.createElement(_Card.default, {
+    }, _react.default.createElement(_Carousel.default, {
+      className: "border border-info"
+    }, _react.default.createElement(_Carousel.default.Item, null, _react.default.createElement("img", {
+      className: "d-block w-100",
+      src: require("/img/marine.png")
+    }), _react.default.createElement(_Carousel.default.Caption, null, _react.default.createElement("h3", null, "Explore new worlds"))), _react.default.createElement(_Carousel.default.Item, null, _react.default.createElement("img", {
+      className: "d-block w-100 h-100",
+      src: require("/img/mining.png")
+    }), _react.default.createElement(_Carousel.default.Caption, null, _react.default.createElement("h3", null, "Build your fortune"))), _react.default.createElement(_Carousel.default.Item, null, _react.default.createElement("img", {
+      className: "d-block w-100",
+      src: require("/img/combat.png")
+    }), _react.default.createElement(_Carousel.default.Caption, null, _react.default.createElement("h3", null, "Join the fight")))), _react.default.createElement(_Card.default, {
       style: {
         backgroundColor: 'darkgrey'
       },
-      className: "border border-info"
+      className: "border border-info mt-4"
     }, _react.default.createElement(_Card.default.Header, {
       className: "text-center",
       style: {
@@ -36331,7 +36333,7 @@ class HomeView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, _react.default.createElement("h5", null, "RSI - New Inside Star Citizen Video - 18.03.2020")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, _react.default.createElement("p", null, "Inside Star Citizen: Personal Systems - You want UI updates? You want another sprint report? Well, friends, you're in luck. We have both, in this week's episode."), _react.default.createElement("a", {
+    }, _react.default.createElement("h5", null, "CIG - New Inside Star Citizen Video - 18.03.2020")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, _react.default.createElement("p", null, "Inside Star Citizen: Personal Systems - You want UI updates? You want another sprint report? Well, friends, you're in luck. We have both, in this week's episode."), _react.default.createElement("a", {
       href: "https://www.youtube.com/watch?v=qSZiOxyVGmI&feature=emb_title",
       target: "blank"
     }, "Check out the video here")))))))));
@@ -36342,7 +36344,7 @@ class HomeView extends _react.default.Component {
 exports.HomeView = HomeView;
 var _default = HomeView;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./home-view.scss":"components/home-view/home-view.scss","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Jumbotron":"../node_modules/react-bootstrap/esm/Jumbotron.js","react-bootstrap/Carousel":"../node_modules/react-bootstrap/esm/Carousel.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","/img/mole.png":"img/mole.png","/img/arccorp.png":"img/arccorp.png","/img/hammerhead.png":"img/hammerhead.png","/img/featured.png":"img/featured.png"}],"components/roster-view/roster-view.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./home-view.scss":"components/home-view/home-view.scss","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Jumbotron":"../node_modules/react-bootstrap/esm/Jumbotron.js","react-bootstrap/Carousel":"../node_modules/react-bootstrap/esm/Carousel.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","/img/featured.png":"img/featured.png","/img/marine.png":"img/marine.png","/img/mining.png":"img/mining.png","/img/combat.png":"img/combat.png"}],"components/roster-view/roster-view.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -36375,9 +36377,9 @@ class RosterView extends _react.default.Component {
       className: "roster"
     }, _react.default.createElement(_Container.default, {
       fluid: true,
-      className: "text-center mt-4 px-5 vh-100 "
+      className: "pb-5 text-center"
     }, _react.default.createElement(_Card.default, {
-      className: "text-center mx-5 border border-info",
+      className: "mt-4 border border-info",
       style: {
         backgroundColor: 'darkgrey'
       }
@@ -36385,8 +36387,7 @@ class RosterView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, _react.default.createElement("h3", null, "Organization Roster")), _react.default.createElement(_Card.default, {
-      className: "m-5",
+    }, _react.default.createElement("h3", null, "Command Staff")), _react.default.createElement(_Card.default, {
       style: {
         backgroundColor: 'silver'
       }
@@ -36394,8 +36395,9 @@ class RosterView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, "Admiral"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "C3SK"))), _react.default.createElement(_Row.default, null, _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
-      className: "mx-5",
+    }, _react.default.createElement("h5", null, "Admiral")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "C3SK"))), _react.default.createElement(_Row.default, {
+      noGutters: true
+    }, _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
       style: {
         backgroundColor: 'silver'
       }
@@ -36403,8 +36405,7 @@ class RosterView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, "Commander"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "CursedEinherjar")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
-      className: "mx-5",
+    }, _react.default.createElement("h5", null, "Commander")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "CursedEinherjar")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
       style: {
         backgroundColor: 'silver'
       }
@@ -36412,8 +36413,7 @@ class RosterView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, "Commander"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "ZucchiniZhang")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
-      className: "mx-5",
+    }, _react.default.createElement("h5", null, "Commander")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "ZucchiniZhang")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
       style: {
         backgroundColor: 'silver'
       }
@@ -36421,8 +36421,18 @@ class RosterView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, "Acting Commander"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "7R06D0R"))))), _react.default.createElement(_Row.default, null, _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
-      className: "m-5",
+    }, _react.default.createElement("h5", null, "Acting Commander")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "7R06D0R")))))), _react.default.createElement(_Card.default, {
+      className: "mt-5 border border-info",
+      style: {
+        backgroundColor: 'darkgrey'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, _react.default.createElement("h3", null, "Junior Ranks")), _react.default.createElement(_Row.default, {
+      noGutters: true
+    }, _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
       style: {
         backgroundColor: 'silver'
       }
@@ -36430,8 +36440,7 @@ class RosterView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "makewiththebits")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
-      className: "m-5",
+    }, _react.default.createElement("h5", null, "Ensign")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "makewiththebits")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
       style: {
         backgroundColor: 'silver'
       }
@@ -36439,8 +36448,7 @@ class RosterView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "Bootyout")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
-      className: "m-5",
+    }, _react.default.createElement("h5", null, "Ensign")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "Bootyout")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
       style: {
         backgroundColor: 'silver'
       }
@@ -36448,8 +36456,7 @@ class RosterView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "GravityScientist")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
-      className: "m-5",
+    }, _react.default.createElement("h5", null, "Ensign")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "GravityScientist")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
       style: {
         backgroundColor: 'silver'
       }
@@ -36457,8 +36464,7 @@ class RosterView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "TrashbagMckee")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
-      className: "m-5",
+    }, _react.default.createElement("h5", null, "Ensign")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "TrashbagMckee")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
       style: {
         backgroundColor: 'silver'
       }
@@ -36466,8 +36472,7 @@ class RosterView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "kingbudha")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
-      className: "m-5",
+    }, _react.default.createElement("h5", null, "Ensign")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "kingbudha")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
       style: {
         backgroundColor: 'silver'
       }
@@ -36475,8 +36480,9 @@ class RosterView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "Tbster"))))), _react.default.createElement(_Row.default, null, _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
-      className: "m-5",
+    }, _react.default.createElement("h5", null, "Ensign")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "Tbster"))))), _react.default.createElement(_Row.default, {
+      noGutters: true
+    }, _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
       style: {
         backgroundColor: 'silver'
       }
@@ -36484,8 +36490,7 @@ class RosterView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "slippery_pickle")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
-      className: "m-5",
+    }, _react.default.createElement("h5", null, "Ensign")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "slippery_pickle")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
       style: {
         backgroundColor: 'silver'
       }
@@ -36493,8 +36498,7 @@ class RosterView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "zander825")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
-      className: "m-5",
+    }, _react.default.createElement("h5", null, "Ensign")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "zander825")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
       style: {
         backgroundColor: 'silver'
       }
@@ -36502,8 +36506,18 @@ class RosterView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, "Ensign"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "Mikecrook2112")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
-      className: "m-5",
+    }, _react.default.createElement("h5", null, "Ensign")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "Mikecrook2112")))), _react.default.createElement(_Col.default, null), _react.default.createElement(_Col.default, null), _react.default.createElement(_Col.default, null))), _react.default.createElement(_Card.default, {
+      className: "mt-5 border border-info",
+      style: {
+        backgroundColor: 'darkgrey'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, _react.default.createElement("h3", null, "Recruits")), _react.default.createElement(_Row.default, {
+      noGutters: true
+    }, _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
       style: {
         backgroundColor: 'silver'
       }
@@ -36512,7 +36526,6 @@ class RosterView extends _react.default.Component {
         backgroundColor: 'grey'
       }
     }, "Recruit"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "ILoveTheFedGov")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
-      className: "m-5",
       style: {
         backgroundColor: 'silver'
       }
@@ -36520,16 +36533,7 @@ class RosterView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, "Recruit"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "bxw93")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
-      className: "m-5",
-      style: {
-        backgroundColor: 'silver'
-      }
-    }, _react.default.createElement(_Card.default.Header, {
-      style: {
-        backgroundColor: 'grey'
-      }
-    }, "Recruit"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "Placeholder"))))))));
+    }, "Recruit"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "bxw93")))), _react.default.createElement(_Col.default, null), _react.default.createElement(_Col.default, null), _react.default.createElement(_Col.default, null), _react.default.createElement(_Col.default, null)))));
   }
 
 }
@@ -36727,14 +36731,14 @@ class MilestoneView extends _react.default.Component {
       className: "milestones"
     }, _react.default.createElement(_Container.default, {
       fluid: true,
-      className: "px-5 text-center"
+      className: "pb-5 text-center"
     }, _react.default.createElement(_Card.default, {
-      className: "text-center mt-4 mb-5 mx-5 border border-info",
+      className: "mt-4 mx-5 border border-info",
       style: {
         backgroundColor: 'grey'
       }
     }, _react.default.createElement(_Card.default.Header, null, _react.default.createElement("h3", null, "Current Objective")), _react.default.createElement(_Row.default, {
-      className: "no-gutters"
+      noGutters: true
     }, _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
       className: "h-100",
       style: {
@@ -36749,7 +36753,7 @@ class MilestoneView extends _react.default.Component {
       variant: "info",
       animated: true,
       now: 65
-    }), _react.default.createElement(_Card.default.Text, null, "3 000 000 / 4 700 000 aUEC")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+    }), _react.default.createElement(_Card.default.Text, null, _react.default.createElement("p", null, "3 000 000 / 4 700 000 aUEC"), _react.default.createElement("p", null, "Top Contributors:"))))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
       className: "h-100",
       style: {
         backgroundColor: 'silver'
@@ -36757,7 +36761,7 @@ class MilestoneView extends _react.default.Component {
     }, _react.default.createElement(_Card.default.Img, {
       src: require("/img/milestone1.png")
     }))))), _react.default.createElement(_Card.default, {
-      className: "text-center mx-5 border border-info",
+      className: "border border-info mt-5",
       style: {
         backgroundColor: 'darkgrey'
       }
@@ -36765,8 +36769,10 @@ class MilestoneView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, _react.default.createElement("h3", null, "Completed Objectives")), _react.default.createElement(_Row.default, null, _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
-      className: "m-5",
+    }, _react.default.createElement("h3", null, "Completed Objectives")), _react.default.createElement(_Row.default, {
+      noGutters: true
+    }, _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "",
       style: {
         backgroundColor: 'silver'
       }
@@ -36778,7 +36784,7 @@ class MilestoneView extends _react.default.Component {
       striped: true,
       variant: "success",
       now: 100
-    }), _react.default.createElement(_Card.default.Text, null, "4 700 000 / 4 700 000 aUEC"), _react.default.createElement(_Card.default.Img, {
+    }), _react.default.createElement(_Card.default.Text, null, _react.default.createElement("p", null, "4 700 000 / 4 700 000 aUEC"), _react.default.createElement("p", null, "Top Contributor: C3SK")), _react.default.createElement(_Card.default.Img, {
       src: require("/img/milestone1.png")
     })))), _react.default.createElement(_Col.default, null)))));
   }
@@ -36788,8 +36794,8 @@ class MilestoneView extends _react.default.Component {
 exports.MilestoneView = MilestoneView;
 var _default = MilestoneView;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./milestone-view.scss":"components/milestone-view/milestone-view.scss","react-bootstrap/ProgressBar":"../node_modules/react-bootstrap/esm/ProgressBar.js","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","/img/milestone1.png":"img/milestone1.png"}],"img/background.png":[function(require,module,exports) {
-module.exports = "/background.59c06501.png";
+},{"react":"../node_modules/react/index.js","./milestone-view.scss":"components/milestone-view/milestone-view.scss","react-bootstrap/ProgressBar":"../node_modules/react-bootstrap/esm/ProgressBar.js","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","/img/milestone1.png":"img/milestone1.png"}],"img/background2.png":[function(require,module,exports) {
+module.exports = "/background2.e834877b.png";
 },{}],"app.jsx":[function(require,module,exports) {
 "use strict";
 
@@ -36819,7 +36825,7 @@ class App extends _react.default.Component {
     return _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement("div", {
       className: "main min-vh-100 background",
       style: {
-        backgroundImage: 'url(' + require("/img/background.png") + ')'
+        backgroundImage: 'url(' + require("/img/background2.png") + ')'
       }
     }, _react.default.createElement(_navBar.default, {
       path: "/"
@@ -36841,7 +36847,7 @@ class App extends _react.default.Component {
 exports.App = App;
 var _default = App;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./app.scss":"app.scss","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./components/nav-bar/nav-bar":"components/nav-bar/nav-bar.jsx","./components/home-view/home-view":"components/home-view/home-view.jsx","./components/roster-view/roster-view":"components/roster-view/roster-view.jsx","./components/milestone-view/milestone-view":"components/milestone-view/milestone-view.jsx","/img/background.png":"img/background.png"}],"index.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./app.scss":"app.scss","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./components/nav-bar/nav-bar":"components/nav-bar/nav-bar.jsx","./components/home-view/home-view":"components/home-view/home-view.jsx","./components/roster-view/roster-view":"components/roster-view/roster-view.jsx","./components/milestone-view/milestone-view":"components/milestone-view/milestone-view.jsx","/img/background2.png":"img/background2.png"}],"index.jsx":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -36892,7 +36898,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63186" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62192" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
