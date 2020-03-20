@@ -14,7 +14,6 @@ export class HomeView extends React.Component {
         <Container fluid className="pb-5">
           <Jumbotron className="text-center border border-info" style={{ backgroundColor: 'grey' }}>
             <h1>Perses Fleet</h1>
-            <p>Tactical Space Operations</p>
           </Jumbotron>
           <Row className="mt-4">
             <Col xs={5}>

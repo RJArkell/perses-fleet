@@ -32285,12 +32285,7 @@ if ("development" !== "production") {
     style: _propTypes.default.object
   });
 }
-},{"react-router":"../node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"../node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"../node_modules/react/index.js","history":"../node_modules/history/esm/history.js","prop-types":"../node_modules/prop-types/index.js","tiny-warning":"../node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"../node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"components/nav-bar/nav-bar.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../../../../home/arnketel/.nvm/versions/node/v12.13.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/classnames/index.js":[function(require,module,exports) {
+},{"react-router":"../node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"../node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"../node_modules/react/index.js","history":"../node_modules/history/esm/history.js","prop-types":"../node_modules/prop-types/index.js","tiny-warning":"../node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"../node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"../node_modules/classnames/index.js":[function(require,module,exports) {
 var define;
 /*!
   Copyright (c) 2017 Jed Watson.
@@ -35302,55 +35297,7 @@ Nav.Item = _NavItem.default;
 Nav.Link = _NavLink.default;
 var _default = Nav;
 exports.default = _default;
-},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","classnames":"../node_modules/classnames/index.js","prop-types-extra/lib/all":"../node_modules/prop-types-extra/lib/all.js","react":"../node_modules/react/index.js","uncontrollable":"../node_modules/uncontrollable/esm/index.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js","./NavbarContext":"../node_modules/react-bootstrap/esm/NavbarContext.js","./CardContext":"../node_modules/react-bootstrap/esm/CardContext.js","./AbstractNav":"../node_modules/react-bootstrap/esm/AbstractNav.js","./NavItem":"../node_modules/react-bootstrap/esm/NavItem.js","./NavLink":"../node_modules/react-bootstrap/esm/NavLink.js"}],"components/nav-bar/nav-bar.jsx":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = exports.MenuBar = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-require("./nav-bar.scss");
-
-var _Navbar = _interopRequireDefault(require("react-bootstrap/Navbar"));
-
-var _Nav = _interopRequireDefault(require("react-bootstrap/Nav"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-class MenuBar extends _react.default.Component {
-  render() {
-    return _react.default.createElement("div", {
-      className: "menubar"
-    }, _react.default.createElement(_Navbar.default, {
-      className: "border-bottom border-info",
-      bg: "dark",
-      variant: "dark",
-      expand: "md",
-      sticky: "top"
-    }, _react.default.createElement(_Nav.default.Link, {
-      href: "/"
-    }, "Home"), _react.default.createElement(_Nav.default.Link, {
-      href: "/roster"
-    }, "Roster"), _react.default.createElement(_Nav.default.Link, {
-      href: "/milestones"
-    }, "Milestones"), _react.default.createElement(_Nav.default.Link, {
-      target: "_blank",
-      href: "https://robertsspaceindustries.com/spectrum/community/PERSES"
-    }, "Forum"), _react.default.createElement(_Nav.default.Link, {
-      target: "_blank",
-      href: "https://robertsspaceindustries.com/orgs/PERSES"
-    }, "Apply to Join")));
-  }
-
-}
-
-exports.MenuBar = MenuBar;
-var _default = MenuBar;
-exports.default = _default;
-},{"react":"../node_modules/react/index.js","./nav-bar.scss":"components/nav-bar/nav-bar.scss","react-bootstrap/Navbar":"../node_modules/react-bootstrap/esm/Navbar.js","react-bootstrap/Nav":"../node_modules/react-bootstrap/esm/Nav.js"}],"components/home-view/home-view.scss":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","classnames":"../node_modules/classnames/index.js","prop-types-extra/lib/all":"../node_modules/prop-types-extra/lib/all.js","react":"../node_modules/react/index.js","uncontrollable":"../node_modules/uncontrollable/esm/index.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js","./NavbarContext":"../node_modules/react-bootstrap/esm/NavbarContext.js","./CardContext":"../node_modules/react-bootstrap/esm/CardContext.js","./AbstractNav":"../node_modules/react-bootstrap/esm/AbstractNav.js","./NavItem":"../node_modules/react-bootstrap/esm/NavItem.js","./NavLink":"../node_modules/react-bootstrap/esm/NavLink.js"}],"components/home-view/home-view.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -36274,7 +36221,7 @@ class HomeView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, _react.default.createElement("h1", null, "Perses Fleet"), _react.default.createElement("p", null, "Tactical Space Operations")), _react.default.createElement(_Row.default, {
+    }, _react.default.createElement("h1", null, "Perses Fleet")), _react.default.createElement(_Row.default, {
       className: "mt-4"
     }, _react.default.createElement(_Col.default, {
       xs: 5
@@ -36384,10 +36331,12 @@ class RosterView extends _react.default.Component {
         backgroundColor: 'darkgrey'
       }
     }, _react.default.createElement(_Card.default.Header, {
+      className: "border border-dark",
       style: {
         backgroundColor: 'grey'
       }
     }, _react.default.createElement("h3", null, "Command Staff")), _react.default.createElement(_Card.default, {
+      className: "border border-dark",
       style: {
         backgroundColor: 'silver'
       }
@@ -36398,6 +36347,7 @@ class RosterView extends _react.default.Component {
     }, _react.default.createElement("h5", null, "Admiral")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "C3SK"))), _react.default.createElement(_Row.default, {
       noGutters: true
     }, _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "border border-dark",
       style: {
         backgroundColor: 'silver'
       }
@@ -36406,6 +36356,7 @@ class RosterView extends _react.default.Component {
         backgroundColor: 'grey'
       }
     }, _react.default.createElement("h5", null, "Commander")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "CursedEinherjar")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "border border-dark",
       style: {
         backgroundColor: 'silver'
       }
@@ -36414,6 +36365,7 @@ class RosterView extends _react.default.Component {
         backgroundColor: 'grey'
       }
     }, _react.default.createElement("h5", null, "Commander")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "ZucchiniZhang")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "border border-dark",
       style: {
         backgroundColor: 'silver'
       }
@@ -36422,17 +36374,19 @@ class RosterView extends _react.default.Component {
         backgroundColor: 'grey'
       }
     }, _react.default.createElement("h5", null, "Acting Commander")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "7R06D0R")))))), _react.default.createElement(_Card.default, {
-      className: "mt-5 border border-info",
+      className: "mt-4 border border-info",
       style: {
         backgroundColor: 'darkgrey'
       }
     }, _react.default.createElement(_Card.default.Header, {
+      className: "border border-dark",
       style: {
         backgroundColor: 'grey'
       }
     }, _react.default.createElement("h3", null, "Junior Ranks")), _react.default.createElement(_Row.default, {
       noGutters: true
     }, _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "border border-dark",
       style: {
         backgroundColor: 'silver'
       }
@@ -36441,6 +36395,7 @@ class RosterView extends _react.default.Component {
         backgroundColor: 'grey'
       }
     }, _react.default.createElement("h5", null, "Ensign")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "makewiththebits")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "border border-dark",
       style: {
         backgroundColor: 'silver'
       }
@@ -36449,6 +36404,7 @@ class RosterView extends _react.default.Component {
         backgroundColor: 'grey'
       }
     }, _react.default.createElement("h5", null, "Ensign")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "Bootyout")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "border border-dark",
       style: {
         backgroundColor: 'silver'
       }
@@ -36457,6 +36413,7 @@ class RosterView extends _react.default.Component {
         backgroundColor: 'grey'
       }
     }, _react.default.createElement("h5", null, "Ensign")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "GravityScientist")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "border border-dark",
       style: {
         backgroundColor: 'silver'
       }
@@ -36465,6 +36422,7 @@ class RosterView extends _react.default.Component {
         backgroundColor: 'grey'
       }
     }, _react.default.createElement("h5", null, "Ensign")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "TrashbagMckee")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "border border-dark",
       style: {
         backgroundColor: 'silver'
       }
@@ -36473,6 +36431,7 @@ class RosterView extends _react.default.Component {
         backgroundColor: 'grey'
       }
     }, _react.default.createElement("h5", null, "Ensign")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "kingbudha")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "border border-dark",
       style: {
         backgroundColor: 'silver'
       }
@@ -36483,6 +36442,7 @@ class RosterView extends _react.default.Component {
     }, _react.default.createElement("h5", null, "Ensign")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "Tbster"))))), _react.default.createElement(_Row.default, {
       noGutters: true
     }, _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "border border-dark",
       style: {
         backgroundColor: 'silver'
       }
@@ -36491,6 +36451,7 @@ class RosterView extends _react.default.Component {
         backgroundColor: 'grey'
       }
     }, _react.default.createElement("h5", null, "Ensign")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "slippery_pickle")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "border border-dark",
       style: {
         backgroundColor: 'silver'
       }
@@ -36499,6 +36460,7 @@ class RosterView extends _react.default.Component {
         backgroundColor: 'grey'
       }
     }, _react.default.createElement("h5", null, "Ensign")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "zander825")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "border border-dark",
       style: {
         backgroundColor: 'silver'
       }
@@ -36507,17 +36469,19 @@ class RosterView extends _react.default.Component {
         backgroundColor: 'grey'
       }
     }, _react.default.createElement("h5", null, "Ensign")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "Mikecrook2112")))), _react.default.createElement(_Col.default, null), _react.default.createElement(_Col.default, null), _react.default.createElement(_Col.default, null))), _react.default.createElement(_Card.default, {
-      className: "mt-5 border border-info",
+      className: "mt-4 border border-info",
       style: {
         backgroundColor: 'darkgrey'
       }
     }, _react.default.createElement(_Card.default.Header, {
+      className: "border border-dark",
       style: {
         backgroundColor: 'grey'
       }
     }, _react.default.createElement("h3", null, "Recruits")), _react.default.createElement(_Row.default, {
       noGutters: true
     }, _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "border border-dark",
       style: {
         backgroundColor: 'silver'
       }
@@ -36526,6 +36490,7 @@ class RosterView extends _react.default.Component {
         backgroundColor: 'grey'
       }
     }, "Recruit"), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "ILoveTheFedGov")))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "border border-dark",
       style: {
         backgroundColor: 'silver'
       }
@@ -36737,10 +36702,12 @@ class MilestoneView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, _react.default.createElement(_Card.default.Header, null, _react.default.createElement("h3", null, "Current Objective")), _react.default.createElement(_Row.default, {
+    }, _react.default.createElement(_Card.default.Header, {
+      className: "border border-dark"
+    }, _react.default.createElement("h3", null, "Current Objective")), _react.default.createElement(_Row.default, {
       noGutters: true
     }, _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
-      className: "h-100",
+      className: "h-100 border border-dark",
       style: {
         backgroundColor: 'silver'
       }
@@ -36753,8 +36720,8 @@ class MilestoneView extends _react.default.Component {
       variant: "info",
       animated: true,
       now: 65
-    }), _react.default.createElement(_Card.default.Text, null, _react.default.createElement("p", null, "3 000 000 / 4 700 000 aUEC"), _react.default.createElement("p", null, "Top Contributors:"))))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
-      className: "h-100",
+    }), _react.default.createElement(_Card.default.Text, null, _react.default.createElement("p", null, "3 000 000 / 4 700 000 aUEC"), _react.default.createElement("p", null, _react.default.createElement("h5", null, "Top Contributors:")), _react.default.createElement("p", null, "C3SK"), _react.default.createElement("p", null, "CursedEinherjar"))))), _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
+      className: "h-100 border border-dark",
       style: {
         backgroundColor: 'silver'
       }
@@ -36766,13 +36733,14 @@ class MilestoneView extends _react.default.Component {
         backgroundColor: 'darkgrey'
       }
     }, _react.default.createElement(_Card.default.Header, {
+      className: "border border-dark",
       style: {
         backgroundColor: 'grey'
       }
     }, _react.default.createElement("h3", null, "Completed Objectives")), _react.default.createElement(_Row.default, {
       noGutters: true
     }, _react.default.createElement(_Col.default, null, _react.default.createElement(_Card.default, {
-      className: "",
+      className: "border border-dark",
       style: {
         backgroundColor: 'silver'
       }
@@ -36794,8 +36762,8 @@ class MilestoneView extends _react.default.Component {
 exports.MilestoneView = MilestoneView;
 var _default = MilestoneView;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./milestone-view.scss":"components/milestone-view/milestone-view.scss","react-bootstrap/ProgressBar":"../node_modules/react-bootstrap/esm/ProgressBar.js","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","/img/milestone1.png":"img/milestone1.png"}],"img/background2.png":[function(require,module,exports) {
-module.exports = "/background2.e834877b.png";
+},{"react":"../node_modules/react/index.js","./milestone-view.scss":"components/milestone-view/milestone-view.scss","react-bootstrap/ProgressBar":"../node_modules/react-bootstrap/esm/ProgressBar.js","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","/img/milestone1.png":"img/milestone1.png"}],"img/background.png":[function(require,module,exports) {
+module.exports = "/background.59c06501.png";
 },{}],"app.jsx":[function(require,module,exports) {
 "use strict";
 
@@ -36810,7 +36778,9 @@ require("./app.scss");
 
 var _reactRouterDom = require("react-router-dom");
 
-var _navBar = _interopRequireDefault(require("./components/nav-bar/nav-bar"));
+var _Navbar = _interopRequireDefault(require("react-bootstrap/Navbar"));
+
+var _Nav = _interopRequireDefault(require("react-bootstrap/Nav"));
 
 var _homeView = _interopRequireDefault(require("./components/home-view/home-view"));
 
@@ -36825,11 +36795,28 @@ class App extends _react.default.Component {
     return _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement("div", {
       className: "main min-vh-100 background",
       style: {
-        backgroundImage: 'url(' + require("/img/background2.png") + ')'
+        backgroundImage: 'url(' + require("/img/background.png") + ')'
       }
-    }, _react.default.createElement(_navBar.default, {
-      path: "/"
-    }), _react.default.createElement(_reactRouterDom.Route, {
+    }, _react.default.createElement(_Navbar.default, {
+      path: "/",
+      className: "border-bottom border-info",
+      bg: "dark",
+      variant: "dark",
+      expand: "md",
+      sticky: "top"
+    }, _react.default.createElement(_Nav.default.Link, {
+      href: "/"
+    }, "Home"), _react.default.createElement(_Nav.default.Link, {
+      href: "/roster"
+    }, "Roster"), _react.default.createElement(_Nav.default.Link, {
+      href: "/milestones"
+    }, "Milestones"), _react.default.createElement(_Nav.default.Link, {
+      target: "_blank",
+      href: "https://robertsspaceindustries.com/spectrum/community/PERSES"
+    }, "Forum"), _react.default.createElement(_Nav.default.Link, {
+      target: "_blank",
+      href: "https://robertsspaceindustries.com/orgs/PERSES"
+    }, "Enlist Now")), _react.default.createElement(_reactRouterDom.Route, {
       exact: true,
       path: "/",
       component: _homeView.default
@@ -36847,7 +36834,7 @@ class App extends _react.default.Component {
 exports.App = App;
 var _default = App;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./app.scss":"app.scss","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./components/nav-bar/nav-bar":"components/nav-bar/nav-bar.jsx","./components/home-view/home-view":"components/home-view/home-view.jsx","./components/roster-view/roster-view":"components/roster-view/roster-view.jsx","./components/milestone-view/milestone-view":"components/milestone-view/milestone-view.jsx","/img/background2.png":"img/background2.png"}],"index.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./app.scss":"app.scss","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-bootstrap/Navbar":"../node_modules/react-bootstrap/esm/Navbar.js","react-bootstrap/Nav":"../node_modules/react-bootstrap/esm/Nav.js","./components/home-view/home-view":"components/home-view/home-view.jsx","./components/roster-view/roster-view":"components/roster-view/roster-view.jsx","./components/milestone-view/milestone-view":"components/milestone-view/milestone-view.jsx","/img/background.png":"img/background.png"}],"index.jsx":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -36898,7 +36885,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62192" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62401" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

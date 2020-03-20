@@ -31,6 +31,10 @@ h6 {
 .jumbotron {
   padding-top: 40px;
   padding-bottom: 40px;
+  margin-top: -5px;
+}
+.rostercard {
+  border-radius: 0px;
 }
 
 /*# sourceMappingURL=/src.78399e21.css.map */
