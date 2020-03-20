@@ -20,8 +20,7 @@
     "src": "^1.1.2"
   },
   "scripts": {
-    "start": "node index.jsx",
-    "test": "parcel src/index.html",
+    "start": "parcel src/index.html",
     "prebuild": "rm -rf dist/",
     "build": "parcel build src/index.html",
     "predeploy": "npm run build",
