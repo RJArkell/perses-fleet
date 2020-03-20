@@ -12,10 +12,10 @@ export class HomeView extends React.Component {
     return (
       <div className="home">
         <Container fluid>
-          <Jumbotron className="text-center mb-5" style={{ backgroundColor: 'grey' }}>
+          <Jumbotron className="text-center mb-5 border border-info" style={{ backgroundColor: 'grey' }}>
             <h1>Perses Fleet</h1>
           </Jumbotron>
-          <Carousel>
+          <Carousel className="border border-info">
             <Carousel.Item>
               <img
                 className="d-block w-100"
@@ -46,7 +46,7 @@ export class HomeView extends React.Component {
           </Carousel>
           <Row className="mt-5">
             <Col xs={5}>
-              <Card style={{ backgroundColor: 'darkgrey' }} className="">
+              <Card style={{ backgroundColor: 'darkgrey' }} className="border border-info">
                 <Card.Header className="text-center" style={{ backgroundColor: 'grey' }}><h3>About Perses Fleet</h3></Card.Header>
                 <Card.Body>
                   <Card.Text>
@@ -77,26 +77,25 @@ export class HomeView extends React.Component {
                   </Card.Text>
                 </Card.Body>
               </Card>
+              <Card style={{ backgroundColor: 'darkgrey' }} className="border border-info">
+                <Card.Header className="text-center" style={{ backgroundColor: 'grey' }}><h3>Screenshot of the Week</h3></Card.Header>
+                <Card.Img src={require("/img/featured.png")} />
+                <Card.Text className="text-center">
+                  Submitted by: C3SK
+                </Card.Text>
+              </Card>
             </Col>
             <Col xs={7}>
-              <Card style={{ backgroundColor: 'darkgrey' }} className="">
+              <Card style={{ backgroundColor: 'darkgrey' }} className="border border-info">
                 <Card.Header className="text-center" style={{ backgroundColor: 'grey' }}><h3>Latest Galactic News</h3></Card.Header>
                 <Card style={{ backgroundColor: 'darkgrey' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}><h5>RSI - Yet Further News - 03.03.2020</h5></Card.Header>
+                  <Card.Header style={{ backgroundColor: 'grey' }}><h5>RSI - New Inside Star Citizen Video - 18.03.2020</h5></Card.Header>
                   <Card.Body>
-                    <Card.Text>Somehow even more things are broken.</Card.Text>
-                  </Card.Body>
-                </Card>
-                <Card style={{ backgroundColor: 'darkgrey' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}><h5>Perses - News 2: Electric Boogaloo - 02.02.2020</h5></Card.Header>
-                  <Card.Body>
-                    <Card.Text>Recruitment drive has begun! Join Us. Please. We need more turret slaves.</Card.Text>
-                  </Card.Body>
-                </Card>
-                <Card style={{ backgroundColor: 'darkgrey' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}><h5>RSI - Some News - 01.01.2020</h5></Card.Header>
-                  <Card.Body>
-                    <Card.Text>Everything is broken.</Card.Text>
+                    <Card.Text>
+                      <p>Inside Star Citizen: Personal Systems - You want UI updates? You want another sprint report?
+                      Well, friends, you're in luck. We have both, in this week's episode.</p>
+                      <a href="https://www.youtube.com/watch?v=qSZiOxyVGmI&feature=emb_title" target="blank">Check out the video here</a>
+                    </Card.Text>
                   </Card.Body>
                 </Card>
               </Card>

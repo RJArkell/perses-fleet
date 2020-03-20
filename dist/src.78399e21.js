@@ -2208,7 +2208,79 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react.development.js');
 }
-},{"./cjs/react.development.js":"../node_modules/react/cjs/react.development.js"}],"../node_modules/scheduler/cjs/scheduler.development.js":[function(require,module,exports) {
+},{"./cjs/react.development.js":"../node_modules/react/cjs/react.development.js"}],"../../../../../../../../home/arnketel/.nvm/versions/node/v12.13.1/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
+
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+
+  return bundleURL;
+}
+
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"../../../../../../../../home/arnketel/.nvm/versions/node/v12.13.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+
+  newLink.onload = function () {
+    link.remove();
+  };
+
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+
+    cssTimeout = null;
+  }, 50);
+}
+
+module.exports = reloadCSS;
+},{"./bundle-url":"../../../../../../../../home/arnketel/.nvm/versions/node/v12.13.1/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"index.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../../../../../../home/arnketel/.nvm/versions/node/v12.13.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/scheduler/cjs/scheduler.development.js":[function(require,module,exports) {
 /** @license React v0.19.0
  * scheduler.development.js
  *
@@ -28311,7 +28383,12 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"../node_modules/@babel/runtime/helpers/esm/inheritsLoose.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"app.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../../../../../../home/arnketel/.nvm/versions/node/v12.13.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/@babel/runtime/helpers/esm/inheritsLoose.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32208,79 +32285,7 @@ if ("development" !== "production") {
     style: _propTypes.default.object
   });
 }
-},{"react-router":"../node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"../node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"../node_modules/react/index.js","history":"../node_modules/history/esm/history.js","prop-types":"../node_modules/prop-types/index.js","tiny-warning":"../node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"../node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"../../../../../../../../home/arnketel/.nvm/versions/node/v12.13.1/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
-
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../../../../../../../../home/arnketel/.nvm/versions/node/v12.13.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../../../../../../../../home/arnketel/.nvm/versions/node/v12.13.1/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"app.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../../../../home/arnketel/.nvm/versions/node/v12.13.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/nav-bar/nav-bar.scss":[function(require,module,exports) {
+},{"react-router":"../node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"../node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"../node_modules/react/index.js","history":"../node_modules/history/esm/history.js","prop-types":"../node_modules/prop-types/index.js","tiny-warning":"../node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"../node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"components/nav-bar/nav-bar.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -36228,6 +36233,8 @@ module.exports = "/mole.999bfa52.png";
 module.exports = "/arccorp.6584714d.png";
 },{}],"img/hammerhead.png":[function(require,module,exports) {
 module.exports = "/hammerhead.fa913b32.png";
+},{}],"img/featured.png":[function(require,module,exports) {
+module.exports = "/featured.5b7ebcb3.png";
 },{}],"components/home-view/home-view.jsx":[function(require,module,exports) {
 "use strict";
 
@@ -36261,11 +36268,13 @@ class HomeView extends _react.default.Component {
     }, _react.default.createElement(_Container.default, {
       fluid: true
     }, _react.default.createElement(_Jumbotron.default, {
-      className: "text-center mb-5",
+      className: "text-center mb-5 border border-info",
       style: {
         backgroundColor: 'grey'
       }
-    }, _react.default.createElement("h1", null, "Perses Fleet")), _react.default.createElement(_Carousel.default, null, _react.default.createElement(_Carousel.default.Item, null, _react.default.createElement("img", {
+    }, _react.default.createElement("h1", null, "Perses Fleet")), _react.default.createElement(_Carousel.default, {
+      className: "border border-info"
+    }, _react.default.createElement(_Carousel.default.Item, null, _react.default.createElement("img", {
       className: "d-block w-100",
       src: require("/img/mole.png")
     }), _react.default.createElement(_Carousel.default.Caption, null, _react.default.createElement("h3", null, "Join our trading and mining expeditions"))), _react.default.createElement(_Carousel.default.Item, null, _react.default.createElement("img", {
@@ -36282,19 +36291,33 @@ class HomeView extends _react.default.Component {
       style: {
         backgroundColor: 'darkgrey'
       },
-      className: ""
+      className: "border border-info"
     }, _react.default.createElement(_Card.default.Header, {
       className: "text-center",
       style: {
         backgroundColor: 'grey'
       }
-    }, _react.default.createElement("h3", null, "About Perses Fleet")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, _react.default.createElement("p", null, "I'm giving you a night call to tell you how I feel (We'll go all, all, all night long) I want to drive you through the night, down the hills (We'll go all, all, all night long) I'm gonna tell you something you don't want to hear (We'll go all, all, all night long) I'm gonna show you where it's dark, but have no fear (We'll go all, all, all night long)"), _react.default.createElement("p", null, "There's something inside you It's hard to explain They're talking about you, boy But you're still the same There's something inside you It's hard to explain They're talking about you, boy But you're still the same"), _react.default.createElement("p", null, "I'm giving you a night call to tell you how I feel (We'll go all, all, all night long) I want to drive you through the night, down the hills (We'll go all, all, all night long) I'm gonna tell you something you don't want to hear (We'll go all, all, all night long) I'm gonna show you where it's dark, but have no fear (We'll go all, all, all night long)"))))), _react.default.createElement(_Col.default, {
+    }, _react.default.createElement("h3", null, "About Perses Fleet")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, _react.default.createElement("p", null, "I'm giving you a night call to tell you how I feel (We'll go all, all, all night long) I want to drive you through the night, down the hills (We'll go all, all, all night long) I'm gonna tell you something you don't want to hear (We'll go all, all, all night long) I'm gonna show you where it's dark, but have no fear (We'll go all, all, all night long)"), _react.default.createElement("p", null, "There's something inside you It's hard to explain They're talking about you, boy But you're still the same There's something inside you It's hard to explain They're talking about you, boy But you're still the same"), _react.default.createElement("p", null, "I'm giving you a night call to tell you how I feel (We'll go all, all, all night long) I want to drive you through the night, down the hills (We'll go all, all, all night long) I'm gonna tell you something you don't want to hear (We'll go all, all, all night long) I'm gonna show you where it's dark, but have no fear (We'll go all, all, all night long)")))), _react.default.createElement(_Card.default, {
+      style: {
+        backgroundColor: 'darkgrey'
+      },
+      className: "border border-info"
+    }, _react.default.createElement(_Card.default.Header, {
+      className: "text-center",
+      style: {
+        backgroundColor: 'grey'
+      }
+    }, _react.default.createElement("h3", null, "Screenshot of the Week")), _react.default.createElement(_Card.default.Img, {
+      src: require("/img/featured.png")
+    }), _react.default.createElement(_Card.default.Text, {
+      className: "text-center"
+    }, "Submitted by: C3SK"))), _react.default.createElement(_Col.default, {
       xs: 7
     }, _react.default.createElement(_Card.default, {
       style: {
         backgroundColor: 'darkgrey'
       },
-      className: ""
+      className: "border border-info"
     }, _react.default.createElement(_Card.default.Header, {
       className: "text-center",
       style: {
@@ -36308,23 +36331,10 @@ class HomeView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
-    }, _react.default.createElement("h5", null, "RSI - Yet Further News - 03.03.2020")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "Somehow even more things are broken."))), _react.default.createElement(_Card.default, {
-      style: {
-        backgroundColor: 'darkgrey'
-      }
-    }, _react.default.createElement(_Card.default.Header, {
-      style: {
-        backgroundColor: 'grey'
-      }
-    }, _react.default.createElement("h5", null, "Perses - News 2: Electric Boogaloo - 02.02.2020")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "Recruitment drive has begun! Join Us. Please. We need more turret slaves."))), _react.default.createElement(_Card.default, {
-      style: {
-        backgroundColor: 'darkgrey'
-      }
-    }, _react.default.createElement(_Card.default.Header, {
-      style: {
-        backgroundColor: 'grey'
-      }
-    }, _react.default.createElement("h5", null, "RSI - Some News - 01.01.2020")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, "Everything is broken."))))))));
+    }, _react.default.createElement("h5", null, "RSI - New Inside Star Citizen Video - 18.03.2020")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, _react.default.createElement("p", null, "Inside Star Citizen: Personal Systems - You want UI updates? You want another sprint report? Well, friends, you're in luck. We have both, in this week's episode."), _react.default.createElement("a", {
+      href: "https://www.youtube.com/watch?v=qSZiOxyVGmI&feature=emb_title",
+      target: "blank"
+    }, "Check out the video here")))))))));
   }
 
 }
@@ -36332,7 +36342,7 @@ class HomeView extends _react.default.Component {
 exports.HomeView = HomeView;
 var _default = HomeView;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./home-view.scss":"components/home-view/home-view.scss","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Jumbotron":"../node_modules/react-bootstrap/esm/Jumbotron.js","react-bootstrap/Carousel":"../node_modules/react-bootstrap/esm/Carousel.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","/img/mole.png":"img/mole.png","/img/arccorp.png":"img/arccorp.png","/img/hammerhead.png":"img/hammerhead.png"}],"components/roster-view/roster-view.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./home-view.scss":"components/home-view/home-view.scss","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Jumbotron":"../node_modules/react-bootstrap/esm/Jumbotron.js","react-bootstrap/Carousel":"../node_modules/react-bootstrap/esm/Carousel.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","/img/mole.png":"img/mole.png","/img/arccorp.png":"img/arccorp.png","/img/hammerhead.png":"img/hammerhead.png","/img/featured.png":"img/featured.png"}],"components/roster-view/roster-view.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -36365,9 +36375,9 @@ class RosterView extends _react.default.Component {
       className: "roster"
     }, _react.default.createElement(_Container.default, {
       fluid: true,
-      className: "text-center mt-4 px-5 vh-100"
+      className: "text-center mt-4 px-5 vh-100 "
     }, _react.default.createElement(_Card.default, {
-      className: "text-center mx-5  ",
+      className: "text-center mx-5 border border-info",
       style: {
         backgroundColor: 'darkgrey'
       }
@@ -36527,7 +36537,12 @@ class RosterView extends _react.default.Component {
 exports.RosterView = RosterView;
 var _default = RosterView;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./roster-view.scss":"components/roster-view/roster-view.scss","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js"}],"../node_modules/react-bootstrap/esm/ProgressBar.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./roster-view.scss":"components/roster-view/roster-view.scss","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js"}],"components/milestone-view/milestone-view.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../../../../../../home/arnketel/.nvm/versions/node/v12.13.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/react-bootstrap/esm/ProgressBar.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36680,12 +36695,7 @@ ProgressBar.displayName = 'ProgressBar';
 ProgressBar.defaultProps = defaultProps;
 var _default = ProgressBar;
 exports.default = _default;
-},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","classnames":"../node_modules/classnames/index.js","react":"../node_modules/react/index.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js","./ElementChildren":"../node_modules/react-bootstrap/esm/ElementChildren.js"}],"components/milestone-view/milestone-view.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../../../../home/arnketel/.nvm/versions/node/v12.13.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"img/milestone1.png":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","classnames":"../node_modules/classnames/index.js","react":"../node_modules/react/index.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js","./ElementChildren":"../node_modules/react-bootstrap/esm/ElementChildren.js"}],"img/milestone1.png":[function(require,module,exports) {
 module.exports = "/milestone1.cb137128.png";
 },{}],"components/milestone-view/milestone-view.jsx":[function(require,module,exports) {
 "use strict";
@@ -36697,6 +36707,8 @@ exports.default = exports.MilestoneView = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+require("./milestone-view.scss");
+
 var _ProgressBar = _interopRequireDefault(require("react-bootstrap/ProgressBar"));
 
 var _Container = _interopRequireDefault(require("react-bootstrap/Container"));
@@ -36707,22 +36719,17 @@ var _Row = _interopRequireDefault(require("react-bootstrap/Row"));
 
 var _Col = _interopRequireDefault(require("react-bootstrap/Col"));
 
-require("./milestone-view.scss");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class MilestoneView extends _react.default.Component {
   render() {
     return _react.default.createElement("div", {
-      className: "milestones",
-      style: {
-        backgroundColor: 'silver'
-      }
+      className: "milestones"
     }, _react.default.createElement(_Container.default, {
       fluid: true,
       className: "px-5 text-center"
     }, _react.default.createElement(_Card.default, {
-      className: "text-center mt-4 mb-5 mx-5",
+      className: "text-center mt-4 mb-5 mx-5 border border-info",
       style: {
         backgroundColor: 'grey'
       }
@@ -36750,7 +36757,7 @@ class MilestoneView extends _react.default.Component {
     }, _react.default.createElement(_Card.default.Img, {
       src: require("/img/milestone1.png")
     }))))), _react.default.createElement(_Card.default, {
-      className: "text-center mx-5",
+      className: "text-center mx-5 border border-info",
       style: {
         backgroundColor: 'darkgrey'
       }
@@ -36781,7 +36788,9 @@ class MilestoneView extends _react.default.Component {
 exports.MilestoneView = MilestoneView;
 var _default = MilestoneView;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-bootstrap/ProgressBar":"../node_modules/react-bootstrap/esm/ProgressBar.js","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","./milestone-view.scss":"components/milestone-view/milestone-view.scss","/img/milestone1.png":"img/milestone1.png"}],"app.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./milestone-view.scss":"components/milestone-view/milestone-view.scss","react-bootstrap/ProgressBar":"../node_modules/react-bootstrap/esm/ProgressBar.js","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","/img/milestone1.png":"img/milestone1.png"}],"img/background.png":[function(require,module,exports) {
+module.exports = "/background.59c06501.png";
+},{}],"app.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36791,9 +36800,9 @@ exports.default = exports.App = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _reactRouterDom = require("react-router-dom");
-
 require("./app.scss");
+
+var _reactRouterDom = require("react-router-dom");
 
 var _navBar = _interopRequireDefault(require("./components/nav-bar/nav-bar"));
 
@@ -36808,9 +36817,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 class App extends _react.default.Component {
   render() {
     return _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement("div", {
-      className: "main",
+      className: "main min-vh-100 background",
       style: {
-        backgroundColor: 'silver'
+        backgroundImage: 'url(' + require("/img/background.png") + ')'
       }
     }, _react.default.createElement(_navBar.default, {
       path: "/"
@@ -36832,21 +36841,16 @@ class App extends _react.default.Component {
 exports.App = App;
 var _default = App;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./app.scss":"app.scss","./components/nav-bar/nav-bar":"components/nav-bar/nav-bar.jsx","./components/home-view/home-view":"components/home-view/home-view.jsx","./components/roster-view/roster-view":"components/roster-view/roster-view.jsx","./components/milestone-view/milestone-view":"components/milestone-view/milestone-view.jsx"}],"index.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../../../../home/arnketel/.nvm/versions/node/v12.13.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./app.scss":"app.scss","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./components/nav-bar/nav-bar":"components/nav-bar/nav-bar.jsx","./components/home-view/home-view":"components/home-view/home-view.jsx","./components/roster-view/roster-view":"components/roster-view/roster-view.jsx","./components/milestone-view/milestone-view":"components/milestone-view/milestone-view.jsx","/img/background.png":"img/background.png"}],"index.jsx":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
 
+require("./index.scss");
+
 var _reactDom = _interopRequireDefault(require("react-dom"));
 
 var _app = _interopRequireDefault(require("./app"));
-
-require("./index.scss");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36860,7 +36864,7 @@ class PersesFleet extends _react.default.Component {
 const container = document.getElementsByClassName("app-container")[0];
 
 _reactDom.default.render(_react.default.createElement(PersesFleet), container);
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./app":"app.jsx","./index.scss":"index.scss"}],"../../../../../../../../home/arnketel/.nvm/versions/node/v12.13.1/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./index.scss":"index.scss","react-dom":"../node_modules/react-dom/index.js","./app":"app.jsx"}],"../../../../../../../../home/arnketel/.nvm/versions/node/v12.13.1/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -36888,7 +36892,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52415" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63186" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

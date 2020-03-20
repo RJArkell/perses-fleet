@@ -9,8 +9,8 @@ export class RosterView extends React.Component {
   render() {
     return (
       <div className="roster">
-        <Container fluid className="text-center mt-4 px-5 vh-100">
-          <Card className="text-center mx-5  " style={{ backgroundColor: 'darkgrey' }}>
+        <Container fluid className="text-center mt-4 px-5 vh-100 ">
+          <Card className="text-center mx-5 border border-info" style={{ backgroundColor: 'darkgrey' }}>
             <Card.Header style={{ backgroundColor: 'grey' }}><h3>Organization Roster</h3></Card.Header>
             <Card className="m-5" style={{ backgroundColor: 'silver' }}>
               <Card.Header style={{ backgroundColor: 'grey' }}>Admiral</Card.Header>
