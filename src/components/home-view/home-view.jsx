@@ -69,7 +69,7 @@ export class HomeView extends React.Component {
                 </Carousel.Item>
                 <Carousel.Item >
                   <img
-                    className="d-block w-100 h-100"
+                    className="d-block w-100"
                     src={require("/img/mining.png")}
                   />
                   <Carousel.Caption>
@@ -89,12 +89,21 @@ export class HomeView extends React.Component {
               <Card style={{ backgroundColor: 'darkgrey' }} className="border border-info mt-4">
                 <Card.Header className="text-center" style={{ backgroundColor: 'grey' }}><h3>Latest Galactic News</h3></Card.Header>
                 <Card style={{ backgroundColor: 'darkgrey' }}>
+                  <Card.Header style={{ backgroundColor: 'grey' }}><h5>CIG - Roadmap Roundup - 20.03.2020</h5></Card.Header>
+                  <Card.Body>
+                    <Card.Text>
+                      <p>This week's Roadmap Roundup is now up. Updated features include Klescher Automated Prison, Prison Missions, and New Babbage Landing Zone Interiors.</p>
+                      <a href="https://robertsspaceindustries.com/spectrum/community/SC/forum/3/thread/roadmap-roundup-march-20th-2020" target="blank">Read the thread</a>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+                <Card style={{ backgroundColor: 'darkgrey' }}>
                   <Card.Header style={{ backgroundColor: 'grey' }}><h5>CIG - New Inside Star Citizen Video - 18.03.2020</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>
                       <p>Inside Star Citizen: Personal Systems - You want UI updates? You want another sprint report?
                       Well, friends, you're in luck. We have both, in this week's episode.</p>
-                      <a href="https://www.youtube.com/watch?v=qSZiOxyVGmI&feature=emb_title" target="blank">Check out the video here</a>
+                      <a href="https://www.youtube.com/watch?v=qSZiOxyVGmI&feature=emb_title" target="blank">Check out the video</a>
                     </Card.Text>
                   </Card.Body>
                 </Card>

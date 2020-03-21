@@ -36257,7 +36257,7 @@ class HomeView extends _react.default.Component {
       className: "d-block w-100",
       src: require("/img/marine.png")
     }), _react.default.createElement(_Carousel.default.Caption, null, _react.default.createElement("h3", null, "Explore new worlds"))), _react.default.createElement(_Carousel.default.Item, null, _react.default.createElement("img", {
-      className: "d-block w-100 h-100",
+      className: "d-block w-100",
       src: require("/img/mining.png")
     }), _react.default.createElement(_Carousel.default.Caption, null, _react.default.createElement("h3", null, "Build your fortune"))), _react.default.createElement(_Carousel.default.Item, null, _react.default.createElement("img", {
       className: "d-block w-100",
@@ -36280,10 +36280,21 @@ class HomeView extends _react.default.Component {
       style: {
         backgroundColor: 'grey'
       }
+    }, _react.default.createElement("h5", null, "CIG - Roadmap Roundup - 20.03.2020")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, _react.default.createElement("p", null, "This week's Roadmap Roundup is now up. Updated features include Klescher Automated Prison, Prison Missions, and New Babbage Landing Zone Interiors."), _react.default.createElement("a", {
+      href: "https://robertsspaceindustries.com/spectrum/community/SC/forum/3/thread/roadmap-roundup-march-20th-2020",
+      target: "blank"
+    }, "Read the thread")))), _react.default.createElement(_Card.default, {
+      style: {
+        backgroundColor: 'darkgrey'
+      }
+    }, _react.default.createElement(_Card.default.Header, {
+      style: {
+        backgroundColor: 'grey'
+      }
     }, _react.default.createElement("h5", null, "CIG - New Inside Star Citizen Video - 18.03.2020")), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Text, null, _react.default.createElement("p", null, "Inside Star Citizen: Personal Systems - You want UI updates? You want another sprint report? Well, friends, you're in luck. We have both, in this week's episode."), _react.default.createElement("a", {
       href: "https://www.youtube.com/watch?v=qSZiOxyVGmI&feature=emb_title",
       target: "blank"
-    }, "Check out the video here")))))))));
+    }, "Check out the video")))))))));
   }
 
 }
@@ -36885,7 +36896,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64761" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62217" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

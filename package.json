@@ -2,15 +2,11 @@
   "name": "perses-fleet",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rjarkell.github.io/perses-fleet/",
-  "engines": {
-    "npm": "6.14.2",
-    "node": "12.13.1"
-  },
+  "homepage": "www.csg-perses.com",
+  "main": "index.html",
   "dependencies": {
     "@popperjs/core": "^2.1.0",
     "core-js": "^3.6.4",
-    "heroku": "^7.39.1",
     "img": "^3.0.3",
     "popper.js": "^1.16.1",
     "react": "^16.12.0",
@@ -22,9 +18,7 @@
   "scripts": {
     "start": "parcel src/index.html",
     "prebuild": "rm -rf dist/",
-    "build": "parcel build src/index.html",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "build": "parcel build src/index.html"
   },
   "browserslist": {
     "production": [
