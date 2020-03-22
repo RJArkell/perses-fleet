@@ -49,7 +49,7 @@ export class HomeView extends React.Component {
                 </Card.Body>
               </Card>
               <Card style={{ backgroundColor: 'darkgrey' }} className="border border-info mt-4">
-                <Card.Header className="text-center" style={{ backgroundColor: 'grey' }}><h3>Screenshot of the Week</h3></Card.Header>
+                <Card.Header className="text-center" style={{ backgroundColor: 'grey' }}><h3>Featured Screenshot</h3></Card.Header>
                 <Card.Img src={require("/img/featured.png")} />
                 <Card.Text className="text-center">
                   Submitted by: C3SK
