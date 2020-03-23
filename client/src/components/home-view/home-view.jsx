@@ -103,7 +103,7 @@ export class HomeView extends React.Component {
                     <Card.Text>
                       <p>Inside Star Citizen: Personal Systems - You want UI updates? You want another sprint report?
                       Well, friends, you're in luck. We have both, in this week's episode.</p>
-                      <a href="https://www.youtube.com/watch?v=qSZiOxyVGmI&feature=emb_title" target="blank">Check out the video</a>
+                      <a href="https://www.youtube.com/watch?v=qSZiOxyVGmI&feature=emb_title" target="blank">Watch the video</a>
                     </Card.Text>
                   </Card.Body>
                 </Card>

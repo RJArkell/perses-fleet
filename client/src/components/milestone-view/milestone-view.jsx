@@ -6,7 +6,6 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-
 export class MilestoneView extends React.Component {
   render() {
     return (
@@ -37,7 +36,7 @@ export class MilestoneView extends React.Component {
               </Col>
             </Row>
           </Card>
-          <Card className="border border-info mt-5" style={{ backgroundColor: 'darkgrey' }}>
+          <Card className="border border-info mt-4" style={{ backgroundColor: 'darkgrey' }}>
             <Card.Header className="border border-dark" style={{ backgroundColor: 'grey' }}><h3>Completed Objectives</h3></Card.Header>
             <Row noGutters={true}>
               <Col>

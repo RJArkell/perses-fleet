@@ -1,6 +1,6 @@
 {
-  "name": "perses-fleet-dev",
-  "version": "0.1.0",
+  "name": "perses-fleet",
+  "version": "1.0.0",
   "description": "Perses Fleet",
   "main": "index.js",
   "scripts": {
