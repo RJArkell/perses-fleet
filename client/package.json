@@ -1,0 +1,43 @@
+{
+  "name": "perses-fleet",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "www.csg-perses.com",
+  "main": "index.html",
+  "dependencies": {
+    "@popperjs/core": "^2.1.0",
+    "core-js": "^3.6.4",
+    "img": "^3.0.3",
+    "popper.js": "^1.16.1",
+    "react": "^16.12.0",
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
+    "src": "^1.1.2"
+  },
+  "scripts": {
+    "start": "parcel src/index.html",
+    "prebuild": "rm -rf dist/",
+    "build": "parcel build src/index.html --public-url ./"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.24.0"
+  }
+}
