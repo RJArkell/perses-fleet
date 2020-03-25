@@ -9,35 +9,35 @@ export class RosterView extends React.Component {
   render() {
     return (
       <div className="roster">
-        <Container fluid className="pb-5 text-center" >
-          <Card className="mt-4 border border-info" style={{ backgroundColor: 'darkgrey' }}>
-            <Card.Header className="border border-dark" style={{ backgroundColor: 'grey' }}><h3>Command Staff</h3></Card.Header>
-            <Card className="border border-dark" style={{ backgroundColor: 'silver' }}>
-              <Card.Header style={{ backgroundColor: 'grey' }}><h5>Admiral</h5></Card.Header>
+        <Container fluid className="p-5 text-center" >
+          <Card>
+            <Card.Header className="header"><h3>Command Staff</h3></Card.Header>
+            <Card className="m-1 infocard">
+              <Card.Header className="header"><h5>Admiral</h5></Card.Header>
               <Card.Body>
                 <Card.Text>C3SK</Card.Text>
               </Card.Body>
             </Card>
             <Row noGutters={true}>
               <Col>
-                <Card className="border border-dark" style={{ backgroundColor: 'silver' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}><h5>Commander</h5></Card.Header>
+                <Card className="m-1 infocard">
+                  <Card.Header className="header"><h5>Commander</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>CursedEinherjar</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
               <Col>
-                <Card className="border border-dark" style={{ backgroundColor: 'silver' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}><h5>Commander</h5></Card.Header>
+                <Card className="m-1 infocard">
+                  <Card.Header className="header"><h5>Commander</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>ZucchiniZhang</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
               <Col>
-                <Card className="border border-dark" style={{ backgroundColor: 'silver' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}><h5>Acting Commander</h5></Card.Header>
+                <Card className="m-1 infocard">
+                  <Card.Header className="header"><h5>Acting Commander</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>7R06D0R</Card.Text>
                   </Card.Body>
@@ -45,78 +45,77 @@ export class RosterView extends React.Component {
               </Col>
             </Row>
           </Card>
-          <Card className="mt-4 border border-info" style={{ backgroundColor: 'darkgrey' }}>
-            <Card.Header className="border border-dark" style={{ backgroundColor: 'grey' }}><h3>Junior Ranks</h3></Card.Header>
+
+          <Card className="mt-4">
+            <Card.Header className="header border border-dark"><h3>Junior Ranks</h3></Card.Header>
             <Row noGutters={true}>
-              <Col>
-                <Card className="border border-dark" style={{ backgroundColor: 'silver' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}><h5>Ensign</h5></Card.Header>
+              <Col xl={2} md={3}>
+                <Card className="m-1 infocard">
+                  <Card.Header className="header"><h5>Ensign</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>makewiththebits</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
-              <Col>
-                <Card className="border border-dark" style={{ backgroundColor: 'silver' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}><h5>Ensign</h5></Card.Header>
+              <Col xl={2} md={3}>
+                <Card className="m-1 infocard">
+                  <Card.Header className="header"><h5>Ensign</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>Bootyout</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
-              <Col>
-                <Card className="border border-dark" style={{ backgroundColor: 'silver' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}><h5>Ensign</h5></Card.Header>
+              <Col xl={2} md={3}>
+                <Card className="m-1 infocard">
+                  <Card.Header className="header"><h5>Ensign</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>GravityScientist</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
-              <Col>
-                <Card className="border border-dark" style={{ backgroundColor: 'silver' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}><h5>Ensign</h5></Card.Header>
+              <Col xl={2} md={3}>
+                <Card className="m-1 infocard">
+                  <Card.Header className="header"><h5>Ensign</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>TrashbagMckee</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
-              <Col>
-                <Card className="border border-dark" style={{ backgroundColor: 'silver' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}><h5>Ensign</h5></Card.Header>
+              <Col xl={2} md={3}>
+                <Card className="m-1 infocard">
+                  <Card.Header className="header"><h5>Ensign</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>kingbudha</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
-              <Col>
-                <Card className="border border-dark" style={{ backgroundColor: 'silver' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}><h5>Ensign</h5></Card.Header>
+              <Col xl={2} md={3}>
+                <Card className="m-1 infocard">
+                  <Card.Header className="header"><h5>Ensign</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>Tbster</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
-            </Row>
-            <Row noGutters={true}>
-              <Col>
-                <Card className="border border-dark" style={{ backgroundColor: 'silver' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}><h5>Ensign</h5></Card.Header>
+              <Col xl={2} md={3}>
+                <Card className="m-1 infocard">
+                  <Card.Header className="header"><h5>Ensign</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>slippery_pickle</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
-              <Col>
-                <Card className="border border-dark" style={{ backgroundColor: 'silver' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}><h5>Ensign</h5></Card.Header>
+              <Col xl={2} md={3}>
+                <Card className="m-1 infocard">
+                  <Card.Header className="header"><h5>Ensign</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>zander825</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
-              <Col>
-                <Card className="border border-dark" style={{ backgroundColor: 'silver' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}><h5>Ensign</h5></Card.Header>
+              <Col xl={2} md={3}>
+                <Card className="m-1 infocard">
+                  <Card.Header className="header"><h5>Ensign</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>Mikecrook2112</Card.Text>
                   </Card.Body>
@@ -127,20 +126,21 @@ export class RosterView extends React.Component {
               <Col></Col>
             </Row>
           </Card>
-          <Card className="mt-4 border border-info" style={{ backgroundColor: 'darkgrey' }}>
-            <Card.Header className="border border-dark" style={{ backgroundColor: 'grey' }}><h3>Recruits</h3></Card.Header>
+
+          <Card className="mt-4">
+            <Card.Header className="header"><h3>Recruits</h3></Card.Header>
             <Row noGutters={true}>
-              <Col>
-                <Card className="border border-dark" style={{ backgroundColor: 'silver' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}>Recruit</Card.Header>
+              <Col xl={2} md={3}>
+                <Card className="m-1 infocard">
+                  <Card.Header className="header">Recruit</Card.Header>
                   <Card.Body>
                     <Card.Text>ILoveTheFedGov</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
-              <Col>
-                <Card className="border border-dark" style={{ backgroundColor: 'silver' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}>Recruit</Card.Header>
+              <Col xl={2} md={3}>
+                <Card className="m-1 infocard">
+                  <Card.Header className="header">Recruit</Card.Header>
                   <Card.Body>
                     <Card.Text>bxw93</Card.Text>
                   </Card.Body>

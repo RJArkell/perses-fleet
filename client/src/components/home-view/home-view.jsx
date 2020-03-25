@@ -11,14 +11,14 @@ export class HomeView extends React.Component {
   render() {
     return (
       <div className="home">
-        <Container fluid className="pb-5">
-          <Jumbotron className="text-center border border-info" style={{ backgroundColor: 'grey' }}>
+        <Container fluid className="p-5">
+          <Jumbotron className="text-center">
             <h1>Perses Fleet</h1>
           </Jumbotron>
           <Row className="mt-4">
             <Col xs={5}>
-              <Card style={{ backgroundColor: 'darkgrey' }} className="border border-info">
-                <Card.Header className="text-center" style={{ backgroundColor: 'grey' }}><h3>About Perses Fleet</h3></Card.Header>
+              <Card>
+                <Card.Header className="header text-center"><h3>About Perses Fleet</h3></Card.Header>
                 <Card.Body>
                   <Card.Text>
                     <p>I'm giving you a night call to tell you how I feel
@@ -48,8 +48,8 @@ export class HomeView extends React.Component {
                   </Card.Text>
                 </Card.Body>
               </Card>
-              <Card style={{ backgroundColor: 'darkgrey' }} className="border border-info mt-4">
-                <Card.Header className="text-center" style={{ backgroundColor: 'grey' }}><h3>Featured Screenshot</h3></Card.Header>
+              <Card className="mt-4">
+                <Card.Header className="header text-center"><h3>Featured Screenshot</h3></Card.Header>
                 <Card.Img src={require("/img/featured.png")} />
                 <Card.Text className="text-center">
                   Submitted by: C3SK
@@ -57,7 +57,7 @@ export class HomeView extends React.Component {
               </Card>
             </Col>
             <Col xs={7}>
-              <Carousel className="border border-info">
+              <Carousel>
                 <Carousel.Item>
                   <img
                     className="d-block w-100"
@@ -86,10 +86,10 @@ export class HomeView extends React.Component {
                   </Carousel.Caption>
                 </Carousel.Item>
               </Carousel>
-              <Card style={{ backgroundColor: 'darkgrey' }} className="border border-info mt-4">
-                <Card.Header className="text-center" style={{ backgroundColor: 'grey' }}><h3>Latest Galactic News</h3></Card.Header>
-                <Card style={{ backgroundColor: 'darkgrey' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}><h5>CIG - Roadmap Roundup - 20.03.2020</h5></Card.Header>
+              <Card className="mt-4">
+                <Card.Header className="header text-center"><h3>Latest Galactic News</h3></Card.Header>
+                <Card className="m-1 infocard">
+                  <Card.Header className="header"><h5>CIG - Roadmap Roundup - 20.03.2020</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>
                       <p>This week's Roadmap Roundup is now up. Updated features include Klescher Automated Prison, Prison Missions, and New Babbage Landing Zone Interiors.</p>
@@ -97,8 +97,8 @@ export class HomeView extends React.Component {
                     </Card.Text>
                   </Card.Body>
                 </Card>
-                <Card style={{ backgroundColor: 'darkgrey' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}><h5>CIG - New Inside Star Citizen Video - 18.03.2020</h5></Card.Header>
+                <Card className="m-1 infocard">
+                  <Card.Header className="header"><h5>CIG - New Inside Star Citizen Video - 18.03.2020</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>
                       <p>Inside Star Citizen: Personal Systems - You want UI updates? You want another sprint report?

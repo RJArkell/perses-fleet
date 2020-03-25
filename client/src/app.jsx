@@ -11,13 +11,19 @@ export class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="main min-vh-100 background" style={{ backgroundImage: 'url(' + require("/img/background.png") + ')' }}>
-          <Navbar path="/" className="border-bottom border-info" bg="dark" variant="dark" expand="md" sticky="top">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/roster">Roster</Nav.Link>
-            <Nav.Link href="/milestones">Milestones</Nav.Link>
-            <Nav.Link target="_blank" href="https://robertsspaceindustries.com/spectrum/community/PERSES">Forum</Nav.Link>
-            <Nav.Link target="_blank" href="https://robertsspaceindustries.com/orgs/PERSES">Enlist Now</Nav.Link>
+        <div className="main background">
+          <Navbar path="/" className="menubar" expand="md">
+            <Navbar.Brand href="#home"></Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav className="ml-auto">
+                <Nav.Link href="/" className="menulink">Main</Nav.Link>
+                <Nav.Link href="/roster" className="menulink">Roster</Nav.Link>
+                <Nav.Link href="/milestones" className="menulink">Milestones</Nav.Link>
+                <Nav.Link target="_blank" href="https://robertsspaceindustries.com/spectrum/community/PERSES" className="menulink">Forum</Nav.Link>
+                <Nav.Link target="_blank" href="https://robertsspaceindustries.com/orgs/PERSES" className="menulink">Enlist Now</Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
           </Navbar>
           <Route exact path="/" component={HomeView} />
           <Route path="/milestones" component={MilestoneView} />

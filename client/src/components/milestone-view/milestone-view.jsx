@@ -10,14 +10,14 @@ export class MilestoneView extends React.Component {
   render() {
     return (
       <div className="milestones">
-        <Container fluid className="pb-5 text-center" >
-          <Card className="mt-4 mx-5 border border-info" style={{ backgroundColor: 'grey' }}>
-            <Card.Header className="border border-dark"><h3>Current Objective</h3></Card.Header>
-            <Row noGutters={true}>
+        <Container fluid className="p-5 text-center" >
+          <Card className="mx-5">
+            <Card.Header className="header"><h3>Current Objective</h3></Card.Header>
+            <Row noGutters={true} className="m-1">
               <Col>
-                <Card className="h-100 border border-dark" style={{ backgroundColor: 'silver' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}><h5>2nd DRAKE Caterpillar</h5></Card.Header>
-                  <Card.Body >
+                <Card className="h-100 infocard">
+                  <Card.Header className="header"><h5>2nd DRAKE Caterpillar</h5></Card.Header>
+                  <Card.Body>
                     <Card.Text>We are currently working towards buying a second Caterpillar to increase our trading capacity.</Card.Text>
                     <ProgressBar striped variant="info" animated now={65} />
                     <Card.Text>
@@ -30,18 +30,18 @@ export class MilestoneView extends React.Component {
                 </Card>
               </Col>
               <Col>
-                <Card className="h-100 border border-dark" style={{ backgroundColor: 'silver' }}>
+                <Card>
                   <Card.Img src={require("/img/milestone1.png")} />
                 </Card>
               </Col>
             </Row>
           </Card>
-          <Card className="border border-info mt-4" style={{ backgroundColor: 'darkgrey' }}>
-            <Card.Header className="border border-dark" style={{ backgroundColor: 'grey' }}><h3>Completed Objectives</h3></Card.Header>
+          <Card className="mt-5">
+            <Card.Header className="header"><h3>Completed Objectives</h3></Card.Header>
             <Row noGutters={true}>
               <Col>
-                <Card className="border border-dark" style={{ backgroundColor: 'silver' }}>
-                  <Card.Header style={{ backgroundColor: 'grey' }}><h5>1st DRAKE Caterpillar</h5></Card.Header>
+                <Card className="m-1 infocard">
+                  <Card.Header className="header"><h5>1st DRAKE Caterpillar</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>We have obtained our first Caterpillar to begin ramping up our trade operations.</Card.Text>
                     <ProgressBar striped variant="success" now={100} />

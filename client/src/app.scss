@@ -1,8 +1,29 @@
 .background {
+  background-image: url('/img/background.jpg');
+  min-height: 100vh;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.menubar {
+  background-color: rgba(22, 22, 26, 0.9);
+  border-bottom: 1px solid rgb(61, 175, 209);
+  box-shadow: 6px 8px 10px 0 rgba(61, 175, 209, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  
+}
+
+.menulink{
+  color: rgb(61, 175, 209);
+}
+
+.header {
+  background-color: rgba(22, 22, 26, 0.5);
+  color: rgb(61, 175, 209);
 }
 
 h1,
@@ -11,9 +32,36 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 500;
+  font-weight: 700;
 }
 
 * {
-  font-weight: 500;
+  font-weight: 700;
+}
+
+.jumbotron { 
+  background-color: rgba(22, 22, 26, 0.9);
+  color: rgb(61, 175, 209);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: -5px;
+  border: 1px solid rgb(61, 175, 209);
+  box-shadow: 6px 8px 10px 0 rgba(61, 175, 209, 0.4);
+}
+
+.carousel {
+  border: 1px solid rgb(61, 175, 209);
+  box-shadow: 6px 8px 10px 0 rgba(61, 175, 209, 0.4);
+  color: rgb(61, 175, 209);
+}
+
+.card {
+  background-color: rgba(47, 49, 65, 0.95);
+  color: rgb(61, 175, 209);
+  border: 1px solid rgb(61, 175, 209);
+  box-shadow: 6px 8px 10px 0 rgba(61, 175, 209, 0.4);
+}
+
+.infocard {
+  background-color: rgba(47, 49, 65, 0.4);
 }
