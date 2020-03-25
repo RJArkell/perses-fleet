@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
+const sslRedirect = require('heroku-ssl-redirect');
 path = require("path");
+
+//Enable Heroku SSL
+app.use(sslRedirect());
 
 //Serve React App
 app.use(express.static(path.join(__dirname, "client", 'dist')));

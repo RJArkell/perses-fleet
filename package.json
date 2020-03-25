@@ -1,7 +1,7 @@
 {
-  "name": "perses-fleet",
-  "version": "1.0.0",
-  "description": "Perses Fleet",
+  "name": "perses-fleet-server",
+  "version": "1.0.1",
+  "description": "Backend of Perses Fleet website",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/RJArkell/perses-fleet-dev#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "heroku-ssl-redirect": "0.0.4"
   }
 }
