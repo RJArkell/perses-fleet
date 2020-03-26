@@ -1,3 +1,16 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+* {
+  font-weight: 700;
+}
+
 .background {
   background-image: linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ),
   url('/img/background.jpg');
@@ -26,27 +39,29 @@
   color: rgb(61, 175, 209);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
+.missionpatch {
+  width:150px;
+  height:150px;
+  border-radius: 50%;
+  border: 1px solid rgb(61, 175, 209);
+  box-shadow: 2px 4px 4px 0 rgba(61, 175, 209, 0.4);
 }
 
-* {
-  font-weight: 700;
+.jumboh1{
+  font-size: 400%
 }
 
 .jumbotron { 
   background-color: rgba(22, 22, 26, 0.9);
   color: rgb(61, 175, 209);
-  padding-top: 40px;
-  padding-bottom: 40px;
-  margin-top: -5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   border: 1px solid rgb(61, 175, 209);
   box-shadow: 6px 8px 10px 0 rgba(61, 175, 209, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .carousel {

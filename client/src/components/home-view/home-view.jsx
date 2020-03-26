@@ -13,7 +13,9 @@ export class HomeView extends React.Component {
       <div className="home">
         <Container fluid className="p-5">
           <Jumbotron className="text-center">
-            <h1>Perses Fleet</h1>
+            <Row className="pr-5">
+              <h1 className="jumboh1 pr-5"><img className="missionpatch" src={require("/img/patch.png")}></img>    Perses Fleet</h1>
+            </Row>
           </Jumbotron>
           <Row className="mt-4">
             <Col xs={5}>
@@ -111,7 +113,7 @@ export class HomeView extends React.Component {
             </Col>
           </Row>
         </Container>
-      </div>
+      </div >
     );
   }
 }

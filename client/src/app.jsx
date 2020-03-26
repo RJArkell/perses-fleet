@@ -13,10 +13,12 @@ export class App extends React.Component {
       <BrowserRouter>
         <div className="main background">
           <Navbar path="/" className="menubar" expand="md">
-            <Navbar.Brand href="#home"></Navbar.Brand>
+            <Navbar.Brand href="/">
+              <h2 className="menulink pl-5">CSG-PERSES</h2>
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav className="ml-auto">
+              <Nav className="ml-auto pr-5">
                 <Nav.Link href="/" className="menulink">Main</Nav.Link>
                 <Nav.Link href="/roster" className="menulink">Roster</Nav.Link>
                 <Nav.Link href="/milestones" className="menulink">Milestones</Nav.Link>
