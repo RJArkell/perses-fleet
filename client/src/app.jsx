@@ -14,7 +14,7 @@ export class App extends React.Component {
         <div className="main background">
           <Navbar path="/" className="menubar" expand="md">
             <Navbar.Brand href="/">
-              <h2 className="menulink pl-5">CSG-PERSES</h2>
+              <h2 className="menuheader pl-5"><img className="navlogo pr-2" src={require("/img/navlogo.png")}></img>CSG-PERSES</h2>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">

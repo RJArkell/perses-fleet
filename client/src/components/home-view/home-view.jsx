@@ -1,7 +1,6 @@
 import React from "react";
 import "./home-view.scss";
 import Container from "react-bootstrap/Container";
-import Jumbotron from 'react-bootstrap/Jumbotron';
 import Carousel from 'react-bootstrap/Carousel'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -12,12 +11,7 @@ export class HomeView extends React.Component {
     return (
       <div className="home">
         <Container fluid className="p-5">
-          <Jumbotron className="text-center">
-            <Row className="pr-5">
-              <h1 className="jumboh1 pr-5"><img className="missionpatch" src={require("/img/patch.png")}></img>    Perses Fleet</h1>
-            </Row>
-          </Jumbotron>
-          <Row className="mt-4">
+          <Row>
             <Col xs={5}>
               <Card>
                 <Card.Header className="header text-center"><h3>About Perses Fleet</h3></Card.Header>
@@ -89,9 +83,19 @@ export class HomeView extends React.Component {
                 </Carousel.Item>
               </Carousel>
               <Card className="mt-4">
-                <Card.Header className="header text-center"><h3>Latest Galactic News</h3></Card.Header>
+                <Card.Header className="header text-center"><h3>Fleet News</h3></Card.Header>
                 <Card className="m-1 infocard">
-                  <Card.Header className="header"><h5>CIG - Roadmap Roundup - 20.03.2020</h5></Card.Header>
+                  <Card.Header className="infoheader"><h5>CIG - Roadmap Roundup - 27.03.2020</h5></Card.Header>
+                  <Card.Body>
+                    <Card.Text>
+                      <p>This week's Roadmap Roundup is now up. Changes to the roadmap include delays for Ship-to-Ship Docking and Ship-to-Station Docking, Security Systems,
+                      and Space Station Cargo Decks.</p>
+                      <a href="https://robertsspaceindustries.com/spectrum/community/SC/forum/3/thread/roadmap-roundup-march-27th-2020" target="blank">Read the thread</a>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+                <Card className="m-1 infocard">
+                  <Card.Header className="infoheader"><h5>CIG - Roadmap Roundup - 20.03.2020</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>
                       <p>This week's Roadmap Roundup is now up. Updated features include Klescher Automated Prison, Prison Missions, and New Babbage Landing Zone Interiors.</p>
@@ -100,7 +104,7 @@ export class HomeView extends React.Component {
                   </Card.Body>
                 </Card>
                 <Card className="m-1 infocard">
-                  <Card.Header className="header"><h5>CIG - New Inside Star Citizen Video - 18.03.2020</h5></Card.Header>
+                  <Card.Header className="infoheader"><h5>CIG - New Inside Star Citizen Video - 18.03.2020</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>
                       <p>Inside Star Citizen: Personal Systems - You want UI updates? You want another sprint report?

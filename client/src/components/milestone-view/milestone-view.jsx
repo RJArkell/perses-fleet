@@ -16,7 +16,7 @@ export class MilestoneView extends React.Component {
             <Row noGutters={true} className="m-1">
               <Col>
                 <Card className="h-100 infocard">
-                  <Card.Header className="header"><h5>2nd DRAKE Caterpillar</h5></Card.Header>
+                  <Card.Header className="infoheader"><h5>2nd DRAKE Caterpillar</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>We are currently working towards buying a second Caterpillar to increase our trading capacity.</Card.Text>
                     <ProgressBar striped variant="info" animated now={65} />
@@ -31,17 +31,17 @@ export class MilestoneView extends React.Component {
               </Col>
               <Col>
                 <Card>
-                  <Card.Img src={require("/img/milestone1.png")} />
+                  <Card.Img className="h-100" src={require("/img/milestone1.png")} />
                 </Card>
               </Col>
             </Row>
           </Card>
-          <Card className="mt-5">
+          <Card className="mt-4">
             <Card.Header className="header"><h3>Completed Objectives</h3></Card.Header>
             <Row noGutters={true}>
               <Col>
                 <Card className="m-1 infocard">
-                  <Card.Header className="header"><h5>1st DRAKE Caterpillar</h5></Card.Header>
+                  <Card.Header className="infoheader"><h5>1st DRAKE Caterpillar</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>We have obtained our first Caterpillar to begin ramping up our trade operations.</Card.Text>
                     <ProgressBar striped variant="success" now={100} />

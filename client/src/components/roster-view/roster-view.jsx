@@ -13,7 +13,7 @@ export class RosterView extends React.Component {
           <Card>
             <Card.Header className="header"><h3>Command Staff</h3></Card.Header>
             <Card className="m-1 infocard">
-              <Card.Header className="header"><h5>Admiral</h5></Card.Header>
+              <Card.Header className="infoheader"><h5>Admiral</h5></Card.Header>
               <Card.Body>
                 <Card.Text>C3SK</Card.Text>
               </Card.Body>
@@ -21,7 +21,7 @@ export class RosterView extends React.Component {
             <Row noGutters={true}>
               <Col>
                 <Card className="m-1 infocard">
-                  <Card.Header className="header"><h5>Commander</h5></Card.Header>
+                  <Card.Header className="infoheader"><h5>Commander</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>CursedEinherjar</Card.Text>
                   </Card.Body>
@@ -29,7 +29,7 @@ export class RosterView extends React.Component {
               </Col>
               <Col>
                 <Card className="m-1 infocard">
-                  <Card.Header className="header"><h5>Commander</h5></Card.Header>
+                  <Card.Header className="infoheader"><h5>Commander</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>ZucchiniZhang</Card.Text>
                   </Card.Body>
@@ -37,7 +37,7 @@ export class RosterView extends React.Component {
               </Col>
               <Col>
                 <Card className="m-1 infocard">
-                  <Card.Header className="header"><h5>Acting Commander</h5></Card.Header>
+                  <Card.Header className="infoheader"><h5>Acting Commander</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>7R06D0R</Card.Text>
                   </Card.Body>
@@ -51,7 +51,7 @@ export class RosterView extends React.Component {
             <Row noGutters={true}>
               <Col xl={2} md={3}>
                 <Card className="m-1 infocard">
-                  <Card.Header className="header"><h5>Ensign</h5></Card.Header>
+                  <Card.Header className="infoheader"><h5>Ensign</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>makewiththebits</Card.Text>
                   </Card.Body>
@@ -59,7 +59,7 @@ export class RosterView extends React.Component {
               </Col>
               <Col xl={2} md={3}>
                 <Card className="m-1 infocard">
-                  <Card.Header className="header"><h5>Ensign</h5></Card.Header>
+                  <Card.Header className="infoheader"><h5>Ensign</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>Bootyout</Card.Text>
                   </Card.Body>
@@ -67,7 +67,7 @@ export class RosterView extends React.Component {
               </Col>
               <Col xl={2} md={3}>
                 <Card className="m-1 infocard">
-                  <Card.Header className="header"><h5>Ensign</h5></Card.Header>
+                  <Card.Header className="infoheader"><h5>Ensign</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>GravityScientist</Card.Text>
                   </Card.Body>
@@ -75,7 +75,7 @@ export class RosterView extends React.Component {
               </Col>
               <Col xl={2} md={3}>
                 <Card className="m-1 infocard">
-                  <Card.Header className="header"><h5>Ensign</h5></Card.Header>
+                  <Card.Header className="infoheader"><h5>Ensign</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>TrashbagMckee</Card.Text>
                   </Card.Body>
@@ -83,7 +83,7 @@ export class RosterView extends React.Component {
               </Col>
               <Col xl={2} md={3}>
                 <Card className="m-1 infocard">
-                  <Card.Header className="header"><h5>Ensign</h5></Card.Header>
+                  <Card.Header className="infoheader"><h5>Ensign</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>kingbudha</Card.Text>
                   </Card.Body>
@@ -91,7 +91,7 @@ export class RosterView extends React.Component {
               </Col>
               <Col xl={2} md={3}>
                 <Card className="m-1 infocard">
-                  <Card.Header className="header"><h5>Ensign</h5></Card.Header>
+                  <Card.Header className="infoheader"><h5>Ensign</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>Tbster</Card.Text>
                   </Card.Body>
@@ -99,7 +99,7 @@ export class RosterView extends React.Component {
               </Col>
               <Col xl={2} md={3}>
                 <Card className="m-1 infocard">
-                  <Card.Header className="header"><h5>Ensign</h5></Card.Header>
+                  <Card.Header className="infoheader"><h5>Ensign</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>slippery_pickle</Card.Text>
                   </Card.Body>
@@ -107,7 +107,7 @@ export class RosterView extends React.Component {
               </Col>
               <Col xl={2} md={3}>
                 <Card className="m-1 infocard">
-                  <Card.Header className="header"><h5>Ensign</h5></Card.Header>
+                  <Card.Header className="infoheader"><h5>Ensign</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>zander825</Card.Text>
                   </Card.Body>
@@ -115,7 +115,7 @@ export class RosterView extends React.Component {
               </Col>
               <Col xl={2} md={3}>
                 <Card className="m-1 infocard">
-                  <Card.Header className="header"><h5>Ensign</h5></Card.Header>
+                  <Card.Header className="infoheader"><h5>Ensign</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>Mikecrook2112</Card.Text>
                   </Card.Body>
@@ -132,7 +132,7 @@ export class RosterView extends React.Component {
             <Row noGutters={true}>
               <Col xl={2} md={3}>
                 <Card className="m-1 infocard">
-                  <Card.Header className="header">Recruit</Card.Header>
+                  <Card.Header className="infoheader">Recruit</Card.Header>
                   <Card.Body>
                     <Card.Text>ILoveTheFedGov</Card.Text>
                   </Card.Body>
@@ -140,7 +140,7 @@ export class RosterView extends React.Component {
               </Col>
               <Col xl={2} md={3}>
                 <Card className="m-1 infocard">
-                  <Card.Header className="header">Recruit</Card.Header>
+                  <Card.Header className="infoheader">Recruit</Card.Header>
                   <Card.Body>
                     <Card.Text>bxw93</Card.Text>
                   </Card.Body>
