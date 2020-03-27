@@ -132,7 +132,7 @@ export class RosterView extends React.Component {
             <Row noGutters={true}>
               <Col xl={2} md={3}>
                 <Card className="m-1 infocard h-100">
-                  <Card.Header className="infoheader">Recruit</Card.Header>
+                  <Card.Header className="infoheader"><h5>Recruit</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>ILoveTheFedGov</Card.Text>
                   </Card.Body>
@@ -140,7 +140,7 @@ export class RosterView extends React.Component {
               </Col>
               <Col xl={2} md={3}>
                 <Card className="m-1 infocard h-100">
-                  <Card.Header className="infoheader">Recruit</Card.Header>
+                  <Card.Header className="infoheader"><h5>Recruit</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>bxw93</Card.Text>
                   </Card.Body>
