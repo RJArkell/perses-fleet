@@ -85,6 +85,15 @@ export class HomeView extends React.Component {
               <Card className="mt-4">
                 <Card.Header className="header text-center"><h3>Fleet News</h3></Card.Header>
                 <Card className="m-1 infocard">
+                  <Card.Header className="infoheader"><h5>CIG - Roadmap Roundup - 03.04.2020</h5></Card.Header>
+                  <Card.Body>
+                    <Card.Text>
+                      <p>This week's Roadmap Roundup is now up. Includes updates on GrimHEX and upcoming ships as well as new info on Space Station Refinery Decks.</p>
+                      <a href="https://robertsspaceindustries.com/spectrum/community/SC/forum/3/thread/roadmap-roundup-april-3rd-2020" target="blank">Read the thread</a>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+                <Card className="m-1 infocard">
                   <Card.Header className="infoheader"><h5>CIG - Roadmap Roundup - 27.03.2020</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>
