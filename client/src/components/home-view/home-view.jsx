@@ -33,14 +33,6 @@ export class HomeView extends React.Component {
                     It's hard to explain
                     They're talking about you, boy
                     But you're still the same</p>
-                    <p>I'm giving you a night call to tell you how I feel
-                    (We'll go all, all, all night long)
-                    I want to drive you through the night, down the hills
-                    (We'll go all, all, all night long)
-                    I'm gonna tell you something you don't want to hear
-                    (We'll go all, all, all night long)
-                    I'm gonna show you where it's dark, but have no fear
-                    (We'll go all, all, all night long)</p>
                   </Card.Text>
                 </Card.Body>
               </Card>
