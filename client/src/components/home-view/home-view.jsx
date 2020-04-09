@@ -77,6 +77,15 @@ export class HomeView extends React.Component {
               <Card className="mt-4">
                 <Card.Header className="header text-center"><h3>Fleet News</h3></Card.Header>
                 <Card className="m-1 infocard">
+                  <Card.Header className="infoheader"><h5>CIG - Star Citizen: Pillar Talk Video - 06.04.2020</h5></Card.Header>
+                  <Card.Body>
+                    <Card.Text>
+                      <p>Join Chris Roberts, Sean Tracy, Paul Reindell, and Eric Kieron Davis as they discuss the new content and tech debuting in Star Citizen Alpha 3.9.</p>
+                      <a href="https://www.youtube.com/watch?v=tcMtPKSe2g4&feature=emb_title" target="blank">Watch the video</a>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+                <Card className="m-1 infocard">
                   <Card.Header className="infoheader"><h5>CIG - Roadmap Roundup - 03.04.2020</h5></Card.Header>
                   <Card.Body>
                     <Card.Text>
