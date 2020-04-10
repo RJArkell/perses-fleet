@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import HomeView from "./components/home-view/home-view";
+import LoginView from "./components/login-view/login-view";
 import RosterView from "./components/roster-view/roster-view";
 import MilestoneView from "./components/milestone-view/milestone-view";
 
@@ -20,6 +21,7 @@ export class App extends React.Component {
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="ml-auto pr-5">
                 <Nav.Link href="/" className="menulink">Main</Nav.Link>
+                <Nav.Link href="/login" className="menulink">Login</Nav.Link>
                 <Nav.Link href="/roster" className="menulink">Roster</Nav.Link>
                 <Nav.Link href="/milestones" className="menulink">Milestones</Nav.Link>
                 <Nav.Link target="_blank" href="https://robertsspaceindustries.com/spectrum/community/PERSES" className="menulink">Forum</Nav.Link>
@@ -29,6 +31,7 @@ export class App extends React.Component {
           </Navbar>
           <Route exact path="/" component={HomeView} />
           <Route path="/milestones" component={MilestoneView} />
+          <Route path="/login" component={LoginView} />
           <Route path="/roster" component={RosterView} />
         </div>
       </BrowserRouter >
