@@ -11,7 +11,7 @@ export class MilestoneView extends React.Component {
     return (
       <div className="milestones">
         <Container fluid className="p-5 text-center" >
-          <Card className="mx-5">
+          <Card>
             <Card.Header className="header"><h3>Current Objective</h3></Card.Header>
             <Row noGutters={true} className="m-1">
               <Col>

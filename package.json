@@ -1,6 +1,6 @@
 {
   "name": "perses-fleet-server",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Backend of Perses Fleet website",
   "main": "index.js",
   "scripts": {

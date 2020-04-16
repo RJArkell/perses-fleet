@@ -11,9 +11,88 @@ export class HomeView extends React.Component {
     return (
       <div className="home">
         <Container fluid className="p-5">
-          <Row>
-            <Col xs={5}>
-              <Card>
+          <Carousel className="vh-30">
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={require("/img/marine2.png")}
+              />
+              <Carousel.Caption>
+                <h3>Explore new worlds</h3>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item >
+              <img
+                className="d-block w-100"
+                src={require("/img/mining2.png")}
+              />
+              <Carousel.Caption>
+                <h3>Build your fortune</h3>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={require("/img/combat2.png")}
+              />
+              <Carousel.Caption>
+                <h3>Join the fight</h3>
+              </Carousel.Caption>
+            </Carousel.Item>
+          </Carousel>
+          <Card className="mt-4">
+            <Card.Header className="header text-center"><h3>Fleet News</h3></Card.Header>
+            <Card className="m-1 infocard">
+              <Card.Header className="infoheader"><h5>CIG - Star Citizen: Pillar Talk Video - 06.04.2020</h5></Card.Header>
+              <Card.Body>
+                <Card.Text>
+                  <p>Join Chris Roberts, Sean Tracy, Paul Reindell, and Eric Kieron Davis as they discuss the new content and tech debuting in Star Citizen Alpha 3.9.</p>
+                  <a href="https://www.youtube.com/watch?v=tcMtPKSe2g4&feature=emb_title" target="blank">Watch the video</a>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+            <Card className="m-1 infocard">
+              <Card.Header className="infoheader"><h5>CIG - Roadmap Roundup - 03.04.2020</h5></Card.Header>
+              <Card.Body>
+                <Card.Text>
+                  <p>This week's Roadmap Roundup is now up. Includes updates on GrimHEX and upcoming ships as well as new info on Space Station Refinery Decks.</p>
+                  <a href="https://robertsspaceindustries.com/spectrum/community/SC/forum/3/thread/roadmap-roundup-april-3rd-2020" target="blank">Read the thread</a>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+            <Card className="m-1 infocard">
+              <Card.Header className="infoheader"><h5>CIG - Roadmap Roundup - 27.03.2020</h5></Card.Header>
+              <Card.Body>
+                <Card.Text>
+                  <p>This week's Roadmap Roundup is now up. Changes to the roadmap include delays for Ship-to-Ship Docking and Ship-to-Station Docking, Security Systems,
+                      and Space Station Cargo Decks.</p>
+                  <a href="https://robertsspaceindustries.com/spectrum/community/SC/forum/3/thread/roadmap-roundup-march-27th-2020" target="blank">Read the thread</a>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+            <Card className="m-1 infocard">
+              <Card.Header className="infoheader"><h5>CIG - Roadmap Roundup - 20.03.2020</h5></Card.Header>
+              <Card.Body>
+                <Card.Text>
+                  <p>This week's Roadmap Roundup is now up. Updated features include Klescher Automated Prison, Prison Missions, and New Babbage Landing Zone Interiors.</p>
+                  <a href="https://robertsspaceindustries.com/spectrum/community/SC/forum/3/thread/roadmap-roundup-march-20th-2020" target="blank">Read the thread</a>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+            <Card className="m-1 infocard">
+              <Card.Header className="infoheader"><h5>CIG - New Inside Star Citizen Video - 18.03.2020</h5></Card.Header>
+              <Card.Body>
+                <Card.Text>
+                  <p>Inside Star Citizen: Personal Systems - You want UI updates? You want another sprint report?
+                      Well, friends, you're in luck. We have both, in this week's episode.</p>
+                  <a href="https://www.youtube.com/watch?v=qSZiOxyVGmI&feature=emb_title" target="blank">Watch the video</a>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Card>
+          <Row className="mt-4">
+            <Col xs={4}>
+              <Card className="h-100">
                 <Card.Header className="header text-center"><h3>About Perses Fleet</h3></Card.Header>
                 <Card.Body>
                   <Card.Text>
@@ -36,93 +115,14 @@ export class HomeView extends React.Component {
                   </Card.Text>
                 </Card.Body>
               </Card>
-              <Card className="mt-4">
+            </Col>
+            <Col xs={8}>
+              <Card className="h-100">
                 <Card.Header className="header text-center"><h3>Featured Screenshot</h3></Card.Header>
-                <Card.Img src={require("/img/featured.png")} />
+                <Card.Img className="h-100" src={require("/img/featured.png")} />
                 <Card.Text className="text-center">
                   Submitted by: C3SK
                 </Card.Text>
-              </Card>
-            </Col>
-            <Col xs={7}>
-              <Carousel>
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100"
-                    src={require("/img/marine.png")}
-                  />
-                  <Carousel.Caption>
-                    <h3>Explore new worlds</h3>
-                  </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item >
-                  <img
-                    className="d-block w-100"
-                    src={require("/img/mining.png")}
-                  />
-                  <Carousel.Caption>
-                    <h3>Build your fortune</h3>
-                  </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100"
-                    src={require("/img/combat.png")}
-                  />
-                  <Carousel.Caption>
-                    <h3>Join the fight</h3>
-                  </Carousel.Caption>
-                </Carousel.Item>
-              </Carousel>
-              <Card className="mt-4">
-                <Card.Header className="header text-center"><h3>Fleet News</h3></Card.Header>
-                <Card className="m-1 infocard">
-                  <Card.Header className="infoheader"><h5>CIG - Star Citizen: Pillar Talk Video - 06.04.2020</h5></Card.Header>
-                  <Card.Body>
-                    <Card.Text>
-                      <p>Join Chris Roberts, Sean Tracy, Paul Reindell, and Eric Kieron Davis as they discuss the new content and tech debuting in Star Citizen Alpha 3.9.</p>
-                      <a href="https://www.youtube.com/watch?v=tcMtPKSe2g4&feature=emb_title" target="blank">Watch the video</a>
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-                <Card className="m-1 infocard">
-                  <Card.Header className="infoheader"><h5>CIG - Roadmap Roundup - 03.04.2020</h5></Card.Header>
-                  <Card.Body>
-                    <Card.Text>
-                      <p>This week's Roadmap Roundup is now up. Includes updates on GrimHEX and upcoming ships as well as new info on Space Station Refinery Decks.</p>
-                      <a href="https://robertsspaceindustries.com/spectrum/community/SC/forum/3/thread/roadmap-roundup-april-3rd-2020" target="blank">Read the thread</a>
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-                <Card className="m-1 infocard">
-                  <Card.Header className="infoheader"><h5>CIG - Roadmap Roundup - 27.03.2020</h5></Card.Header>
-                  <Card.Body>
-                    <Card.Text>
-                      <p>This week's Roadmap Roundup is now up. Changes to the roadmap include delays for Ship-to-Ship Docking and Ship-to-Station Docking, Security Systems,
-                      and Space Station Cargo Decks.</p>
-                      <a href="https://robertsspaceindustries.com/spectrum/community/SC/forum/3/thread/roadmap-roundup-march-27th-2020" target="blank">Read the thread</a>
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-                <Card className="m-1 infocard">
-                  <Card.Header className="infoheader"><h5>CIG - Roadmap Roundup - 20.03.2020</h5></Card.Header>
-                  <Card.Body>
-                    <Card.Text>
-                      <p>This week's Roadmap Roundup is now up. Updated features include Klescher Automated Prison, Prison Missions, and New Babbage Landing Zone Interiors.</p>
-                      <a href="https://robertsspaceindustries.com/spectrum/community/SC/forum/3/thread/roadmap-roundup-march-20th-2020" target="blank">Read the thread</a>
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-                <Card className="m-1 infocard">
-                  <Card.Header className="infoheader"><h5>CIG - New Inside Star Citizen Video - 18.03.2020</h5></Card.Header>
-                  <Card.Body>
-                    <Card.Text>
-                      <p>Inside Star Citizen: Personal Systems - You want UI updates? You want another sprint report?
-                      Well, friends, you're in luck. We have both, in this week's episode.</p>
-                      <a href="https://www.youtube.com/watch?v=qSZiOxyVGmI&feature=emb_title" target="blank">Watch the video</a>
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
               </Card>
             </Col>
           </Row>
