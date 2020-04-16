@@ -91,7 +91,7 @@ export class HomeView extends React.Component {
             </Card>
           </Card>
           <Row className="mt-4">
-            <Col xs={4}>
+            <Col>
               <Card className="h-100">
                 <Card.Header className="header text-center"><h3>About Perses Fleet</h3></Card.Header>
                 <Card.Body>
@@ -116,7 +116,7 @@ export class HomeView extends React.Component {
                 </Card.Body>
               </Card>
             </Col>
-            <Col xs={8}>
+            <Col>
               <Card className="h-100">
                 <Card.Header className="header text-center"><h3>Featured Screenshot</h3></Card.Header>
                 <Card.Img className="h-100" src={require("/img/featured.png")} />

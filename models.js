@@ -3,9 +3,17 @@ const bcrypt = require('bcrypt');
 
 //Schema for users
 var userSchema = mongoose.Schema({
+  _id: String,
   Username: { type: String, required: true },
   Password: { type: String, required: true },
   Email: { type: String, required: true },
+});
+
+//Schema for news
+var newsSchema = mongoose.Schema({
+  _id: String,
+  Title: { type: String, required: true },
+  Body: { type: String, required: true },
 });
 
 //Bcrypt password encryption
@@ -19,6 +27,8 @@ userSchema.methods.validatePassword = function (password) {
 
 //Schema models
 var User = mongoose.model('User', userSchema);
+var News = mongoose.model('News', newsSchema);
 
 //Export models
 module.exports.User = User;
+module.exports.News = News;
