@@ -1,5 +1,6 @@
 import React from "react";
 import "./app.scss";
+import axios from "axios";
 import { BrowserRouter, Route } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -9,7 +10,23 @@ import RosterView from "./components/roster-view/roster-view";
 import MilestoneView from "./components/milestone-view/milestone-view";
 
 export class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
+
+  getNewsposts() {
+    axios.get("https://perses-fleet.herokuapp.com/api/news")
+      .then(res => {
+        this.props.setNewsposts(res.data);
+      })
+      .catch(function (err) {
+        console.log('Error: ' + err);
+      });
+  }
+
   render() {
+    let { newsposts } = this.props;
     return (
       <BrowserRouter>
         <div className="main background">
@@ -21,15 +38,15 @@ export class App extends React.Component {
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="ml-auto pr-5">
                 <Nav.Link href="/" className="menulink">Main</Nav.Link>
-                <Nav.Link href="/login" className="menulink">Login</Nav.Link>
                 <Nav.Link href="/roster" className="menulink">Roster</Nav.Link>
                 <Nav.Link href="/milestones" className="menulink">Milestones</Nav.Link>
                 <Nav.Link target="_blank" href="https://robertsspaceindustries.com/spectrum/community/PERSES" className="menulink">Forum</Nav.Link>
                 <Nav.Link target="_blank" href="https://robertsspaceindustries.com/orgs/PERSES" className="menulink">Enlist Now</Nav.Link>
+                <Nav.Link href="/login" className="menulink">Login</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
-          <Route exact path="/" component={HomeView} />
+          <Route exact path="/" render={() => <HomeView newsposts={newsposts} />} />
           <Route path="/milestones" component={MilestoneView} />
           <Route path="/login" component={LoginView} />
           <Route path="/roster" component={RosterView} />

@@ -5,36 +5,32 @@ import Carousel from 'react-bootstrap/Carousel'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
+import { NewsCard } from "/components/news-card/news-card";
 
 export class HomeView extends React.Component {
   render() {
+    let { newsposts } = this.props;
     return (
       <div className="home">
         <Container fluid className="p-5">
-          <Carousel className="vh-30">
+          <Carousel>
             <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={require("/img/marine2.png")}
-              />
+              <img className="d-block w-100"
+                src={require("/img/marine2.png")} />
               <Carousel.Caption>
                 <h3>Explore new worlds</h3>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item >
-              <img
-                className="d-block w-100"
-                src={require("/img/mining2.png")}
-              />
+              <img className="d-block w-100"
+                src={require("/img/mining2.png")} />
               <Carousel.Caption>
                 <h3>Build your fortune</h3>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={require("/img/combat2.png")}
-              />
+              <img className="d-block w-100"
+                src={require("/img/combat2.png")} />
               <Carousel.Caption>
                 <h3>Join the fight</h3>
               </Carousel.Caption>
@@ -65,7 +61,7 @@ export class HomeView extends React.Component {
               <Card.Body>
                 <Card.Text>
                   <p>This week's Roadmap Roundup is now up. Changes to the roadmap include delays for Ship-to-Ship Docking and Ship-to-Station Docking, Security Systems,
-                      and Space Station Cargo Decks.</p>
+        and Space Station Cargo Decks.</p>
                   <a href="https://robertsspaceindustries.com/spectrum/community/SC/forum/3/thread/roadmap-roundup-march-27th-2020" target="blank">Read the thread</a>
                 </Card.Text>
               </Card.Body>
@@ -84,7 +80,7 @@ export class HomeView extends React.Component {
               <Card.Body>
                 <Card.Text>
                   <p>Inside Star Citizen: Personal Systems - You want UI updates? You want another sprint report?
-                      Well, friends, you're in luck. We have both, in this week's episode.</p>
+        Well, friends, you're in luck. We have both, in this week's episode.</p>
                   <a href="https://www.youtube.com/watch?v=qSZiOxyVGmI&feature=emb_title" target="blank">Watch the video</a>
                 </Card.Text>
               </Card.Body>
@@ -96,22 +92,6 @@ export class HomeView extends React.Component {
                 <Card.Header className="header text-center"><h3>About Perses Fleet</h3></Card.Header>
                 <Card.Body>
                   <Card.Text>
-                    <p>I'm giving you a night call to tell you how I feel
-                    (We'll go all, all, all night long)
-                    I want to drive you through the night, down the hills
-                    (We'll go all, all, all night long)
-                    I'm gonna tell you something you don't want to hear
-                    (We'll go all, all, all night long)
-                    I'm gonna show you where it's dark, but have no fear
-                    (We'll go all, all, all night long)</p>
-                    <p>There's something inside you
-                    It's hard to explain
-                    They're talking about you, boy
-                    But you're still the same
-                    There's something inside you
-                    It's hard to explain
-                    They're talking about you, boy
-                    But you're still the same</p>
                   </Card.Text>
                 </Card.Body>
               </Card>

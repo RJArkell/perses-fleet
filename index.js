@@ -11,7 +11,8 @@ const express = require('express'),
 require('./passport');
 
 //Imported models
-const Users = Models.User;
+const Users = Models.User,
+  Newsposts = Models.Newspost;
 
 mongoose.connect('mongodb+srv://Admin:reaver3@arnketel-69akm.azure.mongodb.net/PersesFleet?retryWrites=true&w=majority',
   { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true });
@@ -19,15 +20,28 @@ mongoose.connect('mongodb+srv://Admin:reaver3@arnketel-69akm.azure.mongodb.net/P
 //Enable Heroku SSL
 app.use(sslRedirect());
 
+app.use(bodyParser.json());
+app.use(cors());
+
+app.get("/api/", (req, res) => {
+  res.send("Welcome to the home of Perses Fleet.");
+});
+
+//Get news posts
+app.get('/api/news', (req, res) => {
+  Newsposts.find()
+    .then((newsposts) => { res.status(201).json(newsposts) })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+    });
+});
+
 //Serve React App
 app.use(express.static(path.join(__dirname, "client", 'dist')));
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, "client", 'dist', 'index.html'));
 });
-
-app.use(bodyParser.json());
-app.use(cors());
-var auth = require('./auth')(app);
 
 //Error catching
 app.use((err, req, res, next) => {

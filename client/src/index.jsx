@@ -1,13 +1,13 @@
 import React from "react";
 import "./index.scss";
 import ReactDOM from "react-dom";
-import MainView from "./app";
+import App from "./app";
 
 
 class PersesFleet extends React.Component {
   render() {
     return (
-      <MainView />
+      <App />
     );
   }
 }
