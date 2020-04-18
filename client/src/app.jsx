@@ -15,10 +15,12 @@ export class App extends React.Component {
     this.state = {};
   }
 
-  getNewsposts() {
+  componentDidMount() {
     axios.get("https://perses-fleet.herokuapp.com/api/news")
       .then(res => {
-        this.props.setNewsposts(res.data);
+        this.setState({
+          newsposts: response.data
+        });
       })
       .catch(function (err) {
         console.log('Error: ' + err);
@@ -26,7 +28,7 @@ export class App extends React.Component {
   }
 
   render() {
-    let { newsposts } = this.props;
+    const { newsposts } = this.state;
     return (
       <BrowserRouter>
         <div className="main background">

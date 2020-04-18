@@ -37,6 +37,16 @@ app.get('/api/news', (req, res) => {
     });
 });
 
+//Get users
+app.get('/api/users', (req, res) => {
+  Users.find()
+    .then((users) => { res.status(201).json(users) })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+    });
+});
+
 //Serve React App
 app.use(express.static(path.join(__dirname, "client", 'dist')));
 app.get('/*', (req, res) => {
