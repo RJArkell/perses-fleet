@@ -12,7 +12,7 @@ require('./passport');
 
 //Imported models
 const Users = Models.User,
-  Newsposts = Models.Newspost;
+  News = Models.News;
 
 mongoose.connect('mongodb+srv://Admin:reaver3@arnketel-69akm.azure.mongodb.net/PersesFleet?retryWrites=true&w=majority',
   { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true });
@@ -29,8 +29,8 @@ app.get("/api/", (req, res) => {
 
 //Get news posts
 app.get('/api/news', (req, res) => {
-  Newsposts.find()
-    .then((newsposts) => { res.status(201).json(newsposts) })
+  News.find()
+    .then((news) => { res.status(201).json(news) })
     .catch((err) => {
       console.error(err);
       res.status(500).send("Error: " + err);

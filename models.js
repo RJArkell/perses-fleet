@@ -27,8 +27,8 @@ userSchema.methods.validatePassword = function (password) {
 
 //Schema models
 var User = mongoose.model('User', userSchema);
-var Newspost = mongoose.model('Newspost', newsSchema);
+var News = mongoose.model('News', newsSchema);
 
 //Export models
 module.exports.User = User;
-module.exports.Newspost = Newspost;
+module.exports.News = News;

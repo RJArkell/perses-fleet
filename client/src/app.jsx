@@ -18,9 +18,7 @@ export class App extends React.Component {
   componentDidMount() {
     axios.get("https://perses-fleet.herokuapp.com/api/news")
       .then(res => {
-        this.setState({
-          newsposts: response.data
-        });
+        this.setState({ news: res.data });
       })
       .catch(function (err) {
         console.log('Error: ' + err);
@@ -28,7 +26,6 @@ export class App extends React.Component {
   }
 
   render() {
-    const { newsposts } = this.state;
     return (
       <BrowserRouter>
         <div className="main background">
@@ -48,10 +45,10 @@ export class App extends React.Component {
               </Nav>
             </Navbar.Collapse>
           </Navbar>
-          <Route exact path="/" render={() => <HomeView newsposts={newsposts} />} />
-          <Route path="/milestones" component={MilestoneView} />
-          <Route path="/login" component={LoginView} />
-          <Route path="/roster" component={RosterView} />
+          <Route exact path="/" render={() => <HomeView />} />
+          <Route path="/milestones" render={() => <MilestoneView />} />
+          <Route path="/login" render={() => <LoginView />} />
+          <Route path="/roster" render={() => <RosterView />} />
         </div>
       </BrowserRouter >
     );
