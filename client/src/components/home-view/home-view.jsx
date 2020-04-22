@@ -5,9 +5,11 @@ import Carousel from 'react-bootstrap/Carousel'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
+import { NewsCard } from "../news-card/news-card";
 
 export class HomeView extends React.Component {
   render() {
+    const { news } = this.props;
     return (
       <div className="home">
         <Container fluid className="p-5">
@@ -36,6 +38,9 @@ export class HomeView extends React.Component {
           </Carousel>
           <Card className="mt-4">
             <Card.Header className="header text-center"><h3>Fleet News</h3></Card.Header>
+            {news.map(n => (
+              <NewsCard key={n._id} n={n} />
+            ))}
           </Card>
           <Row className="mt-4">
             <Col>

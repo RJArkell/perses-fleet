@@ -10,22 +10,35 @@ import RosterView from "./components/roster-view/roster-view";
 import MilestoneView from "./components/milestone-view/milestone-view";
 
 export class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      news: [],
+      users: []
+    };
   }
 
   componentDidMount() {
     axios.get("https://perses-fleet.herokuapp.com/api/news")
       .then(res => {
-        this.setState({ news: res.data });
+        const news = res.data;
+        this.setState({ news });
       })
-      .catch(function (err) {
+      .catch((err) => {
+        console.log('Error: ' + err);
+      });
+    axios.get("https://perses-fleet.herokuapp.com/api/users")
+      .then(res => {
+        const users = res.data;
+        this.setState({ users });
+      })
+      .catch((err) => {
         console.log('Error: ' + err);
       });
   }
 
   render() {
+    const { news, users } = this.state;
     return (
       <BrowserRouter>
         <div className="main background">
@@ -45,10 +58,10 @@ export class App extends React.Component {
               </Nav>
             </Navbar.Collapse>
           </Navbar>
-          <Route exact path="/" render={() => <HomeView />} />
+          <Route exact path="/" render={() => <HomeView news={news} />} />
           <Route path="/milestones" render={() => <MilestoneView />} />
           <Route path="/login" render={() => <LoginView />} />
-          <Route path="/roster" render={() => <RosterView />} />
+          <Route path="/roster" render={() => <RosterView users={users} />} />
         </div>
       </BrowserRouter >
     );

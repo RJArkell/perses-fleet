@@ -4,9 +4,11 @@ import Container from "react-bootstrap/Container";
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { UserCard } from "../user-card/user-card";
 
 export class RosterView extends React.Component {
   render() {
+    const { users } = this.props;
     return (
       <div className="roster">
         <Container fluid className="p-5 text-center" >
@@ -152,6 +154,11 @@ export class RosterView extends React.Component {
               <Col></Col>
             </Row>
           </Card>
+          <div>
+            {users.map(u => (
+              <UserCard key={u._id} u={u} />
+            ))}
+          </div>
         </Container >
       </div >
     );
