@@ -6,11 +6,15 @@ export class ProfileView extends React.Component {
   render() {
     const { u } = this.props;
     return (
-      <Container className="profile text-center" >
+      <Container className="profile" >
         <Card>
           <Card.Header className="header text-center"><h1>{u.Rank} {u.Username}</h1></Card.Header>
           <Card.Body>
-            <Card.Text></Card.Text>
+            <Card.Text>
+              <p>Status:</p><br />
+              <p>Commendations:</p><br />
+              <p>Commission/Command:</p>
+            </Card.Text>
           </Card.Body>
         </Card>
       </Container>
