@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 var userSchema = mongoose.Schema({
   _id: String,
   Username: { type: String, required: true },
+  Rank: { type: String, required: true },
   Password: { type: String, required: true },
   Email: { type: String, required: true }
 });
@@ -12,8 +13,11 @@ var userSchema = mongoose.Schema({
 //Schema for news
 var newsSchema = mongoose.Schema({
   _id: String,
-  Title: { type: String, required: true },
-  Body: { type: String, required: true }
+  Headline: { type: String, required: true },
+  Date: { type: String, required: true },
+  Body: { type: String, required: true },
+  LinkText: { type: String, required: true },
+  Link: { type: String, required: true }
 });
 
 //Bcrypt password encryption
