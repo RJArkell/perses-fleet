@@ -4,13 +4,12 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Card from 'react-bootstrap/Card';
-import './login-view.scss'
 
 export class LoginView extends React.Component {
   render() {
     return (
       <Container className="loginform text-center" >
-        <Card className="" >
+        <Card>
           <Card.Header className="header text-center"><h1>Restricted Area</h1></Card.Header>
           <Card.Body>
             <Card.Text>Please enter your credentials to continue.</Card.Text>
@@ -37,5 +36,3 @@ export class LoginView extends React.Component {
     );
   }
 }
-
-export default LoginView;

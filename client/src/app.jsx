@@ -5,9 +5,10 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import HomeView from "./components/home-view/home-view";
-import LoginView from "./components/login-view/login-view";
+import { LoginView } from "./components/login-view/login-view";
 import RosterView from "./components/roster-view/roster-view";
 import MilestoneView from "./components/milestone-view/milestone-view";
+import { ProfileView } from "./components/profile-view/profile-view";
 
 export class App extends React.Component {
   constructor(props) {
@@ -62,6 +63,7 @@ export class App extends React.Component {
           <Route path="/milestones" render={() => <MilestoneView />} />
           <Route path="/login" render={() => <LoginView />} />
           <Route path="/roster" render={() => <RosterView users={users} />} />
+          <Route path="/profile/:username" render={({ match }) => <ProfileView u={users.find(u => u.Username === match.params.username)} />} />
         </div>
       </BrowserRouter >
     );
