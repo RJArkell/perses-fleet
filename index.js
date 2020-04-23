@@ -23,6 +23,9 @@ app.use(sslRedirect());
 app.use(bodyParser.json());
 app.use(cors());
 
+//Authentication
+var auth = require('./auth')(app);
+
 app.get("/api/", (req, res) => {
   res.send("Welcome to the home of Perses Fleet.");
 });
@@ -38,7 +41,7 @@ app.get('/api/news', (req, res) => {
 });
 
 //Get users
-app.get('/api/users', (req, res) => {
+app.get('/api/users', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.find()
     .then((users) => { res.status(201).json(users) })
     .catch((err) => {
@@ -48,7 +51,7 @@ app.get('/api/users', (req, res) => {
 });
 
 //Get specific user
-app.get('/api/users/:Username', (req, res) => {
+app.get('/api/users/:Username', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.findOne({ Username: req.params.Username })
     .then((user) => { res.json(user) })
     .catch((err) => {
@@ -56,6 +59,31 @@ app.get('/api/users/:Username', (req, res) => {
       res.status(500).send("Error: " + err);
     });
 });
+
+//Edit user info
+app.put('/users/:Username', passport.authenticate('jwt', { session: false }), [
+  check('Password', "Password is required").not().isEmpty(),
+  check('Email', "Email does not appear to be valid").isEmail()],
+  (req, res) => {
+    var errors = validationResult(req);
+    if (!errors.isEmpty()) { return res.status(422).json({ errors: errors.array() }); }
+    var hashedPassword = Users.hashPassword(req.body.Password);
+    Users.findOneAndUpdate({ Username: req.params.Username }, {
+      $set: {
+        Password: hashedPassword,
+        Email: req.body.Email,
+      }
+    },
+      { new: true },
+      (err, updatedUser) => {
+        if (err) {
+          console.error(err);
+          res.status(500).send("Error: " + err);
+        } else {
+          res.json(updatedUser)
+        }
+      })
+  });
 
 //Serve React App
 app.use(express.static(path.join(__dirname, "client", 'dist')));
