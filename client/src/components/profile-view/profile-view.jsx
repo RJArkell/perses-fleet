@@ -8,7 +8,7 @@ export class ProfileView extends React.Component {
     return (
       <Container className="profile" >
         <Card>
-          <Card.Header className="header text-center"><h1>{u.Rank} {u.Username}</h1></Card.Header>
+          <Card.Header className="header text-center"><h3>{u.Rank} {u.Username}</h3></Card.Header>
           <Card.Body>
             <Card.Text>
               <p>Status:</p><br />

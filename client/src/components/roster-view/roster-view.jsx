@@ -9,7 +9,7 @@ export class RosterView extends React.Component {
   render() {
     const { users } = this.props;
     return (
-      <Container fluid className="p-5 text-center" >
+      <Container fluid className="p-5 text-center">
         <Card>
           <Card.Header className="header"><h3>Roster</h3></Card.Header>
           <Row noGutters={true} className="h-100">
@@ -19,9 +19,7 @@ export class RosterView extends React.Component {
               </Col>)}
           </Row>
         </Card>
-      </Container >
+      </Container>
     );
   }
 }
-
-export default RosterView;

@@ -8,7 +8,7 @@ import Col from 'react-bootstrap/Col';
 export class MilestoneView extends React.Component {
   render() {
     return (
-      <Container fluid className="p-5 text-center" >
+      <Container fluid className="p-5 text-center">
         <Card>
           <Card.Header className="header"><h3>Current Objective</h3></Card.Header>
           <Row noGutters={true} className="m-1">
@@ -59,5 +59,3 @@ export class MilestoneView extends React.Component {
     );
   }
 }
-
-export default MilestoneView;

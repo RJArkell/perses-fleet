@@ -24,7 +24,7 @@ export class LoginView extends React.Component {
               <Form.Group>
                 <Form.Control
                   className="text-center"
-                  type="text"
+                  type="password"
                   placeholder="Password"
                 />
               </Form.Group>
