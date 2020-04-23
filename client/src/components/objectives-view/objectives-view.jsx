@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-export class MilestoneView extends React.Component {
+export class ObjectivesView extends React.Component {
   render() {
     return (
       <Container fluid className="p-5 text-center">
@@ -20,9 +20,6 @@ export class MilestoneView extends React.Component {
                   <ProgressBar striped variant="info" animated now={65} />
                   <Card.Text>
                     <p>3 000 000 / 4 700 000 aUEC</p>
-                    <p><h5>Top Contributors:</h5></p>
-                    <p>C3SK</p>
-                    <p>CursedEinherjar</p>
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -45,7 +42,6 @@ export class MilestoneView extends React.Component {
                   <ProgressBar striped variant="success" now={100} />
                   <Card.Text>
                     <p>4 700 000 / 4 700 000 aUEC</p>
-                    <p>Top Contributor: C3SK</p>
                   </Card.Text>
                   <Card.Img src={require("/img/milestone1.png")} />
                 </Card.Body>
