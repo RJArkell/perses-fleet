@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { Menubar } from "./components/menubar/menubar";
 import { HomeView } from "./components/home-view/home-view";
 import { LoginView } from "./components/login-view/login-view";
+import { RegistrationView } from "./components/registration-view/registration-view";
 import { RosterView } from "./components/roster-view/roster-view";
 import { FleetView } from "./components/fleet-view/fleet-view";
 import { ObjectivesView } from "./components/objectives-view/objectives-view";
@@ -36,19 +37,19 @@ export class App extends React.Component {
       this.setState({
         user: localStorage.getItem("user")
       });
+      axios.get("https://perses-fleet.herokuapp.com/api/users")
+        .then(res => {
+          const users = res.data;
+          this.setState({ users });
+        })
+        .catch((err) => {
+          console.log('Error: ' + err);
+        });
     }
     axios.get("https://perses-fleet.herokuapp.com/api/news")
       .then(res => {
         const news = res.data;
         this.setState({ news });
-      })
-      .catch((err) => {
-        console.log('Error: ' + err);
-      });
-    axios.get("https://perses-fleet.herokuapp.com/api/users")
-      .then(res => {
-        const users = res.data;
-        this.setState({ users });
       })
       .catch((err) => {
         console.log('Error: ' + err);
@@ -79,6 +80,7 @@ export class App extends React.Component {
             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
             return <OperationsView />;
           }} />
+          <Route path="/registration" render={() => <RegistrationView />} />
         </div>
       </BrowserRouter >
     );

@@ -16,7 +16,7 @@ export class Menubar extends React.Component {
             <Nav.Link target="_blank" href="https://robertsspaceindustries.com/spectrum/community/PERSES" className="menulink">Forum</Nav.Link>
             <Nav.Link target="_blank" href="https://robertsspaceindustries.com/orgs/PERSES" className="menulink">Enlist</Nav.Link>
             <NavDropdown title={<div className="menulink">Restricted Area</div>} id="basic-nav-dropdown">
-              <NavDropdown.Item href="/login" className="menulink">Login</NavDropdown.Item>
+              <NavDropdown.Item href="/registration" className="menulink">Login</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/operations" className="menulink">Operations</NavDropdown.Item>
               <NavDropdown.Item href="/roster" className="menulink">Roster</NavDropdown.Item>
