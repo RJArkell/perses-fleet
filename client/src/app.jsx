@@ -16,8 +16,17 @@ export class App extends React.Component {
     super(props);
     this.state = {
       news: [],
-      users: []
+      users: [],
+      user: null
     };
+  }
+
+  onLoggedIn(authData) {
+    this.setState({
+      user: authData.user.Username
+    });
+    localStorage.setItem("token", authData.token);
+    localStorage.setItem("user", authData.user.Username);
   }
 
   componentDidMount() {
@@ -29,29 +38,52 @@ export class App extends React.Component {
       .catch((err) => {
         console.log('Error: ' + err);
       });
-    axios.get("https://perses-fleet.herokuapp.com/api/users")
-      .then(res => {
-        const users = res.data;
-        this.setState({ users });
-      })
-      .catch((err) => {
-        console.log('Error: ' + err);
+    let accessToken = localStorage.getItem("token");
+    if (accessToken !== null) {
+      this.setState({
+        user: localStorage.getItem("user")
       });
+      axios.get("https://perses-fleet.herokuapp.com/api/users", {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+        .then(res => {
+          const users = res.data;
+          this.setState({ users });
+        })
+        .catch((err) => {
+          console.log('Error: ' + err);
+        });
+    }
+  }
+
+  onLoggedOut() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    window.open("/", "_self");
+    this.setState({
+      user: null
+    });
   }
 
   render() {
-    const { news, users } = this.state;
+    const { news, users, user } = this.state;
     return (
       <BrowserRouter>
         <div className="main background">
           <Route path="/" render={() => <Menubar />} />
           <Route exact path="/" render={() => <HomeView news={news} />} />
-          <Route path="/objectives" render={() => <ObjectivesView />} />
+          <Route path="/fleet" render={() => <FleetView />} />
           <Route path="/login" render={() => <LoginView />} />
           <Route path="/roster" render={() => <RosterView users={users} />} />
           <Route path="/profile/:username" render={({ match }) => <ProfileView u={users.find(u => u.Username === match.params.username)} />} />
-          <Route path="/fleet" render={() => <FleetView />} />
-          <Route path="/operations" render={() => <OperationsView />} />
+          <Route path="/objectives" render={() => {
+            if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+            return <ObjectivesView />;
+          }} />
+          <Route path="/operations" render={() => {
+            if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+            return <OperationsView />;
+          }} />
         </div>
       </BrowserRouter >
     );

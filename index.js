@@ -26,7 +26,7 @@ app.use(cors());
 //Authentication
 var auth = require('./auth')(app);
 
-app.get("/api/", (req, res) => {
+app.get("/api", (req, res) => {
   res.send("Welcome to the home of Perses Fleet.");
 });
 

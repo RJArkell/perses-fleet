@@ -11,7 +11,7 @@ export function LoginView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('https://perses-fleet.herokuapp.com/api/login', {
+    axios.post('https://perses-fleet.herokuapp.com/login', {
       Username: username,
       Password: password
     })
@@ -19,8 +19,8 @@ export function LoginView(props) {
         const data = res.data;
         props.onLoggedIn(data);
       })
-      .catch(e => {
-        console.log('User does not exist')
+      .catch(err => {
+        console.log(err)
       });
   };
 
