@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
+import Container from "react-bootstrap/Container";
 
 export function RegistrationView(props) {
   const [username, setUsername] = useState('');
@@ -47,7 +48,7 @@ export function RegistrationView(props) {
             <Form.Group controlId="regPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control
-                type="text"
+                type="password"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -65,7 +66,7 @@ export function RegistrationView(props) {
             <Form.Group controlId="regRank">
               <Form.Label>Rank</Form.Label>
               <Form.Control
-                type="date"
+                type="string"
                 value={rank}
                 onChange={(e) => setRank(e.target.value)}
               />
