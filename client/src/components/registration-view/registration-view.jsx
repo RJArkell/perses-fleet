@@ -22,7 +22,7 @@ export function RegistrationView(props) {
       .then(response => {
         const data = response.data;
         console.log(data);
-        window.open("/client", "_self");
+        window.open("/", "_self");
       })
       .catch(e => {
         console.log("error registering the user")
@@ -33,11 +33,11 @@ export function RegistrationView(props) {
     <Container className="loginform text-center" >
       <Card>
         <Card.Body>
-          <Card.Title><h1>Edge of Umbra</h1></Card.Title>
+          <Card.Title></Card.Title>
           <Card.Text>Enter your information to create a new account</Card.Text>
           <Form>
             <Form.Group controlId="regUsername">
-              <Form.Label>Username - Must be at least 5 characters long</Form.Label>
+              <Form.Label>Username</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Username"
@@ -66,10 +66,17 @@ export function RegistrationView(props) {
             <Form.Group controlId="regRank">
               <Form.Label>Rank</Form.Label>
               <Form.Control
-                type="string"
+                as="select"
+                custom
                 value={rank}
                 onChange={(e) => setRank(e.target.value)}
-              />
+              >
+                <option>Recruit</option>
+                <option>Ensign</option>
+                <option>Lieutenant</option>
+                <option>Commander</option>
+                <option>Admiral</option>
+              </Form.Control>
             </Form.Group>
             <Button variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
           </Form>
