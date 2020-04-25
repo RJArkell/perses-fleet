@@ -38,23 +38,16 @@ export class App extends React.Component {
       .catch((err) => {
         console.log('Error: ' + err);
       });
-    let accessToken = localStorage.getItem("token");
-    if (accessToken !== null) {
-      this.setState({
-        user: localStorage.getItem("user")
-      });
-      axios.get("https://perses-fleet.herokuapp.com/api/users", {
-        headers: { Authorization: `Bearer ${token}` }
+    axios.get("https://perses-fleet.herokuapp.com/api/users")
+      .then(res => {
+        const users = res.data;
+        this.setState({ users });
       })
-        .then(res => {
-          const users = res.data;
-          this.setState({ users });
-        })
-        .catch((err) => {
-          console.log('Error: ' + err);
-        });
-    }
+      .catch((err) => {
+        console.log('Error: ' + err);
+      });
   }
+
 
   onLoggedOut() {
     localStorage.removeItem("token");
@@ -73,9 +66,14 @@ export class App extends React.Component {
           <Route path="/" render={() => <Menubar />} />
           <Route exact path="/" render={() => <HomeView news={news} />} />
           <Route path="/fleet" render={() => <FleetView />} />
-          <Route path="/login" render={() => <LoginView />} />
-          <Route path="/roster" render={() => <RosterView users={users} />} />
-          <Route path="/profile/:username" render={({ match }) => <ProfileView u={users.find(u => u.Username === match.params.username)} />} />
+          <Route path="/roster" render={() => {
+            if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+            return <RosterView users={users} />;
+          }} />
+          <Route path="/profile/:username" render={({ match }) => {
+            if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+            return <ProfileView u={users.find(u => u.Username === match.params.username)} />;
+          }} />
           <Route path="/objectives" render={() => {
             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
             return <ObjectivesView />;

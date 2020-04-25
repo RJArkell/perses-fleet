@@ -41,7 +41,7 @@ app.get('/api/news', (req, res) => {
 });
 
 //Get users
-app.get('/api/users', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/api/users', (req, res) => {
   Users.find()
     .then((users) => { res.status(201).json(users) })
     .catch((err) => {
@@ -51,7 +51,7 @@ app.get('/api/users', passport.authenticate('jwt', { session: false }), (req, re
 });
 
 //Get specific user
-app.get('/api/users/:Username', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/api/users/:Username', (req, res) => {
   Users.findOne({ Username: req.params.Username })
     .then((user) => { res.json(user) })
     .catch((err) => {
