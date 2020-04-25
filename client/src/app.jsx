@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { BrowserRouter, Route } from "react-router-dom";
 import { Menubar } from "./components/menubar/menubar";
@@ -22,6 +22,7 @@ export class App extends React.Component {
   }
 
   onLoggedIn(authData) {
+    console.log(authData);
     this.setState({
       user: authData.user.Username
     });
@@ -30,6 +31,12 @@ export class App extends React.Component {
   }
 
   componentDidMount() {
+    let accessToken = localStorage.getItem("token");
+    if (accessToken !== null) {
+      this.setState({
+        user: localStorage.getItem("user")
+      });
+    }
     axios.get("https://perses-fleet.herokuapp.com/api/news")
       .then(res => {
         const news = res.data;
@@ -64,7 +71,10 @@ export class App extends React.Component {
       <BrowserRouter>
         <div className="main background">
           <Route path="/" render={() => <Menubar />} />
-          <Route exact path="/" render={() => <HomeView news={news} />} />
+          <Route exact path="/" render={() => {
+            if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+            return <HomeView news={news} />;
+          }} />
           <Route path="/fleet" render={() => <FleetView />} />
           <Route path="/roster" render={() => {
             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
