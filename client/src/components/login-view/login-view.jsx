@@ -11,9 +11,10 @@ export function LoginView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(username, password)
     axios.post('https://perses-fleet.herokuapp.com/api/login', {
       Username: username,
-      Password: password
+      Password: password,
     })
       .then(res => {
         const data = res.data;

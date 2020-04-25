@@ -55,26 +55,13 @@ export class App extends React.Component {
       });
   }
 
-
-  onLoggedOut() {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    window.open("/", "_self");
-    this.setState({
-      user: null
-    });
-  }
-
   render() {
     const { news, users, user } = this.state;
     return (
       <BrowserRouter>
         <div className="main background">
           <Route path="/" render={() => <Menubar />} />
-          <Route exact path="/" render={() => {
-            if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-            return <HomeView news={news} />;
-          }} />
+          <Route exact path="/" render={() => <HomeView news={news} />} />
           <Route path="/fleet" render={() => <FleetView />} />
           <Route path="/roster" render={() => {
             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
