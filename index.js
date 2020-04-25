@@ -41,7 +41,7 @@ app.get('/api/news', (req, res) => {
 });
 
 //Get users
-app.get('/api/users', (req, res) => {
+app.get('/api/users', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.find()
     .then((users) => { res.status(201).json(users) })
     .catch((err) => {
@@ -51,7 +51,7 @@ app.get('/api/users', (req, res) => {
 });
 
 //Get specific user
-app.get('/api/users/:Username', (req, res) => {
+app.get('/api/users/:Username', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.findOne({ Username: req.params.Username })
     .then((user) => { res.json(user) })
     .catch((err) => {
@@ -86,7 +86,7 @@ app.put('/api/users/:Username', passport.authenticate('jwt', { session: false })
   });
 
 //Create user
-app.post('/api/users', [
+app.post('/api/users', passport.authenticate('jwt', { session: false }), [
   check('Username', "Username is required"),
   check('Username', "Username contains non-alphanumeric characters - not allowed.").isAlphanumeric(),
   check('Password', "Password is required").not().isEmpty(),

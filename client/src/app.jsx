@@ -10,6 +10,7 @@ import { FleetView } from "./components/fleet-view/fleet-view";
 import { ObjectivesView } from "./components/objectives-view/objectives-view";
 import { ProfileView } from "./components/profile-view/profile-view";
 import { OperationsView } from "./components/operations-view/operations-view";
+import { DashboardView } from "./components/dashboard-view/dashboard-view";
 import "./app.scss";
 
 export class App extends React.Component {
@@ -18,24 +19,28 @@ export class App extends React.Component {
     this.state = {
       news: [],
       users: [],
-      user: null
+      user: null,
+      rank: null
     };
   }
 
   onLoggedIn(authData) {
     console.log(authData);
     this.setState({
-      user: authData.user.Username
+      user: authData.user.Username,
+      rank: authData.user.Rank
     });
     localStorage.setItem("token", authData.token);
     localStorage.setItem("user", authData.user.Username);
+    localStorage.setItem("rank", authData.user.Rank);
   }
 
   componentDidMount() {
     let accessToken = localStorage.getItem("token");
     if (accessToken !== null) {
       this.setState({
-        user: localStorage.getItem("user")
+        user: localStorage.getItem("user"),
+        rank: localStorage.getItem("rank")
       });
       axios.get("https://perses-fleet.herokuapp.com/api/users")
         .then(res => {
@@ -57,7 +62,7 @@ export class App extends React.Component {
   }
 
   render() {
-    const { news, users, user } = this.state;
+    const { news, users, user, rank } = this.state;
     return (
       <BrowserRouter>
         <div className="main background">
@@ -80,7 +85,14 @@ export class App extends React.Component {
             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
             return <OperationsView />;
           }} />
-          <Route path="/registration" render={() => <RegistrationView />} />
+          <Route path="/dashboard" render={() => {
+            if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+            return <DashboardView user={user} rank={rank} />;
+          }} />
+          <Route path="/adminpanel" render={() => {
+            if (rank === "Commander" || rank === "Admiral") return <RegistrationView />;
+            return <HomeView news={news} />;
+          }} />
         </div>
       </BrowserRouter >
     );

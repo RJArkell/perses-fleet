@@ -32,9 +32,8 @@ export function RegistrationView(props) {
   return (
     <Container className="loginform text-center" >
       <Card>
+        <Card.Header className="header text-center"><h3>Create Fleet Security Access</h3></Card.Header>
         <Card.Body>
-          <Card.Title></Card.Title>
-          <Card.Text>Enter your information to create a new account</Card.Text>
           <Form>
             <Form.Group controlId="regUsername">
               <Form.Label>Username</Form.Label>
@@ -48,7 +47,7 @@ export function RegistrationView(props) {
             <Form.Group controlId="regPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control
-                type="password"
+                type="text"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}

@@ -28,7 +28,7 @@ export function LoginView(props) {
   return (
     <Container className="loginform text-center" >
       <Card>
-        <Card.Header className="header text-center"><h1>Restricted Area</h1></Card.Header>
+        <Card.Header className="header text-center"><h3>Restricted Area</h3></Card.Header>
         <Card.Body>
           <Card.Text>Please enter your credentials to continue.</Card.Text>
           <Form className="mt-3 mx-5">
