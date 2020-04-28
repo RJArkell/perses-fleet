@@ -19,6 +19,16 @@ var newsSchema = mongoose.Schema({
   Link: { type: String, required: true }
 });
 
+//Schema for objectives
+var objectiveSchema = mongoose.Schema({
+  _id: String,
+  Title: { type: String, required: true },
+  Body: { type: String, required: true },
+  Progress: { type: String, required: true },
+  Goal: { type: String, required: true },
+  Current: { type: Boolean, required: true }
+});
+
 //Bcrypt password encryption
 userSchema.statics.hashPassword = function (password) {
   return bcrypt.hashSync(password, 10);
@@ -31,7 +41,9 @@ userSchema.methods.validatePassword = function (password) {
 //Schema models
 var User = mongoose.model('User', userSchema);
 var News = mongoose.model('News', newsSchema);
+var Objective = mongoose.model('Objective', objectiveSchema);
 
 //Export models
 module.exports.User = User;
 module.exports.News = News;
+module.exports.Objective = Objective;

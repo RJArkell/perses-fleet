@@ -12,7 +12,8 @@ require('./passport');
 
 //Imported models
 const Users = Models.User,
-  News = Models.News;
+  News = Models.News,
+  Objectives = Models.Objective;
 
 mongoose.connect('mongodb+srv://Admin:reaver3@arnketel-69akm.azure.mongodb.net/PersesFleet?retryWrites=true&w=majority',
   { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true });
@@ -34,6 +35,16 @@ app.get("/api", (req, res) => {
 app.get('/api/news', (req, res) => {
   News.find()
     .then((news) => { res.status(201).json(news) })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+    });
+});
+
+//Get objectives
+app.get('/api/objectives', (req, res) => {
+  Objectives.find()
+    .then((Objectives) => { res.status(201).json(Objectives) })
     .catch((err) => {
       console.error(err);
       res.status(500).send("Error: " + err);
