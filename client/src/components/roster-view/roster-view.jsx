@@ -1,8 +1,5 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Card from 'react-bootstrap/Card';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Container, Col, Row, Card } from "react-bootstrap";
 import { UserCard } from "../user-card/user-card";
 
 export class RosterView extends React.Component {

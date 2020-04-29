@@ -1,6 +1,5 @@
 import React from "react";
-import Card from 'react-bootstrap/Card';
-import Container from "react-bootstrap/Container";
+import { Container, Card } from "react-bootstrap";
 
 export class ProfileView extends React.Component {
   render() {

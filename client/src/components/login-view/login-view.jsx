@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import Card from 'react-bootstrap/Card';
+import { Container, Button, Form, Card } from "react-bootstrap";
 
 export function LoginView(props) {
   const [username, setUsername] = useState('');

@@ -1,9 +1,5 @@
 import React from "react";
-import ProgressBar from 'react-bootstrap/ProgressBar';
-import Container from "react-bootstrap/Container";
-import Card from 'react-bootstrap/Card';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Container, Row, Col, Card, ProgressBar } from "react-bootstrap";
 
 export class ObjectivesView extends React.Component {
   render() {
