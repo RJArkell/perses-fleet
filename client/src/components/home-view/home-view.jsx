@@ -56,7 +56,7 @@ export class HomeView extends React.Component {
               <Card.Img className="h-100" src={require("/img/featured.png")} />
               <Card.Text className="text-center">
                 Submitted by: c3sk
-                </Card.Text>
+              </Card.Text>
             </Card>
           </Col>
         </Row>

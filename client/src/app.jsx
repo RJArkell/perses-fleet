@@ -4,7 +4,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { Menubar } from "./components/menubar/menubar";
 import { HomeView } from "./components/home-view/home-view";
 import { LoginView } from "./components/login-view/login-view";
-import { RegistrationView } from "./components/registration-view/registration-view";
+import { AdminView } from "./components/admin-view/admin-view";
 import { RosterView } from "./components/roster-view/roster-view";
 import { FleetView } from "./components/fleet-view/fleet-view";
 import { ObjectivesView } from "./components/objectives-view/objectives-view";
@@ -90,7 +90,7 @@ export class App extends React.Component {
             return <DashboardView user={user} rank={rank} />;
           }} />
           <Route path="/adminpanel" render={() => {
-            if (rank === "Commander" || rank === "Admiral") return <RegistrationView />;
+            if (rank === "Commander" || rank === "Admiral") return <AdminView />;
             return <HomeView news={news} />;
           }} />
         </div>

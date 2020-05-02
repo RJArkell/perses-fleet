@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Button, Form, Card } from "react-bootstrap";
 import axios from "axios";
 
-export function RegistrationView(props) {
+export function CreateUserTab(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
