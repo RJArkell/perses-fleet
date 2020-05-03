@@ -87,11 +87,8 @@ export class App extends React.Component {
           }} />
           <Route path="/dashboard" render={() => {
             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+            if (rank === "Commander" || rank === "Admiral") return <div><DashboardView user={user} rank={rank} /><AdminView /></div>;
             return <DashboardView user={user} rank={rank} />;
-          }} />
-          <Route path="/adminpanel" render={() => {
-            if (rank === "Commander" || rank === "Admiral") return <AdminView />;
-            return <HomeView news={news} />;
           }} />
         </div>
       </BrowserRouter >

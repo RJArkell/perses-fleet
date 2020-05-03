@@ -29,61 +29,59 @@ export function CreateNewsTab(props) {
   };
 
   return (
-    <Container className="loginform text-center" >
-      <Card>
-        <Card.Header className="header text-center"><h3>Create News Post</h3></Card.Header>
-        <Card.Body>
-          <Form>
-            <Form.Group>
-              <Form.Label>Headline</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Headline"
-                value={headline}
-                onChange={(e) => setHeadline(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label>Date</Form.Label>
-              <Form.Control
-                type="date"
-                placeholder="Date"
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label>Body</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Body"
-                value={body}
-                onChange={(e) => setBody(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label>Link Text</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Link Text"
-                value={linktext}
-                onChange={(e) => setLinkText(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label>Link</Form.Label>
-              <Form.Control
-                as="text"
-                placeholder="www.link.com"
-                value={link}
-                onChange={(e) => setLink(e.target.value)}
-              >
-              </Form.Control>
-            </Form.Group>
-            <Button variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
-          </Form>
-        </Card.Body>
-      </Card>
-    </Container>
+    <Card>
+      <Card.Header className="header text-center"><h4>Create News Post</h4></Card.Header>
+      <Card.Body>
+        <Form>
+          <Form.Group>
+            <Form.Label>Headline</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Headline"
+              value={headline}
+              onChange={(e) => setHeadline(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Date</Form.Label>
+            <Form.Control
+              type="date"
+              placeholder="Date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Body</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Body"
+              value={body}
+              onChange={(e) => setBody(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Link Text</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Link Text"
+              value={linktext}
+              onChange={(e) => setLinkText(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Link</Form.Label>
+            <Form.Control
+              as="text"
+              placeholder="Link"
+              value={link}
+              onChange={(e) => setLink(e.target.value)}
+            >
+            </Form.Control>
+          </Form.Group>
+          <Button className="button" type="submit" onClick={handleSubmit}>Submit</Button>
+        </Form>
+      </Card.Body>
+    </Card>
   );
 }

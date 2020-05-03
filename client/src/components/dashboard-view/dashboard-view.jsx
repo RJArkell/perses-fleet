@@ -15,12 +15,11 @@ export class DashboardView extends React.Component {
   render() {
     const { user, rank } = this.props;
     return (
-      <Container className="profile" >
+      <Container fluid className="p-5">
         <Card>
-          <Card.Header className="header text-center"><h3>{rank} {user}</h3></Card.Header>
+          <Card.Header className="header text-center"><h3>Welcome {rank}</h3></Card.Header>
           <Card.Body>
             <Card.Text>
-              <Link to={`/adminpanel`} className="menulink">Admin</Link><br />
               <Link className="menulink" onClick={() => this.onLoggedOut()}>Logout</Link>
             </Card.Text>
           </Card.Body>
