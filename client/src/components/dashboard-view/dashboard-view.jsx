@@ -8,7 +8,8 @@ export class DashboardView extends React.Component {
     localStorage.removeItem("user");
     window.open("/", "_self");
     this.setState({
-      user: null
+      user: null,
+      rank: null
     });
   }
 
@@ -20,6 +21,10 @@ export class DashboardView extends React.Component {
           <Card.Header className="header text-center"><h3>Welcome {rank}</h3></Card.Header>
           <Card.Body>
             <Card.Text>
+              <p>Username: {user}</p>
+              <p>Rank: {rank}</p>
+              <Link to={`/updatepassword`} className="menulink">Edit Password</Link><br />
+              <Link to={`/updateemail`} className="menulink">Edit Email</Link><br />
               <Link className="menulink" onClick={() => this.onLoggedOut()}>Logout</Link>
             </Card.Text>
           </Card.Body>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Button, Form, Card } from "react-bootstrap";
+import { Button, Form, Card } from "react-bootstrap";
 import axios from "axios";
 
 export function CreateNewsTab(props) {
@@ -29,7 +29,7 @@ export function CreateNewsTab(props) {
   };
 
   return (
-    <Card>
+    <Card className="h-100 w-100">
       <Card.Header className="header text-center"><h4>Create News Post</h4></Card.Header>
       <Card.Body>
         <Form>

@@ -11,6 +11,8 @@ import { ObjectivesView } from "./components/objectives-view/objectives-view";
 import { ProfileView } from "./components/profile-view/profile-view";
 import { OperationsView } from "./components/operations-view/operations-view";
 import { DashboardView } from "./components/dashboard-view/dashboard-view";
+import { EditPassword } from "./components/dashboard-view/edit-password";
+import { EditEmail } from "./components/dashboard-view/edit-email";
 import "./app.scss";
 
 export class App extends React.Component {
@@ -90,6 +92,8 @@ export class App extends React.Component {
             if (rank === "Commander" || rank === "Admiral") return <div><DashboardView user={user} rank={rank} /><AdminView /></div>;
             return <DashboardView user={user} rank={rank} />;
           }} />
+          <Route path="/updatepassword" render={() => <EditPassword />} />
+          <Route path="/updateemail" render={() => <EditEmail />} />
         </div>
       </BrowserRouter >
     );

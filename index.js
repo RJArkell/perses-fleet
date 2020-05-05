@@ -14,6 +14,7 @@ require('./passport');
 const Users = Models.User,
   News = Models.News,
   Objectives = Models.Objective;
+Operations = Models.Operation;
 
 mongoose.connect('mongodb+srv://Admin:reaver3@arnketel-69akm.azure.mongodb.net/PersesFleet?retryWrites=true&w=majority',
   { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true });
@@ -73,6 +74,8 @@ app.get('/api/users/:Username', (req, res) => {
 
 //Edit user info
 app.put('/api/users/:Username', [
+  check('Username', "Username is required"),
+  check('Username', "Username contains non-alphanumeric characters - not allowed.").isAlphanumeric(),
   check('Password', "Password is required").not().isEmpty(),
   check('Email', "Email does not appear to be valid").isEmail()],
   (req, res) => {
@@ -81,8 +84,55 @@ app.put('/api/users/:Username', [
     var hashedPassword = Users.hashPassword(req.body.Password);
     Users.findOneAndUpdate({ Username: req.params.Username }, {
       $set: {
+        Username: req.body.Username,
+        Rank: req.body.Rank,
         Password: hashedPassword,
         Email: req.body.Email,
+      }
+    },
+      { new: true },
+      (err, updatedUser) => {
+        if (err) {
+          console.error(err);
+          res.status(500).send("Error: " + err);
+        } else {
+          res.json(updatedUser)
+        }
+      })
+  });
+
+//Edit user password
+app.put('/api/users/:Username', [
+  check('Password', "Password is required").not().isEmpty()],
+  (req, res) => {
+    var errors = validationResult(req);
+    if (!errors.isEmpty()) { return res.status(422).json({ errors: errors.array() }); }
+    var hashedPassword = Users.hashPassword(req.body.Password);
+    Users.findOneAndUpdate({ Username: req.params.Username }, {
+      $set: {
+        Password: hashedPassword
+      }
+    },
+      { new: true },
+      (err, updatedUser) => {
+        if (err) {
+          console.error(err);
+          res.status(500).send("Error: " + err);
+        } else {
+          res.json(updatedUser)
+        }
+      })
+  });
+
+//Edit user email
+app.put('/api/users/:Username', [
+  check('Email', "Email does not appear to be valid").isEmail()],
+  (req, res) => {
+    var errors = validationResult(req);
+    if (!errors.isEmpty()) { return res.status(422).json({ errors: errors.array() }); }
+    Users.findOneAndUpdate({ Username: req.params.Username }, {
+      $set: {
+        Email: req.body.Email
       }
     },
       { new: true },

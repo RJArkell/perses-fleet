@@ -13,7 +13,7 @@ var userSchema = mongoose.Schema({
 var newsSchema = mongoose.Schema({
   _id: String,
   Headline: { type: String, required: true },
-  Date: { type: String, required: true },
+  Date: { type: Date, required: true },
   Body: { type: String, required: true },
   LinkText: { type: String, required: true },
   Link: { type: String, required: true }
@@ -29,6 +29,15 @@ var objectiveSchema = mongoose.Schema({
   Current: { type: Boolean, required: true }
 });
 
+//Schema for operations
+var operationSchema = mongoose.Schema({
+  _id: String,
+  Title: { type: String, required: true },
+  Details: { type: String, required: true },
+  Date: { type: Date, required: true },
+  Time: { type: String, required: true }
+});
+
 //Bcrypt password encryption
 userSchema.statics.hashPassword = function (password) {
   return bcrypt.hashSync(password, 10);
@@ -42,8 +51,10 @@ userSchema.methods.validatePassword = function (password) {
 var User = mongoose.model('User', userSchema);
 var News = mongoose.model('News', newsSchema);
 var Objective = mongoose.model('Objective', objectiveSchema);
+var Operation = mongoose.model('Operation', operationSchema);
 
 //Export models
 module.exports.User = User;
 module.exports.News = News;
 module.exports.Objective = Objective;
+module.exports.Operation = Operation;

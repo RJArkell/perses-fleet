@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Form, Card } from "react-bootstrap";
 import axios from "axios";
 
-export function CreateUserTab(props) {
+export function EditUserTab(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
@@ -10,7 +10,7 @@ export function CreateUserTab(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("https://perses-fleet.herokuapp.com/api/users", {
+    axios.put("https://perses-fleet.herokuapp.com/api/users/", {
       Username: username,
       Password: password,
       Email: email,
@@ -28,7 +28,7 @@ export function CreateUserTab(props) {
 
   return (
     <Card className="h-100 w-100">
-      <Card.Header className="header text-center"><h4>Create Security Access</h4></Card.Header>
+      <Card.Header className="header text-center"><h4>Edit User</h4></Card.Header>
       <Card.Body>
         <Form>
           <Form.Group controlId="regUsername">
@@ -66,7 +66,6 @@ export function CreateUserTab(props) {
               value={rank}
               onChange={(e) => setRank(e.target.value)}
             >
-              <option>Associate</option>
               <option>Recruit</option>
               <option>Ensign</option>
               <option>Lieutenant</option>
