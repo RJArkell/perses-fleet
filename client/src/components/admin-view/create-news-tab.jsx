@@ -72,7 +72,7 @@ export function CreateNewsTab(props) {
           <Form.Group>
             <Form.Label>Link</Form.Label>
             <Form.Control
-              as="text"
+              type="text"
               placeholder="Link"
               value={link}
               onChange={(e) => setLink(e.target.value)}
