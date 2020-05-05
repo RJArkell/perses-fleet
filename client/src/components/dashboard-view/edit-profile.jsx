@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Form, Card } from "react-bootstrap";
+import { Container, Button, Form, Card } from "react-bootstrap";
 import axios from "axios";
 
 export function EditProfile(props) {
@@ -33,9 +33,7 @@ export function EditProfile(props) {
       .then(res => {
         const data = res.data;
         console.log(data);
-        alert("Email updated, please login again");
-        localStorage.removeItem("token");
-        localStorage.removeItem("user");
+        alert("Email updated");
         window.open("/", "_self");
       })
       .catch(e => {
@@ -45,32 +43,34 @@ export function EditProfile(props) {
   };
 
   return (
-    <Card className="h-100 w-100">
-      <Card.Header className="header text-center"><h4>Create Security Access</h4></Card.Header>
-      <Card.Body>
-        <Form>
-          <Form.Group>
-            <Form.Label>Change Password</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter new password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </Form.Group>
-          <Button className="button" type="submit" onClick={handleUpdatePassword}>Update Password</Button>
-          <Form.Group>
-            <Form.Label>Change Email Address</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="Enter new email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </Form.Group>
-          <Button className="button" type="submit" onClick={handleUpdateEmail}>Update Email</Button>
-        </Form>
-      </Card.Body>
-    </Card>
+    <Container className="loginform text-center" >
+      <Card className="w-100">
+        <Card.Header className="header text-center"><h4>Update Profile</h4></Card.Header>
+        <Card.Body>
+          <Form>
+            <Form.Group>
+              <Form.Label>Change Password</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter new password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Form.Group>
+            <Button className="button" type="submit" onClick={handleUpdatePassword}>Update Password</Button>
+            <Form.Group className="p-3">
+              <Form.Label>Change Email Address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter new email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Form.Group>
+            <Button className="button" type="submit" onClick={handleUpdateEmail}>Update Email</Button>
+          </Form>
+        </Card.Body>
+      </Card>
+    </Container>
   );
 }

@@ -23,8 +23,7 @@ export class DashboardView extends React.Component {
             <Card.Text>
               <p>Username: {user}</p>
               <p>Rank: {rank}</p>
-              <Link to={`/updatepassword`} className="menulink">Edit Password</Link><br />
-              <Link to={`/updateemail`} className="menulink">Edit Email</Link><br />
+              <Link to={`/updateprofile`} className="menulink">Update Profile</Link><br />
               <Link className="menulink" onClick={() => this.onLoggedOut()}>Logout</Link>
             </Card.Text>
           </Card.Body>
