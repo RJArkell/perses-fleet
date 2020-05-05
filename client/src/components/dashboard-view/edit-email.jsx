@@ -7,7 +7,7 @@ export function EditEmail(props) {
 
   const handleUpdateEmail = (e) => {
     e.preventDefault();
-    axios.put(`https://perses-fleet.herokuapp.com/api/users/${localStorage.getItem("user")}`, {
+    axios.put(`https://perses-fleet.herokuapp.com/api/users/${localStorage.getItem("user")}/email`, {
       Email: email,
     })
       .then(res => {

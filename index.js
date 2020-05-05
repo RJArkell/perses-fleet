@@ -73,7 +73,7 @@ app.get('/api/users/:Username', (req, res) => {
 });
 
 //Edit user password
-app.put('/api/users/:Username', [
+app.put('/api/users/:Username/password', [
   check('Password', "Password is required").not().isEmpty()],
   (req, res) => {
     var errors = validationResult(req);
@@ -96,7 +96,7 @@ app.put('/api/users/:Username', [
   });
 
 //Edit user email
-app.put('/api/users/:Username', [
+app.put('/api/users/:Username/email', [
   check('Email', "Email does not appear to be valid").isEmail()],
   (req, res) => {
     var errors = validationResult(req);

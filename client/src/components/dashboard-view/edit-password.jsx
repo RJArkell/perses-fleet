@@ -7,7 +7,7 @@ export function EditPassword(props) {
 
   const handleUpdatePassword = (e) => {
     e.preventDefault();
-    axios.put(`https://perses-fleet.herokuapp.com/api/users/${localStorage.getItem("user")}`, {
+    axios.put(`https://perses-fleet.herokuapp.com/api/users/${localStorage.getItem("user")}/password`, {
       Password: password,
     })
       .then(res => {
