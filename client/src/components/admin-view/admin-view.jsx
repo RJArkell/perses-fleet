@@ -8,7 +8,7 @@ import { CreateObjectiveTab } from "./create-objective-tab";
 export class AdminView extends React.Component {
   render() {
     return (
-      <Container fluid className="px-5" >
+      <Container fluid className="px-5 pb-5" >
         <Card>
           <Card.Header className="header text-center"><h3>Admin Panel</h3></Card.Header>
           <Tab.Container id="left-tabs-example" defaultActiveKey="news">

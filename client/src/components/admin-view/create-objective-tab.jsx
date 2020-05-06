@@ -22,7 +22,7 @@ export function CreateObjectiveTab(props) {
         window.open("/", "_self");
       })
       .catch(e => {
-        console.log("error registering the user")
+        console.log("error creating the objective")
       });
   };
 
