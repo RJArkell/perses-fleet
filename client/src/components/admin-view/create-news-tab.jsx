@@ -29,7 +29,7 @@ export function CreateNewsTab(props) {
   };
 
   return (
-    <Card className="h-100 w-100">
+    <Card>
       <Card.Header className="header text-center"><h4>Create News Post</h4></Card.Header>
       <Card.Body>
         <Form>

@@ -27,11 +27,11 @@ export function CreateUserTab(props) {
   };
 
   return (
-    <Card className="h-100 w-100">
+    <Card>
       <Card.Header className="header text-center"><h4>Create Security Access</h4></Card.Header>
       <Card.Body>
         <Form>
-          <Form.Group controlId="regUsername">
+          <Form.Group>
             <Form.Label>Username</Form.Label>
             <Form.Control
               type="text"
@@ -40,7 +40,7 @@ export function CreateUserTab(props) {
               onChange={(e) => setUsername(e.target.value)}
             />
           </Form.Group>
-          <Form.Group controlId="regPassword">
+          <Form.Group>
             <Form.Label>Password</Form.Label>
             <Form.Control
               type="text"
@@ -49,7 +49,7 @@ export function CreateUserTab(props) {
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
-          <Form.Group controlId="regEmail">
+          <Form.Group>
             <Form.Label>Email address</Form.Label>
             <Form.Control
               type="email"
@@ -58,7 +58,7 @@ export function CreateUserTab(props) {
               onChange={(e) => setEmail(e.target.value)}
             />
           </Form.Group>
-          <Form.Group controlId="regRank">
+          <Form.Group>
             <Form.Label>Rank</Form.Label>
             <Form.Control
               as="select"
