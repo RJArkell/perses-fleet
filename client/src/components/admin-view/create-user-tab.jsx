@@ -28,7 +28,7 @@ export function CreateUserTab(props) {
 
   return (
     <Card>
-      <Card.Header className="header text-center"><h4>Create Security Access</h4></Card.Header>
+      <Card.Header className="header text-center"><h4>Register User</h4></Card.Header>
       <Card.Body>
         <Form>
           <Form.Group>

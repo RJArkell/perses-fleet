@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Button, Form, Card } from "react-bootstrap";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export function EditProfile(props) {
   const [password, setPassword] = useState('');
@@ -47,9 +48,9 @@ export function EditProfile(props) {
       <Card className="w-100">
         <Card.Header className="header text-center"><h4>Update Profile</h4></Card.Header>
         <Card.Body>
-          <Form>
+          <Form className="pb-2">
             <Form.Group>
-              <Form.Label>Change Password</Form.Label>
+              <Form.Label className="p-2">Change Password</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter new password"
@@ -58,8 +59,8 @@ export function EditProfile(props) {
               />
             </Form.Group>
             <Button className="button" type="submit" onClick={handleUpdatePassword}>Update Password</Button>
-            <Form.Group className="p-3">
-              <Form.Label>Change Email Address</Form.Label>
+            <Form.Group>
+              <Form.Label className="p-2">Change Email Address</Form.Label>
               <Form.Control
                 type="email"
                 placeholder="Enter new email"
@@ -69,6 +70,7 @@ export function EditProfile(props) {
             </Form.Group>
             <Button className="button" type="submit" onClick={handleUpdateEmail}>Update Email</Button>
           </Form>
+          <Button component={Link} to={`/dashboard`} className="button">Return</Button>
         </Card.Body>
       </Card>
     </Container>

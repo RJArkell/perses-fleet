@@ -21,7 +21,8 @@ export class App extends React.Component {
       news: [],
       users: [],
       user: null,
-      rank: null
+      rank: null,
+      email: null
     };
   }
 
@@ -29,11 +30,13 @@ export class App extends React.Component {
     console.log(authData);
     this.setState({
       user: authData.user.Username,
-      rank: authData.user.Rank
+      rank: authData.user.Rank,
+      email: authData.user.Email
     });
     localStorage.setItem("token", authData.token);
     localStorage.setItem("user", authData.user.Username);
     localStorage.setItem("rank", authData.user.Rank);
+    localStorage.setItem("email", authData.user.Email);
   }
 
   componentDidMount() {
@@ -41,7 +44,8 @@ export class App extends React.Component {
     if (accessToken !== null) {
       this.setState({
         user: localStorage.getItem("user"),
-        rank: localStorage.getItem("rank")
+        rank: localStorage.getItem("rank"),
+        email: localStorage.getItem("email")
       });
       axios.get("https://perses-fleet.herokuapp.com/api/users")
         .then(res => {
@@ -63,7 +67,7 @@ export class App extends React.Component {
   }
 
   render() {
-    const { news, users, user, rank } = this.state;
+    const { news, users, user, rank, email } = this.state;
     return (
       <BrowserRouter>
         <div className="main background">
@@ -88,8 +92,8 @@ export class App extends React.Component {
           }} />
           <Route path="/dashboard" render={() => {
             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-            if (rank === "Commander" || rank === "Admiral") return <div><DashboardView user={user} rank={rank} /><AdminView /></div>;
-            return <DashboardView user={user} rank={rank} />;
+            if (rank === "Commander" || rank === "Admiral") return <div><DashboardView user={user} rank={rank} email={email} /><AdminView /></div>;
+            return <DashboardView user={user} rank={rank} email={email} />;
           }} />
           <Route path="/updateprofile" render={() => <EditProfile />} />
         </div>

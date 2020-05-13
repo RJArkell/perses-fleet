@@ -35,7 +35,16 @@ var operationSchema = mongoose.Schema({
   Title: { type: String, required: true },
   Details: { type: String, required: true },
   Date: { type: Date, required: true },
-  Time: { type: String, required: true }
+  Time: { type: String, required: true },
+  Assets: []
+});
+
+//Schema for screenshots
+var screenshotSchema = mongoose.Schema({
+  _id: String,
+  URL: { type: String, required: true },
+  User: { type: String, required: true },
+  Date: { type: Date, required: true },
 });
 
 //Bcrypt password encryption
@@ -52,9 +61,11 @@ var User = mongoose.model('User', userSchema);
 var News = mongoose.model('News', newsSchema);
 var Objective = mongoose.model('Objective', objectiveSchema);
 var Operation = mongoose.model('Operation', operationSchema);
+var Screenshot = mongoose.model('Screenshot', screenshotSchema);
 
 //Export models
 module.exports.User = User;
 module.exports.News = News;
 module.exports.Objective = Objective;
 module.exports.Operation = Operation;
+module.exports.Screenshot = Screenshot;

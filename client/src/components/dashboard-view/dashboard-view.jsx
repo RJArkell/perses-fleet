@@ -6,15 +6,18 @@ export class DashboardView extends React.Component {
   onLoggedOut() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
+    localStorage.removeItem("rank");
+    localStorage.removeItem("email");
     window.open("/", "_self");
     this.setState({
       user: null,
-      rank: null
+      rank: null,
+      email: null
     });
   }
 
   render() {
-    const { user, rank } = this.props;
+    const { user, rank, email } = this.props;
     return (
       <Container fluid className="p-5">
         <Card>
@@ -23,8 +26,9 @@ export class DashboardView extends React.Component {
             <Card.Text>
               <p>Username: {user}</p>
               <p>Rank: {rank}</p>
-              <Link to={`/profile/${user}`} className="menulink">View Profile</Link><br />
-              <Link to={`/updateprofile`} className="menulink">Update Profile</Link><br />
+              <p>Email: {email}</p>
+              <p>Commendations:</p>
+              <Link to={`/updateprofile`} className="menulink">Update Information</Link><br />
               <Link className="menulink" onClick={() => this.onLoggedOut()}>Logout</Link>
             </Card.Text>
           </Card.Body>

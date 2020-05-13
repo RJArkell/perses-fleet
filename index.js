@@ -13,9 +13,11 @@ require('./passport');
 //Imported models
 const Users = Models.User,
   News = Models.News,
-  Objectives = Models.Objective;
-Operations = Models.Operation;
+  Objectives = Models.Objective,
+  Operations = Models.Operation,
+  Screenshots = Models.Screenshot;
 
+//Connect to database
 mongoose.connect('mongodb+srv://Admin:reaver3@arnketel-69akm.azure.mongodb.net/PersesFleet?retryWrites=true&w=majority',
   { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true });
 
@@ -52,10 +54,70 @@ app.get('/api/objectives', (req, res) => {
     });
 });
 
+//Get operations
+app.get('/api/operations', (req, res) => {
+  Operations.find()
+    .then((Operations) => { res.status(201).json(Operations) })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+    });
+});
+
+//Get screenshots
+app.get('/api/screenshots', (req, res) => {
+  Screenshots.find()
+    .then((Screenshots) => { res.status(201).json(Screenshots) })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+    });
+});
+
 //Get users
 app.get('/api/users', (req, res) => {
   Users.find()
     .then((users) => { res.status(201).json(users) })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+    });
+});
+
+//Get specific news post
+app.get('/api/news/:_id', (req, res) => {
+  News.findOne({ _id: req.params._id })
+    .then((news) => { res.json(news) })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+    });
+});
+
+//Get specific objective
+app.get('/api/objectives/:_id', (req, res) => {
+  Objectives.findOne({ _id: req.params._id })
+    .then((objective) => { res.json(objective) })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+    });
+});
+
+//Get specific operation
+app.get('/api/operations/:_id', (req, res) => {
+  Operations.findOne({ _id: req.params._id })
+    .then((operation) => { res.json(operation) })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+    });
+});
+
+//Get specific screenshot
+app.get('/api/screenshots/:_id', (req, res) => {
+  Screenshots.findOne({ _id: req.params._id })
+    .then((screenshot) => { res.json(screenshot) })
     .catch((err) => {
       console.error(err);
       res.status(500).send("Error: " + err);
