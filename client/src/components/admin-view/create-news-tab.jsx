@@ -24,7 +24,9 @@ export function CreateNewsTab(props) {
         window.open("/", "_self");
       })
       .catch(e => {
-        console.log("error posting the content")
+        alert("Error posting the content");
+        console.log(e);
+
       });
   };
 
