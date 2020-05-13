@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Card } from "react-bootstrap";
+import { Container, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export class DashboardView extends React.Component {
@@ -23,14 +23,16 @@ export class DashboardView extends React.Component {
         <Card>
           <Card.Header className="header text-center"><h3>Welcome {rank}</h3></Card.Header>
           <Card.Body>
-            <Card.Text>
+            <Card.Text className="pb-2">
               <p>Username: {user}</p>
               <p>Rank: {rank}</p>
               <p>Email: {email}</p>
               <p>Commendations:</p>
-              <Link to={`/updateprofile`} className="menulink">Update Information</Link><br />
-              <Link className="menulink" onClick={() => this.onLoggedOut()}>Logout</Link>
             </Card.Text>
+            <Link to={`/updateprofile`}>
+              <Button variant="contained" color="primary" className="button">Update Information</Button>
+            </Link>
+            <Button className="button" onClick={() => this.onLoggedOut()}>Logout</Button>
           </Card.Body>
         </Card>
       </Container>

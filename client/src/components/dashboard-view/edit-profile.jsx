@@ -70,7 +70,9 @@ export function EditProfile(props) {
             </Form.Group>
             <Button className="button" type="submit" onClick={handleUpdateEmail}>Update Email</Button>
           </Form>
-          <Button component={Link} to={`/dashboard`} className="button">Return</Button>
+          <Link to={`/dashboard`}>
+            <Button variant="contained" color="primary" className="button">Return</Button>
+          </Link>
         </Card.Body>
       </Card>
     </Container>
