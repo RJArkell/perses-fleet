@@ -63,11 +63,36 @@ export function CreateOperationTab(props) {
           <Form.Group>
             <Form.Label>Time</Form.Label>
             <Form.Control
-              type="text"
-              placeholder="Time"
+              as="select"
+              custom
               value={time}
               onChange={(e) => setTime(e.target.value)}
-            />
+            >
+              <option>00:00</option>
+              <option>01:00</option>
+              <option>02:00</option>
+              <option>03:00</option>
+              <option>04:00</option>
+              <option>05:00</option>
+              <option>06:00</option>
+              <option>07:00</option>
+              <option>08:00</option>
+              <option>09:00</option>
+              <option>10:00</option>
+              <option>11:00</option>
+              <option>12:00</option>
+              <option>13:00</option>
+              <option>14:00</option>
+              <option>15:00</option>
+              <option>16:00</option>
+              <option>17:00</option>
+              <option>18:00</option>
+              <option>19:00</option>
+              <option>20:00</option>
+              <option>21:00</option>
+              <option>22:00</option>
+              <option>23:00</option>
+            </Form.Control>
           </Form.Group>
           <Form.Group>
             <Form.Label>Assets</Form.Label>
