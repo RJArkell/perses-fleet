@@ -212,6 +212,28 @@ app.post('/api/users', [
       });
   });
 
+//Create news
+app.post('/api/news', [
+  check('Headline', "Headline is required").not().isEmpty(),
+  check('Date', "Date is required").not().isEmpty(),
+  check('Body', "Body is required").not().isEmpty()],
+  (req, res) => {
+    var errors = validationResult(req);
+    if (!errors.isEmpty()) { return res.status(422).json({ errors: errors.array() }); }
+    News.create({
+      Headline: req.body.Headline,
+      Body: req.body.Body,
+      Date: req.body.Date,
+      LinkText: req.body.LinkText,
+      Link: req.body.Link
+    })
+      .then((user) => { res.status(201).json(user) })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).send("Error: " + err);
+      });
+  });
+
 //Serve React App
 app.use(express.static(path.join(__dirname, "client", 'dist')));
 app.get('/*', (req, res) => {
