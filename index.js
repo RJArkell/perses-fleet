@@ -156,7 +156,8 @@ app.put('/api/users/:Username/password', [
           res.json(updatedUser)
         }
       })
-  });
+  }
+);
 
 //Edit user email
 app.put('/api/users/:Username/email', [
@@ -178,7 +179,8 @@ app.put('/api/users/:Username/email', [
           res.json(updatedUser)
         }
       })
-  });
+  }
+);
 
 //Create user
 app.post('/api/users', [
@@ -211,9 +213,10 @@ app.post('/api/users', [
         console.error(err);
         res.status(500).send("Error: " + err);
       });
-  });
+  }
+);
 
-//Create news
+//Create news post
 app.post('/api/news',
   (req, res) => {
     News.create({
@@ -229,7 +232,63 @@ app.post('/api/news',
         console.error(err);
         res.status(500).send("Error: " + err);
       });
-  });
+  }
+);
+
+//Create operation
+app.post('/api/operations',
+  (req, res) => {
+    Operations.create({
+      _id: uuid.v4(),
+      Title: req.body.Title,
+      Details: req.body.Details,
+      Date: req.body.Date,
+      Time: req.body.Time,
+      Assets: req.body.Assets
+    })
+      .then((user) => { res.status(201).json(user) })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).send("Error: " + err);
+      });
+  }
+);
+
+//Create objective
+app.post('/api/objectives',
+  (req, res) => {
+    Objectives.create({
+      _id: uuid.v4(),
+      Title: req.body.Title,
+      Details: req.body.Details,
+      Progress: req.body.Progress,
+      Goal: req.body.Goal,
+      Current: req.body.Current
+    })
+      .then((user) => { res.status(201).json(user) })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).send("Error: " + err);
+      });
+  }
+);
+
+//Create screenshot
+app.post('/api/screenshots',
+  (req, res) => {
+    Screenshots.create({
+      _id: uuid.v4(),
+      Address: req.body.Address,
+      User: req.body.User,
+      Date: req.body.Date,
+    })
+      .then((user) => { res.status(201).json(user) })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).send("Error: " + err);
+      });
+  }
+);
 
 //Serve React App
 app.use(express.static(path.join(__dirname, "client", 'dist')));

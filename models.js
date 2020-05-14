@@ -23,7 +23,7 @@ var newsSchema = mongoose.Schema({
 var objectiveSchema = mongoose.Schema({
   _id: String,
   Title: { type: String, required: true },
-  Body: { type: String, required: true },
+  Details: { type: String, required: true },
   Progress: { type: String, required: true },
   Goal: { type: String, required: true },
   Current: { type: Boolean, required: true }
@@ -36,13 +36,13 @@ var operationSchema = mongoose.Schema({
   Details: { type: String, required: true },
   Date: { type: Date, required: true },
   Time: { type: String, required: true },
-  Assets: []
+  Assets: { type: String, required: true }
 });
 
 //Schema for screenshots
 var screenshotSchema = mongoose.Schema({
   _id: String,
-  URL: { type: String, required: true },
+  Address: { type: String, required: true },
   User: { type: String, required: true },
   Date: { type: Date, required: true },
 });
