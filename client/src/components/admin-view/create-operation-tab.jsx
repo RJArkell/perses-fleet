@@ -11,7 +11,7 @@ export function CreateOperationTab(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("https://perses-fleet.herokuapp.com/api/users", {
+    axios.post("https://perses-fleet.herokuapp.com/api/operations", {
       Title: title,
       Details: details,
       Date: date,
@@ -24,7 +24,8 @@ export function CreateOperationTab(props) {
         window.open("/", "_self");
       })
       .catch(e => {
-        console.log("error creating the operation")
+        alert("error creating the operation");
+        console.log(e);
       });
   };
 
