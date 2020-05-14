@@ -6,6 +6,7 @@ const express = require('express'),
   cors = require('cors'),
   Models = require('./models.js'),
   passport = require('passport'),
+  uuid = require('uuid'),
   path = require("path"),
   { check, validationResult } = require('express-validator');
 require('./passport');
@@ -216,6 +217,7 @@ app.post('/api/users', [
 app.post('/api/news',
   (req, res) => {
     News.create({
+      _id: uuid.v4(),
       Headline: req.body.Headline,
       Body: req.body.Body,
       Date: req.body.Date,
