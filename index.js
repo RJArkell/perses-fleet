@@ -45,50 +45,20 @@ app.get('/api/news', (req, res) => {
     });
 });
 
-//Get objectives
-app.get('/api/objectives', (req, res) => {
-  Objectives.find()
-    .then((Objectives) => { res.status(201).json(Objectives) })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send("Error: " + err);
-    });
-});
-
-//Get operations
-app.get('/api/operations', (req, res) => {
-  Operations.find()
-    .then((Operations) => { res.status(201).json(Operations) })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send("Error: " + err);
-    });
-});
-
-//Get screenshots
-app.get('/api/screenshots', (req, res) => {
-  Screenshots.find()
-    .then((Screenshots) => { res.status(201).json(Screenshots) })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send("Error: " + err);
-    });
-});
-
-//Get users
-app.get('/api/users', (req, res) => {
-  Users.find()
-    .then((users) => { res.status(201).json(users) })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send("Error: " + err);
-    });
-});
-
 //Get specific news post
 app.get('/api/news/:_id', (req, res) => {
   News.findOne({ _id: req.params._id })
     .then((news) => { res.json(news) })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+    });
+});
+
+//Get objectives
+app.get('/api/objectives', (req, res) => {
+  Objectives.find()
+    .then((Objectives) => { res.status(201).json(Objectives) })
     .catch((err) => {
       console.error(err);
       res.status(500).send("Error: " + err);
@@ -105,6 +75,16 @@ app.get('/api/objectives/:_id', (req, res) => {
     });
 });
 
+//Get operations
+app.get('/api/operations', (req, res) => {
+  Operations.find()
+    .then((Operations) => { res.status(201).json(Operations) })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+    });
+});
+
 //Get specific operation
 app.get('/api/operations/:_id', (req, res) => {
   Operations.findOne({ _id: req.params._id })
@@ -115,10 +95,30 @@ app.get('/api/operations/:_id', (req, res) => {
     });
 });
 
+//Get screenshots
+app.get('/api/screenshots', (req, res) => {
+  Screenshots.find()
+    .then((Screenshots) => { res.status(201).json(Screenshots) })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+    });
+});
+
 //Get specific screenshot
 app.get('/api/screenshots/:_id', (req, res) => {
   Screenshots.findOne({ _id: req.params._id })
     .then((screenshot) => { res.json(screenshot) })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+    });
+});
+
+//Get users
+app.get('/api/users', (req, res) => {
+  Users.find()
+    .then((users) => { res.status(201).json(users) })
     .catch((err) => {
       console.error(err);
       res.status(500).send("Error: " + err);
@@ -262,8 +262,7 @@ app.post('/api/objectives',
       Title: req.body.Title,
       Details: req.body.Details,
       Progress: req.body.Progress,
-      Goal: req.body.Goal,
-      Current: req.body.Current
+      Goal: req.body.Goal
     })
       .then((user) => { res.status(201).json(user) })
       .catch((err) => {

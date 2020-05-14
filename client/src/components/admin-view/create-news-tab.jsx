@@ -55,7 +55,8 @@ export function CreateNewsTab(props) {
           <Form.Group>
             <Form.Label>Body</Form.Label>
             <Form.Control
-              type="text"
+              as="textarea"
+              rows="3"
               placeholder="Body"
               value={body}
               onChange={(e) => setBody(e.target.value)}

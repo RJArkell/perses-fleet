@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Col, Row, Card } from "react-bootstrap";
-import { UserCard } from "../user-card/user-card";
+import { RosterCard } from "./roster-card";
 
 export class RosterView extends React.Component {
   render() {
@@ -12,7 +12,7 @@ export class RosterView extends React.Component {
           <Row noGutters={true} className="h-100">
             {users.map(u =>
               <Col xl={3} lg={4} md={6} sm={12}>
-                <UserCard key={u._id} u={u} />
+                <RosterCard key={u._id} u={u} />
               </Col>)}
           </Row>
         </Card>

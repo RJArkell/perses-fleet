@@ -2,7 +2,7 @@ import React from "react";
 import Card from 'react-bootstrap/Card';
 import { Link } from "react-router-dom";
 
-export class UserCard extends React.Component {
+export class RosterCard extends React.Component {
   render() {
     const { u } = this.props;
 

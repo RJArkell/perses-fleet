@@ -4,6 +4,7 @@ import { CreateNewsTab } from "./create-news-tab";
 import { CreateUserTab } from "./create-user-tab";
 import { CreateOperationTab } from "./create-operation-tab";
 import { CreateObjectiveTab } from "./create-objective-tab";
+import { CreateScreenshotTab } from "./create-screenshot-tab";
 
 export class AdminView extends React.Component {
   render() {
@@ -28,6 +29,9 @@ export class AdminView extends React.Component {
                     <Nav.Item>
                       <Nav.Link eventKey="obj" className="admintab">Create Objective</Nav.Link>
                     </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link eventKey="scrn" className="admintab">Add Screenshot</Nav.Link>
+                    </Nav.Item>
                   </Nav>
                 </Card>
               </Col>
@@ -44,6 +48,9 @@ export class AdminView extends React.Component {
                   </Tab.Pane>
                   <Tab.Pane eventKey="obj">
                     <CreateObjectiveTab />
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="scrn">
+                    <CreateScreenshotTab />
                   </Tab.Pane>
                 </Tab.Content>
               </Col>
