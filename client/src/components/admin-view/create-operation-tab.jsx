@@ -8,6 +8,7 @@ export function CreateOperationTab(props) {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [assets, setAssets] = useState('');
+  const [address, setAddress] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,7 +17,8 @@ export function CreateOperationTab(props) {
       Details: details,
       Date: date,
       Time: time,
-      Assets: assets
+      Assets: assets,
+      Address: address
     })
       .then(response => {
         const data = response.data;
@@ -75,9 +77,18 @@ export function CreateOperationTab(props) {
             <Form.Label>Assets</Form.Label>
             <Form.Control
               type="text"
-              placeholder="assets"
+              placeholder="Assets"
               value={assets}
               onChange={(e) => setAssets(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Image URL</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="URL"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
             />
           </Form.Group>
           <Button className="button" type="submit" onClick={handleSubmit}>Submit</Button>

@@ -244,7 +244,8 @@ app.post('/api/operations',
       Details: req.body.Details,
       Date: req.body.Date,
       Time: req.body.Time,
-      Assets: req.body.Assets
+      Assets: req.body.Assets,
+      Address: req.body.Address
     })
       .then((user) => { res.status(201).json(user) })
       .catch((err) => {
@@ -262,7 +263,8 @@ app.post('/api/objectives',
       Title: req.body.Title,
       Details: req.body.Details,
       Progress: req.body.Progress,
-      Goal: req.body.Goal
+      Goal: req.body.Goal,
+      Address: req.body.Address
     })
       .then((user) => { res.status(201).json(user) })
       .catch((err) => {

@@ -25,7 +25,8 @@ var objectiveSchema = mongoose.Schema({
   Title: { type: String, required: true },
   Details: { type: String, required: true },
   Progress: { type: String, required: true },
-  Goal: { type: String, required: true }
+  Goal: { type: String, required: true },
+  Address: { type: String, required: true }
 });
 
 //Schema for operations
@@ -35,7 +36,8 @@ var operationSchema = mongoose.Schema({
   Details: { type: String, required: true },
   Date: { type: Date, required: true },
   Time: { type: String, required: true },
-  Assets: { type: String, required: true }
+  Assets: { type: String, required: true },
+  Address: { type: String, required: true }
 });
 
 //Schema for screenshots
