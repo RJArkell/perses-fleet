@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Card } from "react-bootstrap";
+import { OperationsCard } from "./operations-card";
 
 export class OperationsView extends React.Component {
   render() {
