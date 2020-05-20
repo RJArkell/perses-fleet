@@ -9,7 +9,7 @@ export class OperationsCard extends React.Component {
       <Card className="m-1 infocard">
         <Row noGutters={true}>
           <Col xs={3}>
-            <Card.Img className="h-100" src="https://ibb.co/nwLZxCD" />
+            <Card.Img className="h-100" src={o.Address} />
           </Col>
           <Col xs={9}>
             <Card.Header className="infoheader"><h5>{o.Title}</h5></Card.Header>
