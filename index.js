@@ -275,6 +275,38 @@ app.post('/api/objectives',
   }
 );
 
+//Sign up for operation
+app.post('/operations/:_id/crew/:Username', (req, res) => {
+  Operations.findOneAndUpdate({ _id: req.params._id }, {
+    $push: { Crew: req.params.Username }
+  },
+    { new: true },
+    (err, updatedCrew) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error: " + err);
+      } else {
+        res.json(updatedCrew)
+      }
+    })
+});
+
+//Back out of operation
+app.delete('/operations/:_id/crew/:Username', (req, res) => {
+  Operations.findOneAndUpdate({ _id: req.params._id }, {
+    $pull: { Crew: req.params.Username }
+  },
+    { new: true },
+    (err, updatedCrew) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error: " + err);
+      } else {
+        res.json(updatedCrew)
+      }
+    })
+});
+
 //Create screenshot
 app.post('/api/screenshots',
   (req, res) => {

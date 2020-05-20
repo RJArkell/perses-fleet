@@ -4,13 +4,13 @@ import { OperationsCard } from "./operations-card";
 
 export class OperationsView extends React.Component {
   render() {
-    const { operations } = this.props;
+    const { operations, user } = this.props;
     return (
       <Container fluid className="pagecontainer">
         <Card>
           <Card.Header className="header text-center"><h3>Operations</h3></Card.Header>
           {operations.map(o => (
-            <OperationsCard key={o._id} o={o} />
+            <OperationsCard key={o._id} o={o} user={user} />
           ))}
         </Card>
       </Container>

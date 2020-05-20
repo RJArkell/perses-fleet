@@ -106,7 +106,7 @@ export class App extends React.Component {
           }} />
           <Route path="/operations" render={() => {
             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-            return <OperationsView operations={operations} />;
+            return <OperationsView operations={operations} user={user} />;
           }} />
           <Route path="/dashboard" render={() => {
             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
