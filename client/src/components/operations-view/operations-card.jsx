@@ -4,11 +4,12 @@ import { Card, Col, Row, Button } from 'react-bootstrap';
 export class OperationsCard extends React.Component {
   render() {
     const { o } = this.props;
+
     return (
       <Card className="m-1 infocard">
         <Row noGutters={true}>
           <Col xs={3}>
-            <Card.Img className="h-100" src={require("/img/featured.png")} />
+            <Card.Img className="h-100" src="https://ibb.co/nwLZxCD" />
           </Col>
           <Col xs={9}>
             <Card.Header className="infoheader"><h5>{o.Title}</h5></Card.Header>
