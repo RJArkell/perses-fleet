@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, ProgressBar } from "react-bootstrap";
 
 export class ObjectivesView extends React.Component {
   render() {
+    const { objectives } = this.props;
     return (
       <Container fluid className="p-5 text-center">
         <Card>

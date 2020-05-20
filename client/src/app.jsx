@@ -20,6 +20,8 @@ export class App extends React.Component {
     this.state = {
       news: [],
       users: [],
+      objectives: [],
+      operations: [],
       user: null,
       rank: null,
       email: null
@@ -55,6 +57,22 @@ export class App extends React.Component {
         .catch((err) => {
           console.log('Error: ' + err);
         });
+      axios.get("https://perses-fleet.herokuapp.com/api/objectives")
+        .then(res => {
+          const objectives = res.data;
+          this.setState({ objectives });
+        })
+        .catch((err) => {
+          console.log('Error: ' + err);
+        });
+      axios.get("https://perses-fleet.herokuapp.com/api/operations")
+        .then(res => {
+          const operations = res.data;
+          this.setState({ operations });
+        })
+        .catch((err) => {
+          console.log('Error: ' + err);
+        });
     }
     axios.get("https://perses-fleet.herokuapp.com/api/news")
       .then(res => {
@@ -67,7 +85,7 @@ export class App extends React.Component {
   }
 
   render() {
-    const { news, users, user, rank, email } = this.state;
+    const { news, users, user, rank, email, operations, objectives } = this.state;
     return (
       <BrowserRouter>
         <div className="main background">
@@ -84,11 +102,11 @@ export class App extends React.Component {
           }} />
           <Route path="/objectives" render={() => {
             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-            return <ObjectivesView />;
+            return <ObjectivesView objectives={objectives} />;
           }} />
           <Route path="/operations" render={() => {
             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-            return <OperationsView />;
+            return <OperationsView operations={operations} />;
           }} />
           <Route path="/dashboard" render={() => {
             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;

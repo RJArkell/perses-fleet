@@ -10,7 +10,7 @@ export class HomeView extends React.Component {
   render() {
     const { news } = this.props;
     return (
-      <Container fluid className="p-5">
+      <Container fluid className="pagecontainer">
         <Carousel>
           <Carousel.Item>
             <img className="d-block w-100"

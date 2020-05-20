@@ -37,7 +37,8 @@ var operationSchema = mongoose.Schema({
   Date: { type: Date, required: true },
   Time: { type: String, required: true },
   Assets: { type: String, required: true },
-  Address: { type: String, required: true }
+  Address: { type: String, required: true },
+
 });
 
 //Schema for screenshots

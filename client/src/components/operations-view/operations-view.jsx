@@ -4,12 +4,14 @@ import { OperationsCard } from "./operations-card";
 
 export class OperationsView extends React.Component {
   render() {
+    const { operations } = this.props;
     return (
-      <Container fluid className="p-5 text-center">
+      <Container fluid className="pagecontainer">
         <Card>
           <Card.Header className="header text-center"><h3>Operations</h3></Card.Header>
-          <Card.Body>
-          </Card.Body>
+          {operations.map(o => (
+            <OperationsCard key={o._id} o={o} />
+          ))}
         </Card>
       </Container>
     )
