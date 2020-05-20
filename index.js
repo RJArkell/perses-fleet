@@ -264,7 +264,8 @@ app.post('/api/objectives',
       Details: req.body.Details,
       Progress: req.body.Progress,
       Goal: req.body.Goal,
-      Address: req.body.Address
+      Address: req.body.Address,
+      Crew: req.body.Crew
     })
       .then((user) => { res.status(201).json(user) })
       .catch((err) => {
