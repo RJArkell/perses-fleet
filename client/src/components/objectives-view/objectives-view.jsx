@@ -5,7 +5,7 @@ export class ObjectivesView extends React.Component {
   render() {
     const { objectives } = this.props;
     return (
-      <Container fluid className="p-5 text-center">
+      <Container fluid className="pagecontainer text-center">
         <Card>
           <Card.Header className="header"><h3>Current Objective</h3></Card.Header>
           <Row noGutters={true} className="m-1">

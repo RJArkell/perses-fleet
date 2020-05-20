@@ -19,7 +19,7 @@ export class DashboardView extends React.Component {
   render() {
     const { user, rank, email } = this.props;
     return (
-      <Container fluid className="p-5">
+      <Container fluid className="pagecontainer">
         <Card>
           <Card.Header className="header text-center"><h3>Welcome {rank}</h3></Card.Header>
           <Card.Body>

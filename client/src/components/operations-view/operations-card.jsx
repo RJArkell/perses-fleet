@@ -6,35 +6,34 @@ export class OperationsCard extends React.Component {
     const { o } = this.props;
     return (
       <Card className="m-1 infocard">
-        <Row>
+        <Row noGutters={true}>
           <Col xs={3}>
-            <p>jadshfjkhg</p>
+            <Card.Img className="h-100" src={require("/img/featured.png")} />
           </Col>
           <Col xs={9}>
             <Card.Header className="infoheader"><h5>{o.Title}</h5></Card.Header>
-            <Card.Body>
+            <Card.Body className="ml-4">
               <Row>
-                <Card.Subtitle>
-                  {o.Date}{o.Time}
+                <Card.Subtitle >
+                  <p>{o.Date} - {o.Time}</p>
                 </Card.Subtitle>
               </Row>
-              <Row>
+              <Row className="pt-2">
                 <Card.Text>
                   <p>Details: {o.Details}</p>
                 </Card.Text>
               </Row>
-              <Row>
+              <Row className="pt-2">
                 <Card.Text>
+                  <p>Crew: {o.Assets}</p>
                 </Card.Text>
               </Row>
-              <Row>
+              <Row className="pt-2">
                 <Card.Text>
                   <p>Assets: {o.Assets}</p>
                 </Card.Text>
               </Row>
-              <Row>
-                <Button className="button align-right" type="submit">Join Event</Button>
-              </Row>
+              <Button className="button float-right m-2" type="submit">Join Event</Button>
             </Card.Body>
           </Col>
         </Row>

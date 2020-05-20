@@ -9,7 +9,7 @@ import { CreateScreenshotTab } from "./create-screenshot-tab";
 export class AdminView extends React.Component {
   render() {
     return (
-      <Container fluid className="px-5 pb-5" >
+      <Container fluid className="pagecontainer" >
         <Card>
           <Card.Header className="header text-center"><h3>Admin Panel</h3></Card.Header>
           <Tab.Container id="left-tabs-example" defaultActiveKey="news">
@@ -37,21 +37,11 @@ export class AdminView extends React.Component {
               </Col>
               <Col sm={9}>
                 <Tab.Content>
-                  <Tab.Pane eventKey="news">
-                    <CreateNewsTab />
-                  </Tab.Pane>
-                  <Tab.Pane eventKey="op">
-                    <CreateOperationTab />
-                  </Tab.Pane>
-                  <Tab.Pane eventKey="user">
-                    <CreateUserTab />
-                  </Tab.Pane>
-                  <Tab.Pane eventKey="obj">
-                    <CreateObjectiveTab />
-                  </Tab.Pane>
-                  <Tab.Pane eventKey="scrn">
-                    <CreateScreenshotTab />
-                  </Tab.Pane>
+                  <Tab.Pane eventKey="news"><CreateNewsTab /></Tab.Pane>
+                  <Tab.Pane eventKey="op"><CreateOperationTab /></Tab.Pane>
+                  <Tab.Pane eventKey="user"><CreateUserTab /></Tab.Pane>
+                  <Tab.Pane eventKey="obj"><CreateObjectiveTab /></Tab.Pane>
+                  <Tab.Pane eventKey="scrn"><CreateScreenshotTab /></Tab.Pane>
                 </Tab.Content>
               </Col>
             </Row>
