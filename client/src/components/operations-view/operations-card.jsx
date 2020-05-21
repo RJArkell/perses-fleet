@@ -9,13 +9,13 @@ export class OperationsCard extends React.Component {
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      axios.post(`https://perses-fleet.herokuapp.com/api/operations/${o._id}/crew`, {
+      axios.post(`https://perses-fleet.herokuapp.com/api/operations/${o._id}/crew/${user}`, {
         Username: user,
       })
         .then(res => {
           const data = res.data;
           console.log(data);
-          window.open("/", "_self");
+          window.open("/operations", "_self");
         })
         .catch(e => {
           alert("error signing up for operation");
@@ -44,12 +44,15 @@ export class OperationsCard extends React.Component {
               </Row>
               <Row className="pt-2">
                 <Card.Text>
-                  <p>Crew: {o.Crew}</p>
+                  <p>Assets: {o.Assets}</p>
                 </Card.Text>
               </Row>
               <Row className="pt-2">
                 <Card.Text>
-                  <p>Assets: {o.Assets}</p>
+                  <p>Crew: </p>
+                  {o.Crew.map(u => {
+                    <p key={u._id}>{u.Username}</p>
+                  })}
                 </Card.Text>
               </Row>
               <Button className="button float-right mb-2" type="submit" onClick={handleSubmit}>Join Event</Button>
