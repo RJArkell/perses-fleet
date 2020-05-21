@@ -14,7 +14,9 @@ export class Menubar extends React.Component {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto pr-5">
             <Nav.Link href="/" className="menulink">Main</Nav.Link>
+            <Nav.Link href="/news" className="menulink">News</Nav.Link>
             <Nav.Link href="/fleet" className="menulink">Fleet</Nav.Link>
+            <Nav.Link href="/media" className="menulink">Media</Nav.Link>
             <Nav.Link target="_blank" href="https://robertsspaceindustries.com/spectrum/community/PERSES" className="menulink">Forum</Nav.Link>
             <Nav.Link target="_blank" href="https://robertsspaceindustries.com/orgs/PERSES" className="menulink">Enlist</Nav.Link>
             <NavDropdown title={<div className="menulink">Restricted Area</div>} id="basic-nav-dropdown">

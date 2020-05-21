@@ -50,9 +50,9 @@ export class OperationsCard extends React.Component {
               <Row className="pt-2">
                 <Card.Text>
                   <p>Crew: </p>
-                  {o.Crew.map(u => {
-                    <p key={u._id}>{u.Username}</p>
-                  })}
+                  {o.Crew.map(u => (
+                    <p>{u.Username}</p>
+                  ))}
                 </Card.Text>
               </Row>
               <Button className="button float-right mb-2" type="submit" onClick={handleSubmit}>Join Event</Button>

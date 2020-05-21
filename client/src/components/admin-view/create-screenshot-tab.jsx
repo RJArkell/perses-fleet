@@ -5,7 +5,7 @@ import axios from "axios";
 export function CreateScreenshotTab(props) {
   const [address, setAddress] = useState('');
   const [user, setUser] = useState('');
-  const [date, setDate] = useState('');
+  const date = new Date();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -46,15 +46,6 @@ export function CreateScreenshotTab(props) {
               placeholder="Username"
               value={user}
               onChange={(e) => setUser(e.target.value)}
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Date</Form.Label>
-            <Form.Control
-              type="date"
-              placeholder="Date"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
             />
           </Form.Group>
           <Button className="button" type="submit" onClick={handleSubmit}>Submit</Button>

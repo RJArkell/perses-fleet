@@ -4,11 +4,11 @@ import Carousel from 'react-bootstrap/Carousel'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
-import { NewsCard } from "../news-card/news-card";
+import { NewsCard } from "../news-view/news-card";
 
 export class HomeView extends React.Component {
   render() {
-    const { news } = this.props;
+    const { news, screenshots } = this.props;
     return (
       <Container fluid className="pagecontainer">
         <Carousel>
@@ -35,7 +35,7 @@ export class HomeView extends React.Component {
           </Carousel.Item>
         </Carousel>
         <Card className="mt-4">
-          <Card.Header className="header text-center"><h3>Fleet News</h3></Card.Header>
+          <Card.Header className="header text-center"><h3>Recent News</h3></Card.Header>
           {news.map(n => (
             <NewsCard key={n._id} n={n} />
           ))}
@@ -53,9 +53,9 @@ export class HomeView extends React.Component {
           <Col>
             <Card className="h-100">
               <Card.Header className="header text-center"><h3>Featured Screenshot</h3></Card.Header>
-              <Card.Img className="h-100" src={require("/img/featured.png")} />
+              <Card.Img className="" src={screenshots.Address} />
               <Card.Text className="text-center">
-                Submitted by: c3sk
+                Submitted by: {screenshots.User}
               </Card.Text>
             </Card>
           </Col>

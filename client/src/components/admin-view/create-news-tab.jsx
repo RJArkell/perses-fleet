@@ -4,10 +4,10 @@ import axios from "axios";
 
 export function CreateNewsTab(props) {
   const [headline, setHeadline] = useState('');
-  const [date, setDate] = useState('');
   const [body, setBody] = useState('');
   const [linktext, setLinkText] = useState('');
   const [link, setLink] = useState('');
+  const date = new Date();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,15 +41,6 @@ export function CreateNewsTab(props) {
               placeholder="Headline"
               value={headline}
               onChange={(e) => setHeadline(e.target.value)}
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Date</Form.Label>
-            <Form.Control
-              type="date"
-              placeholder="Date"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
             />
           </Form.Group>
           <Form.Group>

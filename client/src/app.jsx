@@ -3,6 +3,8 @@ import axios from "axios";
 import { BrowserRouter, Route } from "react-router-dom";
 import { Menubar } from "./components/menubar/menubar";
 import { HomeView } from "./components/home-view/home-view";
+import { NewsView } from "./components/news-view/news-view";
+import { MediaView } from "./components/media-view/media-view";
 import { LoginView } from "./components/login-view/login-view";
 import { AdminView } from "./components/admin-view/admin-view";
 import { RosterView } from "./components/roster-view/roster-view";
@@ -19,6 +21,7 @@ export class App extends React.Component {
     super(props);
     this.state = {
       news: [],
+      screenshots: [],
       users: [],
       objectives: [],
       operations: [],
@@ -82,16 +85,26 @@ export class App extends React.Component {
       .catch((err) => {
         console.log('Error: ' + err);
       });
+    axios.get("https://perses-fleet.herokuapp.com/api/screenshots")
+      .then(res => {
+        const screenshots = res.data;
+        this.setState({ screenshots });
+      })
+      .catch((err) => {
+        console.log('Error: ' + err);
+      });
   }
 
   render() {
-    const { news, users, user, rank, email, operations, objectives } = this.state;
+    const { news, users, user, rank, email, operations, objectives, screenshots } = this.state;
     return (
       <BrowserRouter>
         <div className="main background">
           <Route path="/" render={() => <Menubar />} />
-          <Route exact path="/" render={() => <HomeView news={news} />} />
+          <Route exact path="/" render={() => <HomeView news={news} screenshots={screenshots} />} />
+          <Route path="/news" render={() => <NewsView news={news} />} />
           <Route path="/fleet" render={() => <FleetView />} />
+          <Route path="/media" render={() => <MediaView screenshots={screenshots} />} />
           <Route path="/roster" render={() => {
             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
             return <RosterView users={users} />;

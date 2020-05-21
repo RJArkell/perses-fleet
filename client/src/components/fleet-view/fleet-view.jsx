@@ -1,6 +1,5 @@
 import React from "react";
-import Card from 'react-bootstrap/Card';
-import Container from "react-bootstrap/Container";
+import { Card, Container } from 'react-bootstrap';
 
 export class FleetView extends React.Component {
   render() {
