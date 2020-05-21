@@ -1,13 +1,15 @@
 import React from "react";
 import { Card, Col, Row, Button } from 'react-bootstrap';
+import axios from "axios";
 
 export class OperationsCard extends React.Component {
   render() {
     const { o } = this.props;
+    const { user } = this.props;
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      axios.post("https://perses-fleet.herokuapp.com/api/operations/:_id/crew", {
+      axios.post(`https://perses-fleet.herokuapp.com/api/operations/${o._id}/crew`, {
         Username: user,
       })
         .then(res => {
