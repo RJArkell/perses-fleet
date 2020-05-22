@@ -55,32 +55,32 @@ export class App extends React.Component {
         rank: localStorage.getItem("rank"),
         email: localStorage.getItem("email")
       });
-      axios.get("https://perses-fleet.herokuapp.com/api/users")
-        .then(res => {
-          const users = res.data;
-          this.setState({ users });
-        })
-        .catch((err) => {
-          console.log('Error: ' + err);
-        });
-      axios.get("https://perses-fleet.herokuapp.com/api/objectives")
-        .then(res => {
-          const objectives1 = res.data;
-          const objectives = objectives1.reverse();
-          this.setState({ objectives });
-        })
-        .catch((err) => {
-          console.log('Error: ' + err);
-        });
-      axios.get("https://perses-fleet.herokuapp.com/api/operations")
-        .then(res => {
-          const operations = res.data;
-          this.setState({ operations });
-        })
-        .catch((err) => {
-          console.log('Error: ' + err);
-        });
     }
+    axios.get("https://perses-fleet.herokuapp.com/api/users")
+      .then(res => {
+        const users = res.data;
+        this.setState({ users });
+      })
+      .catch((err) => {
+        console.log('Error: ' + err);
+      });
+    axios.get("https://perses-fleet.herokuapp.com/api/objectives")
+      .then(res => {
+        const objectives1 = res.data;
+        const objectives = objectives1.reverse();
+        this.setState({ objectives });
+      })
+      .catch((err) => {
+        console.log('Error: ' + err);
+      });
+    axios.get("https://perses-fleet.herokuapp.com/api/operations")
+      .then(res => {
+        const operations = res.data;
+        this.setState({ operations });
+      })
+      .catch((err) => {
+        console.log('Error: ' + err);
+      });
     axios.get("https://perses-fleet.herokuapp.com/api/news")
       .then(res => {
         const news1 = res.data;
