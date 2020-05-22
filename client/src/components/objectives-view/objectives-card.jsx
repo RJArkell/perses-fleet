@@ -5,7 +5,7 @@ export class ObjectivesCard extends React.Component {
   render() {
     const { o } = this.props;
     const bar = (o.Progress / o.Goal) * 100;
-    console.log(bar)
+    var date = new Date(o.Date);
 
     return (
       <Card className="m-1 infocard">
@@ -15,7 +15,12 @@ export class ObjectivesCard extends React.Component {
             <Card.Body className="mx-4">
               <Row>
                 <Card.Text>
-                  <p>Details: {o.Details}</p>
+                  <p>STARTED: {date.toDateString()}</p>
+                </Card.Text>
+              </Row>
+              <Row className="pt-2">
+                <Card.Text>
+                  <p>DETAILS: {o.Details}</p>
                 </Card.Text>
               </Row>
               <Row className="pt-3">

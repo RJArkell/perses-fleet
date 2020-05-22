@@ -7,6 +7,7 @@ export class OperationsCard extends React.Component {
     const { o } = this.props;
     const { user } = this.props;
     var date = new Date(o.Date);
+    console.log(o.Crew)
 
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -39,22 +40,25 @@ export class OperationsCard extends React.Component {
                   <h5>{date.toDateString()} - {o.Time}</h5>
                 </Card.Subtitle>
               </Row>
-              <Row className="pt-2">
+              <Row className="mt-3">
                 <Card.Text>
-                  <p>Details: {o.Details}</p>
+                  <p>DETAILS:  {o.Details}</p>
                 </Card.Text>
               </Row>
-              <Row className="pt-2">
+              <Row className="mt-2">
                 <Card.Text>
-                  <p>Assets: {o.Assets}</p>
+                  <p>ASSETS:  {o.Assets}</p>
                 </Card.Text>
               </Row>
-              <Row className="pt-2">
+              <Row className="mt-2">
                 <Card.Text>
-                  <p>Crew: {o.Crew}</p>
+                  <p>CREW:</p>
+                  {o.Crew.map(c => {
+                    return <p className="ml-2">{c}</p>
+                  })}
                 </Card.Text>
               </Row>
-              <Button className="button float-right mb-2" type="submit" onClick={handleSubmit}>Join Event</Button>
+              <Button className="button float-right mb-2" type="submit" onClick={handleSubmit}>Join Crew</Button>
             </Card.Body>
           </Col>
         </Row>
