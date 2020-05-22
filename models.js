@@ -41,7 +41,7 @@ var operationSchema = mongoose.Schema({
   Time: { type: String, required: true },
   Assets: { type: String, required: true },
   Address: { type: String, required: true },
-  Crew: [{ type: mongoose.Schema.Types.String, ref: 'User' }]
+  Crew: [String]
 });
 
 //Schema for screenshots

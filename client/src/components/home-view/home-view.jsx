@@ -15,21 +15,21 @@ export class HomeView extends React.Component {
         <Carousel>
           <Carousel.Item>
             <img className="d-block w-100"
-              src={require("/img/marine2.png")} />
+              src={"https://i.ibb.co/x5BmxtH/marine2.png"} />
             <Carousel.Caption>
               <h3>Explore new worlds</h3>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item >
             <img className="d-block w-100"
-              src={require("/img/mining2.png")} />
+              src={"https://i.ibb.co/LZHDFwn/mining2.png"} />
             <Carousel.Caption>
               <h3>Build your fortune</h3>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img className="d-block w-100"
-              src={require("/img/combat2.png")} />
+              src={"https://i.ibb.co/1XW0kVh/combat2.png"} />
             <Carousel.Caption>
               <h3>Join the fight</h3>
             </Carousel.Caption>
