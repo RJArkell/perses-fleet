@@ -6,6 +6,7 @@ export class OperationsCard extends React.Component {
   render() {
     const { o } = this.props;
     const { user } = this.props;
+    var date = new Date(o.Date);
 
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -15,6 +16,7 @@ export class OperationsCard extends React.Component {
         .then(res => {
           const data = res.data;
           console.log(data);
+          alert("You have been signed up");
           window.open("/operations", "_self");
         })
         .catch(e => {
@@ -30,11 +32,11 @@ export class OperationsCard extends React.Component {
             <Card.Img className="h-100" src={o.Address} />
           </Col>
           <Col xs={9}>
-            <Card.Header className="infoheader"><h5>{o.Title}</h5></Card.Header>
-            <Card.Body className="ml-4">
+            <Card.Header className="infoheader"><h4>{o.Title}</h4></Card.Header>
+            <Card.Body className="mx-4">
               <Row>
                 <Card.Subtitle >
-                  <p>{o.Date} - {o.Time}</p>
+                  <h5>{date.toDateString()} - {o.Time}</h5>
                 </Card.Subtitle>
               </Row>
               <Row className="pt-2">
@@ -49,10 +51,7 @@ export class OperationsCard extends React.Component {
               </Row>
               <Row className="pt-2">
                 <Card.Text>
-                  <p>Crew: </p>
-                  {o.Crew.map(u => (
-                    <p>{u.Username}</p>
-                  ))}
+                  <p>Crew: {o.Crew}</p>
                 </Card.Text>
               </Row>
               <Button className="button float-right mb-2" type="submit" onClick={handleSubmit}>Join Event</Button>

@@ -9,6 +9,7 @@ import { NewsCard } from "../news-view/news-card";
 export class HomeView extends React.Component {
   render() {
     const { news, screenshots } = this.props;
+
     return (
       <Container fluid className="pagecontainer">
         <Carousel>
@@ -36,7 +37,7 @@ export class HomeView extends React.Component {
         </Carousel>
         <Card className="mt-4">
           <Card.Header className="header text-center"><h3>Recent News</h3></Card.Header>
-          {news.map(n => (
+          {news.slice(0, 5).map(n => (
             <NewsCard key={n._id} n={n} />
           ))}
         </Card>
@@ -51,13 +52,15 @@ export class HomeView extends React.Component {
             </Card>
           </Col>
           <Col>
-            <Card className="h-100">
-              <Card.Header className="header text-center"><h3>Featured Screenshot</h3></Card.Header>
-              <Card.Img className="" src={screenshots.Address} />
-              <Card.Text className="text-center">
-                Submitted by: {screenshots.User}
-              </Card.Text>
-            </Card>
+            {screenshots.slice(0, 1).map(s => (
+              <Card className="h-100">
+                <Card.Header className="header text-center"><h3>Featured Screenshot</h3></Card.Header>
+                <Card.Img className="" src={s.Address} />
+                <Card.Text className="text-center">
+                  Submitted by: {s.User}
+                </Card.Text>
+              </Card>
+            ))}
           </Col>
         </Row>
       </Container>

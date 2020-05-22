@@ -20,9 +20,12 @@ export class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      news1: [],
       news: [],
+      screenshots1: [],
       screenshots: [],
       users: [],
+      objectives1: [],
       objectives: [],
       operations: [],
       user: null,
@@ -62,7 +65,8 @@ export class App extends React.Component {
         });
       axios.get("https://perses-fleet.herokuapp.com/api/objectives")
         .then(res => {
-          const objectives = res.data;
+          const objectives1 = res.data;
+          const objectives = objectives1.reverse();
           this.setState({ objectives });
         })
         .catch((err) => {
@@ -79,7 +83,8 @@ export class App extends React.Component {
     }
     axios.get("https://perses-fleet.herokuapp.com/api/news")
       .then(res => {
-        const news = res.data;
+        const news1 = res.data;
+        const news = news1.reverse();
         this.setState({ news });
       })
       .catch((err) => {
@@ -87,7 +92,8 @@ export class App extends React.Component {
       });
     axios.get("https://perses-fleet.herokuapp.com/api/screenshots")
       .then(res => {
-        const screenshots = res.data;
+        const screenshots1 = res.data;
+        const screenshots = screenshots1.reverse();
         this.setState({ screenshots });
       })
       .catch((err) => {
@@ -97,6 +103,7 @@ export class App extends React.Component {
 
   render() {
     const { news, users, user, rank, email, operations, objectives, screenshots } = this.state;
+
     return (
       <BrowserRouter>
         <div className="main background">

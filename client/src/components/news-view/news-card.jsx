@@ -4,10 +4,11 @@ import Card from 'react-bootstrap/Card';
 export class NewsCard extends React.Component {
   render() {
     const { n } = this.props;
+    var date = new Date(n.Date);
 
     return (
       <Card className="m-1 infocard">
-        <Card.Header className="infoheader"><h5>{n.Headline} - {n.Date}</h5></Card.Header>
+        <Card.Header className="infoheader"><h5>{n.Headline} - {date.toDateString()}</h5></Card.Header>
         <Card.Body>
           <Card.Text>
             <p>{n.Body}</p>

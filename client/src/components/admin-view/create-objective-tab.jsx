@@ -7,7 +7,9 @@ export function CreateObjectiveTab(props) {
   const [details, setDetails] = useState('');
   const [progress, setProgress] = useState('');
   const [goal, setGoal] = useState('');
+  const [unit, setUnit] = useState('');
   const [address, setAddress] = useState('');
+  const date = new Date();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,7 +18,9 @@ export function CreateObjectiveTab(props) {
       Details: details,
       Progress: progress,
       Goal: goal,
-      Address: address
+      Unit: unit,
+      Address: address,
+      Date: date
     })
       .then(response => {
         const data = response.data;
@@ -57,7 +61,7 @@ export function CreateObjectiveTab(props) {
             <Form.Label>Progress</Form.Label>
             <Form.Control
               type="number"
-              placeholder="aUEC"
+              placeholder="Current progress"
               value={progress}
               onChange={(e) => setProgress(e.target.value)}
             />
@@ -66,9 +70,18 @@ export function CreateObjectiveTab(props) {
             <Form.Label>Goal</Form.Label>
             <Form.Control
               type="number"
-              placeholder="aUEC"
+              placeholder="Set goal"
               value={goal}
               onChange={(e) => setGoal(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Progress Unit</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Hours, aUEC, etc."
+              value={unit}
+              onChange={(e) => setUnit(e.target.value)}
             />
           </Form.Group>
           <Form.Group>

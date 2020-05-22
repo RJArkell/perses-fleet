@@ -27,7 +27,9 @@ var objectiveSchema = mongoose.Schema({
   Details: { type: String, required: true },
   Progress: { type: String, required: true },
   Goal: { type: String, required: true },
-  Address: { type: String, required: true }
+  Unit: { type: String, required: true },
+  Address: { type: String, required: true },
+  Date: { type: String, required: true }
 });
 
 //Schema for operations
