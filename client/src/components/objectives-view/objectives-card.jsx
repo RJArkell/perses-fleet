@@ -18,15 +18,15 @@ export class ObjectivesCard extends React.Component {
                   <p>STARTED: {date.toDateString()}</p>
                 </Card.Text>
               </Row>
-              <Row className="pt-2">
+              <Row className="mt-2">
                 <Card.Text>
                   <p>DETAILS: {o.Details}</p>
                 </Card.Text>
               </Row>
-              <Row className="pt-3">
+              <Row className="mt-3">
                 <ProgressBar striped variant="info" className="w-100" animated now={bar} />
               </Row>
-              <Row className="pt-2 justify-content-center">
+              <Row className="mt-2 justify-content-center">
                 <Card.Text>
                   <p>{o.Progress} / {o.Goal} aUEC</p>
                 </Card.Text>

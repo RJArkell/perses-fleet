@@ -24,12 +24,12 @@ export class DashboardView extends React.Component {
           <Card.Header className="header text-center"><h3>Welcome {rank}</h3></Card.Header>
           <Card.Body>
             <Card.Text className="pb-2">
-              <p className="mb-2">Username: {user}</p>
-              <p className="mb-2">Rank: {rank}</p>
-              <p className="mb-2">Email: {email}</p>
-              <p className="mb-2">Commission/Command:</p>
-              <p className="mb-2">Status:</p>
-              <p className="mb-2">Commendations:</p>
+              <p className="mb-2">HANDLE: {user}</p>
+              <p className="mb-2">RANK: {rank}</p>
+              <p className="mb-2">EMAIL: {email}</p>
+              <p className="mb-2">COMMISSION/COMMAND:</p>
+              <p className="mb-2">STATUS:</p>
+              <p className="mb-2">COMMENDATION:</p>
             </Card.Text>
             <Link to={`/updateprofile`}>
               <Button variant="contained" color="primary" className="button">Update Information</Button>
