@@ -20,12 +20,9 @@ export class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      news1: [],
       news: [],
-      screenshots1: [],
       screenshots: [],
       users: [],
-      objectives1: [],
       objectives: [],
       operations: [],
       user: null,
@@ -66,8 +63,7 @@ export class App extends React.Component {
       });
     axios.get("https://perses-fleet.herokuapp.com/api/objectives")
       .then(res => {
-        const objectives1 = res.data;
-        const objectives = objectives1.reverse();
+        const objectives = res.data.reverse();
         this.setState({ objectives });
       })
       .catch((err) => {
@@ -76,6 +72,9 @@ export class App extends React.Component {
     axios.get("https://perses-fleet.herokuapp.com/api/operations")
       .then(res => {
         const operations = res.data;
+        operations.sort((a, b) => {
+          return a.Date > b.Date;
+        })
         this.setState({ operations });
       })
       .catch((err) => {
@@ -83,8 +82,7 @@ export class App extends React.Component {
       });
     axios.get("https://perses-fleet.herokuapp.com/api/news")
       .then(res => {
-        const news1 = res.data;
-        const news = news1.reverse();
+        const news = res.data.reverse();
         this.setState({ news });
       })
       .catch((err) => {
@@ -92,8 +90,7 @@ export class App extends React.Component {
       });
     axios.get("https://perses-fleet.herokuapp.com/api/screenshots")
       .then(res => {
-        const screenshots1 = res.data;
-        const screenshots = screenshots1.reverse();
+        const screenshots = res.data.reverse();
         this.setState({ screenshots });
       })
       .catch((err) => {

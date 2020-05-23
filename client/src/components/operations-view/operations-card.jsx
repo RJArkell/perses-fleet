@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Col, Row, Button } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 export class OperationsCard extends React.Component {
@@ -54,7 +55,7 @@ export class OperationsCard extends React.Component {
                 <Card.Text>
                   <p>CREW:</p>
                   {o.Crew.map(c => {
-                    return <p className="ml-2">{c}</p>
+                    return <Link to={`/profile/${c}`} className="ml-2">{c}</Link>
                   })}
                 </Card.Text>
               </Row>

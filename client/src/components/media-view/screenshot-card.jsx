@@ -1,5 +1,6 @@
 import React from "react";
 import { Card } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 export class ScreenshotCard extends React.Component {
   render() {
@@ -11,7 +12,7 @@ export class ScreenshotCard extends React.Component {
           <Card.Img className="h-100" src={s.Address} />
         </a>
         <Card.Text className="text-center">
-          Submitted by: {s.User}
+          Submitted by: <Link to={`/profile/${s.User}`} className="ml-2">{s.User}</Link>
         </Card.Text>
       </Card>
     )
