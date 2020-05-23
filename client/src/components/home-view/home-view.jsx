@@ -12,7 +12,7 @@ export class HomeView extends React.Component {
 
     return (
       <Container fluid className="pagecontainer">
-        <Card className="mt-4">
+        <Card>
           <Carousel className="m-1">
             <Carousel.Item>
               <img className="d-block w-100"
@@ -41,7 +41,7 @@ export class HomeView extends React.Component {
             <NewsCard key={n._id} n={n} />
           ))}
           <Row noGutters={true}>
-            <Col>
+            <Col className="h-100">
               <Card className="h-100 m-1 infocard">
                 <Card.Header className="header text-center"><h3>About Perses Fleet</h3></Card.Header>
                 <Card.Body>
@@ -50,7 +50,7 @@ export class HomeView extends React.Component {
                 </Card.Body>
               </Card>
             </Col>
-            <Col>
+            <Col className="h-100">
               {screenshots.slice(0, 1).map(s => (
                 <Card className="h-100 m-1 infocard" >
                   <Card.Header className="header text-center"><h3>Featured Screenshot</h3></Card.Header>
