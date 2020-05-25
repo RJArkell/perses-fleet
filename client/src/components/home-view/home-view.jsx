@@ -13,7 +13,7 @@ export class HomeView extends React.Component {
     return (
       <Container fluid className="pagecontainer">
         <Card>
-          <Carousel className="m-1">
+          <Carousel className="m-1 holoborder">
             <Carousel.Item>
               <img className="d-block w-100"
                 src={"https://i.ibb.co/x5BmxtH/marine2.png"} />
@@ -42,15 +42,6 @@ export class HomeView extends React.Component {
           ))}
           <Row noGutters={true}>
             <Col className="h-100">
-              <Card className="h-100 m-1 infocard">
-                <Card.Header className="header text-center"><h3>About Perses Fleet</h3></Card.Header>
-                <Card.Body>
-                  <Card.Text>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col className="h-100">
               {screenshots.slice(0, 1).map(s => (
                 <Card className="h-100 m-1 infocard" >
                   <Card.Header className="header text-center"><h3>Featured Screenshot</h3></Card.Header>
@@ -60,6 +51,15 @@ export class HomeView extends React.Component {
                   </Card.Text>
                 </Card>
               ))}
+            </Col>
+            <Col className="h-100">
+              <Card className="h-100 m-1 infocard">
+                <Card.Header className="header text-center"><h3>About Perses Fleet</h3></Card.Header>
+                <Card.Body>
+                  <Card.Text>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
             </Col>
           </Row>
         </Card>

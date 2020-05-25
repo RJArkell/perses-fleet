@@ -66,7 +66,6 @@ export function CreateUserTab(props) {
               value={rank}
               onChange={(e) => setRank(e.target.value)}
             >
-              <option>Associate</option>
               <option>Recruit</option>
               <option>Ensign</option>
               <option>Lieutenant</option>

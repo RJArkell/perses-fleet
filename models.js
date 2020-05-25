@@ -7,7 +7,10 @@ var userSchema = mongoose.Schema({
   Username: { type: String, required: true },
   Rank: { type: String, required: true },
   Password: { type: String, required: true },
-  Email: { type: String, required: true }
+  Email: { type: String, required: true },
+  Status: { type: String, required: true },
+  Commission: { type: String, required: true },
+  Commendations: [String]
 });
 
 //Schema for news

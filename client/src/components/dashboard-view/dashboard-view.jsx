@@ -29,7 +29,7 @@ export class DashboardView extends React.Component {
               <p className="mb-2">EMAIL: {email}</p>
               <p className="mb-2">COMMISSION/COMMAND:</p>
               <p className="mb-2">STATUS:</p>
-              <p className="mb-2">COMMENDATION:</p>
+              <p className="mb-2">COMMENDATIONS:</p>
             </Card.Text>
             <Link to={`/updateprofile`}>
               <Button variant="contained" color="primary" className="button">Update Information</Button>
