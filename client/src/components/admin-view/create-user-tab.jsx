@@ -7,6 +7,8 @@ export function CreateUserTab(props) {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [rank, setRank] = useState('');
+  const [status, setStatus] = useState('');
+  const [commission, setCommission] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,7 +16,9 @@ export function CreateUserTab(props) {
       Username: username,
       Password: password,
       Email: email,
-      Rank: rank
+      Rank: rank,
+      Status: status,
+      Commission: commission
     })
       .then(res => {
         const data = res.data;
@@ -72,6 +76,24 @@ export function CreateUserTab(props) {
               <option>Commander</option>
               <option>Admiral</option>
             </Form.Control>
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Status</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Status"
+              value={status}
+              onChange={(e) => setStatus(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Commission</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Commission"
+              value={commission}
+              onChange={(e) => setCommission(e.target.value)}
+            />
           </Form.Group>
           <Button className="button" type="submit" onClick={handleSubmit}>Submit</Button>
         </Form>

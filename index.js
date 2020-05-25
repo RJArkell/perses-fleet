@@ -201,7 +201,9 @@ app.post('/api/users', [
             Username: req.body.Username,
             Rank: req.body.Rank,
             Password: hashedPassword,
-            Email: req.body.Email
+            Email: req.body.Email,
+            Status: req.body.Status,
+            Commission: req.body.Commission
           })
             .then((user) => { res.status(201).json(user) })
             .catch((err) => {
