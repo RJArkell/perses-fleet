@@ -11,7 +11,7 @@ export class MediaView extends React.Component {
           <Card.Header className="header"><h3>Screenshots</h3></Card.Header>
           <Row noGutters={true} className="m-1">
             {screenshots.map(s =>
-              <Col sm={12} md={6} lg={4} className="m-1">
+              <Col sm={12} md={6} lg={4} className="p-1">
                 <ScreenshotCard key={s._id} s={s} />
               </Col>)}
           </Row>

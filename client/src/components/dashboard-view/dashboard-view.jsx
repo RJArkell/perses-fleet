@@ -27,7 +27,7 @@ export class DashboardView extends React.Component {
               <p className="mb-2">HANDLE: {user}</p>
               <p className="mb-2">RANK: {rank}</p>
               <p className="mb-2">EMAIL: {email}</p>
-              <p className="mb-2">COMMISSION/COMMAND:</p>
+              <p className="mb-2">COMMISSION:</p>
               <p className="mb-2">STATUS:</p>
               <p className="mb-2">COMMENDATIONS:</p>
             </Card.Text>

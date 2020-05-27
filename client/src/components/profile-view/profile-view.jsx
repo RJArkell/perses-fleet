@@ -10,9 +10,9 @@ export class ProfileView extends React.Component {
           <Card.Header className="header text-center"><h3>{u.Rank} {u.Username}</h3></Card.Header>
           <Card.Body>
             <Card.Text>
-              <p>STATUS:</p><br />
-              <p>COMMENDATIONS:</p><br />
-              <p>COMMISSION/COMMAND:</p>
+              <p>STATUS:  </p>
+              <p>COMMISSION:  </p>
+              <p>COMMENDATIONS:  </p>
             </Card.Text>
           </Card.Body>
         </Card>

@@ -39,9 +39,9 @@ export class FleetView extends React.Component {
               </Row>
             </Col>
           </Row>
-          <Row noGutters={true} className="mx-1 my-1">
+          <Row noGutters={true} className="m-1">
             <Col className="p-1">
-              <Card.Img className="h-100 holoborder" src={"https://i.ibb.co/RHj9cJq/unknown.png"} />
+              <Card.Img className="h-100 holoborder" src={"https://i.ibb.co/r5W8cy3/unknown.png"} />
             </Col>
             <Col className="p-1">
               <Card.Img className="h-100 holoborder" src={"https://i.ibb.co/KFYZYNW/image.png"} />
@@ -83,7 +83,7 @@ export class FleetView extends React.Component {
               <Card.Img className="patch" />
             </Col>
           </Row>
-          <Row noGutters={true} className="mx-1 my-1">
+          <Row noGutters={true} className="m-1">
             <Col className="p-1">
               <Card.Img className="h-100 holoborder" src={"https://i.ibb.co/ggx8pNW/unknown.png"} />
             </Col>
@@ -93,43 +93,41 @@ export class FleetView extends React.Component {
           </Row>
         </Card>
 
-        <Card className="mb-2 infocard">
-          <Card.Header className="infoheader text-center"><h4>Polaris</h4></Card.Header>
-          <Card.Body>
-            <Row className="my-3">
-              <Col xs={5} className="text-center" >
-                <Card.Img className="patch" />
-              </Col>
-              <Col xs={7} className="mt-4 pr-5">
-                <Row>
-                  <Card.Text>
-                    <p>MODEL:  RSI Polaris</p>
-                  </Card.Text>
-                </Row>
-                <Row className="mt-2">
-                  <Card.Text>
-                    <p>CAPTAIN:  N/A</p>
-                  </Card.Text>
-                </Row>
-                <Row className="mt-2">
-                  <Card.Text>
-                    <p>ROLE:  Corvette</p>
-                  </Card.Text>
-                </Row>
-                <Row className="mt-2">
-                  <Card.Text>
-                    <p>STATUS:  In Production</p>
-                  </Card.Text>
-                </Row>
-                <Row className="mt-2">
-                  <Card.Text>
-                    <p>DETAILS:  The RSI Polaris is a ship in the concept stage and will be filling the void between larger capital sized ships and non-capital ships that had been created when the original Idris grew in size significantly during production. At the length of around 155 meters the Polaris will be a Corvette. It has been mentioned that it will have a military focus.</p>
-                  </Card.Text>
-                </Row>
-              </Col>
-            </Row>
-          </Card.Body>
-          <Row noGutters={true} className="mx-1 mb-1">
+        <Card className="mb-2 card">
+          <Card.Header className="header text-center"><h3>Polaris</h3></Card.Header>
+          <Row className="mx-2 mt-2 py-4 holoborder">
+            <Col xs={5} className="text-center p-1" >
+              <Card.Img className="patch" />
+            </Col>
+            <Col xs={7} className="pt-4 pr-5">
+              <Row>
+                <Card.Text>
+                  <p>MODEL:  RSI Polaris</p>
+                </Card.Text>
+              </Row>
+              <Row className="mt-2">
+                <Card.Text>
+                  <p>CAPTAIN:  N/A</p>
+                </Card.Text>
+              </Row>
+              <Row className="mt-2">
+                <Card.Text>
+                  <p>ROLE:  Corvette</p>
+                </Card.Text>
+              </Row>
+              <Row className="mt-2">
+                <Card.Text>
+                  <p>STATUS:  In Production</p>
+                </Card.Text>
+              </Row>
+              <Row className="mt-2">
+                <Card.Text>
+                  <p>DETAILS:  The RSI Polaris is a ship in the concept stage and will be filling the void between larger capital sized ships and non-capital ships that had been created when the original Idris grew in size significantly during production. At the length of around 155 meters the Polaris will be a Corvette. It has been mentioned that it will have a military focus.</p>
+                </Card.Text>
+              </Row>
+            </Col>
+          </Row>
+          <Row noGutters={true} className="m-1">
             <Col className="p-1">
               <Card.Img className="h-100 holoborder" />
             </Col>
@@ -139,43 +137,41 @@ export class FleetView extends React.Component {
           </Row>
         </Card>
 
-        <Card className="infocard">
+        <Card className="card">
           <Card.Header className="header text-center"><h3>Idris</h3></Card.Header>
-          <Card.Body>
-            <Row className="my-3">
-              <Col xs={7} className="mt-4 pl-5">
-                <Row>
-                  <Card.Text>
-                    <p>MODEL:  Aegis Idris-K</p>
-                  </Card.Text>
-                </Row>
-                <Row className="mt-2">
-                  <Card.Text>
-                    <p>CAPTAIN:  N/A</p>
-                  </Card.Text>
-                </Row>
-                <Row className="mt-2">
-                  <Card.Text>
-                    <p>ROLE:  Frigate</p>
-                  </Card.Text>
-                </Row>
-                <Row className="mt-2">
-                  <Card.Text>
-                    <p>STATUS:  In Production</p>
-                  </Card.Text>
-                </Row>
-                <Row className="mt-2">
-                  <Card.Text>
-                    <p>DETAILS:  The Aegis Idris-K is an aftermarket special edition of the Idris-P that features additional equipments tailored to dealing with the swarm threat of carrier-type ships. Compared to the Idris-P, Idris-K has an additional size 10 laser beam, four point defense turrets that replaced the remote turrets, and a missile turret that replaced a manned turret.</p>
-                  </Card.Text>
-                </Row>
-              </Col>
-              <Col xs={5} className="text-center" >
-                <Card.Img className="patch" />
-              </Col>
-            </Row>
-          </Card.Body>
-          <Row noGutters={true} className="mx-1 mb-1">
+          <Row className="mx-2 mt-2 py-4 holoborder">
+            <Col xs={7} className="pt-4 pl-5">
+              <Row>
+                <Card.Text>
+                  <p>MODEL:  Aegis Idris-K</p>
+                </Card.Text>
+              </Row>
+              <Row className="mt-2">
+                <Card.Text>
+                  <p>CAPTAIN:  N/A</p>
+                </Card.Text>
+              </Row>
+              <Row className="mt-2">
+                <Card.Text>
+                  <p>ROLE:  Frigate</p>
+                </Card.Text>
+              </Row>
+              <Row className="mt-2">
+                <Card.Text>
+                  <p>STATUS:  In Production</p>
+                </Card.Text>
+              </Row>
+              <Row className="mt-2">
+                <Card.Text>
+                  <p>DETAILS:  The Aegis Idris-K is an aftermarket special edition of the Idris-P that features additional equipments tailored to dealing with the swarm threat of carrier-type ships. Compared to the Idris-P, Idris-K has an additional size 10 laser beam, four point defense turrets that replaced the remote turrets, and a missile turret that replaced a manned turret.</p>
+                </Card.Text>
+              </Row>
+            </Col>
+            <Col xs={5} className="text-center p-1" >
+              <Card.Img className="patch" />
+            </Col>
+          </Row>
+          <Row noGutters={true} className="m-1">
             <Col className="p-1">
               <Card.Img className="h-100 holoborder" />
             </Col>
