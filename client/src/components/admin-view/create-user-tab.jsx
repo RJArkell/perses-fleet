@@ -66,11 +66,11 @@ export function CreateUserTab(props) {
             <Form.Label>Rank</Form.Label>
             <Form.Control
               as="select"
-              placeholder="Select Rank"
               custom
               value={rank}
               onChange={(e) => setRank(e.target.value)}
             >
+              <option>Select Rank</option>
               <option>Recruit</option>
               <option>Ensign</option>
               <option>Lieutenant</option>
