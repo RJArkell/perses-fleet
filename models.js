@@ -55,6 +55,14 @@ var screenshotSchema = mongoose.Schema({
   Date: { type: Date, required: true },
 });
 
+//Schema for commendations
+var commendationSchema = mongoose.Schema({
+  _id: String,
+  Name: { type: String, required: true },
+  Details: { type: String, required: true },
+  Address: { type: String, required: true }
+});
+
 //Bcrypt password encryption
 userSchema.statics.hashPassword = function (password) {
   return bcrypt.hashSync(password, 10);
@@ -70,6 +78,7 @@ var News = mongoose.model('News', newsSchema);
 var Objective = mongoose.model('Objective', objectiveSchema);
 var Operation = mongoose.model('Operation', operationSchema);
 var Screenshot = mongoose.model('Screenshot', screenshotSchema);
+var Commendation = mongoose.model('Commendation', commendationSchema);
 
 //Export models
 module.exports.User = User;
@@ -77,3 +86,4 @@ module.exports.News = News;
 module.exports.Objective = Objective;
 module.exports.Operation = Operation;
 module.exports.Screenshot = Screenshot;
+module.exports.Commendation = Commendation;

@@ -16,7 +16,8 @@ const Users = Models.User,
   News = Models.News,
   Objectives = Models.Objective,
   Operations = Models.Operation,
-  Screenshots = Models.Screenshot;
+  Screenshots = Models.Screenshot,
+  Commendations = Models.Commendation;
 
 //Connect to database
 mongoose.connect('mongodb+srv://Admin:reaver3@arnketel-69akm.azure.mongodb.net/PersesFleet?retryWrites=true&w=majority',
@@ -135,6 +136,26 @@ app.get('/api/users/:Username', (req, res) => {
     });
 });
 
+//Get commendations
+app.get('/api/commendations', (req, res) => {
+  Users.find()
+    .then((commendations) => { res.status(201).json(commendations) })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+    });
+});
+
+//Get specific commendation
+app.get('/api/commendations/:_id', (req, res) => {
+  Users.findOne({ _id: req.params._id })
+    .then((commendation) => { res.json(commendation) })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+    });
+});
+
 //Edit user password
 app.put('/api/users/:Username/password', [
   check('Password', "Password is required").not().isEmpty()],
@@ -198,6 +219,7 @@ app.post('/api/users', [
           return res.status(400).send("Username " + req.body.Username + " is already in use.");
         } else {
           Users.create({
+            _id: uuid.v4(),
             Username: req.body.Username,
             Rank: req.body.Rank,
             Password: hashedPassword,
@@ -270,6 +292,23 @@ app.post('/api/objectives',
       Address: req.body.Address,
       Unit: req.body.Unit,
       Date: req.body.Date
+    })
+      .then((user) => { res.status(201).json(user) })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).send("Error: " + err);
+      });
+  }
+);
+
+//Create commendation
+app.post('/api/commendations',
+  (req, res) => {
+    Commendations.create({
+      _id: uuid.v4(),
+      Name: req.body.Name,
+      Details: req.body.Details,
+      Address: req.body.Address
     })
       .then((user) => { res.status(201).json(user) })
       .catch((err) => {
