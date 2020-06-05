@@ -25,6 +25,7 @@ export class App extends React.Component {
       users: [],
       objectives: [],
       operations: [],
+      operations: [],
       user: null,
       rank: null,
       email: null
@@ -76,6 +77,14 @@ export class App extends React.Component {
           return a.Date > b.Date;
         })
         this.setState({ operations });
+      })
+      .catch((err) => {
+        console.log('Error: ' + err);
+      });
+    axios.get("https://perses-fleet.herokuapp.com/api/commendations")
+      .then(res => {
+        const commendations = res.data.reverse();
+        this.setState({ commendations });
       })
       .catch((err) => {
         console.log('Error: ' + err);

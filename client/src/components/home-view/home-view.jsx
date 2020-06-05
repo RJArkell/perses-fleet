@@ -55,6 +55,7 @@ export class HomeView extends React.Component {
               </Card>
             ))}
           </Col>
+
           <Col className="h-100 ml-1">
             <Card className="h-100 card">
               <Card.Header className="header text-center"><h3>About Perses Fleet</h3></Card.Header>

@@ -43,7 +43,8 @@ export class OperationsCard extends React.Component {
               </Row>
               <Row className="mt-3">
                 <Card.Text>
-                  <p>DETAILS:  {o.Details}</p>
+                  <p>DETAILS:  </p>
+                  <div dangerouslySetInnerHTML={{ __html: o.Details }}></div>
                 </Card.Text>
               </Row>
               <Row className="mt-2">

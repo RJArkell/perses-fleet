@@ -59,7 +59,7 @@ var screenshotSchema = mongoose.Schema({
 var commendationSchema = mongoose.Schema({
   _id: String,
   Name: { type: String, required: true },
-  Details: { type: String, required: true },
+  Description: { type: String, required: true },
   Address: { type: String, required: true }
 });
 

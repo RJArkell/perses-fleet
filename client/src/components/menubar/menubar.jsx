@@ -26,6 +26,7 @@ export class Menubar extends React.Component {
               <NavDropdown.Item href="/roster" className="menulink">Roster</NavDropdown.Item>
               <NavDropdown.Item href="/objectives" className="menulink">Objectives</NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link target="_blank" href="https://discord.gg/pSYvzsz" ><img src="https://i.ibb.co/XCvDY5F/discord.png" className="icon" /></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
