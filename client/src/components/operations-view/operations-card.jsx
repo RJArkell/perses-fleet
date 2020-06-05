@@ -28,7 +28,7 @@ export class OperationsCard extends React.Component {
     };
 
     return (
-      <Card className="m-1 infocard">
+      <Card className="my-1 mx-2 infocard">
         <Row noGutters={true}>
           <Col xs={3}>
             <Card.Img className="h-100" src={o.Address} />
