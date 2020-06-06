@@ -11,7 +11,7 @@ export class NewsCard extends React.Component {
         <Card.Header className="infoheader"><h5>{n.Headline} - {date.toDateString()}</h5></Card.Header>
         <Card.Body>
           <Card.Text>
-            <p>{n.Body}</p>
+            <div dangerouslySetInnerHTML={{ __html: n.Body }}></div>
             <br></br>
             <a target="_blank" href={n.Link} >{n.LinkText}</a>
           </Card.Text>

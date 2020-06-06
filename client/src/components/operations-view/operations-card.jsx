@@ -49,20 +49,23 @@ export class OperationsCard extends React.Component {
               </Row>
               <Row className="mt-2">
                 <Card.Text>
-                  <p>ASSETS:  {o.Assets}</p>
+                  <p>ASSETS:  </p>
+                  <div dangerouslySetInnerHTML={{ __html: o.Assets }}></div>
                 </Card.Text>
               </Row>
-              <Row className="mt-2">
-                <Card.Text>
-                  <p>CREW:</p>
-                  {o.Crew.map(c => {
-                    return <Link to={`/profile/${c}`} className="ml-2">{c}</Link>
-                  })}
-                </Card.Text>
-              </Row>
-              <Button className="button float-right mb-2" type="submit" onClick={handleSubmit}>Join Crew</Button>
             </Card.Body>
           </Col>
+        </Row>
+        <Row className="mt-2">
+          <Card.Body className="mx-4">
+            <Card.Text>
+              <p>CREW:</p>
+              {o.Crew.map(c => {
+                return <Link to={`/profile/${c}`} className="ml-2">{c}</Link>
+              })}
+            </Card.Text>
+            <Button className="button float-right mb-2" type="submit" onClick={handleSubmit}>Join Crew</Button>
+          </Card.Body>
         </Row>
       </Card>
     );

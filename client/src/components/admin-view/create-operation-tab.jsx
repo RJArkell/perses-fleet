@@ -46,16 +46,6 @@ export function CreateOperationTab(props) {
             />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Details</Form.Label>
-            <Form.Control
-              as="textarea"
-              rows="3"
-              placeholder="Details"
-              value={details}
-              onChange={(e) => setDetails(e.target.value)}
-            />
-          </Form.Group>
-          <Form.Group>
             <Form.Label>Date</Form.Label>
             <Form.Control
               type="date"
@@ -74,9 +64,20 @@ export function CreateOperationTab(props) {
             </Form.Control>
           </Form.Group>
           <Form.Group>
+            <Form.Label>Details</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows="3"
+              placeholder="Details"
+              value={details}
+              onChange={(e) => setDetails(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group>
             <Form.Label>Assets</Form.Label>
             <Form.Control
-              type="text"
+              as="textarea"
+              rows="3"
               placeholder="Assets"
               value={assets}
               onChange={(e) => setAssets(e.target.value)}
