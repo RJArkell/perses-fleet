@@ -30,10 +30,10 @@ export class OperationsCard extends React.Component {
     return (
       <Card className="my-1 mx-2 infocard">
         <Row noGutters={true}>
-          <Col xs={3}>
+          <Col xs={4}>
             <Card.Img className="h-100" src={o.Address} />
           </Col>
-          <Col xs={9}>
+          <Col xs={8}>
             <Card.Header className="infoheader"><h4>{o.Title}</h4></Card.Header>
             <Card.Body className="mx-4">
               <Row>
@@ -41,16 +41,10 @@ export class OperationsCard extends React.Component {
                   <h5>{date.toDateString()} - {o.Time} PST</h5>
                 </Card.Subtitle>
               </Row>
-              <Row className="mt-3">
-                <Card.Text>
-                  <p>DETAILS:  </p>
-                  <div dangerouslySetInnerHTML={{ __html: o.Details }}></div>
-                </Card.Text>
-              </Row>
               <Row className="mt-2">
                 <Card.Text>
                   <p>ASSETS:  </p>
-                  <div dangerouslySetInnerHTML={{ __html: o.Assets }}></div>
+                  <div className="ml-2" dangerouslySetInnerHTML={{ __html: o.Assets }}></div>
                 </Card.Text>
               </Row>
             </Card.Body>
@@ -58,12 +52,20 @@ export class OperationsCard extends React.Component {
         </Row>
         <Row className="mt-2">
           <Card.Body className="mx-4">
-            <Card.Text>
-              <p>CREW:</p>
-              {o.Crew.map(c => {
-                return <Link to={`/profile/${c}`} className="ml-2">{c}</Link>
-              })}
-            </Card.Text>
+            <Row>
+              <Card.Text>
+                <p>DETAILS:  </p>
+                <div className="ml-2" dangerouslySetInnerHTML={{ __html: o.Details }}></div>
+              </Card.Text>
+            </Row>
+            <Row className="mt-2">
+              <Card.Text>
+                <p>CREW:</p>
+                {o.Crew.map(c => {
+                  return <Link to={`/profile/${c}`} className="ml-2">{c}</Link>
+                })}
+              </Card.Text>
+            </Row>
             <Button className="button float-right mb-2" type="submit" onClick={handleSubmit}>Join Crew</Button>
           </Card.Body>
         </Row>
