@@ -74,7 +74,7 @@ export class App extends React.Component {
       .then(res => {
         const operations = res.data;
         operations.sort((a, b) => {
-          return a.Date > b.Date;
+          return b.Date > a.Date;
         })
         this.setState({ operations });
       })
