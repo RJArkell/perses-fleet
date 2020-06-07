@@ -113,7 +113,7 @@ export class App extends React.Component {
   }
 
   render() {
-    const { news, users, user, rank, email, operations, objectives, screenshots } = this.state;
+    const { news, users, user, rank, email, operations, objectives, screenshots, commendations } = this.state;
 
     return (
       <BrowserRouter>

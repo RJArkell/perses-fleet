@@ -47,13 +47,13 @@ export class RosterView extends React.Component {
           <Card.Header className="header"><h3>Junior Ranks</h3></Card.Header>
           <Row noGutters={true} className="mx-1 mt-1">
             {ensign.map(u =>
-              <Col xl={3} lg={4} md={6} sm={12} className="p-1">
+              <Col xl={4} md={6} sm={12} className="p-1">
                 <RosterCard key={u._id} u={u} />
               </Col>)}
           </Row>
           <Row noGutters={true} className="mx-1 mb-1">
             {recruit.map(u =>
-              <Col xl={3} lg={4} md={6} sm={12} className="p-1">
+              <Col xl={4} md={6} sm={12} className="p-1">
                 <RosterCard key={u._id} u={u} />
               </Col>)}
           </Row>

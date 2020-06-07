@@ -19,7 +19,6 @@ export class DashboardView extends React.Component {
   }
 
   render() {
-    console.log(commendations)
     const { user, rank, email, commendations } = this.props;
     return (
       <Container fluid className="pagecontainer">
