@@ -30,8 +30,20 @@ export class OperationsCard extends React.Component {
     return (
       <Card className="my-1 mx-2 infocard">
         <Row noGutters={true}>
-          <Col xs={4}>
-            <Card.Img className="h-100" src={o.Address} />
+          <Col xs={4} className="h-100">
+            <Card.Img src={o.Address} />
+            <Card.Header className="infoheader text-center"><h5>Crew</h5></Card.Header>
+            <Card.Body>
+              <Card.Text>
+                <Row className="pt-2">
+                  {o.Crew.map(c => {
+                    return <Col xl={4}>
+                      <Link to={`/profile/${c}`} className="pl-2">{c}</Link>
+                    </Col>
+                  })}
+                </Row>
+              </Card.Text>
+            </Card.Body>
           </Col>
           <Col xs={8}>
             <Card.Header className="infoheader"><h4>{o.Title}</h4></Card.Header>
@@ -41,35 +53,23 @@ export class OperationsCard extends React.Component {
                   <h5>{date.toDateString()} - {o.Time} PST</h5>
                 </Card.Subtitle>
               </Row>
-              <Row className="mt-2">
+              <Row className="pt-2">
                 <Card.Text>
                   <p>ASSETS:  </p>
-                  <div className="ml-2" dangerouslySetInnerHTML={{ __html: o.Assets }}></div>
+                  <div className="pl-2" dangerouslySetInnerHTML={{ __html: o.Assets }}></div>
+                </Card.Text>
+              </Row>
+              <Row>
+                <Card.Text>
+                  <p>DETAILS:  </p>
+                  <div className="pl-2" dangerouslySetInnerHTML={{ __html: o.Details }}></div>
                 </Card.Text>
               </Row>
             </Card.Body>
+            <Button className="button float-right mr-2 mb-2" type="submit" onClick={handleSubmit}>Join Crew</Button>
           </Col>
         </Row>
-        <Row className="mt-2">
-          <Card.Body className="mx-4">
-            <Row>
-              <Card.Text>
-                <p>DETAILS:  </p>
-                <div className="ml-2" dangerouslySetInnerHTML={{ __html: o.Details }}></div>
-              </Card.Text>
-            </Row>
-            <Row className="mt-2">
-              <Card.Text>
-                <p>CREW:</p>
-                {o.Crew.map(c => {
-                  return <Link to={`/profile/${c}`} className="ml-2">{c}</Link>
-                })}
-              </Card.Text>
-            </Row>
-            <Button className="button float-right mb-2" type="submit" onClick={handleSubmit}>Join Crew</Button>
-          </Card.Body>
-        </Row>
-      </Card>
+      </Card >
     );
   }
 }

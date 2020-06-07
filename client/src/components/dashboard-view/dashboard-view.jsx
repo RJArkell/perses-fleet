@@ -8,31 +8,40 @@ export class DashboardView extends React.Component {
     localStorage.removeItem("user");
     localStorage.removeItem("rank");
     localStorage.removeItem("email");
+    localStorage.removeItem("commission");
     localStorage.removeItem("commendations");
+    localStorage.removeItem("status");
     window.open("/", "_self");
     this.setState({
-      userdata: null,
       user: null,
       rank: null,
-      email: null
+      email: null,
+      commission: null,
+      status: null,
+      commendations: []
     });
   }
 
   render() {
-    const { user, rank, email, commendations } = this.props;
+    const { user, rank, email, commission, status, commendations } = this.props;
+
     return (
       <Container fluid className="pagecontainer">
         <Card>
           <Card.Header className="header text-center"><h3>Welcome {rank}</h3></Card.Header>
-          <Card.Body>
+          <Card.Body className="pl-5">
             <Card.Text className="pb-2">
-              <p className="mb-2">HANDLE: {user}</p>
-              <p className="mb-2">RANK: {rank}</p>
-              <p className="mb-2">EMAIL: {email}</p>
-              <p className="mb-2">COMMISSION:</p>
-              <p className="mb-2">STATUS:</p>
-              <p className="mb-2">COMMENDATIONS: </p>
-
+              <p className="mb-2">HANDLE:   {user}</p>
+              <p className="mb-2">RANK:   {rank}</p>
+              <p className="mb-2">EMAIL:    {email}</p>
+              <p className="mb-2">COMMISSION:   {commission}</p>
+              <p className="mb-2">STATUS:   {status}</p>
+              <p className="mb-2">COMMENDATIONS:</p>
+              <div className="ml-5 mb-2">
+                {commendations.map(c => {
+                  return <img src={c} />
+                })}
+              </div>
             </Card.Text>
             <Link to={`/updateprofile`}>
               <Button variant="contained" color="primary" className="button">Update Information</Button>

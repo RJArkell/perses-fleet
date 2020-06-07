@@ -61,7 +61,7 @@ export class HomeView extends React.Component {
               <Card.Header className="header text-center"><h3>About Perses Fleet</h3></Card.Header>
               <Card.Body>
                 <Card.Text>
-                  Awaiting orders, Admiral.
+                  <p>Awaiting orders, Admiral.</p>
                 </Card.Text>
               </Card.Body>
             </Card>

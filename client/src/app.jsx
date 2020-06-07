@@ -26,10 +26,11 @@ export class App extends React.Component {
       objectives: [],
       operations: [],
       operations: [],
-      userdata: null,
       user: null,
       rank: null,
       email: null,
+      status: null,
+      commission: null,
       commendations: []
     };
   }
@@ -37,26 +38,32 @@ export class App extends React.Component {
   onLoggedIn(authData) {
     console.log(authData);
     this.setState({
-      commendations: authData.user.Commendations,
+      commission: authData.user.Commission,
       user: authData.user.Username,
       rank: authData.user.Rank,
-      email: authData.user.Email
+      email: authData.user.Email,
+      status: authData.user.Status,
+      commendations: authData.user.Commendations
     });
     localStorage.setItem("token", authData.token);
-    localStorage.setItem("commendations", authData.user.Commendations);
     localStorage.setItem("user", authData.user.Username);
     localStorage.setItem("rank", authData.user.Rank);
     localStorage.setItem("email", authData.user.Email);
+    localStorage.setItem("status", authData.user.Status);
+    localStorage.setItem("commission", authData.user.Commission);
+    localStorage.setItem("commendations", JSON.stringify(authData.user.Commendations));
   }
 
   componentDidMount() {
     let accessToken = localStorage.getItem("token");
     if (accessToken !== null) {
       this.setState({
-        commendations: localStorage.getItem("commendations"),
+        commission: localStorage.getItem("commission"),
         user: localStorage.getItem("user"),
         rank: localStorage.getItem("rank"),
-        email: localStorage.getItem("email")
+        status: localStorage.getItem("status"),
+        email: localStorage.getItem("email"),
+        commendations: JSON.parse(localStorage.getItem("commendations"))
       });
     }
     axios.get("https://perses-fleet.herokuapp.com/api/users")
@@ -86,14 +93,6 @@ export class App extends React.Component {
       .catch((err) => {
         console.log('Error: ' + err);
       });
-    axios.get("https://perses-fleet.herokuapp.com/api/commendations")
-      .then(res => {
-        const commendations = res.data.reverse();
-        this.setState({ commendations });
-      })
-      .catch((err) => {
-        console.log('Error: ' + err);
-      });
     axios.get("https://perses-fleet.herokuapp.com/api/news")
       .then(res => {
         const news = res.data.reverse();
@@ -113,7 +112,7 @@ export class App extends React.Component {
   }
 
   render() {
-    const { news, users, user, rank, email, operations, objectives, screenshots, commendations } = this.state;
+    const { news, users, user, rank, email, operations, objectives, screenshots, commission, status, commendations } = this.state;
 
     return (
       <BrowserRouter>
@@ -141,8 +140,8 @@ export class App extends React.Component {
           }} />
           <Route path="/dashboard" render={() => {
             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-            if (rank === "Captain" || rank === "Admiral") return <div><DashboardView user={user} rank={rank} email={email} commendations={commendations} /><AdminView /></div>;
-            return <DashboardView user={user} rank={rank} email={email} commendations={commendations} />;
+            if (rank === "Captain" || rank === "Admiral") return <div><DashboardView user={user} rank={rank} email={email} commission={commission} status={status} commendations={commendations} /><AdminView /></div>;
+            return <DashboardView user={user} rank={rank} email={email} commission={commission} status={status} commendations={commendations} />;
           }} />
           <Route path="/updateprofile" render={() => <EditProfile />} />
         </div>

@@ -16,8 +16,7 @@ const Users = Models.User,
   News = Models.News,
   Objectives = Models.Objective,
   Operations = Models.Operation,
-  Screenshots = Models.Screenshot,
-  Commendations = Models.Commendation;
+  Screenshots = Models.Screenshot;
 
 //Connect to database
 mongoose.connect('mongodb+srv://Admin:reaver3@arnketel-69akm.azure.mongodb.net/PersesFleet?retryWrites=true&w=majority',
@@ -130,26 +129,6 @@ app.get('/api/users', (req, res) => {
 app.get('/api/users/:Username', (req, res) => {
   Users.findOne({ Username: req.params.Username })
     .then((user) => { res.json(user) })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send("Error: " + err);
-    });
-});
-
-//Get commendations
-app.get('/api/commendations', (req, res) => {
-  Users.find()
-    .then((commendations) => { res.status(201).json(commendations) })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send("Error: " + err);
-    });
-});
-
-//Get specific commendation
-app.get('/api/commendations/:_id', (req, res) => {
-  Users.findOne({ _id: req.params._id })
-    .then((commendation) => { res.json(commendation) })
     .catch((err) => {
       console.error(err);
       res.status(500).send("Error: " + err);
