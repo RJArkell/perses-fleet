@@ -12,7 +12,10 @@ export class ProfileView extends React.Component {
             <Card.Text>
               <p>STATUS:  {u.Status}</p>
               <p>COMMISSION:  {u.Commission}</p>
-              <p>COMMENDATIONS:  {u.Commendations}</p>
+              <p>COMMENDATIONS:  </p>
+              {u.Commendations.map(c => {
+                return <img src={c} />
+              })}
             </Card.Text>
           </Card.Body>
         </Card>

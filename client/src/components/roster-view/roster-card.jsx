@@ -11,7 +11,10 @@ export class RosterCard extends React.Component {
         <Card.Header className="infoheader"><h5>{u.Rank}</h5></Card.Header>
         <Card.Body>
           <Card.Text>
-            <Link to={`/profile/${u.Username}`}>{u.Username}</Link>
+            <p><Link to={`/profile/${u.Username}`}>{u.Username}</Link></p>
+            {u.Commendations.map(c => {
+              return <img src={c} />
+            })}
           </Card.Text>
         </Card.Body>
       </Card>

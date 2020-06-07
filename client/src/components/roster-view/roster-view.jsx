@@ -21,13 +21,13 @@ export class RosterView extends React.Component {
       <Container fluid className="pagecontainer text-center">
         <Card className="mb-2">
           <Card.Header className="header"><h3>Command Staff</h3></Card.Header>
-          <Row noGutters={true} className="m-1 text-center">
+          <Row noGutters={true} className="mx-1 mt-1">
             {admiral.map(u =>
               <Col xl={12} className="p-1">
                 <RosterCard key={u._id} u={u} />
               </Col>)}
           </Row>
-          <Row noGutters={true} className="m-1">
+          <Row noGutters={true} className="mx-1 mb-1">
             {captain.map(u =>
               <Col xl={6} lg={12} className="p-1">
                 <RosterCard key={u._id} u={u} />
@@ -45,13 +45,13 @@ export class RosterView extends React.Component {
         </Card>
         <Card>
           <Card.Header className="header"><h3>Junior Ranks</h3></Card.Header>
-          <Row noGutters={true} className="m-1">
+          <Row noGutters={true} className="mx-1 mt-1">
             {ensign.map(u =>
               <Col xl={3} lg={4} md={6} sm={12} className="p-1">
                 <RosterCard key={u._id} u={u} />
               </Col>)}
           </Row>
-          <Row noGutters={true} className="m-1">
+          <Row noGutters={true} className="mx-1 mb-1">
             {recruit.map(u =>
               <Col xl={3} lg={4} md={6} sm={12} className="p-1">
                 <RosterCard key={u._id} u={u} />

@@ -8,8 +8,10 @@ export class DashboardView extends React.Component {
     localStorage.removeItem("user");
     localStorage.removeItem("rank");
     localStorage.removeItem("email");
+    localStorage.removeItem("commendations");
     window.open("/", "_self");
     this.setState({
+      userdata: null,
       user: null,
       rank: null,
       email: null
@@ -17,7 +19,8 @@ export class DashboardView extends React.Component {
   }
 
   render() {
-    const { user, rank, email } = this.props;
+    console.log(commendations)
+    const { user, rank, email, commendations } = this.props;
     return (
       <Container fluid className="pagecontainer">
         <Card>
@@ -29,7 +32,8 @@ export class DashboardView extends React.Component {
               <p className="mb-2">EMAIL: {email}</p>
               <p className="mb-2">COMMISSION:</p>
               <p className="mb-2">STATUS:</p>
-              <p className="mb-2">COMMENDATIONS:</p>
+              <p className="mb-2">COMMENDATIONS: </p>
+
             </Card.Text>
             <Link to={`/updateprofile`}>
               <Button variant="contained" color="primary" className="button">Update Information</Button>
