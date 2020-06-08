@@ -13,12 +13,7 @@ code {
     monospace;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   margin: 0;
   font-family: 'Lakehurst Gothic', sans-serif;
@@ -26,7 +21,7 @@ h6 {
   -moz-osx-font-smoothing: grayscale;
 }
 
-*:not(h1):not(h2):not(h3):not(h4):not(h5) {
+*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
   font-weight: 700;
   margin: 0;
   font-family: 'Exo 2', sans-serif;
@@ -159,4 +154,52 @@ h6 {
 
 .infocard {
   background-color: rgba(47, 49, 65, 0.4);
+}
+
+@media (max-width: 500px){
+  .pagecontainer {
+    padding: 10px 0px
+  }
+}
+
+@media (min-width: 500px) and (max-width: 720px) {
+  .pagecontainer {
+    padding: 10px 50px
+  }
+  .card {
+    font-size: 93%;
+  }
+  .menulink {
+    font-size: 93%;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 94%;
+  }
+  .navlogo {
+    height:45px;
+  }
+  .icon{
+    height: 35px
+  }
+}
+  
+@media (min-width: 720px) and (max-width: 1080px) {
+  .pagecontainer {
+    padding: 10px 100px
+  }
+  .card {
+    font-size: 95%;
+  }
+  .menulink {
+    font-size: 95%;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 96%;
+  }
+  .navlogo {
+    height:50px;
+  }
+  .icon{
+    height: 35px
+  }
 }
