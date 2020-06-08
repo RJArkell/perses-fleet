@@ -37,7 +37,7 @@ export class OperationsCard extends React.Component {
               <Card.Text>
                 <Row className="pt-2">
                   {o.Crew.map(c => {
-                    return <Col xl={4}>
+                    return <Col xl={6}>
                       <Link to={`/profile/${c}`} className="pl-2">{c}</Link>
                     </Col>
                   })}
