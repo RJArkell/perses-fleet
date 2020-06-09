@@ -31,6 +31,7 @@ export class App extends React.Component {
       email: null,
       status: null,
       commission: null,
+      staff: null,
       commendations: []
     };
   }
@@ -43,7 +44,8 @@ export class App extends React.Component {
       rank: authData.user.Rank,
       email: authData.user.Email,
       status: authData.user.Status,
-      commendations: authData.user.Commendations
+      commendations: authData.user.Commendations,
+      staff: authData.user.Staff
     });
     localStorage.setItem("token", authData.token);
     localStorage.setItem("user", authData.user.Username);
@@ -51,6 +53,7 @@ export class App extends React.Component {
     localStorage.setItem("email", authData.user.Email);
     localStorage.setItem("status", authData.user.Status);
     localStorage.setItem("commission", authData.user.Commission);
+    localStorage.setItem("staff", authData.user.Staff);
     localStorage.setItem("commendations", JSON.stringify(authData.user.Commendations));
   }
 
@@ -63,6 +66,7 @@ export class App extends React.Component {
         rank: localStorage.getItem("rank"),
         status: localStorage.getItem("status"),
         email: localStorage.getItem("email"),
+        staff: localStorage.getItem("staff"),
         commendations: JSON.parse(localStorage.getItem("commendations"))
       });
     }
@@ -112,7 +116,7 @@ export class App extends React.Component {
   }
 
   render() {
-    const { news, users, user, rank, email, operations, objectives, screenshots, commission, status, commendations } = this.state;
+    const { news, users, user, rank, email, operations, objectives, screenshots, commission, status, commendations, staff } = this.state;
 
     return (
       <BrowserRouter>
@@ -140,7 +144,7 @@ export class App extends React.Component {
           }} />
           <Route path="/dashboard" render={() => {
             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-            if (rank === "Captain" || rank === "Admiral") return <div><DashboardView user={user} rank={rank} email={email} commission={commission} status={status} commendations={commendations} /><AdminView /></div>;
+            if (staff === "true") return <div><DashboardView user={user} rank={rank} email={email} commission={commission} status={status} commendations={commendations} /><AdminView /></div>;
             return <DashboardView user={user} rank={rank} email={email} commission={commission} status={status} commendations={commendations} />;
           }} />
           <Route path="/updateprofile" render={() => <EditProfile />} />
