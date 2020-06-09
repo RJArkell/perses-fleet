@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pagecontainer {
-  padding: 10px 200px
+  padding: 10px 150px
 }
 
 .menubar {
@@ -95,6 +95,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .menuheader{
+  padding-left:67px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,30 +157,27 @@ h1, h2, h3, h4, h5, h6 {
   background-color: rgba(47, 49, 65, 0.4);
 }
 
-@media (max-width: 500px){
+@media (max-width: 720px) {
   .pagecontainer {
     padding: 10px 0px
   }
-}
-
-@media (min-width: 500px) and (max-width: 720px) {
-  .pagecontainer {
-    padding: 10px 50px
-  }
   .card {
-    font-size: 93%;
+    font-size: 90%;
   }
   .menulink {
-    font-size: 93%;
+    font-size: 90%;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-size: 94%;
+    font-size: 90%;
   }
   .navlogo {
     height:45px;
   }
   .icon{
     height: 35px
+  }
+  .menuheader{
+    padding-left:0px;
   }
 }
   
@@ -201,5 +199,8 @@ h1, h2, h3, h4, h5, h6 {
   }
   .icon{
     height: 35px
+  }
+  .menuheader{
+    padding-left:32px;
   }
 }

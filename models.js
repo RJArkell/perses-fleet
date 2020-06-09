@@ -10,6 +10,7 @@ var userSchema = mongoose.Schema({
   Email: { type: String, required: true },
   Status: { type: String, required: true },
   Commission: { type: String, required: true },
+  Staff: { Boolean },
   Commendations: [String]
 });
 
