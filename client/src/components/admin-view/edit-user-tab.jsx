@@ -31,48 +31,6 @@ export function EditUserTab(props) {
       <Card.Header className="header text-center"><h4>Edit User</h4></Card.Header>
       <Card.Body>
         <Form>
-          <Form.Group controlId="regUsername">
-            <Form.Label>Username</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </Form.Group>
-          <Form.Group controlId="regPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </Form.Group>
-          <Form.Group controlId="regEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="example@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </Form.Group>
-          <Form.Group controlId="regRank">
-            <Form.Label>Rank</Form.Label>
-            <Form.Control
-              as="select"
-              custom
-              value={rank}
-              onChange={(e) => setRank(e.target.value)}
-            >
-              <option>Recruit</option>
-              <option>Ensign</option>
-              <option>Lieutenant</option>
-              <option>Commander</option>
-              <option>Admiral</option>
-            </Form.Control>
-          </Form.Group>
           <Button className="button" type="submit" onClick={handleSubmit}>Submit</Button>
         </Form>
       </Card.Body>
