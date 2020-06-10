@@ -7,7 +7,7 @@ export class NewsView extends React.Component {
     const { news } = this.props;
     return (
       <Container fluid className="pagecontainer">
-        <Card className="mx-1 pb-1">
+        <Card className="pb-1">
           <Card.Header className="header text-center mb-1"><h3>Fleet News</h3></Card.Header>
           {news.map(n => (
             <NewsCard key={n._id} n={n} />

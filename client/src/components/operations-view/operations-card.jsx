@@ -49,9 +49,9 @@ export class OperationsCard extends React.Component {
             <Card.Header className="infoheader"><h4>{o.Title}</h4></Card.Header>
             <Card.Body className="mx-4">
               <Row>
-                <Card.Subtitle >
+                <Card.Text >
                   <h5>{date.toDateString()} - {o.Time} PST</h5>
-                </Card.Subtitle>
+                </Card.Text>
               </Row>
               <Row className="pt-2">
                 <Card.Text>

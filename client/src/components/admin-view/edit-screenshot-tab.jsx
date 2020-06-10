@@ -28,7 +28,7 @@ export function EditScreenshotTab(props) {
 
   return (
     <Card>
-      <Card.Header className="header text-center"><h4>Edit News Post</h4></Card.Header>
+      <Card.Header className="header text-center"><h4>Edit Screenshot</h4></Card.Header>
       <Card.Body>
         <Form>
           <Button className="button" type="submit" onClick={handleSubmit}>Submit</Button>

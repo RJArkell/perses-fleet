@@ -8,33 +8,33 @@ export class ObjectivesCard extends React.Component {
     var date = new Date(o.Date);
 
     return (
-      <Card className="m-1 infocard">
+      <Card className="my-1 mx-2 infocard">
         <Row noGutters={true}>
-          <Col xs={9}>
-            <Card.Header className="infoheader"><h4>{o.Title}</h4></Card.Header>
+          <Col xs={8}>
+            <Card.Header className="infoheader text-center"><h4>{o.Title}</h4></Card.Header>
             <Card.Body className="mx-4">
               <Row>
                 <Card.Text>
                   <p>STARTED: {date.toDateString()}</p>
                 </Card.Text>
               </Row>
-              <Row className="mt-2">
+              <Row className="pt-3">
                 <Card.Text>
                   <p>DETAILS: </p>
-                  <div dangerouslySetInnerHTML={{ __html: o.Details }}></div>
+                  <div className="pl-2" dangerouslySetInnerHTML={{ __html: o.Details }}></div>
                 </Card.Text>
               </Row>
-              <Row className="mt-3">
+              <Row className="pt-4">
                 <ProgressBar striped variant="info" className="w-100" animated now={bar} />
               </Row>
-              <Row className="mt-2 justify-content-center">
+              <Row className="pt-2 justify-content-center">
                 <Card.Text>
                   <p>{o.Progress} / {o.Goal} aUEC</p>
                 </Card.Text>
               </Row>
             </Card.Body>
           </Col>
-          <Col xs={3}>
+          <Col xs={4}>
             <Card.Img className="h-100" src={o.Address} />
           </Col>
         </Row>

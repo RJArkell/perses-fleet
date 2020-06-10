@@ -7,8 +7,8 @@ export class ObjectivesView extends React.Component {
     const { objectives } = this.props;
     return (
       <Container fluid className="pagecontainer">
-        <Card>
-          <Card.Header className="header text-center"><h3>Objectives</h3></Card.Header>
+        <Card className="pb-1">
+          <Card.Header className="header text-center mb-1"><h3>Objectives</h3></Card.Header>
           {objectives.map(o => (
             <ObjectivesCard key={o._id} o={o} />
           ))}

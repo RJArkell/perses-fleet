@@ -19,7 +19,7 @@ export class FleetView extends React.Component {
               </Row>
               <Row className="mt-2">
                 <Card.Text>
-                  <p>CAPTAIN:  c3sk</p>
+                  <p>CAPTAIN:  Admiral Malkovich</p>
                 </Card.Text>
               </Row>
               <Row className="mt-2">
@@ -60,7 +60,7 @@ export class FleetView extends React.Component {
               </Row>
               <Row className="mt-2">
                 <Card.Text>
-                  <p>CAPTAIN:  c3sk</p>
+                  <p>CAPTAIN:  Admiral Malkovich</p>
                 </Card.Text>
               </Row>
               <Row className="mt-2">
