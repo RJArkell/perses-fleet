@@ -173,8 +173,11 @@ h1, h2, h3, h4, h5, h6 {
   .navlogo {
     height:45px;
   }
+  .navbar {
+    font-size: 70%;
+  }
   .icon{
-    height: 35px
+    height: 25px
   }
   .menuheader{
     padding-left:0px;
@@ -188,9 +191,6 @@ h1, h2, h3, h4, h5, h6 {
   .card {
     font-size: 95%;
   }
-  .menulink {
-    font-size: 95%;
-  }
   h1, h2, h3, h4, h5, h6 {
     font-size: 96%;
   }
@@ -198,7 +198,10 @@ h1, h2, h3, h4, h5, h6 {
     height:50px;
   }
   .icon{
-    height: 35px
+    height: 30px
+  }
+  .navbar {
+    font-size: 80%;
   }
   .menuheader{
     padding-left:0px;
