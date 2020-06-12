@@ -8,8 +8,19 @@ export class OperationsCard extends React.Component {
     const { o, user } = this.props;
     const signedup = o.Crew.some((list) => list === user);
     const date = new Date(o.Date);
-    console.log(signedup);
-    console.log(o.Crew);
+    const staff = localStorage.getItem("staff")
+
+    const handleClose = (e) => {
+      this.setState({
+        show: true
+      });
+    };
+
+    const handleShow = (e) => {
+      this.setState({
+        show: true
+      });
+    };
 
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -46,22 +57,22 @@ export class OperationsCard extends React.Component {
     }
 
     return (
-      <Card className="my-1 mx-2 infocard">
+      <Card className="my-1 mx-2 infocard squared">
         <Row noGutters={true}>
           <Col xs={4} className="h-100">
-            <Card.Img src={o.Address} />
+            <Card.Img className="squared" src={o.Address} />
             <Card.Header className="infoheader text-center"><h5>Crew</h5></Card.Header>
-            <Card.Body>
-              <Card.Text>
-                <Row className="pt-2">
-                  {o.Crew.map(c => {
-                    return <Col xl={6}>
-                      <Link to={`/profile/${c}`} className="pl-2">{c}</Link>
-                    </Col>
-                  })}
-                </Row>
-              </Card.Text>
-            </Card.Body>
+            <Card.Text>
+              <Row noGutters={true} className="m-2">
+                {o.Crew.map(c => {
+                  return <Col xl={6}>
+                    <Card className="infoheader text-center py-1 squared">
+                      <Link to={`/profile/${c}`}>{c}</Link>
+                    </Card>
+                  </Col>
+                })}
+              </Row>
+            </Card.Text>
           </Col>
           <Col xs={8}>
             <Card.Header className="infoheader"><h4>{o.Title}</h4></Card.Header>
@@ -84,6 +95,7 @@ export class OperationsCard extends React.Component {
                 </Card.Text>
               </Row>
             </Card.Body>
+            {staff === "true" && <Button className="button float-right mr-2 mb-2" type="submit" onClick={handleShow}>Edit</Button>}
             {signedup
               ? <Button className="button float-right mr-2 mb-2" type="submit" onClick={handleDelete}>Leave Crew</Button>
               : <Button className="button float-right mr-2 mb-2" type="submit" onClick={handleSubmit}>Join Crew</Button>

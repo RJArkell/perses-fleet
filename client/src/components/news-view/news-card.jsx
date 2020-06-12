@@ -22,7 +22,7 @@ export class NewsCard extends React.Component {
 
     return (
       <div>
-        <Card className="my-1 mx-2 infocard">
+        <Card className="my-1 mx-2 infocard squared">
           <Card.Header className="infoheader"><h5>{n.Headline} - {date.toDateString()}</h5></Card.Header>
           <Card.Body>
             <Card.Text>

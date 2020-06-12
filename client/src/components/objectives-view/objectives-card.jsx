@@ -1,14 +1,27 @@
 import React from "react";
-import { Row, Col, Card, ProgressBar } from 'react-bootstrap';
+import { Row, Col, Card, ProgressBar, Button } from 'react-bootstrap';
 
 export class ObjectivesCard extends React.Component {
   render() {
     const { o } = this.props;
     const bar = (o.Progress / o.Goal) * 100;
     var date = new Date(o.Date);
+    const staff = localStorage.getItem("staff")
+
+    const handleClose = (e) => {
+      this.setState({
+        show: true
+      });
+    };
+
+    const handleShow = (e) => {
+      this.setState({
+        show: true
+      });
+    };
 
     return (
-      <Card className="my-1 mx-2 infocard">
+      <Card className="my-1 mx-2 infocard squared">
         <Row noGutters={true}>
           <Col xs={8}>
             <Card.Header className="infoheader text-center"><h4>{o.Title}</h4></Card.Header>
@@ -33,6 +46,7 @@ export class ObjectivesCard extends React.Component {
                 </Card.Text>
               </Row>
             </Card.Body>
+            {staff === "true" && <Button className="button float-left ml-2 mb-2" type="submit" onClick={handleShow}>Edit</Button>}
           </Col>
           <Col xs={4}>
             <Card.Img className="h-100" src={o.Address} />

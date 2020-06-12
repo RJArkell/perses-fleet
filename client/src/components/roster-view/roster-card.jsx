@@ -7,7 +7,7 @@ export class RosterCard extends React.Component {
     const { u } = this.props;
 
     return (
-      <Card className="h-100 infocard">
+      <Card className="h-100 infocard squared">
         <Card.Header className="infoheader"><h5>{u.Rank}</h5></Card.Header>
         <Card.Body>
           <Card.Text>

@@ -41,10 +41,10 @@ export class FleetView extends React.Component {
           </Row>
           <Row noGutters={true} className="m-1">
             <Col className="p-1">
-              <Card.Img className="h-100 holoborder" src={"https://i.ibb.co/r5W8cy3/unknown.png"} />
+              <Card.Img className="h-100 holoborder squared" src={"https://i.ibb.co/r5W8cy3/unknown.png"} />
             </Col>
             <Col className="p-1">
-              <Card.Img className="h-100 holoborder" src={"https://i.ibb.co/KFYZYNW/image.png"} />
+              <Card.Img className="h-100 holoborder squared" src={"https://i.ibb.co/KFYZYNW/image.png"} />
             </Col>
           </Row>
         </Card>
@@ -85,10 +85,10 @@ export class FleetView extends React.Component {
           </Row>
           <Row noGutters={true} className="m-1">
             <Col className="p-1">
-              <Card.Img className="h-100 holoborder" src={"https://i.ibb.co/ggx8pNW/unknown.png"} />
+              <Card.Img className="h-100 holoborder squared" src={"https://i.ibb.co/ggx8pNW/unknown.png"} />
             </Col>
             <Col className="p-1">
-              <Card.Img className="h-100 holoborder" src={"https://i.ibb.co/CPs51hV/unknown.png"} />
+              <Card.Img className="h-100 holoborder squared" src={"https://i.ibb.co/CPs51hV/unknown.png"} />
             </Col>
           </Row>
         </Card>
@@ -129,10 +129,10 @@ export class FleetView extends React.Component {
           </Row>
           <Row noGutters={true} className="m-1">
             <Col className="p-1">
-              <Card.Img className="h-100 holoborder" />
+              <Card.Img className="h-100 holoborder squared" />
             </Col>
             <Col className="p-1">
-              <Card.Img className="h-100 holoborder" />
+              <Card.Img className="h-100 holoborder squared" />
             </Col>
           </Row>
         </Card>
@@ -173,10 +173,10 @@ export class FleetView extends React.Component {
           </Row>
           <Row noGutters={true} className="m-1">
             <Col className="p-1">
-              <Card.Img className="h-100 holoborder" />
+              <Card.Img className="h-100 holoborder squared" />
             </Col>
             <Col className="p-1">
-              <Card.Img className="h-100 holoborder" />
+              <Card.Img className="h-100 holoborder squared" />
             </Col>
           </Row>
         </Card>

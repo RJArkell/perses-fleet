@@ -48,7 +48,7 @@ export class HomeView extends React.Component {
             {screenshots.slice(0, 1).map(s => (
               <Card className="h-100 card" >
                 <Card.Header className="header text-center"><h3>Featured Screenshot</h3></Card.Header>
-                <Card.Img className="" src={s.Address} />
+                <Card.Img className="squared" src={s.Address} />
                 <Card.Text className="text-center">
                   Submitted by: {s.User}
                 </Card.Text>
