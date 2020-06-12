@@ -26,6 +26,22 @@ export function EditNewsTab(props) {
       });
   };
 
+  const handleDelete = (e) => {
+    e.preventDefault();
+    axios.delete(`https://edge-of-umbra.herokuapp.com/users/${localStorage.getItem('user')}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    })
+      .then(res => {
+        alert("Your account has been deleted");
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        window.open("/", "_self");
+      })
+      .catch(e => {
+        alert("Error deleting the account");
+      });
+  }
+
   return (
     <Card>
       <Card.Header className="header text-center"><h4>Edit News Post</h4></Card.Header>
@@ -33,6 +49,7 @@ export function EditNewsTab(props) {
         <Form>
           <Button className="button" type="submit" onClick={handleSubmit}>Submit</Button>
         </Form>
+        <Button variant="danger" type="submit" onClick={handleDelete}>Delete account</Button>
       </Card.Body>
     </Card>
   );

@@ -5,10 +5,11 @@ import axios from "axios";
 
 export class OperationsCard extends React.Component {
   render() {
-    const { o } = this.props;
-    const { user } = this.props;
-    var date = new Date(o.Date);
-    console.log(o.Crew)
+    const { o, user } = this.props;
+    const signedup = o.Crew.some((list) => list === user);
+    const date = new Date(o.Date);
+    console.log(signedup);
+    console.log(o.Crew);
 
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -26,6 +27,23 @@ export class OperationsCard extends React.Component {
           console.log(e);
         });
     };
+
+    const handleDelete = (e) => {
+      e.preventDefault();
+      axios.delete(`https://perses-fleet.herokuapp.com/api/operations/${o._id}/crew/${user}`, {
+        Username: user,
+      })
+        .then(res => {
+          const data = res.data;
+          console.log(data);
+          alert("You have been removed from the crew");
+          window.open("/operations", "_self");
+        })
+        .catch(e => {
+          alert("error resigning from operation");
+          console.log(e);
+        });
+    }
 
     return (
       <Card className="my-1 mx-2 infocard">
@@ -66,7 +84,10 @@ export class OperationsCard extends React.Component {
                 </Card.Text>
               </Row>
             </Card.Body>
-            <Button className="button float-right mr-2 mb-2" type="submit" onClick={handleSubmit}>Join Crew</Button>
+            {signedup
+              ? <Button className="button float-right mr-2 mb-2" type="submit" onClick={handleDelete}>Leave Crew</Button>
+              : <Button className="button float-right mr-2 mb-2" type="submit" onClick={handleSubmit}>Join Crew</Button>
+            }
           </Col>
         </Row>
       </Card >
