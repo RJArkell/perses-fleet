@@ -61,18 +61,6 @@ export class OperationsCard extends React.Component {
         <Row noGutters={true}>
           <Col xs={4} className="h-100">
             <Card.Img className="squared" src={o.Address} />
-            <Card.Header className="infoheader text-center"><h5>Crew</h5></Card.Header>
-            <Card.Text>
-              <Row noGutters={true} className="m-2">
-                {o.Crew.map(c => {
-                  return <Col xl={6}>
-                    <Card className="infoheader text-center py-1 squared">
-                      <Link to={`/profile/${c}`}>{c}</Link>
-                    </Card>
-                  </Col>
-                })}
-              </Row>
-            </Card.Text>
           </Col>
           <Col xs={8}>
             <Card.Header className="infoheader"><h4>{o.Title}</h4></Card.Header>
@@ -102,6 +90,18 @@ export class OperationsCard extends React.Component {
             }
           </Col>
         </Row>
+        <Card.Header className="infoheader text-center"><h5>Crew</h5></Card.Header>
+        <Card.Text>
+          <Row noGutters={true} className="m-2">
+            {o.Crew.map(c => {
+              return <Col xl={2}>
+                <Card className="infoheader text-center py-1 squared">
+                  <Link to={`/profile/${c}`}>{c}</Link>
+                </Card>
+              </Col>
+            })}
+          </Row>
+        </Card.Text>
       </Card >
     );
   }
