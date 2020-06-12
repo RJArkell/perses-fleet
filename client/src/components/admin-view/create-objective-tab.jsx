@@ -34,7 +34,7 @@ export function CreateObjectiveTab(props) {
   };
 
   return (
-    <Card>
+    <Card className="squared">
       <Card.Header className="header text-center"><h4>Create Objective</h4></Card.Header>
       <Card.Body>
         <Form>

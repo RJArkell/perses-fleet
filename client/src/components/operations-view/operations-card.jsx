@@ -79,7 +79,7 @@ export class OperationsCard extends React.Component {
             <Card.Body className="mx-4">
               <Row>
                 <Card.Text >
-                  <h5>{date.toDateString()} - {o.Time} PST</h5>
+                  <h6>{date.toDateString()} - {o.Time} PST</h6>
                 </Card.Text>
               </Row>
               <Row className="pt-2">

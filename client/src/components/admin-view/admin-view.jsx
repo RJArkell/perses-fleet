@@ -16,25 +16,25 @@ export class AdminView extends React.Component {
           <Tab.Container id="left-tabs-example" defaultActiveKey="news">
             <Row noGutters={true}>
               <Col sm={3}>
-                <Card className="h-100 w-100">
-                  <Nav variant="pills" className="flex-column">
+                <Card className="h-100 w-100 squared">
+                  <Nav className="flex-column">
                     <Nav.Item>
-                      <Nav.Link eventKey="news" className="admintab">Post News</Nav.Link>
+                      <Nav.Link eventKey="news" className="admintab squared">Post News</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="op" className="admintab">Create Operation</Nav.Link>
+                      <Nav.Link eventKey="op" className="admintab squared">Create Operation</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="user" className="admintab">Register User</Nav.Link>
+                      <Nav.Link eventKey="user" className="admintab squared">Register User</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="obj" className="admintab">Create Objective</Nav.Link>
+                      <Nav.Link eventKey="obj" className="admintab squared">Create Objective</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="scrn" className="admintab">Add Screenshot</Nav.Link>
+                      <Nav.Link eventKey="scrn" className="admintab squared">Add Screenshot</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="euser" className="admintab">Edit User</Nav.Link>
+                      <Nav.Link eventKey="euser" className="admintab squared">Edit User</Nav.Link>
                     </Nav.Item>
                   </Nav>
                 </Card>

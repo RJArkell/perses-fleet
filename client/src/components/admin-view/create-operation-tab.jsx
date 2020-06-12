@@ -32,7 +32,7 @@ export function CreateOperationTab(props) {
   };
 
   return (
-    <Card>
+    <Card className="squared">
       <Card.Header className="header text-center"><h4>Create Operation</h4></Card.Header>
       <Card.Body>
         <Form>
@@ -46,7 +46,7 @@ export function CreateOperationTab(props) {
             />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Date</Form.Label>
+            <Form.Label>Date (add one day to correct date)</Form.Label>
             <Form.Control
               type="date"
               placeholder="Date"

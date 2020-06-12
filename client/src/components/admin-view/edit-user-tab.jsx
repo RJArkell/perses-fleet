@@ -27,7 +27,7 @@ export function EditUserTab(props) {
   };
 
   return (
-    <Card className="h-100 w-100">
+    <Card className="squared">
       <Card.Header className="header text-center"><h4>Edit User</h4></Card.Header>
       <Card.Body>
         <Form>

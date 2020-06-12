@@ -30,7 +30,7 @@ export function CreateNewsTab(props) {
   };
 
   return (
-    <Card>
+    <Card className="squared">
       <Card.Header className="header text-center"><h4>Create News Post</h4></Card.Header>
       <Card.Body>
         <Form>
