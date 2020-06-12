@@ -89,7 +89,7 @@ export class OperationsCard extends React.Component {
         <Card.Text>
           <Row noGutters={true} className="m-2">
             {o.Crew.map(c => {
-              return <Col xl={2}>
+              return <Col xl={2} sm={4} xs={12}>
                 <Card className="infoheader text-center py-1 squared">
                   <Link to={`/profile/${c}`}>{c}</Link>
                 </Card>

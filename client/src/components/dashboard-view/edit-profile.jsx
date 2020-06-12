@@ -52,7 +52,7 @@ export function EditProfile(props) {
             <Form.Group>
               <Form.Label className="p-2">Change Password</Form.Label>
               <Form.Control
-                type="text"
+                type="password"
                 placeholder="Enter new password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
