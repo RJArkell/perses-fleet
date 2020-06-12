@@ -83,11 +83,6 @@ export class OperationsCard extends React.Component {
                 </Card.Text>
               </Row>
             </Card.Body>
-            {staff === "true" && <Button className="button float-right mr-2 mb-2" type="submit" onClick={handleShow}>Edit</Button>}
-            {signedup
-              ? <Button className="button float-right mr-2 mb-2" type="submit" onClick={handleDelete}>Leave Crew</Button>
-              : <Button className="button float-right mr-2 mb-2" type="submit" onClick={handleSubmit}>Join Crew</Button>
-            }
           </Col>
         </Row>
         <Card.Header className="infoheader text-center"><h5>Crew</h5></Card.Header>
@@ -101,6 +96,11 @@ export class OperationsCard extends React.Component {
               </Col>
             })}
           </Row>
+          {staff === "true" && <Button className="button float-right mr-2 mb-2" type="submit" onClick={handleShow}>Edit</Button>}
+          {signedup
+            ? <Button className="button float-right mr-2 mb-2" type="submit" onClick={handleDelete}>Leave Crew</Button>
+            : <Button className="button float-right mr-2 mb-2" type="submit" onClick={handleSubmit}>Join Crew</Button>
+          }
         </Card.Text>
       </Card >
     );
