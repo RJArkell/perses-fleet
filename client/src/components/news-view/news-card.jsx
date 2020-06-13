@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Modal, Button } from 'react-bootstrap';
+import { Card, Modal, Button, Row, Col } from 'react-bootstrap';
 
 export class NewsCard extends React.Component {
   render() {
@@ -23,13 +23,21 @@ export class NewsCard extends React.Component {
     return (
       <div>
         <Card className="my-1 mx-2 infocard squared">
-          <Card.Header className="infoheader"><h5>{n.Headline} - {date.toDateString()}</h5></Card.Header>
+          <Card.Header className="infoheader">
+            <Row noGutters={true}>
+              <Col xs={11}>
+                <h5>{n.Headline} - {date.toDateString()}</h5>
+              </Col>
+              <Col xs={1}>
+                {staff === "true" && <Button className="button float-right" type="submit" onClick={handleShow}>Edit</Button>}
+              </Col>
+            </Row>
+          </Card.Header>
           <Card.Body>
             <Card.Text>
               <div dangerouslySetInnerHTML={{ __html: n.Body }}></div>
               <br />
               <a target="_blank" href={n.Link} >{n.LinkText}</a>
-              {staff === "true" && <Button className="button float-right" type="submit" onClick={handleShow}>Edit</Button>}
             </Card.Text>
           </Card.Body>
         </Card>

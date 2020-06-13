@@ -58,12 +58,25 @@ export class OperationsCard extends React.Component {
 
     return (
       <Card className="my-1 mx-2 infocard squared">
+        <Card.Header className="infoheader">
+          <Row noGutters={true}>
+            <Col xs={9}>
+              <h4>{o.Title}</h4>
+            </Col>
+            <Col xs={3}>
+              {signedup
+                ? <Button className="button float-right" type="submit" onClick={handleDelete}>Leave Crew</Button>
+                : <Button className="button float-right" type="submit" onClick={handleSubmit}>Join Crew</Button>
+              }
+              {staff === "true" && <Button className="button mr-2 float-right" type="submit" onClick={handleShow}>Edit</Button>}
+            </Col>
+          </Row>
+        </Card.Header>
         <Row noGutters={true}>
           <Col xs={4} className="h-100">
-            <Card.Img className="squared" src={o.Address} />
+            <Card.Img className="squared h-100" src={o.Address} />
           </Col>
-          <Col xs={8}>
-            <Card.Header className="infoheader"><h4>{o.Title}</h4></Card.Header>
+          <Col xs={6}>
             <Card.Body className="mx-4">
               <Row>
                 <Card.Text >
@@ -84,24 +97,21 @@ export class OperationsCard extends React.Component {
               </Row>
             </Card.Body>
           </Col>
+          <Col xs={2}>
+            <Card.Header className="infoheader text-center"><h5>Crew</h5></Card.Header>
+            <Card.Text>
+              <Row noGutters={true} className="mb-2">
+                {o.Crew.map(c => {
+                  return <Col xs={12}>
+                    <Card className="infoheader text-center py-1 squared">
+                      <Link to={`/profile/${c}`}>{c}</Link>
+                    </Card>
+                  </Col>
+                })}
+              </Row>
+            </Card.Text>
+          </Col>
         </Row>
-        <Card.Header className="infoheader text-center"><h5>Crew</h5></Card.Header>
-        <Card.Text>
-          <Row noGutters={true} className="m-2">
-            {o.Crew.map(c => {
-              return <Col xl={2} sm={4} xs={12}>
-                <Card className="infoheader text-center py-1 squared">
-                  <Link to={`/profile/${c}`}>{c}</Link>
-                </Card>
-              </Col>
-            })}
-          </Row>
-          {staff === "true" && <Button className="button float-right mr-2 mb-2" type="submit" onClick={handleShow}>Edit</Button>}
-          {signedup
-            ? <Button className="button float-right mr-2 mb-2" type="submit" onClick={handleDelete}>Leave Crew</Button>
-            : <Button className="button float-right mr-2 mb-2" type="submit" onClick={handleSubmit}>Join Crew</Button>
-          }
-        </Card.Text>
       </Card >
     );
   }
