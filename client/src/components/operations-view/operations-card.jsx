@@ -74,7 +74,7 @@ export class OperationsCard extends React.Component {
         </Card.Header>
         <Row noGutters={true}>
           <Col xs={4} className="h-100">
-            <Card.Img className="squared h-100" src={o.Address} />
+            <Card.Img className="squared" src={o.Address} />
           </Col>
           <Col xs={6}>
             <Card.Body className="mx-4">

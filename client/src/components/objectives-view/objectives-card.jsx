@@ -24,7 +24,16 @@ export class ObjectivesCard extends React.Component {
       <Card className="my-1 mx-2 infocard squared">
         <Row noGutters={true}>
           <Col xs={8}>
-            <Card.Header className="infoheader text-center"><h4>{o.Title}</h4></Card.Header>
+            <Card.Header className="infoheader">
+              <Row noGutters={true}>
+                <Col xs={11}>
+                  <h4>{o.Title}</h4>
+                </Col>
+                <Col xs={1}>
+                  {staff === "true" && <Button className="button float-right" type="submit" onClick={handleShow}>Edit</Button>}
+                </Col>
+              </Row>
+            </Card.Header>
             <Card.Body className="mx-4">
               <Row>
                 <Card.Text>
@@ -46,7 +55,6 @@ export class ObjectivesCard extends React.Component {
                 </Card.Text>
               </Row>
             </Card.Body>
-            {staff === "true" && <Button className="button float-left ml-2 mb-2" type="submit" onClick={handleShow}>Edit</Button>}
           </Col>
           <Col xs={4}>
             <Card.Img className="h-100" src={o.Address} />
