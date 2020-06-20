@@ -37,7 +37,7 @@ export class ProfileView extends React.Component {
               <p>COMMISSION:    {u.Commission}</p>
               <p>COMMENDATIONS:</p>
               <div className="ml-5">
-                {commendations.map(c => {
+                {u.Commendations.map(c => {
                   return <img src={c} />
                 })}
               </div>

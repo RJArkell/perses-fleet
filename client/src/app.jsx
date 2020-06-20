@@ -25,7 +25,6 @@ export class App extends React.Component {
       users: [],
       objectives: [],
       operations: [],
-      operations: [],
       user: null,
       rank: null,
       email: null,
@@ -90,7 +89,7 @@ export class App extends React.Component {
       .then(res => {
         const operations = res.data;
         operations.sort((a, b) => {
-          return b.Date > a.Date;
+          return (new Date(b.Date)) - (new Date(a.Date))
         })
         this.setState({ operations });
       })
