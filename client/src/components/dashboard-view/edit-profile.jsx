@@ -43,6 +43,26 @@ export function EditProfile(props) {
       });
   };
 
+  const handleUpdateUser = (e) => {
+    e.preventDefault();
+    axios.patch(`https://perses-fleet.herokuapp.com/api/users/${localStorage.getItem("user")}`, {
+      Email: email,
+      Password: password,
+    })
+      .then(res => {
+        const data = res.data;
+        console.log(data);
+        alert("User info updated, please login again");
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        window.open("/", "_self");
+      })
+      .catch(e => {
+        console.log(e);
+        alert("Unable to update user");
+      });
+  };
+
   return (
     <Container className="loginform text-center" >
       <Card className="w-100">
@@ -58,7 +78,6 @@ export function EditProfile(props) {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
-            <Button className="button" type="submit" onClick={handleUpdatePassword}>Update Password</Button>
             <Form.Group>
               <Form.Label className="p-2">Change Email Address</Form.Label>
               <Form.Control
@@ -68,7 +87,7 @@ export function EditProfile(props) {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </Form.Group>
-            <Button className="button" type="submit" onClick={handleUpdateEmail}>Update Email</Button>
+            <Button className="button" type="submit" onClick={handleUpdateUser}>Update User</Button>
           </Form>
           <Link to={`/dashboard`}>
             <Button variant="contained" color="primary" className="button">Return</Button>
