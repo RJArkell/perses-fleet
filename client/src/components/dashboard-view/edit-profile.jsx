@@ -87,8 +87,8 @@ export function EditProfile(props) {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </Form.Group>
-            <Button className="button" type="submit" onClick={handleUpdateUser}>Update User</Button>
           </Form>
+          <Button className="button" type="submit" onClick={handleUpdateUser}>Update User</Button>
           <Link to={`/dashboard`}>
             <Button variant="contained" color="primary" className="button">Return</Button>
           </Link>
