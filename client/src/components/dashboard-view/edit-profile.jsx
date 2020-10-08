@@ -15,7 +15,10 @@ export function EditProfile(props) {
       .then(res => {
         const data = res.data;
         console.log(data);
-        alert("User info updated");
+        alert("User info updated, please login again");
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        window.open("/", "_self");
       })
       .catch(e => {
         console.log(e);

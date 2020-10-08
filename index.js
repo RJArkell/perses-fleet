@@ -155,7 +155,8 @@ app.patch('/api/users/:Username', [
           res.json(updatedUser)
         }
       })
-  });
+  }
+);
 
 //Edit user password
 app.patch('/api/users/:Username/password', [
@@ -254,6 +255,31 @@ app.post('/api/operations',
         console.error(err);
         res.status(500).send("Error: " + err);
       });
+  }
+);
+
+//Edit operation
+app.patch('/api/operations/:id',
+  (req, res) => {
+    Operations.findOneAndUpdate({ _id: req.params._id }, {
+      $set: {
+        Title: req.body.Title,
+        Details: req.body.Details,
+        Date: req.body.Date,
+        Time: req.body.Time,
+        Assets: req.body.Assets,
+        Address: req.body.Address
+      }
+    },
+      { new: true },
+      (err, updatedOperation) => {
+        if (err) {
+          console.error(err);
+          res.status(500).send("Error: " + err);
+        } else {
+          res.json(updatedOperation)
+        }
+      })
   }
 );
 
