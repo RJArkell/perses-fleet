@@ -57,13 +57,7 @@ var screenshotSchema = mongoose.Schema({
 });
 
 //Bcrypt password encryption
-userSchema.statics.hashPassword = function (password) {
-  return bcrypt.hashSync(password, 10);
-};
 
-userSchema.methods.validatePassword = function (password) {
-  return bcrypt.compareSync(password, this.Password);
-};
 
 //Schema models
 var User = mongoose.model('User', userSchema);

@@ -7,42 +7,6 @@ export function EditProfile(props) {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
 
-  const handleUpdatePassword = (e) => {
-    e.preventDefault();
-    axios.put(`https://perses-fleet.herokuapp.com/api/users/${localStorage.getItem("user")}/password`, {
-      Password: password,
-    })
-      .then(res => {
-        const data = res.data;
-        console.log(data);
-        alert("Password updated, please login again");
-        localStorage.removeItem("token");
-        localStorage.removeItem("user");
-        window.open("/", "_self");
-      })
-      .catch(e => {
-        console.log(e);
-        alert("Unable to update password");
-      });
-  };
-
-  const handleUpdateEmail = (e) => {
-    e.preventDefault();
-    axios.put(`https://perses-fleet.herokuapp.com/api/users/${localStorage.getItem("user")}/email`, {
-      Email: email,
-    })
-      .then(res => {
-        const data = res.data;
-        console.log(data);
-        alert("Email updated");
-        window.open("/", "_self");
-      })
-      .catch(e => {
-        console.log(e);
-        alert("Unable to update email");
-      });
-  };
-
   const handleUpdateUser = (e) => {
     e.preventDefault();
     axios.patch(`https://perses-fleet.herokuapp.com/api/users/${localStorage.getItem("user")}`, {
