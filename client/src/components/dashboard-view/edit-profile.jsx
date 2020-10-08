@@ -10,20 +10,35 @@ export function EditProfile(props) {
   const handleUpdateUser = (e) => {
     e.preventDefault();
     axios.patch(`https://perses-fleet.herokuapp.com/api/users/${localStorage.getItem("user")}`, {
-      Email: email,
-      Password: password,
+      Email: email
     })
       .then(res => {
         const data = res.data;
         console.log(data);
-        alert("User info updated, please login again");
+        alert("User info updated");
+      })
+      .catch(e => {
+        console.log(e);
+        alert("Unable to update user");
+      });
+  };
+
+  const handleUpdatePassword = (e) => {
+    e.preventDefault();
+    axios.patch(`https://perses-fleet.herokuapp.com/api/users/${localStorage.getItem("user")}/password`, {
+      Password: password
+    })
+      .then(res => {
+        const data = res.data;
+        console.log(data);
+        alert("Password updated, please login again");
         localStorage.removeItem("token");
         localStorage.removeItem("user");
         window.open("/", "_self");
       })
       .catch(e => {
         console.log(e);
-        alert("Unable to update user");
+        alert("Unable to update password");
       });
   };
 
@@ -42,17 +57,18 @@ export function EditProfile(props) {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
+            <Button className="button" type="submit" onClick={handleUpdatePassword}>Update User</Button>
             <Form.Group>
               <Form.Label className="p-2">Change Email Address</Form.Label>
               <Form.Control
                 type="email"
                 placeholder="Enter new email"
-                value={email}
+                defaultValue={localStorage.getItem("email")}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </Form.Group>
+            <Button className="button" type="submit" onClick={handleUpdateUser}>Update User</Button>
           </Form>
-          <Button className="button" type="submit" onClick={handleUpdateUser}>Update User</Button>
           <Link to={`/dashboard`}>
             <Button variant="contained" color="primary" className="button">Return</Button>
           </Link>

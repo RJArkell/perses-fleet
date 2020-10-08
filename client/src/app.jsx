@@ -146,7 +146,7 @@ export class App extends React.Component {
             if (staff === "true") return <div><DashboardView user={user} rank={rank} email={email} commission={commission} status={status} commendations={commendations} /><AdminView /></div>;
             return <DashboardView user={user} rank={rank} email={email} commission={commission} status={status} commendations={commendations} />;
           }} />
-          <Route path="/updateprofile" render={() => <EditProfile />} />
+          <Route path="/updateprofile" render={() => <EditProfile email={email} />} />
         </div>
       </BrowserRouter >
     );
