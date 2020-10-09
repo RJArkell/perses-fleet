@@ -259,7 +259,7 @@ app.post('/api/operations',
 );
 
 //Edit operation
-app.patch('/api/operations/:id',
+app.patch('/api/operations/:_id',
   (req, res) => {
     Operations.findOneAndUpdate({ _id: req.params._id }, {
       $set: {
