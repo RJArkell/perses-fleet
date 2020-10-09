@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Container, Card, Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 export function EditOperation(props) {
@@ -90,7 +91,10 @@ export function EditOperation(props) {
                 onChange={(e) => setAddress(e.target.value)}
               />
             </Form.Group>
-            <Button className="button float-right mr-2" type="submit" onClick={handleSubmit}>Update</Button>
+            <Button className="button float-right" type="submit" onClick={handleSubmit}>Update</Button>
+            <Link to={`/operations`}>
+              <Button variant="contained" color="primary" className="button float-right mr-2">Return</Button>
+            </Link>
           </Form>
         </Card.Body>
       </Card>
