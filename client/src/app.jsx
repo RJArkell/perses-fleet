@@ -14,6 +14,7 @@ import { ProfileView } from "./components/profile-view/profile-view";
 import { OperationsView } from "./components/operations-view/operations-view";
 import { DashboardView } from "./components/dashboard-view/dashboard-view";
 import { EditProfile } from "./components/dashboard-view/edit-profile";
+import { EditOperation } from "./components/operations-view/edit-operation";
 import "./app.scss";
 
 export class App extends React.Component {
@@ -141,12 +142,16 @@ export class App extends React.Component {
             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
             return <OperationsView operations={operations} user={user} />;
           }} />
+          <Route path="/editoperation/:_id" render={({ match }) => {
+            if (staff !== "true") return <HomeView news={news} screenshots={screenshots} />;
+            return <EditOperation o={operations.find(o => o._id === match.params._id)} />;
+          }} />
           <Route path="/dashboard" render={() => {
             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
             if (staff === "true") return <div><DashboardView user={user} rank={rank} email={email} commission={commission} status={status} commendations={commendations} /><AdminView /></div>;
             return <DashboardView user={user} rank={rank} email={email} commission={commission} status={status} commendations={commendations} />;
           }} />
-          <Route path="/updateprofile" render={() => <EditProfile email={email} />} />
+          <Route path="/editprofile" render={() => <EditProfile email={email} />} />
         </div>
       </BrowserRouter >
     );

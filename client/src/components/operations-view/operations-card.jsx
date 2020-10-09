@@ -68,7 +68,7 @@ export class OperationsCard extends React.Component {
                 ? <Button className="button float-right" type="submit" onClick={handleDelete}>Leave Crew</Button>
                 : <Button className="button float-right" type="submit" onClick={handleSubmit}>Join Crew</Button>
               }
-              {staff === "true" && <Button className="button mr-2 float-right" type="submit" onClick={handleShow}>Edit</Button>}
+              {staff === "true" && <Link to={`/editoperation/${o._id}`}><Button className="button mr-2 float-right" type="submit">Edit</Button></Link>}
             </Col>
           </Row>
         </Card.Header>

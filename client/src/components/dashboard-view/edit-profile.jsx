@@ -60,7 +60,7 @@ export function EditProfile(props) {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
-            <Button className="button" type="submit" onClick={handleUpdatePassword}>Update User</Button>
+            <Button className="button" type="submit" onClick={handleUpdatePassword}>Update Password</Button>
             <Form.Group>
               <Form.Label className="p-2">Change Email Address</Form.Label>
               <Form.Control

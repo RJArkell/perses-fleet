@@ -43,7 +43,7 @@ export class DashboardView extends React.Component {
                 })}
               </div>
             </Card.Text>
-            <Link to={`/updateprofile`}>
+            <Link to={`/editprofile`}>
               <Button variant="contained" color="primary" className="button float-right">Update Information</Button>
             </Link>
             <Button className="button float-right mr-2" onClick={() => this.onLoggedOut()}>Logout</Button>
