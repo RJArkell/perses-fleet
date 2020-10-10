@@ -26,7 +26,7 @@ export class EditNews extends React.Component {
       axios.patch(`https://perses-fleet.herokuapp.com/api/news/${n._id}`, {
         Headline: headline,
         Body: body,
-        Linktext: linktext,
+        LinkText: linktext,
         Link: link
       })
         .then(res => {
