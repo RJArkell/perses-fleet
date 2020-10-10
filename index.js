@@ -218,6 +218,18 @@ app.post('/api/users', [
   }
 );
 
+//Delete user
+app.delete('/api/users/:Username',
+  (req, res) => {
+    Users.findOneAndRemove({ _id: req.params._id })
+      .then((user) => { res.status(201).json(user) })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).send("Error: " + err);
+      });
+  }
+);
+
 //Create news post
 app.post('/api/news',
   (req, res) => {
@@ -264,7 +276,7 @@ app.patch('/api/news/:_id',
 app.delete('/api/news/:_id',
   (req, res) => {
     News.findOneAndRemove({ _id: req.params._id })
-      .then((user) => { res.status(201).json(user) })
+      .then((news) => { res.status(201).json(news) })
       .catch((err) => {
         console.error(err);
         res.status(500).send("Error: " + err);
@@ -322,7 +334,7 @@ app.patch('/api/operations/:_id',
 app.delete('/api/operations/:_id',
   (req, res) => {
     Operations.findOneAndRemove({ _id: req.params._id })
-      .then((user) => { res.status(201).json(user) })
+      .then((operation) => { res.status(201).json(operation) })
       .catch((err) => {
         console.error(err);
         res.status(500).send("Error: " + err);
@@ -380,7 +392,7 @@ app.patch('/api/objectives/:_id',
 app.delete('/api/objectives/:_id',
   (req, res) => {
     Objectives.findOneAndRemove({ _id: req.params._id })
-      .then((user) => { res.status(201).json(user) })
+      .then((objective) => { res.status(201).json(objective) })
       .catch((err) => {
         console.error(err);
         res.status(500).send("Error: " + err);
@@ -479,7 +491,7 @@ app.patch('/api/screenshots/:_id',
 app.delete('/api/screenshots/:_id',
   (req, res) => {
     Screenshots.findOneAndRemove({ _id: req.params._id })
-      .then((user) => { res.status(201).json(user) })
+      .then((screenshot) => { res.status(201).json(screenshot) })
       .catch((err) => {
         console.error(err);
         res.status(500).send("Error: " + err);
