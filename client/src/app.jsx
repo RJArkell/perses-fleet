@@ -17,6 +17,7 @@ import { EditProfile } from "./components/dashboard-view/edit-profile";
 import { EditOperation } from "./components/operations-view/edit-operation";
 import { EditObjective } from "./components/objectives-view/edit-objective";
 import { EditNews } from "./components/news-view/edit-news";
+import { EditScreenshot } from "./components/media-view/edit-screenshot";
 import "./app.scss";
 
 export class App extends React.Component {
@@ -132,6 +133,10 @@ export class App extends React.Component {
           }} />
           <Route path="/fleet" render={() => <FleetView />} />
           <Route path="/media" render={() => <MediaView screenshots={screenshots} />} />
+          <Route path="/editscreenshot/:_id" render={({ match }) => {
+            if (staff !== "true") return <HomeView news={news} screenshots={screenshots} />;
+            return <EditScreenshot s={screenshots.find(s => s._id === match.params._id)} />;
+          }} />
           <Route path="/roster" render={() => {
             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
             return <RosterView users={users} />;

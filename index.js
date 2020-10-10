@@ -454,6 +454,39 @@ app.post('/api/screenshots',
   }
 );
 
+//Edit screenshot
+app.patch('/api/screenshots/:_id',
+  (req, res) => {
+    Screenshots.findOneAndUpdate({ _id: req.params._id }, {
+      $set: {
+        Address: req.body.Address,
+        User: req.body.User,
+      }
+    },
+      { new: true },
+      (err, updatedScreenshot) => {
+        if (err) {
+          console.error(err);
+          res.status(500).send("Error: " + err);
+        } else {
+          res.json(updatedScreenshot)
+        }
+      })
+  }
+);
+
+//Delete screenshot
+app.delete('/api/screenshots/:_id',
+  (req, res) => {
+    Screenshots.findOneAndRemove({ _id: req.params._id })
+      .then((user) => { res.status(201).json(user) })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).send("Error: " + err);
+      });
+  }
+);
+
 //Serve React App
 app.use(express.static(path.join(__dirname, "client", 'dist')));
 app.get('/*', (req, res) => {
