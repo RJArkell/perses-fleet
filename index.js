@@ -319,26 +319,37 @@ app.post('/api/objectives',
 //Edit objective
 app.patch('/api/objectives/:_id',
   (req, res) => {
-    Operations.findOneAndUpdate({ _id: req.params._id }, {
+    Objectives.findOneAndUpdate({ _id: req.params._id }, {
       $set: {
         Title: req.body.Title,
         Details: req.body.Details,
         Progress: req.body.Progress,
         Goal: req.body.Goal,
         Address: req.body.Address,
-        Unit: req.body.Unit,
-        Date: req.body.Date
+        Unit: req.body.Unit
       }
     },
       { new: true },
-      (err, updatedOperation) => {
+      (err, updatedObjective) => {
         if (err) {
           console.error(err);
           res.status(500).send("Error: " + err);
         } else {
-          res.json(updatedOperation)
+          res.json(updatedObjective)
         }
       })
+  }
+);
+
+//Delete objective
+app.delete('/api/objectives/:_id',
+  (req, res) => {
+    Objectives.findOneAndRemove({ _id: req.params._id })
+      .then((user) => { res.status(201).json(user) })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).send("Error: " + err);
+      });
   }
 );
 

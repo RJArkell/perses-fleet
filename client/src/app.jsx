@@ -15,6 +15,7 @@ import { OperationsView } from "./components/operations-view/operations-view";
 import { DashboardView } from "./components/dashboard-view/dashboard-view";
 import { EditProfile } from "./components/dashboard-view/edit-profile";
 import { EditOperation } from "./components/operations-view/edit-operation";
+import { EditObjective } from "./components/objectives-view/edit-objective";
 import "./app.scss";
 
 export class App extends React.Component {
@@ -137,6 +138,10 @@ export class App extends React.Component {
           <Route path="/objectives" render={() => {
             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
             return <ObjectivesView objectives={objectives} />;
+          }} />
+          <Route path="/editobjective/:_id" render={({ match }) => {
+            if (staff !== "true") return <HomeView news={news} screenshots={screenshots} />;
+            return <EditObjective o={objectives.find(o => o._id === match.params._id)} />;
           }} />
           <Route path="/operations" render={() => {
             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;

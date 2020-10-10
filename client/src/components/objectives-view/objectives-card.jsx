@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Col, Card, ProgressBar, Button } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 export class ObjectivesCard extends React.Component {
   render() {
@@ -7,18 +8,6 @@ export class ObjectivesCard extends React.Component {
     const bar = (o.Progress / o.Goal) * 100;
     var date = new Date(o.Date);
     const staff = localStorage.getItem("staff")
-
-    const handleClose = (e) => {
-      this.setState({
-        show: true
-      });
-    };
-
-    const handleShow = (e) => {
-      this.setState({
-        show: true
-      });
-    };
 
     return (
       <Card className="my-1 mx-2 infocard squared">
@@ -30,7 +19,7 @@ export class ObjectivesCard extends React.Component {
                   <h4>{o.Title}</h4>
                 </Col>
                 <Col xs={1}>
-                  {staff === "true" && <Button className="button float-right" type="submit" onClick={handleShow}>Edit</Button>}
+                  {staff === "true" && <Link to={`/editobjective/${o._id}`}><Button className="button float-right" type="submit">Edit</Button></Link>}
                 </Col>
               </Row>
             </Card.Header>

@@ -10,18 +10,6 @@ export class OperationsCard extends React.Component {
     const date = new Date(o.Date);
     const staff = localStorage.getItem("staff")
 
-    const handleClose = (e) => {
-      this.setState({
-        show: true
-      });
-    };
-
-    const handleShow = (e) => {
-      this.setState({
-        show: true
-      });
-    };
-
     const handleSubmit = (e) => {
       e.preventDefault();
       axios.post(`https://perses-fleet.herokuapp.com/api/operations/${o._id}/crew/${user}`, {
@@ -103,9 +91,9 @@ export class OperationsCard extends React.Component {
               <Row noGutters={true} className="mb-2">
                 {o.Crew.map(c => {
                   return <Col xs={12}>
-                    <Card className="infoheader text-center py-1 squared">
-                      <Link className="textlink" to={`/profile/${c}`}>{c}</Link>
-                    </Card>
+                    <Link to={`/profile/${c}`}>
+                      <Button className="button infoheader text-center py-1 squared w-100">{c}</Button>
+                    </Link>
                   </Col>
                 })}
               </Row>
