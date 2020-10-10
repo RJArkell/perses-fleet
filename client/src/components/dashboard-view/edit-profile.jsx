@@ -16,14 +16,14 @@ export function EditProfile(props) {
         const data = res.data;
         console.log(data);
         alert("User info updated, please login again");
-        localStorage.setItem("token");
-        localStorage.setItem("user");
-        localStorage.setItem("rank");
-        localStorage.setItem("email");
-        localStorage.setItem("status");
-        localStorage.setItem("commission");
-        localStorage.setItem("staff");
-        localStorage.setItem("commendations");
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        localStorage.removeItem("rank");
+        localStorage.removeItem("email");
+        localStorage.removeItem("commission");
+        localStorage.removeItem("commendations");
+        localStorage.removeItem("status");
+        localStorage.removeItem("staff");
         window.open("/", "_self");
       })
       .catch(e => {
@@ -41,14 +41,14 @@ export function EditProfile(props) {
         const data = res.data;
         console.log(data);
         alert("Password updated, please login again");
-        localStorage.setItem("token");
-        localStorage.setItem("user");
-        localStorage.setItem("rank");
-        localStorage.setItem("email");
-        localStorage.setItem("status");
-        localStorage.setItem("commission");
-        localStorage.setItem("staff");
-        localStorage.setItem("commendations");
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        localStorage.removeItem("rank");
+        localStorage.removeItem("email");
+        localStorage.removeItem("commission");
+        localStorage.removeItem("commendations");
+        localStorage.removeItem("status");
+        localStorage.removeItem("staff");
         window.open("/", "_self");
       })
       .catch(e => {
