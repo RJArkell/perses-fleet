@@ -104,7 +104,7 @@ export class OperationsCard extends React.Component {
                 {o.Crew.map(c => {
                   return <Col xs={12}>
                     <Card className="infoheader text-center py-1 squared">
-                      <Link to={`/profile/${c}`}>{c}</Link>
+                      <Link className="textlink" to={`/profile/${c}`}>{c}</Link>
                     </Card>
                   </Col>
                 })}

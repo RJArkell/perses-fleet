@@ -37,7 +37,7 @@ export class NewsCard extends React.Component {
             <Card.Text>
               <div dangerouslySetInnerHTML={{ __html: n.Body }}></div>
               <br />
-              <a target="_blank" href={n.Link} >{n.LinkText}</a>
+              <a className="textlink" target="_blank" href={n.Link} >{n.LinkText}</a>
             </Card.Text>
           </Card.Body>
         </Card>
