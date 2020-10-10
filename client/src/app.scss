@@ -45,7 +45,8 @@ a.textlink:hover { color: white; opacity: 0.6; }
 a.textlink:active { color: white; opacity: 0.6; }
 
 .pagecontainer {
-  padding: 10px 150px
+  padding: 10px;
+  max-width: 1440px;
 }
 
 .menubar {
