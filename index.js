@@ -237,6 +237,42 @@ app.post('/api/news',
   }
 );
 
+//Edit news post
+app.patch('/api/news/:_id',
+  (req, res) => {
+    News.findOneAndUpdate({ _id: req.params._id }, {
+      $set: {
+        Headline: req.body.Headline,
+        Body: req.body.Body,
+        Date: req.body.Date,
+        LinkText: req.body.LinkText,
+        Link: req.body.Link
+      }
+    },
+      { new: true },
+      (err, updatedNews) => {
+        if (err) {
+          console.error(err);
+          res.status(500).send("Error: " + err);
+        } else {
+          res.json(updatedNews)
+        }
+      })
+  }
+);
+
+//Delete news post
+app.delete('/api/news/:_id',
+  (req, res) => {
+    News.findOneAndRemove({ _id: req.params._id })
+      .then((user) => { res.status(201).json(user) })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).send("Error: " + err);
+      });
+  }
+);
+
 //Create operation
 app.post('/api/operations',
   (req, res) => {

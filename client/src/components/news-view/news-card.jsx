@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Modal, Button, Row, Col } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 export class NewsCard extends React.Component {
   render() {
@@ -7,18 +8,6 @@ export class NewsCard extends React.Component {
     const show = false;
     var date = new Date(n.Date);
     const staff = localStorage.getItem("staff")
-
-    const handleClose = (e) => {
-      this.setState({
-        show: true
-      });
-    };
-
-    const handleShow = (e) => {
-      this.setState({
-        show: true
-      });
-    };
 
     return (
       <div>
@@ -29,7 +18,7 @@ export class NewsCard extends React.Component {
                 <h5>{n.Headline} - {date.toDateString()}</h5>
               </Col>
               <Col xs={1}>
-                {staff === "true" && <Button className="button float-right" type="submit" onClick={handleShow}>Edit</Button>}
+                {staff === "true" && <Link to={`/editnews/${n._id}`}><Button className="button mr-2 float-right" type="submit">Edit</Button></Link>}
               </Col>
             </Row>
           </Card.Header>
