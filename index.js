@@ -244,7 +244,6 @@ app.patch('/api/news/:_id',
       $set: {
         Headline: req.body.Headline,
         Body: req.body.Body,
-        Date: req.body.Date,
         LinkText: req.body.LinkText,
         Link: req.body.Link
       }

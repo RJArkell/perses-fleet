@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 export class NewsCard extends React.Component {
   render() {
     const { n } = this.props;
-    const show = false;
     var date = new Date(n.Date);
     const staff = localStorage.getItem("staff")
 
@@ -30,17 +29,6 @@ export class NewsCard extends React.Component {
             </Card.Text>
           </Card.Body>
         </Card>
-
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>Close</Button>
-            <Button variant="primary" onClick={handleClose}>Save Changes</Button>
-          </Modal.Footer>
-        </Modal>
       </div >
     );
   }

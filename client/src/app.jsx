@@ -16,6 +16,7 @@ import { DashboardView } from "./components/dashboard-view/dashboard-view";
 import { EditProfile } from "./components/dashboard-view/edit-profile";
 import { EditOperation } from "./components/operations-view/edit-operation";
 import { EditObjective } from "./components/objectives-view/edit-objective";
+import { EditNews } from "./components/news-view/edit-news";
 import "./app.scss";
 
 export class App extends React.Component {
@@ -125,6 +126,10 @@ export class App extends React.Component {
           <Route path="/" render={() => <Menubar />} />
           <Route exact path="/" render={() => <HomeView news={news} screenshots={screenshots} />} />
           <Route path="/news" render={() => <NewsView news={news} />} />
+          <Route path="/editnews/:_id" render={({ match }) => {
+            if (staff !== "true") return <HomeView news={news} screenshots={screenshots} />;
+            return <EditNews n={news.find(n => n._id === match.params._id)} />;
+          }} />
           <Route path="/fleet" render={() => <FleetView />} />
           <Route path="/media" render={() => <MediaView screenshots={screenshots} />} />
           <Route path="/roster" render={() => {

@@ -19,7 +19,7 @@ export class EditNews extends React.Component {
     var headline = n.Headline,
       body = n.Body,
       linktext = n.LinkText,
-      link = n.link
+      link = n.Link
 
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -31,12 +31,12 @@ export class EditNews extends React.Component {
       })
         .then(res => {
           console.log(res);
-          alert("Operation updated successfully");
-          window.open("/operations", "_self");
+          alert("News post updated successfully");
+          window.open("/", "_self");
         })
         .catch(e => {
           console.log(e);
-          alert("Unable to update operation");
+          alert("Unable to update news post");
         });
     };
 
@@ -45,12 +45,12 @@ export class EditNews extends React.Component {
       axios.delete(`https://perses-fleet.herokuapp.com/api/news/${n._id}`)
         .then(res => {
           console.log(res);
-          alert("Operation has been deleted");
-          window.open("/operations", "_self");
+          alert("News post has been deleted");
+          window.open("/", "_self");
         })
         .catch(e => {
           console.log(e);
-          alert("Unable to delete operation");
+          alert("Unable to delete news post");
         });
     }
 
@@ -65,7 +65,7 @@ export class EditNews extends React.Component {
                 <Form.Control
                   type="text"
                   placeholder="Headline"
-                  value={headline}
+                  defaultValue={headline}
                   onChange={(e) => { headline = e.target.value }}
                 />
               </Form.Group>
@@ -75,7 +75,7 @@ export class EditNews extends React.Component {
                   as="textarea"
                   rows="3"
                   placeholder="Body"
-                  value={body}
+                  defaultValue={body}
                   onChange={(e) => { body = e.target.value }}
                 />
               </Form.Group>
@@ -84,7 +84,7 @@ export class EditNews extends React.Component {
                 <Form.Control
                   type="text"
                   placeholder="Link Text"
-                  value={linktext}
+                  defaultValue={linktext}
                   onChange={(e) => { linktext = e.target.value }}
                 />
               </Form.Group>
@@ -93,7 +93,7 @@ export class EditNews extends React.Component {
                 <Form.Control
                   type="text"
                   placeholder="Link"
-                  value={link}
+                  defaultValue={link}
                   onChange={(e) => { link = e.target.value }}
                 >
                 </Form.Control>
