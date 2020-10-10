@@ -36,8 +36,7 @@ export class EditOperation extends React.Component {
         Address: address
       })
         .then(res => {
-          const data = res.data;
-          console.log(data);
+          console.log(res);
           alert("Operation updated successfully");
           window.open("/operations", "_self");
         })
@@ -46,6 +45,20 @@ export class EditOperation extends React.Component {
           alert("Unable to update operation");
         });
     };
+
+    const handleDelete = (e) => {
+      e.preventDefault();
+      axios.delete(`https://perses-fleet.herokuapp.com/api/operations/${o._id}`)
+        .then(res => {
+          console.log(res);
+          alert("Operation has been deleted");
+          window.open("/operations", "_self");
+        })
+        .catch(e => {
+          console.log(e);
+          alert("Unable to delete operation");
+        });
+    }
 
     return (
       <Container fluid className="pagecontainer">
@@ -104,6 +117,7 @@ export class EditOperation extends React.Component {
                   onChange={(e) => { address = e.target.value }}
                 />
               </Form.Group>
+              <Button className="button float-left" type="submit" onClick={handleDelete}>Delete</Button>
               <Button className="button float-right" type="submit" onClick={handleSubmit}>Update</Button>
               <Link to={`/operations`}>
                 <Button variant="contained" color="primary" className="button float-right mr-2">Return</Button>

@@ -283,6 +283,18 @@ app.patch('/api/operations/:_id',
   }
 );
 
+//Delete operation
+app.delete('/api/operations/:_id',
+  (req, res) => {
+    Operations.findOneAndRemove({ _id: req.params._id })
+      .then((user) => { res.status(201).json(user) })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).send("Error: " + err);
+      });
+  }
+);
+
 //Create objective
 app.post('/api/objectives',
   (req, res) => {
@@ -301,6 +313,32 @@ app.post('/api/objectives',
         console.error(err);
         res.status(500).send("Error: " + err);
       });
+  }
+);
+
+//Edit objective
+app.patch('/api/objectives/:_id',
+  (req, res) => {
+    Operations.findOneAndUpdate({ _id: req.params._id }, {
+      $set: {
+        Title: req.body.Title,
+        Details: req.body.Details,
+        Progress: req.body.Progress,
+        Goal: req.body.Goal,
+        Address: req.body.Address,
+        Unit: req.body.Unit,
+        Date: req.body.Date
+      }
+    },
+      { new: true },
+      (err, updatedOperation) => {
+        if (err) {
+          console.error(err);
+          res.status(500).send("Error: " + err);
+        } else {
+          res.json(updatedOperation)
+        }
+      })
   }
 );
 
