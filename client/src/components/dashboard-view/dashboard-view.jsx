@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 
 export class DashboardView extends React.Component {
   onLoggedOut() {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    localStorage.removeItem("rank");
-    localStorage.removeItem("email");
-    localStorage.removeItem("commission");
-    localStorage.removeItem("commendations");
-    localStorage.removeItem("status");
+    localStorage.setItem("token");
+    localStorage.setItem("user");
+    localStorage.setItem("rank");
+    localStorage.setItem("email");
+    localStorage.setItem("status");
+    localStorage.setItem("commission");
+    localStorage.setItem("staff");
+    localStorage.setItem("commendations");
     window.open("/", "_self");
     this.setState({
       user: null,
