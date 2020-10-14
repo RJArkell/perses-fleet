@@ -38,7 +38,7 @@ export class HomeView extends React.Component {
 
         <Card className="mb-2 pb-1">
           <Card.Header className="header text-center mb-1"><h3>Recent News</h3></Card.Header>
-          {news.slice(0, 5).map(n => (
+          {news.slice(0, 3).map(n => (
             <NewsCard key={n._id} n={n} />
           ))}
         </Card>
