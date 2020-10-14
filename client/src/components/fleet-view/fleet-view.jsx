@@ -9,7 +9,7 @@ export class FleetView extends React.Component {
           <Card.Header className="header text-center"><h3>N.S.S. Terror</h3></Card.Header>
           <Row className="mx-2 mt-2 py-4 holoborder">
             <Col xs={5} className="text-center p-1" >
-              <Card.Img className="patch" src={"https://i.ibb.co/sjtwHDb/terrorpatch.png"} />
+              <Card.Img className="patch" src={"https://i.ibb.co/wLyKcgC/terrorpatch.png"} />
             </Col>
             <Col xs={7} className="pt-4 pr-5">
               <Row>
@@ -41,10 +41,10 @@ export class FleetView extends React.Component {
           </Row>
           <Row noGutters={true} className="m-1">
             <Col className="p-1">
-              <Card.Img className="h-100 holoborder squared" src={"https://i.ibb.co/r5W8cy3/unknown.png"} />
+              <Card.Img className="h-100 holoborder squared" src={"https://i.ibb.co/0ZHYhkt/unknown.png"} />
             </Col>
             <Col className="p-1">
-              <Card.Img className="h-100 holoborder squared" src={"https://i.ibb.co/KFYZYNW/image.png"} />
+              <Card.Img className="h-100 holoborder squared" src={"https://i.ibb.co/X2TxYqV/image.png"} />
             </Col>
           </Row>
         </Card>
@@ -85,10 +85,10 @@ export class FleetView extends React.Component {
           </Row>
           <Row noGutters={true} className="m-1">
             <Col className="p-1">
-              <Card.Img className="h-100 holoborder squared" src={"https://i.ibb.co/ggx8pNW/unknown.png"} />
+              <Card.Img className="h-100 holoborder squared" src={"https://i.ibb.co/WGLQp51/unknown-1.png"} />
             </Col>
             <Col className="p-1">
-              <Card.Img className="h-100 holoborder squared" src={"https://i.ibb.co/CPs51hV/unknown.png"} />
+              <Card.Img className="h-100 holoborder squared" src={"https://i.ibb.co/zRyMyRT/unknown-2.png"} />
             </Col>
           </Row>
         </Card>

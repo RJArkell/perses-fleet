@@ -8,7 +8,7 @@ export class Menubar extends React.Component {
     return (
       <Navbar path="/" className="menubar" expand="xl">
         <Navbar.Brand href="/">
-          <div className="menuheader"><img className="navlogo pr-2" src={"https://i.ibb.co/Trr8BWD/navlogo.png"}></img><h2 className="pb-2">CSG-PERSES</h2></div>
+          <div className="menuheader"><img className="navlogo pr-2" src={"https://i.ibb.co/8DHrHZj/navlogo.png"}></img><h2 className="pb-2">CSG-PERSES</h2></div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" className="hamburger" />
         <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
