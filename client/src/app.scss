@@ -168,6 +168,11 @@ a.textlink:active { color: white; opacity: 0.6; }
   background-color: rgba(47, 49, 65, 0.4);
 }
 
+.rostercard:hover {
+  background-color: rgba(61, 175, 209, 0.4);
+  border: 1px solid rgb(61, 175, 209);
+}
+
 @media (max-width: 720px) {
   .pagecontainer {
     padding: 10px 0px
