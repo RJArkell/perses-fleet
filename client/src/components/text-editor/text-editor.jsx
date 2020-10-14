@@ -1,31 +1,19 @@
-import React, { Component } from 'react';
-import { EditorState, convertToRaw } from 'draft-js';
-import { Editor } from 'react-draft-wysiwyg';
-import draftToHtml from 'draftjs-to-html';
+import React, { useEffect, useMemo, useState } from "react";
+import { createEditor } from 'slate'
+import { Slate, Editable, withReact } from 'slate-react'
 
+export function TextEditor(props) {
+  const editor = useMemo(() => withReact(createEditor()), [])
+  const [value, setValue] = useState([
+    {
+      type: 'paragraph',
+      children: [{ text: 'A line of text in a paragraph.' }],
+    },
+  ])
 
-class TextEditor extends Component {
-  state = {
-    editorState: EditorState.createEmpty(),
-  }
-
-  onEditorStateChange: Function = (editorState) => {
-    this.setState({
-      editorState,
-    });
-  };
-
-  render() {
-    const { editorState } = this.state;
-    return (
-      <div>
-        <Editor
-          editorState={editorState}
-          wrapperClassName="demo-wrapper"
-          editorClassName="demo-editor"
-          onEditorStateChange={this.onEditorStateChange}
-        />
-      </div>
-    );
-  }
+  return (
+    <Slate editor={editor} value={value} onChange={newValue => setValue(newValue)}>
+      <Editable />
+    </Slate>
+  )
 }
