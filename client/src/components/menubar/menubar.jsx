@@ -20,11 +20,10 @@ export class Menubar extends React.Component {
             <Nav.Link target="_blank" href="https://robertsspaceindustries.com/spectrum/community/PERSES" className="menulink mt-2">Forum</Nav.Link>
             <Nav.Link target="_blank" href="https://robertsspaceindustries.com/orgs/PERSES" className="menulink mt-2">Enlist</Nav.Link>
             <NavDropdown title={<div className="menulink mt-2">Restricted Area</div>} id="basic-nav-dropdown">
-              <NavDropdown.Item href="/dashboard" className="menulink">Dashboard</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="/operations" className="menulink">Operations</NavDropdown.Item>
-              <NavDropdown.Item href="/roster" className="menulink">Roster</NavDropdown.Item>
-              <NavDropdown.Item href="/objectives" className="menulink">Objectives</NavDropdown.Item>
+              <Nav.Link href="/dashboard" className="menulink">Dashboard</Nav.Link>
+              <Nav.Link href="/operations" className="menulink">Operations</Nav.Link>
+              <Nav.Link href="/roster" className="menulink">Roster</Nav.Link>
+              <Nav.Link href="/objectives" className="menulink">Objectives</Nav.Link>
             </NavDropdown>
             <Nav.Link target="_blank" href="https://discord.gg/pSYvzsz" ><img src="https://i.ibb.co/XCvDY5F/discord.png" className="icon mt-1" /></Nav.Link>
           </Nav>
