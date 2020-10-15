@@ -51,6 +51,7 @@ a.menulink:active { color: rgb(61, 175, 209);}
 
 .pagecontainer {
   max-width: 1440px;
+  padding: 0;
 }
 
 .menubar {
@@ -215,9 +216,6 @@ a.menulink:active { color: rgb(61, 175, 209);}
 }
 
 @media (max-width: 720px) {
-  .pagecontainer {
-    padding: 10px 0px
-  }
   .card {
     font-size: 90%;
   }
@@ -236,6 +234,9 @@ a.menulink:active { color: rgb(61, 175, 209);}
   .navbar {
     font-size: 70%;
   }
+  .dropdown-menu {
+    font-size: 70%;
+  }
   .icon{
     height: 25px
   }
@@ -245,9 +246,6 @@ a.menulink:active { color: rgb(61, 175, 209);}
 }
   
 @media (min-width: 720px) and (max-width: 1400px) {
-  .pagecontainer {
-    padding: 10px 0px
-  }
   .card {
     font-size: 95%;
   }
@@ -264,6 +262,9 @@ a.menulink:active { color: rgb(61, 175, 209);}
     font-size: 95%;
   }
   .navbar {
+    font-size: 80%;
+  }
+  .dropdown-menu {
     font-size: 80%;
   }
   .menuheader{
