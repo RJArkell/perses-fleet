@@ -37,8 +37,8 @@ export class HomeView extends React.Component {
             </Carousel.Item>
           </Carousel>
 
-          <Card className="squared">
-            <Card.Header className="header text-center tb squared"><h3>Recent News</h3></Card.Header>
+          <Card className="squared tb">
+            <Card.Header className="header text-center"><h3>Recent News</h3></Card.Header>
             {news.slice(0, 3).map(n => (
               <NewsCard key={n._id} n={n} />
             ))}
@@ -57,7 +57,7 @@ export class HomeView extends React.Component {
             <Col className="h-100">
               <Card className="h-100 squared tb lb ml-1">
                 <Card.Header className="header text-center"><h3>About Perses Fleet</h3></Card.Header>
-                <Card.Body className="tb">
+                <Card.Body className="tb 30vh">
                   <Card.Text>
                     <p>Awaiting orders, Admiral.</p>
                   </Card.Text>
