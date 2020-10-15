@@ -20,7 +20,7 @@ export class ProfileView extends React.Component {
 
     return (
       <Container className="profile" >
-        <Card className="w-100">
+        <Card className="w-100 fb">
           <Card.Header className="header text-center">
             <Row noGutters={true}>
               <Col xs={11}>

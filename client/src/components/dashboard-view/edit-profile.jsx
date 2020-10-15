@@ -59,7 +59,7 @@ export function EditProfile(props) {
 
   return (
     <Container className="loginform text-center" >
-      <Card className="w-100">
+      <Card className="w-100 fb">
         <Card.Header className="header text-center"><h4>Update Profile</h4></Card.Header>
         <Card.Body>
           <Form className="pb-2">
