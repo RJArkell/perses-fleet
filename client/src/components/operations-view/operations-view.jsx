@@ -7,7 +7,7 @@ export class OperationsView extends React.Component {
     const { operations, user } = this.props;
     return (
       <Container fluid className="pagecontainer">
-        <Card className="pb-1">
+        <Card className="pb-1 squared bb lb rb">
           <Card.Header className="header text-center mb-1"><h3>Operations</h3></Card.Header>
           {operations.map(o => (
             <OperationsCard key={o._id} o={o} user={user} />

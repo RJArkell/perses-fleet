@@ -10,7 +10,7 @@ export class ObjectivesCard extends React.Component {
     const staff = localStorage.getItem("staff")
 
     return (
-      <Card className="my-1 mx-2 infocard squared">
+      <Card className="my-1 mx-2 infocard squared fb">
         <Row noGutters={true}>
           <Col xs={8}>
             <Card.Header className="infoheader">

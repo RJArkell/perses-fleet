@@ -8,7 +8,7 @@ export class RosterCard extends React.Component {
 
     return (
       <Link to={`/profile/${u.Username}`}>
-        <Card className="h-100 rostercard squared">
+        <Card className="h-100 rostercard squared fb">
           <Card.Header className="rosterheader"><h5>{u.Rank}</h5></Card.Header>
           <Card.Body>
             <Card.Text>

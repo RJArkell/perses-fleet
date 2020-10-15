@@ -45,7 +45,7 @@ export class OperationsCard extends React.Component {
     }
 
     return (
-      <Card className="my-1 mx-2 infocard squared">
+      <Card className="my-1 mx-2 infocard squared fb">
         <Card.Header className="infoheader">
           <Row noGutters={true}>
             <Col xs={9}>

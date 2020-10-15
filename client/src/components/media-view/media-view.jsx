@@ -7,7 +7,7 @@ export class MediaView extends React.Component {
     const { screenshots } = this.props;
     return (
       <Container fluid className="pagecontainer text-center">
-        <Card>
+        <Card className="squared bb lb rb">
           <Card.Header className="header"><h3>Screenshots</h3></Card.Header>
           <Row noGutters={true} className="m-1">
             {screenshots.map(s =>

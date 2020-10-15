@@ -12,7 +12,7 @@ export class HomeView extends React.Component {
 
     return (
       <Container fluid className="pagecontainer">
-        <Carousel className="holoborder mb-2">
+        <Carousel className="bb rb lb">
           <Carousel.Item>
             <img className="d-block w-100"
               src={"https://i.ibb.co/x5BmxtH/marine2.png"} />
@@ -36,17 +36,17 @@ export class HomeView extends React.Component {
           </Carousel.Item>
         </Carousel>
 
-        <Card className="mb-2 pb-1">
+        <Card className="pb-1 squared bb rb lb">
           <Card.Header className="header text-center mb-1"><h3>Recent News</h3></Card.Header>
           {news.slice(0, 3).map(n => (
             <NewsCard key={n._id} n={n} />
           ))}
         </Card>
 
-        <Row noGutters={true} className="mt-1">
-          <Col className="h-100 mr-1">
+        <Row noGutters={true} className="">
+          <Col className="h-100">
             {screenshots.slice(0, 1).map(s => (
-              <Card className="h-100 card" >
+              <Card className="h-100 squared rb bb lb" >
                 <Card.Header className="header text-center"><h3>Featured Screenshot</h3></Card.Header>
                 <Card.Img className="squared" src={s.Address} />
                 <Card.Text className="text-center">
@@ -56,8 +56,8 @@ export class HomeView extends React.Component {
             ))}
           </Col>
 
-          <Col className="h-100 ml-1">
-            <Card className="h-100 card">
+          <Col className="h-100">
+            <Card className="h-100 squared rb bb">
               <Card.Header className="header text-center"><h3>About Perses Fleet</h3></Card.Header>
               <Card.Body>
                 <Card.Text>

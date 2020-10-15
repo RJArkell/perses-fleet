@@ -7,7 +7,7 @@ export class ScreenshotCard extends React.Component {
     const { s } = this.props;
 
     return (
-      <Card className="infocard h-100 squared">
+      <Card className="infocard h-100 squared fb">
         <a target="_blank" className="h-100" href={s.Address}>
           <Card.Img className="h-100 squared" src={s.Address} />
         </a>

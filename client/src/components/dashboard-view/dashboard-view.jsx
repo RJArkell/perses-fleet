@@ -28,7 +28,7 @@ export class DashboardView extends React.Component {
 
     return (
       <Container fluid className="pagecontainer">
-        <Card>
+        <Card className="squared bb lb rb">
           <Card.Header className="header text-center"><h3>Welcome {rank}</h3></Card.Header>
           <Card.Body className="pl-5">
             <Card.Text className="pb-2">

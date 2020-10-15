@@ -50,7 +50,6 @@ a.menulink:hover { color: rgb(61, 175, 209);}
 a.menulink:active { color: rgb(61, 175, 209);}
 
 .pagecontainer {
-  padding: 10px;
   max-width: 1440px;
 }
 
@@ -163,10 +162,29 @@ a.menulink:active { color: rgb(61, 175, 209);}
   width:300px;
 }
 
-.holoborder {
+.bb {
+  border-bottom: 1px solid rgb(61, 175, 209);
+  box-shadow: 1px 1px 10px 4px rgba(61, 175, 209, 0.4);
+}
+.lb{
+  border-left: 1px solid rgb(61, 175, 209);
+  box-shadow: 1px 1px 10px 4px rgba(61, 175, 209, 0.4);
+}
+
+.rb{
+  border-right: 1px solid rgb(61, 175, 209);
+  box-shadow: 1px 1px 10px 4px rgba(61, 175, 209, 0.4);
+}
+
+.tb{
+  border-top: 1px solid rgb(61, 175, 209);
+  box-shadow: 1px 1px 10px 4px rgba(61, 175, 209, 0.4);
+}
+
+
+.fb{
   border: 1px solid rgb(61, 175, 209);
   box-shadow: 1px 1px 10px 4px rgba(61, 175, 209, 0.4);
-  color: rgb(61, 175, 209);
 }
 
 .squared {
@@ -176,8 +194,6 @@ a.menulink:active { color: rgb(61, 175, 209);}
 .card {
   background-color: rgba(47, 49, 65, 0.95);
   color: white;
-  border: 1px solid rgb(61, 175, 209);
-  box-shadow: 1px 1px 10px 4px rgba(61, 175, 209, 0.4);
 }
 
 .infocard {

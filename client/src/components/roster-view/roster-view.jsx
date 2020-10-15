@@ -19,7 +19,7 @@ export class RosterView extends React.Component {
 
     return (
       <Container fluid className="pagecontainer text-center">
-        <Card className="mb-2">
+        <Card className="squared bb lb rb">
           <Card.Header className="header"><h3>Command Staff</h3></Card.Header>
           <Row noGutters={true} className="mx-1 mt-1">
             {admiral.map(u =>
@@ -34,7 +34,7 @@ export class RosterView extends React.Component {
               </Col>)}
           </Row>
         </Card>
-        <Card className="mb-2">
+        <Card className="squared bb lb rb">
           <Card.Header className="header"><h3>Senior Ranks</h3></Card.Header>
           <Row noGutters={true} className="m-1">
             {lieutenant.map(u =>
@@ -43,7 +43,7 @@ export class RosterView extends React.Component {
               </Col>)}
           </Row>
         </Card>
-        <Card>
+        <Card className="squared bb lb rb">
           <Card.Header className="header"><h3>Junior Ranks</h3></Card.Header>
           <Row noGutters={true} className="mx-1 mt-1">
             {ensign.map(u =>

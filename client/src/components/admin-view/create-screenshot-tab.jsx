@@ -26,7 +26,7 @@ export function CreateScreenshotTab(props) {
   };
 
   return (
-    <Card className="squared">
+    <Card className="squared tb lb">
       <Card.Header className="header text-center"><h4>Add Screenshot</h4></Card.Header>
       <Card.Body>
         <Form>
@@ -48,7 +48,7 @@ export function CreateScreenshotTab(props) {
               onChange={(e) => setUser(e.target.value)}
             />
           </Form.Group>
-          <Button className="button" type="submit" onClick={handleSubmit}>Submit</Button>
+          <Button className="button float-right mr-2" type="submit" onClick={handleSubmit}>Submit</Button>
         </Form>
       </Card.Body>
     </Card>

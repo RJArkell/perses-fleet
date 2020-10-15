@@ -31,7 +31,7 @@ export function CreateUserTab(props) {
   };
 
   return (
-    <Card className="squared">
+    <Card className="squared tb lb">
       <Card.Header className="header text-center"><h4>Register User</h4></Card.Header>
       <Card.Body>
         <Form>
@@ -96,7 +96,7 @@ export function CreateUserTab(props) {
               onChange={(e) => setCommission(e.target.value)}
             />
           </Form.Group>
-          <Button className="button" type="submit" onClick={handleSubmit}>Submit</Button>
+          <Button className="button float-right mr-2" type="submit" onClick={handleSubmit}>Submit</Button>
         </Form>
       </Card.Body>
     </Card>

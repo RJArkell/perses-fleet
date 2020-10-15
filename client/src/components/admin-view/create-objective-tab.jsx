@@ -34,7 +34,7 @@ export function CreateObjectiveTab(props) {
   };
 
   return (
-    <Card className="squared">
+    <Card className="squared tb lb">
       <Card.Header className="header text-center"><h4>Create Objective</h4></Card.Header>
       <Card.Body>
         <Form>
@@ -93,7 +93,7 @@ export function CreateObjectiveTab(props) {
               onChange={(e) => setAddress(e.target.value)}
             />
           </Form.Group>
-          <Button className="button" type="submit" onClick={handleSubmit}>Submit</Button>
+          <Button className="button float-right mr-2" type="submit" onClick={handleSubmit}>Submit</Button>
         </Form>
       </Card.Body>
     </Card>

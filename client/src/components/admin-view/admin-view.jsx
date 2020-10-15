@@ -5,12 +5,14 @@ import { CreateUserTab } from "./create-user-tab";
 import { CreateOperationTab } from "./create-operation-tab";
 import { CreateObjectiveTab } from "./create-objective-tab";
 import { CreateScreenshotTab } from "./create-screenshot-tab";
+import { EditHomeTab } from "./edit-home-tab";
+import { EditFleetTab } from "./edit-fleet-tab";
 
 export class AdminView extends React.Component {
   render() {
     return (
       <Container fluid className="pagecontainer" >
-        <Card>
+        <Card className="squared bb lb rb">
           <Card.Header className="header text-center"><h3>Admin Panel</h3></Card.Header>
           <Tab.Container id="left-tabs-example" defaultActiveKey="news">
             <Row noGutters={true}>
@@ -32,6 +34,12 @@ export class AdminView extends React.Component {
                     <Nav.Item>
                       <Nav.Link eventKey="scrn" className="admintab squared">Add Screenshot</Nav.Link>
                     </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link eventKey="home" className="admintab squared">Edit Home Page</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link eventKey="fleet" className="admintab squared">Edit Fleet Page</Nav.Link>
+                    </Nav.Item>
                   </Nav>
                 </Card>
               </Col>
@@ -42,6 +50,8 @@ export class AdminView extends React.Component {
                   <Tab.Pane eventKey="user"><CreateUserTab /></Tab.Pane>
                   <Tab.Pane eventKey="obj"><CreateObjectiveTab /></Tab.Pane>
                   <Tab.Pane eventKey="scrn"><CreateScreenshotTab /></Tab.Pane>
+                  <Tab.Pane eventKey="home"><EditHomeTab /></Tab.Pane>
+                  <Tab.Pane eventKey="fleet"><EditFleetTab /></Tab.Pane>
                 </Tab.Content>
               </Col>
             </Row>
