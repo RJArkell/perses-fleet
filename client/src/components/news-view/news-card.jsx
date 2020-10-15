@@ -10,7 +10,7 @@ export class NewsCard extends React.Component {
 
     return (
       <div>
-        <Card className="my-1 mx-2 infocard squared fb">
+        <Card className="mb-2 infocard squared tb bb">
           <Card.Header className="infoheader">
             <Row noGutters={true}>
               <Col xs={11}>

@@ -11,9 +11,6 @@ export class ScreenshotCard extends React.Component {
         <a target="_blank" className="h-100" href={s.Address}>
           <Card.Img className="h-100 squared" src={s.Address} />
         </a>
-        <Card.Text className="text-center">
-          Submitted by: {s.User}
-        </Card.Text>
       </Card>
     )
   }

@@ -7,7 +7,7 @@ export class FleetView extends React.Component {
       <Container fluid className="pagecontainer">
         <Card className="squared bb lb rb">
           <Card.Header className="header text-center"><h3>N.S.S. Terror</h3></Card.Header>
-          <Row className="mx-2 mt-2 py-4 fb">
+          <Row noGutters={true} className="py-4 tb bb">
             <Col xs={5} className="text-center p-1" >
               <Card.Img className="patch" src={"https://i.ibb.co/wLyKcgC/terrorpatch.png"} />
             </Col>
@@ -39,19 +39,19 @@ export class FleetView extends React.Component {
               </Row>
             </Col>
           </Row>
-          <Row noGutters={true} className="m-1">
-            <Col className="p-1">
-              <Card.Img className="h-100 fb squared" src={"https://i.ibb.co/0ZHYhkt/unknown.png"} />
+          <Row noGutters={true} className="my-2">
+            <Col className="mr-1">
+              <Card.Img className="h-100 tb rb bb squared" src={"https://i.ibb.co/0ZHYhkt/unknown.png"} />
             </Col>
-            <Col className="p-1">
-              <Card.Img className="h-100 fb squared" src={"https://i.ibb.co/X2TxYqV/image.png"} />
+            <Col className="ml-1">
+              <Card.Img className="h-100 tb lb bb squared" src={"https://i.ibb.co/X2TxYqV/image.png"} />
             </Col>
           </Row>
         </Card>
 
         <Card className="squared bb lb rb">
           <Card.Header className="header text-center"><h3>N.S.S. Erebus</h3></Card.Header>
-          <Row className="mx-2 mt-2 py-4 fb">
+          <Row noGutters={true} className="py-4 tb bb">
             <Col xs={7} className="pt-4 pl-5">
               <Row>
                 <Card.Text>
@@ -83,19 +83,19 @@ export class FleetView extends React.Component {
               <Card.Img className="patch" />
             </Col>
           </Row>
-          <Row noGutters={true} className="m-1">
-            <Col className="p-1">
-              <Card.Img className="h-100 fb squared" src={"https://i.ibb.co/WGLQp51/unknown-1.png"} />
+          <Row noGutters={true} className="my-2">
+            <Col className="mr-1">
+              <Card.Img className="h-100 tb rb bb squared" src={"https://i.ibb.co/WGLQp51/unknown-1.png"} />
             </Col>
-            <Col className="p-1">
-              <Card.Img className="h-100 fb squared" src={"https://i.ibb.co/zRyMyRT/unknown-2.png"} />
+            <Col className="ml-1">
+              <Card.Img className="h-100 tb lb bb squared" src={"https://i.ibb.co/zRyMyRT/unknown-2.png"} />
             </Col>
           </Row>
         </Card>
 
         <Card className="squared bb lb rb">
           <Card.Header className="header text-center"><h3>Polaris</h3></Card.Header>
-          <Row className="mx-2 mt-2 py-4 fb">
+          <Row noGutters={true} className="py-4 tb bb">
             <Col xs={5} className="text-center p-1" >
               <Card.Img className="patch" />
             </Col>
@@ -127,19 +127,19 @@ export class FleetView extends React.Component {
               </Row>
             </Col>
           </Row>
-          <Row noGutters={true} className="m-1">
-            <Col className="p-1">
-              <Card.Img className="h-100 fb squared" />
+          <Row noGutters={true} className="my-2">
+            <Col className="mr-1">
+              <Card.Img className="h-100 tb rb bb squared" />
             </Col>
-            <Col className="p-1">
-              <Card.Img className="h-100 fb squared" />
+            <Col className="ml-1">
+              <Card.Img className="h-100 tb lb bb squared" />
             </Col>
           </Row>
         </Card>
 
         <Card className="squared bb lb rb">
           <Card.Header className="header text-center"><h3>Idris</h3></Card.Header>
-          <Row className="mx-2 mt-2 py-4 fb">
+          <Row noGutters={true} className="py-4 tb bb">
             <Col xs={7} className="pt-4 pl-5">
               <Row>
                 <Card.Text>
@@ -171,12 +171,12 @@ export class FleetView extends React.Component {
               <Card.Img className="patch" />
             </Col>
           </Row>
-          <Row noGutters={true} className="m-1">
-            <Col className="p-1">
-              <Card.Img className="h-100 fb squared" />
+          <Row noGutters={true} className="my-2">
+            <Col className="mr-1">
+              <Card.Img className="h-100 tb rb bb squared" />
             </Col>
-            <Col className="p-1">
-              <Card.Img className="h-100 fb squared" />
+            <Col className="ml-1">
+              <Card.Img className="h-100 tb lb bb squared" />
             </Col>
           </Row>
         </Card>
