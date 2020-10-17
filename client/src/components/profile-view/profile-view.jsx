@@ -1,48 +1,62 @@
 import React from "react";
-import { Container, Card, Row, Col, Button } from "react-bootstrap";
+import { Container, Card, Row, Col } from "react-bootstrap";
 
 export class ProfileView extends React.Component {
   render() {
     const { u } = this.props;
-    const staff = localStorage.getItem("staff")
-
-    const handleClose = (e) => {
-      this.setState({
-        show: true
-      });
-    };
-
-    const handleShow = (e) => {
-      this.setState({
-        show: true
-      });
-    };
 
     return (
       <Container className="profile" >
-        <Card className="w-100 fb">
-          <Card.Header className="header text-center">
-            <Row noGutters={true}>
-              <Col xs={11}>
-                <h3>{u.Rank} {u.Username}</h3>
-              </Col>
-              <Col xs={1}>
-                {staff === "true" && <Button className="button float-right" type="submit" onClick={handleShow}>Edit</Button>}
-              </Col>
-            </Row>
-          </Card.Header>
-          <Card.Body>
-            <Card.Text>
-              <p>STATUS:    {u.Status}</p>
-              <p>COMMISSION:    {u.Commission}</p>
-              <p>COMMENDATIONS:</p>
-              <div className="ml-5">
-                {u.Commendations.map(c => {
-                  return <img src={c} />
-                })}
-              </div>
-            </Card.Text>
-          </Card.Body>
+        <Card className="fb">
+          <Card.Header className="header text-center"><h3>{u.Username}</h3></Card.Header>
+          <Row noGutters={true} className="tb bb">
+            <Col sm={12} lg={6}>
+              <Card className="text-center squared">
+                <Card.Header className="header"><h5>RANK</h5></Card.Header>
+                <Card.Body>
+                  <Card.Text className="my-3"><h5>{u.Rank}</h5></Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col sm={12} lg={6}>
+              <Card className="text-center squared">
+                <Card.Header className="header"><h5>COMMENDATIONS</h5></Card.Header>
+                <Card.Body>
+                  <Card.Text className="my-3">
+                    <div>
+                      {u.Commendations.map(c => {
+                        return <img src={c} />
+                      })}
+                    </div>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col sm={12} lg={4}>
+              <Card className="text-center squared">
+                <Card.Header className="header"><h5>EMAIL</h5></Card.Header>
+                <Card.Body>
+                  <Card.Text className="my-3">{u.Email}</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col sm={12} lg={4}>
+              <Card className="text-center squared">
+                <Card.Header className="header"><h5>COMMISSION</h5></Card.Header>
+                <Card.Body>
+                  <Card.Text className="my-3"><h5>{u.Commission}</h5></Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col sm={12} lg={4}>
+              <Card className="text-center squared">
+                <Card.Header className="header"><h5>STATUS</h5></Card.Header>
+                <Card.Body>
+                  <Card.Text className="my-3"><h5>{u.Status}</h5></Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
         </Card>
       </Container>
     )
