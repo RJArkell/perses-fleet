@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Card, Button } from "react-bootstrap";
+import { Container, Card, Button, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export class DashboardView extends React.Component {
@@ -29,28 +29,66 @@ export class DashboardView extends React.Component {
     return (
       <Container fluid className="pagecontainer">
         <Card className="squared bb lb rb">
-          <Card.Header className="header text-center"><h3>Welcome {rank}</h3></Card.Header>
-          <Card.Body className="pl-5">
-            <Card.Text className="pb-2">
-              <p className="mb-2">HANDLE:   {user}</p>
-              <p className="mb-2">RANK:   {rank}</p>
-              <p className="mb-2">EMAIL:    {email}</p>
-              <p className="mb-2">COMMISSION:   {commission}</p>
-              <p className="mb-2">STATUS:   {status}</p>
-              <p className="mb-2">COMMENDATIONS:</p>
-              <div className="ml-5 mb-2">
-                {commendations.map(c => {
-                  return <img src={c} />
-                })}
-              </div>
-            </Card.Text>
+          <Card.Header className="header text-center"><h3>{user}</h3></Card.Header>
+          <Row noGutters={true} className="tb">
+            <Col sm={12} lg={6}>
+              <Card className="text-center squared fb">
+                <Card.Header className="header"><h5>RANK</h5></Card.Header>
+                <Card.Body>
+                  <Card.Text className="my-3"><h5>{rank}</h5></Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col sm={12} lg={6} className="text-center">
+              <Card className="text-center squared fb">
+                <Card.Header className="header"><h5>COMMENDATIONS</h5></Card.Header>
+                <Card.Body>
+                  <Card.Text className="my-3">
+                    <div>
+                      {commendations.map(c => {
+                        return <img src={c} />
+                      })}
+                    </div>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col sm={12} lg={4}>
+              <Card className="text-center squared fb">
+                <Card.Header className="header"><h5>EMAIL</h5></Card.Header>
+                <Card.Body>
+                  <Card.Text className="my-3"><h5>{email}</h5></Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col sm={12} lg={4}>
+              <Card className="text-center squared fb">
+                <Card.Header className="header"><h5>COMMISSION</h5></Card.Header>
+                <Card.Body>
+                  <Card.Text className="my-3"><h5>{commission}</h5></Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col sm={12} lg={4}>
+              <Card className="text-center squared fb">
+                <Card.Header className="header"><h5>STATUS</h5></Card.Header>
+                <Card.Body>
+                  <Card.Text className="my-3"><h5>{status}</h5></Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+          <div>
             <Link to={`/editprofile`}>
-              <Button variant="contained" color="primary" className="button float-right">Update Information</Button>
+              <Button variant="contained" color="primary" className="button float-right squared">Update Information</Button>
             </Link>
-            <Button className="button float-right mr-2" onClick={() => this.onLoggedOut()}>Logout</Button>
-          </Card.Body>
+            <Link to={`/editpassword`}>
+              <Button variant="contained" color="primary" className="button float-right squared">Update Password</Button>
+            </Link>
+            <Button className="button float-right squared" onClick={() => this.onLoggedOut()}>Logout</Button>
+          </div>
         </Card>
-      </Container>
+      </Container >
     )
   }
 }

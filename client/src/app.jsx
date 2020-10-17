@@ -14,6 +14,7 @@ import { ProfileView } from "./components/profile-view/profile-view";
 import { OperationsView } from "./components/operations-view/operations-view";
 import { DashboardView } from "./components/dashboard-view/dashboard-view";
 import { EditProfile } from "./components/dashboard-view/edit-profile";
+import { EditPassword } from "./components/dashboard-view/edit-password";
 import { EditOperation } from "./components/operations-view/edit-operation";
 import { EditObjective } from "./components/objectives-view/edit-objective";
 import { EditNews } from "./components/news-view/edit-news";
@@ -167,6 +168,7 @@ export class App extends React.Component {
             return <DashboardView user={user} rank={rank} email={email} commission={commission} status={status} commendations={commendations} />;
           }} />
           <Route path="/editprofile" render={() => <EditProfile email={email} />} />
+          <Route path="/editpassword" render={() => <EditPassword />} />
         </div>
       </BrowserRouter >
     );

@@ -32,7 +32,7 @@ export class EditNews extends React.Component {
         .then(res => {
           console.log(res);
           alert("News post updated successfully");
-          window.open("/", "_self");
+          window.open("/news", "_self");
         })
         .catch(e => {
           console.log(e);
@@ -46,7 +46,7 @@ export class EditNews extends React.Component {
         .then(res => {
           console.log(res);
           alert("News post has been deleted");
-          window.open("/", "_self");
+          window.open("/news", "_self");
         })
         .catch(e => {
           console.log(e);

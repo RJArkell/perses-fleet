@@ -1,9 +1,5 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Carousel from 'react-bootstrap/Carousel'
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
+import { Container, Carousel, Row, Col, Card } from "react-bootstrap";
 import { NewsCard } from "../news-view/news-card";
 
 export class HomeView extends React.Component {
