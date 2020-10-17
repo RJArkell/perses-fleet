@@ -30,17 +30,17 @@ export class DashboardView extends React.Component {
       <Container fluid className="pagecontainer">
         <Card className="squared bb lb rb">
           <Card.Header className="header text-center"><h3>{user}</h3></Card.Header>
-          <Row noGutters={true} className="tb">
+          <Row noGutters={true} className="tb bb">
             <Col sm={12} lg={6}>
-              <Card className="text-center squared fb">
+              <Card className="text-center squared">
                 <Card.Header className="header"><h5>RANK</h5></Card.Header>
                 <Card.Body>
                   <Card.Text className="my-3"><h5>{rank}</h5></Card.Text>
                 </Card.Body>
               </Card>
             </Col>
-            <Col sm={12} lg={6} className="text-center">
-              <Card className="text-center squared fb">
+            <Col sm={12} lg={6}>
+              <Card className="text-center squared">
                 <Card.Header className="header"><h5>COMMENDATIONS</h5></Card.Header>
                 <Card.Body>
                   <Card.Text className="my-3">
@@ -54,15 +54,15 @@ export class DashboardView extends React.Component {
               </Card>
             </Col>
             <Col sm={12} lg={4}>
-              <Card className="text-center squared fb">
+              <Card className="text-center squared">
                 <Card.Header className="header"><h5>EMAIL</h5></Card.Header>
                 <Card.Body>
-                  <Card.Text className="my-3"><h5>{email}</h5></Card.Text>
+                  <Card.Text className="my-3">{email}</Card.Text>
                 </Card.Body>
               </Card>
             </Col>
             <Col sm={12} lg={4}>
-              <Card className="text-center squared fb">
+              <Card className="text-center squared">
                 <Card.Header className="header"><h5>COMMISSION</h5></Card.Header>
                 <Card.Body>
                   <Card.Text className="my-3"><h5>{commission}</h5></Card.Text>
@@ -70,7 +70,7 @@ export class DashboardView extends React.Component {
               </Card>
             </Col>
             <Col sm={12} lg={4}>
-              <Card className="text-center squared fb">
+              <Card className="text-center squared">
                 <Card.Header className="header"><h5>STATUS</h5></Card.Header>
                 <Card.Body>
                   <Card.Text className="my-3"><h5>{status}</h5></Card.Text>

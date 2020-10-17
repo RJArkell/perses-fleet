@@ -8,7 +8,7 @@ export class HomeView extends React.Component {
 
     return (
       <Container fluid className="pagecontainer">
-        <Card className="bb lb rb">
+        <Card className="bb lb rb squared">
           <Carousel className="mb-2 bb">
             <Carousel.Item>
               <img className="d-block w-100"
