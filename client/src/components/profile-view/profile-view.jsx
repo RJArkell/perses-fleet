@@ -9,7 +9,7 @@ export class ProfileView extends React.Component {
       <Container className="profile" >
         <Card className="fb">
           <Card.Header className="header text-center"><h3>{u.Username}</h3></Card.Header>
-          <Row noGutters={true} className="tb bb">
+          <Row noGutters={true} className="tb">
             <Col sm={12} lg={6}>
               <Card className="text-center squared">
                 <Card.Header className="header"><h5>RANK</h5></Card.Header>
