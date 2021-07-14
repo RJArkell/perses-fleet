@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./app";
 
-
 class PersesFleet extends React.Component {
   render() {
     return (
