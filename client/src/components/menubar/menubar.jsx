@@ -3,7 +3,6 @@ import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 export class Menubar extends React.Component {
 
-
   render() {
     return (
       <Navbar path="/" className="menubar" expand="xl">
